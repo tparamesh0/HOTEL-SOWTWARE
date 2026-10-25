@@ -36,3 +36,5 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 * Packages page (under Dashboard in the menu): "Tour Packages" heading + small duration dropdown
   (1 Night 2 Days … 7 Nights 8 Days). Settings → Package settings: longest package (days), rebuild list,
   add/remove duration options. Rest of the page intentionally empty until the next instructions.
+* Package Settings moved out of the Settings submenu to its own item under Settings in the left menu.
+* Packages page: choosing a duration shows one large empty box per day (nights + 1), labelled "Day N" (content to come).
