@@ -10,7 +10,17 @@
   "author": "Magic Memories Tours and Travels",
   "devDependencies": {
     "electron": "^31.7.7",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^24.13.3",
+    "xlsx": "0.18.5",
+    "html2canvas": "1.4.1",
+    "jspdf": "2.5.1",
+    "@fontsource/dm-sans": "5.0.18",
+    "@fontsource/poppins": "5.0.14",
+    "@fontsource/oswald": "5.0.17",
+    "@fontsource/bebas-neue": "5.0.13",
+    "@fontsource/anton": "5.0.13",
+    "@fontsource/righteous": "5.0.13",
+    "@fontsource/teko": "5.0.18"
   },
   "dependencies": {},
   "productName": "Magic Memories",
