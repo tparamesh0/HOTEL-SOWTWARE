@@ -1,0 +1,8712 @@
+{
+ "hotels": [
+  {
+   "id": "port-blair-islands-tourister",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "ISLANDS TOURISTER",
+   "mobile": "7063990194 , 03192231788",
+   "email": "islandstourister@gmail.com",
+   "address": "Prem nagar",
+   "star": null,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2300,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "STANDERD ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "HONEYMOON SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MAP PER PERSON",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "AP PER PERSON",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LGHT DINNER",
+     "rate": 4000,
+     "note": null
+    },
+    {
+     "item": "CHILD AND PET FRENDLY ROOM",
+     "rate": 2600,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH MATRESS ABOVE 5 YEARS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITHOUT MATRESS ABOVE 5 YEARS",
+     "rate": 800,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sea-cliff",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "SEA CLIFF",
+   "mobile": "9434287937",
+   "email": "reservations@seascapeportblair.com",
+   "address": "Nayagaon",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5250,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5250,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON DELUXE SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6300,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "HONEYMOON SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6825,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON HONEYMOON SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 8400,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATRESS PER NIGHT",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "MAP PLAN PER PERSON PER NIGHT",
+     "rate": 850,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hornbill-nest-resort",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "HORNBILL NEST RESORT",
+   "mobile": "03192 227107 , 03192 – 228137, 228138",
+   "email": "aniidco@gmail.com",
+   "address": "Corbyn's Cove Beach",
+   "star": 4,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SEMI DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATRESS PER PERSON",
+     "rate": 1300,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITHOUT MATRESS",
+     "rate": 880,
+     "note": null
+    },
+    {
+     "item": "LUNCH/DINNER",
+     "rate": 987,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 4200,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2950,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITH CAKE",
+     "rate": 4130,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sea-hills-hotel",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "SEA HILLS HOTEL",
+   "mobile": "99332-80806 , 8072934782 , 9840183047",
+   "email": "reservation@seahillshotels.com",
+   "address": "Shadipur",
+   "star": 5,
+   "sea_view": true,
+   "pool": true,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "STANDERD ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM DELUXE WITH BATHTUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM SUITE POOL VIEW WITH BATHTUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM SUITE SEA VIEW BATHTUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "VIP LOUNGE ROOM WITH BATHTUB AND SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 9500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATRESS",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "MEAL PER PERSON",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "CAKE",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3450,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITHOUT WINE",
+     "rate": 6100,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-beyleaf-inn",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "BEYLEAF INN",
+   "mobile": "9531978999 , 3192222799 , 3192222899",
+   "email": "bookings@bayleafinn.com",
+   "address": "Atlanta point",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 4,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 2,
+   "start_rate": 3600,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "STANDERD ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3600,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4700,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA ADULT WITH MATRESS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITHOUT MATRESS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITH MATRESS",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "MAP 2 PAX",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "AP 2 PAX",
+     "rate": 2800,
+     "note": null
+    },
+    {
+     "item": "BIRTHDAY,HONEYMOON, ANNIVERSARY CAKE",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2625,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 3675,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-olive-hotel-suites",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "OLIVE HOTEL & SUITES",
+   "mobile": "9531880606 , 7695010606",
+   "email": "reservation@olivehotelandsuites.com",
+   "address": "Phoenix Bay",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 3,
+   "start_rate": 3800,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "STUDIO ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3800,
+     "map": 5300,
+     "ap": 6800
+    },
+    {
+     "category": "CLASS SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4600,
+     "map": 6100,
+     "ap": 7600
+    },
+    {
+     "category": "PRIVILEGED SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5400,
+     "map": 6900,
+     "ap": 8400
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHID WITH MATRESS ABOVE 12 YEARS PER NIGHT",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "CHID WITHOUT MATRESS 5 TO 12 YEARS PER NIGHT",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "ADULT PER NIGHT",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "BUFFEA LUNCH/DINNER PER PERSON",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "CAKE ON ARRIVAL",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CANDLE NIGHT DINNER",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "LATE CHECKOUT",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-mansha-palace",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "HOTEL MANSHA PALACE",
+   "mobile": "7063994407 , 03192-233772 , 7063994407",
+   "email": "reservations@manshahotels.com",
+   "address": "Dilanipur",
+   "star": 5,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": 5,
+   "near_label": "Airport",
+   "near_km": "2KM",
+   "low_rank": null,
+   "start_rate": 6500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6500,
+     "map": 8300,
+     "ap": 10100
+    },
+    {
+     "category": "EXECUTIVE SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7000,
+     "map": 8800,
+     "ap": 10600
+    },
+    {
+     "category": "ELEGENT SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7800,
+     "map": 9600,
+     "ap": 11400
+    },
+    {
+     "category": "PALACE SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 9000,
+     "map": 10800,
+     "ap": 12600
+    },
+    {
+     "category": "ROYAL SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 10000,
+     "map": 11800,
+     "ap": 13600
+    },
+    {
+     "category": "FAMILY SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 11000,
+     "map": 14600,
+     "ap": 18200
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD 5 TO 11 YEARS WITHOUT EXTRA BED CP",
+     "rate": 1600,
+     "note": null
+    },
+    {
+     "item": "CHILD 5 TO 11 YEARS WITHOUT EXTRA BED MAP",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CHILD 5 TO 11 YEARS WITHOUT EXTRA BED AP",
+     "rate": 3400,
+     "note": null
+    },
+    {
+     "item": "CHILD 5 TO 11 YEARS WITH EXTRA BED CP",
+     "rate": 2100,
+     "note": null
+    },
+    {
+     "item": "CHILD 5 TO 11 YEARS WITH EXTRA BED MAP",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "CHILD 5 TO 11 YEARS WITH EXTRA BED AP",
+     "rate": 3900,
+     "note": null
+    },
+    {
+     "item": "ADULT 12 YEARS ABOVE WITH /WITHOUT EXTRA BED CP",
+     "rate": 2100,
+     "note": null
+    },
+    {
+     "item": "ADULT 12 YEARS ABOVE WITH /WITHOUT EXTRA BED MAP",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "ADULT 12 YEARS ABOVE WITH /WITHOUT EXTRA BED AP",
+     "rate": 3900,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITH CAKE",
+     "rate": 2800,
+     "note": null
+    },
+    {
+     "item": "ROOM DECORATION",
+     "rate": 2800,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON CAKE 1KG",
+     "rate": 1750,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER RESTAURANT",
+     "rate": 5900,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER ROOFTOP",
+     "rate": 7080,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-salt-life",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "SALT LIFE",
+   "mobile": "9933223055",
+   "email": "info.saltlife@gmail.com",
+   "address": "Haddo",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 4,
+   "start_rate": 4000,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SEA VIEW ROOM WITH PRIVATE BALCONEY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7300,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA 5 Y-ABOVE",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CHILD ON SHARING WITHOUT BED 5 Y- ABOVE",
+     "rate": 1300,
+     "note": null
+    },
+    {
+     "item": "MEAL PER PERSON",
+     "rate": 1250,
+     "note": null
+    },
+    {
+     "item": "HALF KG CAKE",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITH CAKE",
+     "rate": 4000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-6ix-hotel",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "6IX HOTEL",
+   "mobile": "8653269069",
+   "email": "reservations@6ixhotels.com",
+   "address": "haddo",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": 1,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 8500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE OCEAN VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 8500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPERIOR OCEAN VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 10500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE OCEAN VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 12000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "PER PERSON MEAL PLAN",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER FOR COUPLE",
+     "rate": 3999,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH WINE FOR A COUPLE",
+     "rate": 5999,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2800,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-da-bay-inn",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "DA BAY INN",
+   "mobile": "9679569827 , 03192-230674",
+   "email": "dabayinn126@gmail.com",
+   "address": "Sea Shore Road, Haddo",
+   "star": 4,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 1,
+   "start_rate": 2700,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "JUNIOR ROOM SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2700,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SENIOR ROOM SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "HONEYMOON SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATRESS",
+     "rate": 950,
+     "note": null
+    },
+    {
+     "item": "CHILD 5 TO 11 YEARS",
+     "rate": 650,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hilltop-international",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "HILLTOP INTERNATIONAL",
+   "mobile": "7695091681",
+   "email": "reservations.hilltopbayview@gmail.com",
+   "address": "Haddo",
+   "star": 5,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "4KM",
+   "low_rank": null,
+   "start_rate": 5450,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5450,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6450,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPERIOR ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6450,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON SUPERIOR ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7450,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "POOL SIDE CANDLE LIGHT DINNER",
+     "rate": 4500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sand-heaven",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "SAND HEAVEN",
+   "mobile": "7063916902 , 8001192930",
+   "email": "hotelsandheaven@gmail.com",
+   "address": "Lamba line",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "0.7KM",
+   "low_rank": null,
+   "start_rate": 5950,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "SUPER DELUXE ROOM Oct 1 To Dec15",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5950,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM 16 Dec to jan 27",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM 16 Jan To 31 Mar",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5950,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MEALS PER PERSON",
+     "rate": 850,
+     "note": null
+    },
+    {
+     "item": "EXTRA 12 Y ABOVE CP",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD 5 TO 11 Y CP",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "FOC POLICY BOOK 5 AND GET 1 FREE",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER INCLUDES DINNER FOR 2 PAX",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "BIRTHDAY DECORATION WITH FLOWERS AND BALOON IN ROOMS",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CAKE",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "GALA DINNER FOR ADULT ON NEW YEAR MANDATORY",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "GALA DINNER FOR CHILD ON NEW YEAR MANDATORY",
+     "rate": 2400,
+     "note": null
+    },
+    {
+     "item": "LATE CHECKOUT CHARGE PER THE CONBENINCE 3 HOURS",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-coral-reef",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "CORAL REEF",
+   "mobile": "8447805618",
+   "email": "reservations@coralreefandaman.com",
+   "address": "Bathu basti",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 6199,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": 6199,
+     "cp": 7499,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": 6899,
+     "cp": 8199,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE ROOM",
+     "total_rooms": null,
+     "ep": 7499,
+     "cp": 8799,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "ROMANTIC DINNER IN THE MOSAIC HALL",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "PRIVATE MOVE EXPERIENCE IN THE MOSAIC  HALL",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "PRIVATE MOVE EXPERIENCE IN THE MOSAIC PER PACKAGE",
+     "rate": 650,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON BED DECORATION",
+     "rate": 4000,
+     "note": null
+    },
+    {
+     "item": "CELEBRATION CAKE VENNILA / CHOCOLATE CAKE",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "WINE FOR ROMANTIC DINNER (OPTIONAL)",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "MODIFIED AMERICAN PLAN MAP ADULT",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "MODIFIED AMERICAN PLAN MAP CHILD",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "AMERICAN PLAN AP ADULT",
+     "rate": 2800,
+     "note": null
+    },
+    {
+     "item": "AMERICAN PLAN AP CHILD",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "EXTRA BED AND BREAKFAST",
+     "rate": 3099,
+     "note": null
+    },
+    {
+     "item": "CHILD 5-11 Y WITH OR WITHOUT CNB",
+     "rate": 1600,
+     "note": null
+    },
+    {
+     "item": "CHILD 5-11 Y WITH OR WITHOUT CNB AND BREAKFAST",
+     "rate": 2099,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-eastern-gate",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "EASTERN GATE",
+   "mobile": "7094234111",
+   "email": "info@hoteleasterngate.com",
+   "address": "lamba line",
+   "star": 5,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "0.7KM",
+   "low_rank": null,
+   "start_rate": 6000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SUPERIOR ROOM NOV TO MAR",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6900,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "EXCUTIVE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7840,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "BIRTHDAY CAKED 1 KG OR 2 KG",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINEER",
+     "rate": 3920,
+     "note": null
+    },
+    {
+     "item": "CHRITMAS DINNER ADULT",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CHRITMAS DINNER KIDS 6 TO 10Y",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITHOUT MATRESS 5 TO 10Y",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH MATRESS",
+     "rate": 1680,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "MEALS PER PERSON",
+     "rate": 950,
+     "note": null
+    },
+    {
+     "item": "NEW YEAR EVE DINNER  KIDS 6 TO 10Y",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "NEW YEAR EVE DINNER ADULT",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "PEAK SESON CHARGES PER ROOMS PER NIGHT FROM 15 DEC TO 15 JAN 2027",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-symphony",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "SYMPHONY",
+   "mobile": "9476060999 , 9609508000",
+   "email": "reservations@symphonyresorts.com",
+   "address": "Chidiyatapu , Carbin cove , Bengali club shompion",
+   "star": 5,
+   "sea_view": true,
+   "pool": true,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "2KM",
+   "low_rank": null,
+   "start_rate": 4988,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "ANDAMAN GARDEN VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4988,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "ANDAMAN SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6038,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "ANDAMAN COTTAGE GARDEN ACCESS WITH PATION",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7824,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATRESS ABOVE 12Y",
+     "rate": 2360,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT MATRESS 5 TO 12Y",
+     "rate": 1770,
+     "note": null
+    },
+    {
+     "item": "EXTRA MEALS",
+     "rate": 1474,
+     "note": null
+    },
+    {
+     "item": "CAKE ON ARRIVAL",
+     "rate": 2950,
+     "note": null
+    },
+    {
+     "item": "FLOWER  BED DECORATION",
+     "rate": 4130,
+     "note": null
+    },
+    {
+     "item": "BALOON ROOM DECORATION BITHDAY AND HONEYMOON",
+     "rate": 3540,
+     "note": null
+    },
+    {
+     "item": "WINE",
+     "rate": 3630,
+     "note": null
+    },
+    {
+     "item": "LATE CHECKOUT 4 HOURS",
+     "rate": 1652,
+     "note": null
+    },
+    {
+     "item": "EXCLUSIVE ROMANTIC CANDLE LIGHT DINNER PER COUPLE-VEG",
+     "rate": 8000,
+     "note": null
+    },
+    {
+     "item": "EXCLUSIVE ROMANTIC CANDLE LIGHT DINNER PER COUPLE-NON VEG",
+     "rate": 10000,
+     "note": null
+    },
+    {
+     "item": "HI TEA JAMUN COVE SPECIALTY BEACHFRONT RESTAURANT PER COUPLE -VEG",
+     "rate": 950,
+     "note": null
+    },
+    {
+     "item": "HI TEA JAMUN COVE SPECIALTY BEACHFRONT RESTAURANT PER COUPLE -NON VEG",
+     "rate": 1350,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sea-shell",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "SEA SHELL",
+   "mobile": "9933239625 , 9679513121 , 9932089942 , 9531970999",
+   "email": "info@seashellhotels.net",
+   "address": "Marine Hill",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": 3,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 5,
+   "start_rate": 12000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "STANDARD ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 12000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "EXCUTIVE RROM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 13000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 14000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": []
+  },
+  {
+   "id": "port-blair-zone-connect",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|HIGH",
+   "tier": "High",
+   "tier_by": "file",
+   "name": "ZONE CONNECT",
+   "mobile": "03192252777 , 8016700000",
+   "email": "reservations.pbr@zoneconnecthotels.com",
+   "address": "JODAKALAN,TEYLORABAD",
+   "star": 5,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": 2,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 6650,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "CONNECT ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6650,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7250,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "LUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7850,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "SOF CUB BED ABOVE 12Y",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "SOF CUB BED ABOVE 6 TO 12Y",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT BED 6 TO 12Y",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "MEAL CHARGE PER PERSON",
+     "rate": 950,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORACTION WITH CAKE",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH WINE",
+     "rate": 7000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITHOUT WINE",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORACTION",
+     "rate": 4000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sea-scape",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "SEA SCAPE",
+   "mobile": "9434287937 , 9811818414",
+   "email": "reservations@seascapeportblair.com",
+   "address": "Nayagaon",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE KING ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4300,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE TRIPLE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5350,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6800,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD BELOW THE AGE OF 6 Yrs WITHOUT EXTRA MATRESS IS FREE(ONLY 1CHILD PER ROOM IS ALLOWED FREE OF CHARGE)",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "EXTRA BED\\MATTRESS CHARGES(INCLUSIVE OF TAXES AND BREAKFAST)",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "SECOND CHILD IN THE SAME ROOM WITHOUT EXTRA BED(INCLUSIVE OF TAXES AND BREAKFAST)",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "CANDLELIGHT DINNER FOR ONE COUPLE",
+     "rate": 3150,
+     "note": null
+    },
+    {
+     "item": "BUFFET MEALS",
+     "rate": 600,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-red-carpet",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "RED CARPET",
+   "mobile": "7695086488 - 9933245461",
+   "email": "redcarpetandaman@gmail.com",
+   "address": "Garacharama",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 1,
+   "start_rate": 1500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SUPERIOR ROOM",
+     "total_rooms": null,
+     "ep": 1500,
+     "cp": 1800,
+     "map": 2500,
+     "ap": 3200
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2000,
+     "map": 2700,
+     "ap": 3400
+    },
+    {
+     "category": "SUPER DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2200,
+     "map": 2900,
+     "ap": 3600
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD BELOW 5 Y WILL BE COMPLIMENTARY WITHOUT EXTRA MATRESS",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "CHILD BELOW 5 Y WILL BE CHARGED PER NIGHT WITH EXTRA MATTRESS INCLUSIVE OF BREAK FAST",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "PERSON WITHOUT EXTRA BED-CP",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "PERSON WITHOUT EXTRA BED-MAP",
+     "rate": 850,
+     "note": null
+    },
+    {
+     "item": "PERSON WITHOUT EXTRA BED-AP",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "PRESON WITH EXTRA-CP",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "PRESON WITH EXTRA-MAP",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "PRESON WITH EXTRA-AP",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "MEAL CHARGES PER PERSON-CP",
+     "rate": 200,
+     "note": null
+    },
+    {
+     "item": "MEAL CHARGES PER PERSON-MAP",
+     "rate": 350,
+     "note": null
+    },
+    {
+     "item": "MEAL CHARGES PER PERSON-AP",
+     "rate": 700,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-darwin-city",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "DARWIN CITY",
+   "mobile": "9332401001 , 9474217227, 9933268361",
+   "email": "magicmemoriestoursandtravels@gmail.com",
+   "address": "Gurudwara lane",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 1,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5775,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DARWIN DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5775,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DARWIN SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6300,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON CAKE",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CANDLELIT DINNER WITHOUT WINE",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "CANDLELITE DINNER WITH WINE",
+     "rate": 6000,
+     "note": null
+    },
+    {
+     "item": "MEAL SUPPLEMENTS CHARGE LUNCH OR DINNER CHARGED PER PERSON",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "CHILDREN BETWEEN 5-12 YRS WITH EXTRA MATTRESS",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "ABOVE 12 YEARS WITHOUT EXTRA MATTRESS WITH BED BREAKFAST",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sea-bliss",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "SEA BLISS",
+   "mobile": "9933280806 , 8072934782 , 9840183047",
+   "email": "reservation@seahilshotels.com",
+   "address": "Middle Point, Junglighat",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SESON  DELUXE SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SESON SUPER DELUXE SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD BETWEEN 5-12 Y PER NIGHT WITHOUT EXTRA MATTRESS (INCLUSIVE OF BREAKFAST)",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "PER NIGHT WITH EXTRA BED INCLUSIVE OF BREAKFAST",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "PER PERSON PER MEAL",
+     "rate": 750,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-the-north-reef",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "THE NORTH REEF",
+   "mobile": "9932089401 , 9932089402",
+   "email": "hotelthenorthreef@gmail.com",
+   "address": "Dollygunj",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SEASON TARIFF CONTEMPORARY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3800,
+     "map": 4900,
+     "ap": 6100
+    },
+    {
+     "category": "DESIGNER ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4800,
+     "map": 5900,
+     "ap": 7100
+    },
+    {
+     "category": "PEAK SEASON TARIFF CONTEMPORARY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4800,
+     "map": 5900,
+     "ap": 7100
+    },
+    {
+     "category": "DESIGNER ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5800,
+     "map": 6900,
+     "ap": 8100
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATTRESS IN (CP)",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS IN (MAP)",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS IN(AP)",
+     "rate": 2400,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS IN (CP)",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS IN (MAP)",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS IN (AP)",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS IN (CP)",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS IN (MAP)",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS IN (AP)",
+     "rate": 2400,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS IN (CP)",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS IN (MAP)",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS IN (AP)",
+     "rate": 1800,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sri-kpn-hotel",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "SRI KPN HOTEL",
+   "mobile": "9832087877",
+   "email": "reservesreekpn@gmail.com",
+   "address": "Autinabad",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 5,
+   "start_rate": 2500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2500,
+     "map": 3000,
+     "ap": 3500
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA COT ABOVE 10 Y CP",
+     "rate": 1250,
+     "note": null
+    },
+    {
+     "item": "EXTRA COT ABOVE 10 Y MAP",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA COT ABOVE 10 Y AP",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "BELOW 10 Y WITHOUT COT",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-mount-view",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "MOUNT VIEW",
+   "mobile": "9474288498, 03192 250150, 9611227245",
+   "email": "mountviewpristine@gmail.com",
+   "address": "PatherGudda",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 2,
+   "start_rate": 2200,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2200,
+     "map": 2800,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2400,
+     "map": 3000,
+     "ap": null
+    },
+    {
+     "category": "FAMILY DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4400,
+     "map": 5600,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA COT CP",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS CP",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "EXTRA COT MAP",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS MAP",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "MEAL PER PERSON MAP",
+     "rate": 550,
+     "note": null
+    },
+    {
+     "item": "BED DECORATION",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "BED DECORATION WITH CAKE",
+     "rate": 2500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-blue-mmarlin",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "BLUE MMARLIN",
+   "mobile": "7430914422 , 7430914433 , 9531994999",
+   "email": "reservationbluemmarlin@gmail.com",
+   "address": "Dollygunj",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3000,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "PREMIUM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CLD WITH WINE",
+     "rate": 4000,
+     "note": null
+    },
+    {
+     "item": "CLD WITHOUT WINE",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON CAKE",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHAMPAGNE NON ALCOHOLIC",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "FRUIT BASKET",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-g-international",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "G INTERNATIONAL",
+   "mobile": "9933268361 , 9933280806",
+   "email": "booking@hotelginternational.com",
+   "address": "Dollygunj",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 4,
+   "start_rate": 2500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "CLASSIC ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "COMFORT ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "ELEGANT ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3800,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD BELOW 5 YEARS WILL BE COMPLIMENTARY (WITHOUT EXTRA MATTRESS)",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "CHILD 5-12YRS WILL BE CHARGED PER NIGHT",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA ADULT WILL BE CHARGED PER NIGHT WITH  EXTRA MATTRESS INCLUSIVE OF BREAKFAST",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "CHILD OF 12 YEARS AND ABOVE IS TREATED AS ADULT",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "PER PERSON PER MEAL",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "HALF KG CAKE",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 4725,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-nk-international",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "NK INTERNATIONAL",
+   "mobile": "9883002943 , 03192233066, 233382",
+   "email": "hotelnkinternational@gmail.com",
+   "address": "Sea Shore Road",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "PREMIUM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2500,
+     "map": 3500,
+     "ap": 4500
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3000,
+     "map": 4000,
+     "ap": 5000
+    },
+    {
+     "category": "ROYAL DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": 4500,
+     "ap": 5500
+    },
+    {
+     "category": "INPERIAL SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": 5000,
+     "ap": 6000
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATTRESS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT MATTRESS",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "EXTRA MEAL",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "CLD WITH OUT WINE",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "EXECUTIVE",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CLASSIC",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "IMPERIAL FAMILY",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS-CP",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS-MAP",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS-AP",
+     "rate": 2000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-haywizz",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "HAYWIZZ",
+   "mobile": "8001414800 , 8001717777",
+   "email": "hotelhaywizz@gmail.com",
+   "address": "Phoenix bay",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3148,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3148,
+     "map": 4448,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3937,
+     "map": 5237,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "PER MEAL",
+     "rate": 650,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON CAKE",
+     "rate": 1199,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH MATTRESS",
+     "rate": 1199,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITHOUT MATTRESS",
+     "rate": 999,
+     "note": null
+    },
+    {
+     "item": "PEAK SEASON SURCHARGE NET PER ROOM PER NIGHT",
+     "rate": 1199,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-star-paradise",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "STAR PARADISE",
+   "mobile": "9679588019 ,  03192 215699",
+   "email": "reservations@hotelstarparadise.in",
+   "address": "Marine hill",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2310,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "BASIC DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2310,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3675,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SEA FACING DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4725,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA BED",
+     "rate": 1260,
+     "note": null
+    },
+    {
+     "item": "CHILD BELOW 12 YEARS(WITHOUT EXTRA BED)",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON",
+     "rate": 630,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-serene-palace",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "SERENE PALACE",
+   "mobile": "8900982065",
+   "email": "serenepalacehotel@gmail.com",
+   "address": "Shadipur",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4725,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "STANDARDS ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4725,
+     "map": 4988,
+     "ap": 5565
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5775,
+     "map": 6038,
+     "ap": 6615
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6825,
+     "map": 7088,
+     "ap": 7665
+    }
+   ],
+   "addons": [
+    {
+     "item": "BREAKFAST",
+     "rate": 420,
+     "note": null
+    },
+    {
+     "item": "LUNCH",
+     "rate": 578,
+     "note": null
+    },
+    {
+     "item": "DINNER",
+     "rate": 578,
+     "note": null
+    },
+    {
+     "item": "CHILDREN BETWEEN OF 5 TO 12 YEARS WILL BE CHARGED",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "CHILDREN ABOVE AGE OF 12 YRS WILL BE CHARGED AS PER EXTRA ADULT RATES PER NIGHT PER CHILD WITH EXTRA MATTRESS INCLUSIVE OF BREAKFAST",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "BIRTHDAY CAKE",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON-CP",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON-MAP",
+     "rate": 1890,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON-AP",
+     "rate": 2100,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-drift-wood",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "DRIFT WOOD",
+   "mobile": "70292 96375 , 95733 42206",
+   "email": "info@driftwoodhotelandresort.com",
+   "address": "Haddo",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM (SEASON RATE)",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "ROYAL SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "HONEYMOON SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4600,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON ROYAL SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5600,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON HONEYMOON SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6300,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "BELOW 5 Y COMPLIMENTARY (NO MATTRESS)",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "5-12 YEARS PER NIGHT",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "EXTRA ADULT PER NIGHT WITH EXTRA MATTRESS INCL, BREAKFAST 12 YEARS ABOVE TREATED AS ADULT",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "PER PERSON MEAL",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "HALF KG CELEBRATION CAKE",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2625,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER (INDOOR)",
+     "rate": 4725,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER (POOLSIDE)",
+     "rate": 5775,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-the-luxor",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "THE LUXOR",
+   "mobile": "3192 235552 ,3192 235559 , 9679502774",
+   "email": "theluxorandaman@gmail.com",
+   "address": "Haddo",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5000,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "EXECUTIVE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "ROYAL SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA ADULT (ABOVE 12YRS) WITH OR WITHOUT MATTRESS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHILD (5-12YRS)",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "PER PERSON MEAL",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITH CAKE",
+     "rate": 3000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-rain-bird",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "RAIN BIRD",
+   "mobile": "8900930566 , 9679506944 , 8900918724",
+   "email": "hotelrainbird@gmail.com",
+   "address": "Haddo",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2900,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2900,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3400,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4800,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA PERSON ABOVE 5 YEARS",
+     "rate": 650,
+     "note": null
+    },
+    {
+     "item": "EXTRA BED",
+     "rate": 1100,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION COST",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN MAP",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN AP",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "FOR EXTRA BREAKFAST PER PERSON IS",
+     "rate": 263,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-urban-heaven",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "URBAN HEAVEN",
+   "mobile": "8670524666",
+   "email": "hotelurbanheaven@gmail.com",
+   "address": "VIP Road",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "0.5KM",
+   "low_rank": null,
+   "start_rate": 2500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "STANDARD ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE FAMILY ROOM W\\B",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "RATE ARE ON CP PLAN BREAKFAST INCLUDED",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "MAP PLAN BREAKFAST+DINNER PER PERSON",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "AP PLAN BREAKFAST+LUNCH+DINNER PER  PERSON",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "EXTRA PRESON WITHOUT MATTRESS PER NIGHT",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH MATTRESS PER NIGHT",
+     "rate": 1200,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-at-villa",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "AT VILLA",
+   "mobile": "9932080282 , 03192251242",
+   "email": "hotelatvilla@gmail.com",
+   "address": "Attam pahad",
+   "star": 5,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": 4,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4000,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM POOL VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM NON POOL VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "EXECUTIVE POOL VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "EXECUTIVE NON POOL VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD  ADULT WITH EXTRA MATTRESS 05-12YRS",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "CHILD  ADULT WITH EXTRA MATTRESS 05-12YRS",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "PEAK SEASON EXTRA",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "MEAL SUPPLEMENTS PER PERSON",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH CAKE & WINE          POOL SIDE",
+     "rate": 7000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH & WINE                     POOL SIDE",
+     "rate": 6500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH WINE                        POOL SIDE",
+     "rate": 5500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITHOUT CAKE & WINE   POOL SIDE",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITH CAKE",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BOUQUET",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "ROOM DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON CAKE (BF-500GM)",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "MAX 3 ADULTS ONLY",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "ONLY ONE EXTRA MATTRESS WILL BE ALLOWED IN ONE ROOM CHILDREN BELOW THE AGE OG 05 YEARS WILL BE COMPLIMENTARY",
+     "rate": null,
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sea-port",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "SEA PORT",
+   "mobile": "8900950115 , 8918728881",
+   "email": "hotelseaportandamans@gmail.com",
+   "address": "Dollygunj",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3000,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3000,
+     "map": 4200,
+     "ap": 5400
+    },
+    {
+     "category": "ORIENTAL ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": 4700,
+     "ap": 5900
+    }
+   ],
+   "addons": [
+    {
+     "item": "CP PLAN EXTRA MATTRESS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "MAP PLAN-EXTRA MATTRESS",
+     "rate": 1600,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "AP PLAN-EXTRA MATTRESS",
+     "rate": 2200,
+     "note": null
+    },
+    {
+     "item": "WITHOUT EXTRA MATTRESS",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PAX",
+     "rate": 650,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-the-pearl",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "THE PEARL",
+   "mobile": "9932083007 , 9474217227 , 9933268361",
+   "email": "reserve.thepearl@gmail.com",
+   "address": "VIP Raod",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "0.5KM",
+   "low_rank": null,
+   "start_rate": 2400,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOMS",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2400,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOMS",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE ROOMS",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3800,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATTRESS CPAI",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "CHILD WITH MATTRESS CPAI",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT BED CPAI",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "MEAL CHARGES PER PERSON PER MEAL",
+     "rate": 600,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-silver-spring",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "SILVER SPRING",
+   "mobile": "03192 242430 ,  9932085580",
+   "email": "reservations.silverspringhotels@gmail.com",
+   "address": "Junglighat",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 2,
+   "near_label": "Airport",
+   "near_km": "0.8KM",
+   "low_rank": null,
+   "start_rate": 5250,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5250,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "LUXURY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6300,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "PER MEAL PER PERSON",
+     "rate": 975,
+     "note": null
+    },
+    {
+     "item": "PEAK SEASON SUR CHARGE",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA ADULT WITH BED 12YRS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITH BED 6-12YRS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD NO BED 6-12YRS BELOW 6 YEARS COMPLIMENTARY",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3540,
+     "note": null
+    },
+    {
+     "item": "ROOF TOP CANDLE LIGHT DINNER",
+     "rate": 4720,
+     "note": null
+    },
+    {
+     "item": "BIRTHDAY CAKE (1\\2KG)",
+     "rate": 799,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-andaman-gkm-grand",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "ANDAMAN GKM GRAND",
+   "mobile": "9434262082 , 6369047484",
+   "email": "gkmgrand@gmail.com",
+   "address": "Nayagaon",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3150,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3675,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "STANDARD ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3150,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MAT WITH BREAKFAST",
+     "rate": 735,
+     "note": null
+    },
+    {
+     "item": "PER PERSON DINNER",
+     "rate": 630,
+     "note": null
+    },
+    {
+     "item": "A 20% WILL BE ADDED TO THE ABOVE RATES IN THE BOOKING  OF DECEMBER 2026 AND JANUARY 2027 AS PEAK SEASON CHARGES",
+     "rate": null,
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "port-blair-the-harriet-sea-view",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "THE HARRIET SEA VIEW",
+   "mobile": "9474217786 , 9933253858",
+   "email": "theharrietseaview2025@gmail.com",
+   "address": "Phoenix Bay",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": 3,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM DELUXE SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "PER PERSON MAP PLAN",
+     "rate": 1300,
+     "note": null
+    },
+    {
+     "item": "ROOM DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "DECORATION WITH CAKE",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "BELOW 5 YRS NO CHARGES UPTO 01 CHILD PER ROOM",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "6-11 YEARS",
+     "rate": 1260,
+     "note": null
+    },
+    {
+     "item": "12 YEARS AND ABOVE",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "PER PERSON MAP PLAN",
+     "rate": 1300,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITHOUT CAKE",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITH CAKE",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "BELOW 5 YRS  NO CHARGES",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "EXTRA PERSON 6-12 YEARS WITH\\ WITHOUT MATTRESS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON ABOVE 12 YEARS WITH\\WITHOUT MATTRESS",
+     "rate": 1800,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-marina-manor",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "MARINA MANOR",
+   "mobile": "03192234793 , 9474227767",
+   "email": "hotelmarinamanor@gmail.com",
+   "address": "Junglighat",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "0.8KM",
+   "low_rank": null,
+   "start_rate": 3000,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": 3000,
+     "cp": 3300,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY ROOM",
+     "total_rooms": null,
+     "ep": 5700,
+     "cp": 6000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MEAL PLAN MAP PER PERSON",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN AP PER PERSON",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRAMATTRESS ABOVE 5 YRS",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "CHILD ON SHARING WITHOUT MATTRESS ABOVE 5 YRS",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sweneha-grand",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "SWENEHA GRAND",
+   "mobile": "7063931999",
+   "email": "rswenehahotel107@gmail.com",
+   "address": "Junglighat",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "0.7KM",
+   "low_rank": 3,
+   "start_rate": 2300,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2300,
+     "map": 3300,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA ADULT 06 YRS & ABOVE IN CP PLAN",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "WITH EXTRA COT\\MATTRESS MAP PLAN",
+     "rate": 1300,
+     "note": null
+    },
+    {
+     "item": "MEAL SUPPLEMENT PER PERSON PER MEAL",
+     "rate": 450,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITH CAKE",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION WITHOUT CAKE",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "EXTENDED LATE CHECK-OUT-03 HOURS SUBJECT TO AVAILABILITY",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-bell-elite",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|MID",
+   "tier": "Mid",
+   "tier_by": "file",
+   "name": "BELL ELITE",
+   "mobile": "7900003192 , 9474217227, 9933268361",
+   "email": "hotelbellelite@gmail.com",
+   "address": "Gurudwara Lane",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 5,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5774,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5774,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6824,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM SUITE WITH TUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7865,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "PEAK SEASON SURCHARGE FROM 15TH DECEMBER TO 10TH JANUARY PER ROOM PER NIGHT",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON CAKE",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CANDLELIT DINNER WITHOUT WINE",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "CANDLELIT DINNER WITH BOTTLE OF WINE",
+     "rate": 6000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-rhishabh",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL RHISHABH",
+   "mobile": "9933221125",
+   "email": "hotelrishabh@gmail.com",
+   "address": "MARINE HILL",
+   "star": 2,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "STANDARD",
+     "total_rooms": null,
+     "ep": 2500,
+     "cp": 3500,
+     "map": 4500,
+     "ap": null
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": 3500,
+     "cp": 3900,
+     "map": 4900,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA BED",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-reef-atlantis",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "REEF ATLANTIS",
+   "mobile": "8348344004 , 9531900000",
+   "email": "hello@hotelreefatlantis.com",
+   "address": "Sisty Nagar",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 2,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "HONEYMOON SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": []
+  },
+  {
+   "id": "port-blair-golden-view",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "GOLDEN VIEW",
+   "mobile": "7695093450",
+   "email": "goldenviewpb@gmail.com",
+   "address": "Round Basthi",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 1800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "PREMIUM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 1800,
+     "map": 2200,
+     "ap": null
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2200,
+     "map": 3000,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "LUNCH PER PERSON",
+     "rate": 400,
+     "note": null
+    },
+    {
+     "item": "EXTRA PER AGE 6TO12 CP",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "EXTRA PER AGE 6TO12 MAP",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-diviyum-manor",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "DIVIYUM MANOR",
+   "mobile": "7479006500",
+   "email": "mail@diviyummanor.in",
+   "address": "Lamba Line,Near Airport",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 3,
+   "near_label": "Airport",
+   "near_km": "1KM",
+   "low_rank": null,
+   "start_rate": 3500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "STANDARD",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATRIX CP",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT MATRIX CP",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "CHILD WITH MATRIX CP",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-king-safire",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL KING SAFIRE",
+   "mobile": "9531907227 , 9531907227",
+   "email": "hotelkingsafire@gmail.com",
+   "address": "Nayagaon",
+   "star": 3,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "5KM",
+   "low_rank": null,
+   "start_rate": 2625,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM-DUBLE OCCUPANCY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2625,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM-TRIPLE OCCUPANCY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3825,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD WITHOUT MATRIX",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "CHILD WITH MATRIX CP",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "MEAL SUPPLEMENTS",
+     "rate": 550,
+     "note": null
+    },
+    {
+     "item": "Candle Light Dinner with cake & Wine",
+     "rate": 6000,
+     "note": null
+    },
+    {
+     "item": "Candle Light Dinner with Wine",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "Candle Light Dinner with Cake",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "Candle Light Dinner without Cake & Wine",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "Candle Light Dinner only table setup for 02 pax",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "Flower Bed Decoration",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "Flower Bouquet",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "Room Decoration",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "Honeymoon Cake (BF-500gm)",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "MORE DETIEL CHECK TARRIF",
+     "rate": null,
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "port-blair-island-cliff",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "ISLAND CLIFF",
+   "mobile": "9679562585",
+   "email": "islandcliffbnb@gmail.com",
+   "address": "Phoenix Bay",
+   "star": 2,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2700,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "STANDARD SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": 2700,
+     "cp": 3100,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM SEA VIEW ROOM",
+     "total_rooms": null,
+     "ep": 3100,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "WITH BRACKFAST",
+     "rate": 900,
+     "note": null
+    },
+    {
+     "item": "WITHOUT BRACKFAST",
+     "rate": 700,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-vmr-hotel",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "VMR HOTEL",
+   "mobile": "8967691999",
+   "email": "reservationvmrhotel@gmail.com",
+   "address": "Phoenix Bay",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 3,
+   "start_rate": 2200,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "STANDARD ROOM",
+     "total_rooms": 10,
+     "ep": null,
+     "cp": 2200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": 18,
+     "ep": null,
+     "cp": 2500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY ROOM",
+     "total_rooms": 2,
+     "ep": null,
+     "cp": 3700,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE ROOM",
+     "total_rooms": 2,
+     "ep": null,
+     "cp": 4200,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA PERSON",
+     "rate": null,
+     "note": "1000 TO 1200"
+    },
+    {
+     "item": "CHILD BELOW 5Y",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "CHILD 6TO 11Y WITHOUT MATTRESS",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "CHILD 6TO 11Y WITH EXTRA MATTRESS",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "CHILDREN ABOVE 12Y WILL BE TREATED ADULT",
+     "rate": 100,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITHOUT WINE",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH WINE",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CELEBRATION 1/2KG",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-sampat-regency",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "SAMPAT REGENCY",
+   "mobile": "9933223478",
+   "email": "sampatregency05@gmail.com",
+   "address": "Aberdeen Bazaar",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 4,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 1,
+   "start_rate": 1500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": 2000,
+     "cp": 2500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "STANDARD",
+     "total_rooms": null,
+     "ep": 1500,
+     "cp": 2000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY",
+     "total_rooms": null,
+     "ep": 2750,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE",
+     "total_rooms": null,
+     "ep": 2500,
+     "cp": 3000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra person above 6 years ep",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "Extra person above 6 years cp",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "Extra person Without matrix ep",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "Extra person Without matrix cp",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "Flower bed decoration",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "Without Cake",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "Flower bed decoration",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "With Cake",
+     "rate": 2000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-landmark",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL LANDMARK",
+   "mobile": "8274092607 , 7063992784",
+   "email": "landmarkandaman@gmail.com",
+   "address": "Clock Tower, Aberdeen Bazar",
+   "star": 3,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3885,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "SUPERIOR CLOCK TOWER ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4725,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "ROSE ISLAND VIEW ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4515,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3885,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra matrix",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "Extra person",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "Extra child 5 to 12 years",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "Ap plan",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "Map plan",
+     "rate": 650,
+     "note": null
+    },
+    {
+     "item": "Birthday and Honeymoon Cake",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "Bed decoration",
+     "rate": 650,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-blue-regent",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL BLUE REGENT",
+   "mobile": "8900904777",
+   "email": "hotelblueregent01@gmail.com",
+   "address": "Austinabad Village",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 4,
+   "start_rate": 2500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2500,
+     "map": 3700,
+     "ap": 4900
+    },
+    {
+     "category": "CLUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": 4000,
+     "ap": 5200
+    },
+    {
+     "category": "SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3000,
+     "map": 4200,
+     "ap": 5400
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra Child with matrix above 5 to 12",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "Extra Child without matrix above 5 to 12",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "Extra person map",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "Extra person ap",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "Flower bed balloon decoration",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "Birthday anniversary Cake",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "Candel light dinner",
+     "rate": 5000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-alphs-view",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "ALPHS VIEW",
+   "mobile": "9932449139 , 7695010105",
+   "email": "",
+   "address": "Shadipur",
+   "star": 2,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2050,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2050,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE BALCONY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2260,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2630,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra matrix cp",
+     "rate": 600,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-magpie",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL MAGPIE",
+   "mobile": "9679582226, 7407418957,8900919923",
+   "email": "hotelmagpieresidency@gmail.com",
+   "address": "Old Pharagaon",
+   "star": 2,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 1800,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 1800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE TRIPLE BED",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPERIOR DOUBLE LITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2300,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPERIOR DOUBLE BED",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPERIOR STUDIO FAMILY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra person",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "Lunch/Dinner  per pax",
+     "rate": 350,
+     "note": null
+    },
+    {
+     "item": "Breakfast per pax",
+     "rate": 150,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-kings",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL KINGS",
+   "mobile": "9933269719 , 7578008860",
+   "email": "<hotelkingsportblair@gmail.com>",
+   "address": "Haddo",
+   "star": 3,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 5,
+   "near_label": "Airport",
+   "near_km": "6KM",
+   "low_rank": null,
+   "start_rate": 2100,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "STANDARD",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2100,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2625,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3150,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra person With matrix",
+     "rate": 1180,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-big-pocket",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "BIG POCKET",
+   "mobile": "88200 20088,9476001222",
+   "email": "",
+   "address": "Nayagaon",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 2,
+   "start_rate": 1800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 1800,
+     "map": 2400,
+     "ap": 3000
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra child 5 to 12 years cp",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "Extra Child 5 to12 map",
+     "rate": 900,
+     "note": null
+    },
+    {
+     "item": "Extra Child 5 to 12 ap",
+     "rate": 1300,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-srm-grand",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "SRM GRAND",
+   "mobile": "9933247770 , 9046886901",
+   "email": "reserve.srmbybighotels@gmail.com",
+   "address": "Babu line",
+   "star": 3,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "TRIPLE DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3600,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Map",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "Ap",
+     "rate": 900,
+     "note": null
+    },
+    {
+     "item": "Extra person with extra matrix",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "Extra person Without matrix",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "Romantic celebration experiences",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "Candle light dinner",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "Elegant setups",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "With celebration cake",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "Flower bed decoration",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "Romantic setups",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "With celebration cake",
+     "rate": 2500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-j-hotel",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "J HOTEL",
+   "mobile": "9476000000 ,  03192- 246000 , 243700 , 243701",
+   "email": "info@jhotel.in, jhotel@outlook.com",
+   "address": "Aberdeen Bazar",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2999,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2999,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PRIMARIE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3499,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra bed per night Above 12 years",
+     "rate": 1049,
+     "note": null
+    },
+    {
+     "item": "Extra child without bed cpai 6 to 11 years",
+     "rate": 749,
+     "note": null
+    },
+    {
+     "item": "Meals plan Per person 6",
+     "rate": 649,
+     "note": null
+    },
+    {
+     "item": "Candle light dinner",
+     "rate": 4199,
+     "note": null
+    },
+    {
+     "item": "Bed decoration",
+     "rate": 2399,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-beyond-blu",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "BEYOND BLU",
+   "mobile": "9940183789 , 9800407888",
+   "email": "hotelbeyondblu@gmail.com",
+   "address": "Nayagaon",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 1,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "HARMONY HIDEOUT DBL OCCUPANCY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3800,
+     "map": 5100,
+     "ap": 6400
+    },
+    {
+     "category": "ELEGANCE RETREAT DBL OCCUPANCY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4100,
+     "map": 5400,
+     "ap": 6700
+    },
+    {
+     "category": "ZEN EXECUTIVE TRIPLE BED FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5200,
+     "map": 7150,
+     "ap": 9100
+    },
+    {
+     "category": "ZEN PREMIUM 04 BEDDED FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6200,
+     "map": 8700,
+     "ap": 11400
+    }
+   ],
+   "addons": []
+  },
+  {
+   "id": "port-blair-hotel-nile-blue",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL NILE BLUE",
+   "mobile": "8653664947 , 03192-206449",
+   "email": "hotelnileblue@gmail.com",
+   "address": "Attam Pahad",
+   "star": 2,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 1500,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": 1500,
+     "cp": 1800,
+     "map": 2500,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra matrix ep",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "Extra matrix cp",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "Extra matrix map",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-a-r-pride-residency",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL A.R.PRIDE RESIDENCY",
+   "mobile": "9679580818 , 9679576497",
+   "email": "arprideresidency@gmail.com",
+   "address": "Junglighat",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": 5,
+   "start_rate": 2300,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2300,
+     "map": 3000,
+     "ap": 3600
+    },
+    {
+     "category": "SUPER DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": 3400,
+     "ap": 4000
+    }
+   ],
+   "addons": [
+    {
+     "item": "Meals plan per person",
+     "rate": 300,
+     "note": null
+    },
+    {
+     "item": "Extra person with cot",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "Extra person Without cot",
+     "rate": 400,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-de-pebbles",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL DE PEBBLES",
+   "mobile": "7695091681 , 9679531023 , 7903555666",
+   "email": "hoteldepebbles@gmail.com",
+   "address": "Haddo",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5772,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "WOODEN DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5772,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Flower bed decoration",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "Honeymoon cake",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "Candle light dinner without wine",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "Candle light dinner with wine",
+     "rate": 6000,
+     "note": null
+    },
+    {
+     "item": "Child 5 to 12 years without matrix",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "Child 5 to 12 years with matrix",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "Above 12 years",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "Meals plan Lunch OR dinner",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "Lunch and dinner both",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-anchorage-inn",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "ANCHORAGE INN",
+   "mobile": "9775101555 , 9476088145",
+   "email": "hotelanchorageinn@gamil.com",
+   "address": "Phoenix Bay",
+   "star": 2,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 1800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 1800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3600,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra person with matrix Adult",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "Extra person without matrix Adult",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "Meals plan",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "Mapi",
+     "rate": 450,
+     "note": null
+    },
+    {
+     "item": "Apai",
+     "rate": 900,
+     "note": null
+    },
+    {
+     "item": "Flower bed decoration 2500/-",
+     "rate": 2500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "port-blair-hotel-shrees",
+   "island": "Port Blair",
+   "source_file": "PORT BLAIR|LOW",
+   "tier": "Low",
+   "tier_by": "file",
+   "name": "HOTEL SHREES",
+   "mobile": "9679503928, 9531838503",
+   "email": "hotelshreeshportblair@gmail.com",
+   "address": "Goal Ghar",
+   "star": 2,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Airport",
+   "near_km": "2KM",
+   "low_rank": null,
+   "start_rate": 2200,
+   "addon_label": "EXTRA",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2700,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "Extra person",
+     "rate": 650,
+     "note": null
+    },
+    {
+     "item": "Breakfast per person",
+     "rate": 160,
+     "note": null
+    },
+    {
+     "item": "Lunch OR Dinner per person 450",
+     "rate": 450,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-the-coral-bentley",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "THE CORAL BENTLEY",
+   "mobile": "90024 87090 , 73648 67090",
+   "email": "coralbentley8@gmail.com",
+   "address": "Havelock",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 6000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "PLATINUM DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SIGNATURE STAY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY NEST ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 10000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MEAL PLAN PER PERSON",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON 13 YRS OR MORE PER NIGHT",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHILD FROM 05-12 YRS PER NIGHT",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "CHILD BELOW 05 YRS COMPLIMENTARY",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "PEAK SESON SURCHARGE PER ROOM",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-wild-orchid-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "WILD ORCHID RESORT",
+   "mobile": "9474210643 , 9531835655",
+   "email": "",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5999,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "PEAK SEASON CLASSIC ROOM",
+     "total_rooms": null,
+     "ep": 5999,
+     "cp": 6499,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON STYLE ROOM",
+     "total_rooms": null,
+     "ep": 6499,
+     "cp": 6999,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEAK SEASON SUITE ROOM",
+     "total_rooms": null,
+     "ep": 6999,
+     "cp": 7499,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": []
+  },
+  {
+   "id": "havelock-elysion",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "ELYSION",
+   "mobile": "9967464086",
+   "email": "reservations@elysianhavelock.com",
+   "address": "Havelock",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2700,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "JUN - AUG",
+     "total_rooms": null,
+     "ep": 2700,
+     "cp": 3200,
+     "map": 4950,
+     "ap": null
+    },
+    {
+     "category": "SEP -NOV",
+     "total_rooms": null,
+     "ep": 5000,
+     "cp": 5500,
+     "map": 7500,
+     "ap": null
+    },
+    {
+     "category": "DEC - JAN",
+     "total_rooms": null,
+     "ep": 6500,
+     "cp": 7500,
+     "map": 9500,
+     "ap": null
+    },
+    {
+     "category": "FEB - MAY",
+     "total_rooms": null,
+     "ep": 5000,
+     "cp": 5500,
+     "map": 7250,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MEAL PLAN PER COUPLES MAP",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER COUPLES AP",
+     "rate": 3600,
+     "note": null
+    },
+    {
+     "item": "FLOWER DECORATION",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CAKE",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATRESS CP",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATRESS EXTRA ADULT CP",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CAKE HALF KG",
+     "rate": 1200,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-el-dorado-beach-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "EL DORADO BEACH RESORT",
+   "mobile": "9434261456 , 9647409190",
+   "email": "eldoradoathavelock@gmail.com",
+   "address": "Havelock",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SEMI DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": 4800,
+     "ap": 6100
+    },
+    {
+     "category": "FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6900,
+     "map": 10150,
+     "ap": 13400
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": 6300,
+     "ap": 7600
+    },
+    {
+     "category": "SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6500,
+     "map": 7800,
+     "ap": 9100
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATTRESS PER PERSON (CP)",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS PER PERSON (MAP)",
+     "rate": 1350,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS PER PERSON (AP)",
+     "rate": 2000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-holiday-holiday-beach-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "HOLIDAY & HOLIDAY BEACH RESORT",
+   "mobile": "9474255566 , 8900955566",
+   "email": "",
+   "address": "Havelock",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": 1,
+   "near_label": "Jetty",
+   "near_km": "0.2KM",
+   "low_rank": null,
+   "start_rate": 6825,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "STUDIOS ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6825,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "MODERN MARGIN ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 8850,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "ROYAL REINS ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 9440,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE ROOMS WITH 02 BEDS",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 9912,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATTRESS PER PERSON PER ROOM",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT MATTRESS PER ROOM",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "EARLY CHECK IN ROOM WELL BE SUBJECT TO AVAILABILITY WOULD ATTRACT ADDITIONAL CHARGES",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON",
+     "rate": 840,
+     "note": null
+    },
+    {
+     "item": "DINNER ON THE BEACH WOULD COST PER PERSON",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "POOL SIDE CLD",
+     "rate": 2800,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER BEACH SIDE",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "CANDLE DINNER WITH COMPLIMENTARY PHOTOSHOOT",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "EXTRA CAKE HALF KG",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-hotel-havelock-gateway",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "HOTEL HAVELOCK GATEWAY",
+   "mobile": "9476080568",
+   "email": "info@havelockgateway.com",
+   "address": "Havelock",
+   "star": 5,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": 3,
+   "near_label": "Jetty",
+   "near_km": "0.5KM",
+   "low_rank": null,
+   "start_rate": 4000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SUPER DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": 6200,
+     "ap": 7400
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": 5200,
+     "ap": 6400
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA MATTRESS (CP)",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS (MAP)",
+     "rate": 1890,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS (AP)",
+     "rate": 2310,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITHOUT MATTRESS ABOVE 5 YEARS",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "PER HEAD PER MEAL",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3150,
+     "note": null
+    },
+    {
+     "item": "BDAY DECORATION",
+     "rate": 3150,
+     "note": null
+    },
+    {
+     "item": "CLD BEACH SIDE",
+     "rate": 4500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-ocean-tree",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "OCEAN TREE",
+   "mobile": "8900977771",
+   "email": "booking@oceantreebeachresort.com",
+   "address": "Havelock",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 2,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 6300,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6300,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "VILLA PLUS",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 10620,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "HONEYMOON VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 12980,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 9440,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM  SUITE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 10620,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 14750,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 17110,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 18290,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA PERSON WITHOUT MATTRES",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS",
+     "rate": 2500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-havelock-exotic",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "HAVELOCK EXOTIC",
+   "mobile": "9679588633 , 93324 12341 , 9933299288",
+   "email": "hebr.resort@gmail.com",
+   "address": "Havelock",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": 5,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SEA VIEW DELUXE COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SEA VIEW COTTAGE BATH TUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SEA VIEW LUXURY POOL COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SEA FACING COTTAGE WITH JAKUZZI",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 8500,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "PER MEALS PER PERSON",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH COT AND MATTRESS",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH ONLY MATTRESS",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER NORMAL SETUP",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER CABANA SETUP",
+     "rate": 5500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "BIRTHDAY OR ANNIVERSARY CAKE 1\\2KG",
+     "rate": 1200,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-senses-havelock-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "SENSES HAVELOCK RESORT",
+   "mobile": "9531843212 , 7695063388",
+   "email": "booking@senseshavelock.com",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM WITH BATHTUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM BATHTUB SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PRIVATE BATHTUB SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7499,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CONFERENCE HALL PROJECTOR WITH SCREEN",
+     "rate": 8000,
+     "note": null
+    },
+    {
+     "item": "CHILD BELOW 5 YER WILL BE COMPLIMENTARY WITHOUT EXTRA MATTRESS",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "CHILD 5 TO 12 YRS WILL BED CHARGED",
+     "rate": 900,
+     "note": null
+    },
+    {
+     "item": "EXTRA ADULT WILL BE CHARGED PER NIGHT",
+     "rate": 1250,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "HALF KG CAKE",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "FLOWER BRD DECORATION",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 4725,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGTH DINNER POOLSIDE",
+     "rate": 5775,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-shangrilas-beash-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "SHANGRILAS BEASH RESORT",
+   "mobile": "9474252177 , 788 869 4853",
+   "email": "shangrilasbeachresort@gmail.com",
+   "address": "Haveelock",
+   "star": null,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": "0.9KM",
+   "low_rank": null,
+   "start_rate": null,
+   "addon_label": "ADD ON",
+   "rooms": [],
+   "addons": [
+    {
+     "item": "THE SHORELINE TEEPEE BEACH SIDE",
+     "rate": 13000,
+     "note": null
+    },
+    {
+     "item": "THE WHIMSICAL SHORELINE BIRTHDAY TEEPEE",
+     "rate": 11000,
+     "note": null
+    },
+    {
+     "item": "THE COASTAL CIRCLE OF CELEBRATION",
+     "rate": 7500,
+     "note": null
+    },
+    {
+     "item": "THE GRAND MIDNIGHT CANOPY",
+     "rate": 14000,
+     "note": null
+    },
+    {
+     "item": "BASIC PANDAL SETUP",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "SPECIAL PREMIUM SETUP",
+     "rate": 5900,
+     "note": null
+    },
+    {
+     "item": "HEART COAST SETUP",
+     "rate": 5500,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON SETUP",
+     "rate": 9000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-radhakrishna-hotel",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "RADHAKRISHNA HOTEL",
+   "mobile": "95318924999 , 9679508053",
+   "email": "resort@radhakrishnahresorthavelock.com",
+   "address": "havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": "0.3KM",
+   "low_rank": null,
+   "start_rate": 3885,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3885,
+     "map": 5145,
+     "ap": 6405
+    },
+    {
+     "category": "SUPER DELUX ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4725,
+     "map": 5985,
+     "ap": 7245
+    },
+    {
+     "category": "COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4410,
+     "map": 5670,
+     "ap": 6930
+    },
+    {
+     "category": "FAMILY COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7350,
+     "map": 9870,
+     "ap": 12390
+    },
+    {
+     "category": "POOL VIEW DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5249,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6299,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUX ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7349,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7875,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA CHILD CHARGE WITHOUT MATTRESS(CP)",
+     "rate": 400,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD CHARGE WITHOUT MATTRESS(MAP)",
+     "rate": 850,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD CHARGE WITHOUT MATTRESS(AP)",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "EXTRA ADULTS CHARGE WITH MATTRESS ABOVE 12YRS (CP)",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "EXTRA ADULTS CHARGE WITH MATTRESS ABOVE 12YRS (MAP)",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "EXTRA ADULTS CHARGE WITH MATTRESS ABOVE 12YRS (AP)",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD CHARGE WITH MATTRESS (CP)",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD CHARGE WITH MATTRESS (MAP)",
+     "rate": 1300,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD CHARGE WITH MATTRESS (AP)",
+     "rate": 1900,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON CAKE",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "WINE",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-all-season-residency",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "ALL SEASON RESIDENCY",
+   "mobile": "8942979777",
+   "email": "havelockallseason@gmail.com",
+   "address": "havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 1,
+   "start_rate": 2835,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2835,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DULUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3885,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MEAL PLAN MAP OPTION-1",
+     "rate": 450,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN MAP OPTION-2",
+     "rate": 850,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH MATTRESS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH OUT MATTRESS",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "BATH TUB CANDLE & FLOWER",
+     "rate": 2000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-hotel-aparupa",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "HOTEL APARUPA",
+   "mobile": "03192-2465823 , 8436160322",
+   "email": "hotelaparupa@gmail.com",
+   "address": "Havelock",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 7400,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "EXECUTIVE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7400,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7900,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "LUXURY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 8900,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "FLOWER BED",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 5500,
+     "note": null
+    },
+    {
+     "item": "CHILD WITH MATTRESS",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT MATTRESS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "MEAL PER HEAD",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "SEASON SURCHARGES PER ROOM",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "GALA DINNER MANDATORY PER HEAD",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "HONEY MOON CAKE",
+     "rate": 2000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-blue-waves-beach-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "BLUE WAVES BEACH RESORT",
+   "mobile": "9474201306 , 9735982088",
+   "email": "bluewavesbeachresort@gmail.com",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 3,
+   "start_rate": 3300,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE COTTAGES",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3300,
+     "map": 4300,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE COTTAGES",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5200,
+     "map": 6500,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "DELUXE COTTAGES HAS MAXIMUM 2 ADULTS+ 1 CHILD WITHOUT BED CAPACITY ONLY",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "LUXURY COTTAGES HAS MAXIMUM 2 ADULTS+ 1 CHILD WITHOUT BED CAPACITY ONLY",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "EXTRA MATTRESS",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD 5-12 YRS WITHOUT BED",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "MEAL PERSON",
+     "rate": 550,
+     "note": null
+    },
+    {
+     "item": "ROMANTIC BEACH DINNER UNDER THE STAR PER COUPLE",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "BED DÉCOR FLOWERS",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "CAKE",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "BEACH PICNIC WITH PICNIC HAMPER PER COUPLE",
+     "rate": 3500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-orient-legend-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "ORIENT LEGEND RESORT",
+   "mobile": "9531965976",
+   "email": "info@havelockbeachresort.in",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 2,
+   "start_rate": 1680,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE DOUBLE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3045,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE TRIPLE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3570,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE DOUBLE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3990,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE DOUBLE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3675,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY SUITE FOUR",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5775,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "NON-AC DOUBLE",
+     "total_rooms": null,
+     "ep": 1680,
+     "cp": null,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "NON-AC TRIPLE",
+     "total_rooms": null,
+     "ep": 1995,
+     "cp": null,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "STD-AC",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2835,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "BREAKFAST",
+     "rate": 150,
+     "note": null
+    },
+    {
+     "item": "LUNCH",
+     "rate": 350,
+     "note": null
+    },
+    {
+     "item": "SNACKS",
+     "rate": 100,
+     "note": null
+    },
+    {
+     "item": "DINNER",
+     "rate": 350,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATRESS A/C",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATRESS NON A/C",
+     "rate": 300,
+     "note": null
+    },
+    {
+     "item": "EXTRA GUEST",
+     "rate": 200,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-de-havelock-queen-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "DE HAVELOCK QUEEN RESORT",
+   "mobile": "9434262517 , 8001090001",
+   "email": "dehavelockqueendhqgmail.com",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": "0.7KM",
+   "low_rank": 4,
+   "start_rate": 3600,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "CORAL ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3600,
+     "map": 3800,
+     "ap": 4000
+    },
+    {
+     "category": "WHISTLING POOL ACCESS",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": 4500,
+     "ap": 4800
+    },
+    {
+     "category": "SUIT WITH TUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5200,
+     "map": 5500,
+     "ap": 5800
+    },
+    {
+     "category": "CORAL ROOM WITH TUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": 4200,
+     "ap": 4500
+    },
+    {
+     "category": "FAMILY ROOM WITH TUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6500,
+     "map": 7000,
+     "ap": 7400
+    },
+    {
+     "category": "FAMILY ROOM WITH OUT TUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6000,
+     "map": 6500,
+     "ap": 7000
+    }
+   ],
+   "addons": []
+  },
+  {
+   "id": "havelock-the-ocean-blue-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "THE OCEAN BLUE RESORT",
+   "mobile": "9476087776 , 9474296180 ,9933292923",
+   "email": "thepceanblueresorthavelock@gmail.com",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3600,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DULUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3600,
+     "map": 4900,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4600,
+     "map": 5900,
+     "ap": null
+    },
+    {
+     "category": "FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6200,
+     "map": 8800,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "ABOVE 13 YRS CPAI",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "5-13 REARS CPAI",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "LUNCH PER PERSON",
+     "rate": 650,
+     "note": null
+    },
+    {
+     "item": "DINNER PER PERSON",
+     "rate": 650,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "1\\2 KG CAKE",
+     "rate": 1400,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-havelock-island-beach-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "HAVELOCK ISLAND BEACH RESORT",
+   "mobile": "7428996082 , 99320 80010",
+   "email": "contact@havelockislandbeachresort.com",
+   "address": "havelock",
+   "star": 5,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 11210,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE COTTAGE GARDEN",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 11210,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 12390,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PREMIUM COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 12980,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE COTTAGE GARDEN",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 15340,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE COTTAGE PARTIAL BEACH",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 17700,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "LUXURY SUITE COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 20650,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 18880,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "OCEAN SUITE PRIVATE POOL VILLA BEACH FRONT OCEAN FACING",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 29500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "HAVELOCK PARADISE PRIVATE POOL VILLA SEA FACING",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 37760,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PRESIDENTIAL SUITE PRIVATE POOL VILLA SEA FACING WITH JACUZZI",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 47200,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MAXIMUM OCCUPANCY PER ROOM 3 PER 1EXTRA PERSON WITH AN EXTRA MATTRESS",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "ADULT PER PERSON",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CHILD WITH MATTRESS 5-12 YEARS",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT MATTRESS 5-12 YRS PER CHILD PER NIGHT",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "LATE CHECKOUT",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON",
+     "rate": 1652,
+     "note": null
+    },
+    {
+     "item": "BUFFET LUNCH DINNER ON THE BEACH PER PERSON",
+     "rate": 2242,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-arina-island-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "ARINA ISLAND RESORT",
+   "mobile": "8754011466",
+   "email": "air@bergamonthotels.com",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 6000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "BARREN ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "RED SKIN VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6900,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "ROSS VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SMITH VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7499,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 3920,
+     "note": null
+    },
+    {
+     "item": "CAKE 1\\2KG",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "CHRISTMAS DINNER ADULT",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CHRISTMAS DINNER KIDS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "NEW YEAR EVE DINNER ADULT",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "NEW YEAR EVE DINNER KIDS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "PEAK SEASON PER ROOM PER",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-placed-garden-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "PLACED GARDEN RESORT",
+   "mobile": "9474286953 ,  9933236983",
+   "email": "placidgardenresort@gmail.com",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 5,
+   "start_rate": 3990,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "COTTAGE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3990,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "COTTAGE PLUS ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "VILLA ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5800,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA BED CHARGES PER NIGHT",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHILD WITHOUT BED PER NIGHT",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "MEALS PLAN  PER PERSON MAP",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "MEALS PLAN  PER PERSON AP",
+     "rate": 1400,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITHOUT WINE",
+     "rate": 3675,
+     "note": null
+    },
+    {
+     "item": "BED DECORATION",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CAKE",
+     "rate": 1050,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-virgin-beach-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "VIRGIN BEACH RESORT",
+   "mobile": "9932085582",
+   "email": "reservation.virginresort@gmail.com",
+   "address": "havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4725,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4725,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "LUXURY",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5775,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA ADULT WITH BED ABOVE 12 YRS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITH BED 5-12 YRS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITH NO BED 5-12 YRS",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "BELOW 5 YRS COMPLIMENTARY",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "MEAL PLAN PER PERSON MAP",
+     "rate": 975,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON AP",
+     "rate": 1950,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-blue-bird-resort",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "BLUE BIRD RESORT",
+   "mobile": "9474255735",
+   "email": "booking@bluebirdresortathavelock.co.in",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 4,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": 5000,
+     "ap": 6000
+    }
+   ],
+   "addons": [
+    {
+     "item": "ADULT WITH MATTRESS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHILD 5-12 WITH MATTRESS",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "CHILD 5-12 W\\O MATTRESS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "MEAL PER PERSON",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON CAKE",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "FRUIT BASKET",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "havelock-sowtir-pelicon",
+   "island": "Havelock",
+   "source_file": "HAVELOCK|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "SOWTIR PELICON",
+   "mobile": "9932081673",
+   "email": "",
+   "address": "Havelock",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SEA VIEW DELUXE COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SEA VIEW LUXURY COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": []
+  },
+  {
+   "id": "neil-pearl-park-beach-resort",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "PEARL PARK BEACH RESORT",
+   "mobile": "7063958600 , 9933256136",
+   "email": "ppbresort@gmail.com",
+   "address": "Neil",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 6000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE GARDEN VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "EXECUTIVE SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7600,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "PEARL VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 8400,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE POOL VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 9200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE POOL SEA VIEW",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 10000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD ADULT WITH MATTRESS 05 & ABOVE (CP)",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "CHILD ADULT WITHOUT MATTRESS 05 & ABOVE (CP)",
+     "rate": 1300,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "PEAK SESON SURCHARGE PER ROOM",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "CHRISTMAS EVENING EVENT AND MANDATORY GALA DINNER PER PERSON",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "NEW YEAR EVENING EVENT AND MANDATORY GALA DINNER PER PERSON",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "EXCLUSIVE BEACH CANDLELIGHT DINNER WITH CAKE & WINE WEATHER PERMITTING",
+     "rate": 12500,
+     "note": null
+    },
+    {
+     "item": "CABANA STYLE CANDLE LIGHT DINNER SEASIDE\\POOLSIDE WITHOUT CAKE WINE",
+     "rate": 12500,
+     "note": null
+    },
+    {
+     "item": "CANDLELIGHT DINNER WITH CAKE WINE SEA SIDE POOLSIDE",
+     "rate": 8500,
+     "note": null
+    },
+    {
+     "item": "CANDLELIGHT DINNER WITH  WINE ONLY SEA SIDE POOLSIDE",
+     "rate": 7500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH CAKE ONLY SEA SIDE POOL SIDE",
+     "rate": 7500,
+     "note": null
+    },
+    {
+     "item": "CANDLELIGHT DINNER WITHOUT CAKE&WINE SEA SIDE POOL SIDE",
+     "rate": 5500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BOUQUET",
+     "rate": 1100,
+     "note": null
+    },
+    {
+     "item": "ROOM DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON\\ BIRTHDAY CAKE (BF-500 GM)",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "BATHTUB DECORATION",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-aquays-hotel",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "AQUAYS HOTEL",
+   "mobile": "9932082094 , 9932082095 , 03192244605",
+   "email": "havelock@aquays.com",
+   "address": "Neil",
+   "star": 5,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": 4,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5250,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "NEIL PLAZA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5250,
+     "map": 7980,
+     "ap": 10710
+    },
+    {
+     "category": "FAMILY SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 9200,
+     "map": 14660,
+     "ap": 20120
+    },
+    {
+     "category": "LAGOON VISTA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7299,
+     "map": 10029,
+     "ap": 12759
+    },
+    {
+     "category": "CRANE SEA VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 9200,
+     "map": 11930,
+     "ap": 14660
+    },
+    {
+     "category": "VINSONS SEA VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 12500,
+     "map": 15230,
+     "ap": 17960
+    }
+   ],
+   "addons": [
+    {
+     "item": "HIGH PEAK SEASON SURCHARGES PER ROOM",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "BUFFET MEAL LINCH\\ DINNER PER PERSON",
+     "rate": 1365,
+     "note": null
+    },
+    {
+     "item": "ADDITIONAL ARRIVAL BREAKFAST PER PERSON",
+     "rate": 630,
+     "note": null
+    },
+    {
+     "item": "5-12 YRS WITHOUT EXTRA BED",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "12 YRS ABOVE WITHOUT EXTRA BED PER PERSON",
+     "rate": 2100,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-coral-garden",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "CORAL GARDEN",
+   "mobile": "9434262594 , 9531928882 , 99332 93666",
+   "email": "amar.coralresort@gmail.com",
+   "address": "Neil",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 5,
+   "near_label": "Jetty",
+   "near_km": "0.1KM",
+   "low_rank": null,
+   "start_rate": 4800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "GARDEN SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4800,
+     "map": 5800,
+     "ap": null
+    },
+    {
+     "category": "GRAND SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5000,
+     "map": 6000,
+     "ap": null
+    },
+    {
+     "category": "ROYAL SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5200,
+     "map": 6200,
+     "ap": null
+    },
+    {
+     "category": "FANCY SUITE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6000,
+     "map": 7000,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA ADULT ABOVE 12 YRS",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD ABOVE 5 YRS",
+     "rate": 900,
+     "note": null
+    },
+    {
+     "item": "BUFFET LUNCH DINNER PER PERSON",
+     "rate": 550,
+     "note": null
+    },
+    {
+     "item": "CAKE ON ARRIVAL",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITHOUT WINE",
+     "rate": 4000,
+     "note": null
+    },
+    {
+     "item": "EXTENDED LATE CHECK UO TO 3 HOURS",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-deep-sea-resort",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "DEEP SEA RESORT",
+   "mobile": "7063980454 , 9476035134",
+   "email": "deepsearesortneil@gmail.com",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 1,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2625,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "STANDARD COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2625,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "STANDARD TRIPLE BED COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3885,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3675,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE FAMILY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6300,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "ADULT CHILD EXTRA PERSON",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "ADULT CHILD EXTRA MATTRESS",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON (MAP)",
+     "rate": 650,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON (AP)",
+     "rate": 900,
+     "note": null
+    },
+    {
+     "item": "6 SEATER ISLAND TRANSPORTATION",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "16 SEATER TRAVELER",
+     "rate": 3500,
+     "note": null
+    },
+    {
+     "item": "26 SEATER TRAVELER",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CAKE ON DEMAND",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "ROOM DECORATION",
+     "rate": 2500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-reef-valley-resort",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "REEF VALLEY RESORT",
+   "mobile": "9474219302 , 9933269350",
+   "email": "reefvalleyresort@gmail.com",
+   "address": "Neil",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 5040,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5040,
+     "map": 6440,
+     "ap": 7840
+    },
+    {
+     "category": "DELUXE VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5040,
+     "map": 6440,
+     "ap": 7840
+    },
+    {
+     "category": "FAMILY EXECUTIVE VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7350,
+     "map": 10150,
+     "ap": 12950
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA ADULT WITH BED (CP)",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "EXTRA ADULT WITH BED (MAP)",
+     "rate": 2275,
+     "note": null
+    },
+    {
+     "item": "EXTRA ADULT WITH BED (AP)",
+     "rate": 2975,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITHOUT BED(CP)",
+     "rate": 1260,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITHOUT BED(MAP)",
+     "rate": 1960,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD WITHOUT BED(AP)",
+     "rate": 2660,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "HONEYMOON BIRTHDAY ANNIVERSARY CAKE",
+     "rate": 2000,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON LUNCH DINNER",
+     "rate": 700,
+     "note": null
+    },
+    {
+     "item": "BREAKFAST",
+     "rate": 400,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-silver-pearl-resort",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "SILVER PEARL RESORT",
+   "mobile": "9531892894",
+   "email": "silverpearlresort@gmail.com",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": true,
+   "pool": false,
+   "best_rank": 2,
+   "near_label": "Jetty",
+   "near_km": "0.4KM",
+   "low_rank": null,
+   "start_rate": 3400,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SEA VIEW DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3400,
+     "map": 4600,
+     "ap": 5800
+    },
+    {
+     "category": "SEA VIEW SUPER DLX",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": 5400,
+     "ap": 6600
+    },
+    {
+     "category": "SEA VIEW SUPER DLX TRIPLE BED",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5400,
+     "map": 7200,
+     "ap": 9000
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA BED (CP)",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "EXTRA BED (MAP)",
+     "rate": 1600,
+     "note": null
+    },
+    {
+     "item": "EXTRA BED (AP)",
+     "rate": 2200,
+     "note": null
+    },
+    {
+     "item": "CHILD ABOVE 5YRS-12YRS WITH OUT MATTRESS",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "ADULT WITH MATTRESS",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "BUFFET MEAL LUNCH DINNER",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "ADDITIONAL BREAKFAST",
+     "rate": 250,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 4000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER CANOPY SETUP",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "CAKE 1\\2 KG",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-tsg-hotels",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "TSG HOTELS",
+   "mobile": "9932089315 , 03192232894",
+   "email": "reservations@tsgresorts.in",
+   "address": "Neil",
+   "star": 5,
+   "sea_view": false,
+   "pool": true,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 4100,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "COZY ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4100,
+     "map": 5100,
+     "ap": 6100
+    },
+    {
+     "category": "FLORA DOUBLE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": 6600,
+     "ap": 7700
+    }
+   ],
+   "addons": [
+    {
+     "item": "ADULT EXTRA MATTRESS (CP)",
+     "rate": 1500,
+     "note": null
+    },
+    {
+     "item": "ADULT EXTRA MATTRESS (MAP)",
+     "rate": 2100,
+     "note": null
+    },
+    {
+     "item": "ADULT EXTRA MATTRESS (AP)",
+     "rate": 2700,
+     "note": null
+    },
+    {
+     "item": "CHILD WITH MATTRESS(CP)",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "CHILD WITH MATTRESS(MAP)",
+     "rate": 1800,
+     "note": null
+    },
+    {
+     "item": "CHILD WITH MATTRESS(AP)",
+     "rate": 2400,
+     "note": null
+    },
+    {
+     "item": "CHILD W\\O MATTRESS(CP)",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "CHILD W\\O MATTRESS(MAP)",
+     "rate": 1600,
+     "note": null
+    },
+    {
+     "item": "CHILD W\\O MATTRESS(AP)",
+     "rate": 2200,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH WINE",
+     "rate": 6000,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITHOUT WINE",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BOUQUET",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "CAKE",
+     "rate": 2000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-cs-empire",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "CS EMPIRE",
+   "mobile": "7063958200, 9531919154",
+   "email": "reservation@csempire.in",
+   "address": "Neil",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "PREMIUM ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3600,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUPER DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4400,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SUITE ROOM WITH BATHTUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5600,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "CHILD\\ADULT WITH MATTRESS 05&ABOVE",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "CHILD\\ADULT WITHOUT MATTRESS 05&ABOVE",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "PEAK SEASON PER NIGHT EXTRA",
+     "rate": 750,
+     "note": null
+    },
+    {
+     "item": "MEAL PLAN PER PERSON",
+     "rate": 650,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-laxmi-continental",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "LAXMI CONTINENTAL",
+   "mobile": "9474254797",
+   "email": "booking.laxmicontinental@gmail.com",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 5,
+   "start_rate": 2800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DOUBLE BED ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": 4000,
+     "ap": null
+    },
+    {
+     "category": "TRIPLE BED ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": 6000,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MEAL PLAN PER PERSON",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON (CP)",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS (CP)",
+     "rate": 1000,
+     "note": null
+    },
+    {
+     "item": "PEAK SEASON SUPPLEMENT",
+     "rate": 500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-co-co-huts",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "CO CO HUTS",
+   "mobile": "9933295937",
+   "email": "",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": "0.2KM",
+   "low_rank": null,
+   "start_rate": 3200,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 6500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "SAMI DELUXE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "N STANDED",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "STANDED",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3200,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": []
+  },
+  {
+   "id": "neil-aoscar",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "AOSCAR",
+   "mobile": "7695093594",
+   "email": "",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 2,
+   "start_rate": 2100,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2100,
+     "map": 3100,
+     "ap": 4100
+    }
+   ],
+   "addons": [
+    {
+     "item": "MEAL PLAN",
+     "rate": 900,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-hotel-neha-palace",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "HOTEL NEHA PALACE",
+   "mobile": "8900903654",
+   "email": "nehapalace15@gmail.com",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 2500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": 3600,
+     "ap": 4300
+    },
+    {
+     "category": "DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2500,
+     "map": 3300,
+     "ap": 4000
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA PRESON (CP)",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "EXTRA PRESON (MAP)",
+     "rate": 1200,
+     "note": null
+    },
+    {
+     "item": "EXTRA PRESON (AP)",
+     "rate": 1500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-sandy-ridge-resort",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "SANDY RIDGE RESORT",
+   "mobile": "9434293519 , 9933203519",
+   "email": "sandyridgeresort@gmail.com",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": "0.3KM",
+   "low_rank": null,
+   "start_rate": 3360,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "SUITE ROOM WITH BATH TUB",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4410,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FAMILY VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5250,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "DELUXE COTTAGE",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3360,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA PERSON WITH OR WITHOUT BED",
+     "rate": 1260,
+     "note": null
+    },
+    {
+     "item": "EXTRA PERSON WITH OR WITHOUT MATTRESS",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "PEAK SEASON EXTRA",
+     "rate": 500,
+     "note": null
+    },
+    {
+     "item": "MEAL PER PERSON",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH CAKE WITHOUT WINE",
+     "rate": 5000,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 3000,
+     "note": null
+    },
+    {
+     "item": "ROOM&FLOWER BED DECORATION",
+     "rate": 4000,
+     "note": null
+    },
+    {
+     "item": "BIRTHDAY, ANNIVERSARY, CAKE",
+     "rate": 1000,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-hotel-amullya",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "HOTEL AMULLYA",
+   "mobile": "8900909649 , 9933215566 , 7063907064",
+   "email": "amullyahotel@gmail.com",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 1,
+   "start_rate": 2800,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DOUBLE BED DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2800,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "TRIPLE BED DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3500,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FOUR BED DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "PER HEAD PER MEALS",
+     "rate": 400,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-exotica-squares",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "EXOTICA SQUARES",
+   "mobile": "8595395625",
+   "email": "esandamans@gmail.com",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 3,
+   "start_rate": 1500,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 1500,
+     "map": 3500,
+     "ap": 4500
+    }
+   ],
+   "addons": []
+  },
+  {
+   "id": "neil-seven-seas-dream-castle",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "SEVEN SEAS DREAM CASTLE",
+   "mobile": "9933629118 , 9531918899 , 7846009092",
+   "email": "sevenseasandamans@gmail.com",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": 4,
+   "start_rate": 2400,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "DOUBLE BEDDED ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 2400,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "TRIPLE BEDDED ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3100,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "FOUR BEDDED ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4100,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "MEAL PLAN",
+     "rate": 630,
+     "note": null
+    },
+    {
+     "item": "EXTRA MATTRESS",
+     "rate": 735,
+     "note": null
+    },
+    {
+     "item": "WITHOUT MATTRESS",
+     "rate": 600,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2500,
+     "note": null
+    },
+    {
+     "item": "SIDE CANDLE LIGHT DINNER",
+     "rate": 4500,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-tango-beach-resort",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "TANGO BEACH RESORT",
+   "mobile": "9933292984",
+   "email": "tangoandaman@gmail.com",
+   "address": "Neil",
+   "star": 5,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": 3,
+   "near_label": "Jetty",
+   "near_km": "0.4KM",
+   "low_rank": null,
+   "start_rate": 4200,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "TANGO SEMI DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 4200,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "TANGO DELUXE ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5040,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "TAMGO LAGOON ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 5880,
+     "map": null,
+     "ap": null
+    },
+    {
+     "category": "TANGO LEGOON SUITE VILLA",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 7490,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "EXTRA PERSON WITH MATTRESS",
+     "rate": 1575,
+     "note": null
+    },
+    {
+     "item": "EXTRA CHILD 6 TO 10 YRS",
+     "rate": 840,
+     "note": null
+    },
+    {
+     "item": "PER MEAL PER PERSON",
+     "rate": 1050,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER",
+     "rate": 7080,
+     "note": null
+    },
+    {
+     "item": "CANDLE LIGHT DINNER WITH CAKE",
+     "rate": 8850,
+     "note": null
+    },
+    {
+     "item": "WINE",
+     "rate": 3080,
+     "note": null
+    },
+    {
+     "item": "FLOWER BED DECORATION",
+     "rate": 2950,
+     "note": null
+    },
+    {
+     "item": "BIRTHDAY HONEMOON CAKE",
+     "rate": 1770,
+     "note": null
+    },
+    {
+     "item": "ROSE BATH TUB ONLY IN SUITE VILLA",
+     "rate": 2360,
+     "note": null
+    }
+   ]
+  },
+  {
+   "id": "neil-royal-neil-resort",
+   "island": "Neil",
+   "source_file": "NEIL|?",
+   "tier": null,
+   "tier_by": null,
+   "name": "ROYAL NEIL RESORT",
+   "mobile": "9789142286",
+   "email": "",
+   "address": "Neil",
+   "star": 4,
+   "sea_view": false,
+   "pool": false,
+   "best_rank": null,
+   "near_label": "Jetty",
+   "near_km": null,
+   "low_rank": null,
+   "start_rate": 3000,
+   "addon_label": "ADD ON",
+   "rooms": [
+    {
+     "category": "ROOM",
+     "total_rooms": null,
+     "ep": null,
+     "cp": 3000,
+     "map": null,
+     "ap": null
+    }
+   ],
+   "addons": [
+    {
+     "item": "BREAKFAST COMPLEMENTARY",
+     "rate": null,
+     "note": ""
+    },
+    {
+     "item": "EXTRA BED",
+     "rate": 800,
+     "note": null
+    },
+    {
+     "item": "SCUBA DIVING STANDERD PROCESS 25 MINS",
+     "rate": 4500,
+     "note": null
+    },
+    {
+     "item": "SCUBA DIVING BEST SCUBA IN NEIL 25 MINS",
+     "rate": 5500,
+     "note": null
+    },
+    {
+     "item": "SCUBA DIVING BEST PROGRAM 50 MINS UNDER WATER",
+     "rate": 7500,
+     "note": null
+    }
+   ]
+  }
+ ],
+ "issues": [
+  [
+   "Low-price list shows a different rate than the hotel sheet",
+   "PORT BLAIR|HIGH",
+   "SEA SHELL: list says 4500, hotel sheet starts at 12000"
+  ],
+  [
+   "Email missing",
+   "PORT BLAIR|LOW",
+   "ALPHS VIEW"
+  ],
+  [
+   "Email missing",
+   "PORT BLAIR|LOW",
+   "BIG POCKET"
+  ],
+  [
+   "Low-price list shows a different rate than the hotel sheet",
+   "PORT BLAIR|LOW",
+   "HOTEL A.R.PRIDE RESIDENCY: list says 2800, hotel sheet starts at 2300"
+  ],
+  [
+   "Email missing",
+   "HAVELOCK|?",
+   "WILD ORCHID RESORT"
+  ],
+  [
+   "Email missing",
+   "HAVELOCK|?",
+   "HOLIDAY & HOLIDAY BEACH RESORT"
+  ],
+  [
+   "Hotel has no room rates entered",
+   "HAVELOCK|?",
+   "SHANGRILAS BEASH RESORT"
+  ],
+  [
+   "Low-price list shows a different rate than the hotel sheet",
+   "HAVELOCK|?",
+   "ORIENT LEGEND RESORT: list says 2900, hotel sheet starts at 1680"
+  ],
+  [
+   "Email missing",
+   "HAVELOCK|?",
+   "SOWTIR PELICON"
+  ],
+  [
+   "Email missing",
+   "NEIL|?",
+   "CO CO HUTS"
+  ],
+  [
+   "Email missing",
+   "NEIL|?",
+   "AOSCAR"
+  ],
+  [
+   "Email missing",
+   "NEIL|?",
+   "ROYAL NEIL RESORT"
+  ],
+  [
+   "Airport list names a hotel that lives in another file",
+   "PORT BLAIR|LOW",
+   "ISLANDS TOURISTER (belongs to another class file)"
+  ]
+ ],
+ "medians": {
+  "High": 5250,
+  "Mid": 3074.0,
+  "Low": 2400.0
+ }
+}
