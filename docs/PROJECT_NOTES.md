@@ -68,3 +68,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Day tab count follows longest duration (nights+1); optional ferry/complimentary photos (Package Settings switches); Packages page remembers scroll position when leaving/returning.
 - Dashboard: removed 'no class' alert; tiles under collapsible Hotels heading with pin.
 - Ferry departure time with circular 12-hour clock picker (hour → minute → AM/PM); shown on card and on Packages ferry rows.
+- Bill fix: logo now on by default for Customer bill (one-time migration turns it on); closed bottom border of terms/signature box.
