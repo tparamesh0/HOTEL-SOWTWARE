@@ -48,3 +48,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
   Data keys: settings.pkgDays[day][i], settings.pkgPicks[nights][day] = package index.
 - Packages page: compact 3-column grid so 6 days fit on one screen without scrolling (1366×768, 1440×900, 1920×1080).
 - Package Settings Day tab: loaded packages from Andaman_Tour_Ideas.xlsx (Day 1: 11, Day 2: 8, Day 3: 6; empty template packages skipped), added Notes field, cards in a grid. Days 4-5 have data in the Excel but are not loaded yet.
+- Fixed: Excel packages not showing for browsers with old saved data (migration now checks seed flag before merging defaults). Added Day 4 (8 packages).
