@@ -33,3 +33,6 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 * v1 sample → back button, edit-save fix with error messages, edit stays on details page, multi mobile/email,
   BP plan, filter-based Find, Auto/Manual rankings, price-range redesign, text-format setting, emoji picker,
   plan delete, logo, immediate submit, Company Info editor with WhatsApp.
+* Packages page (under Dashboard in the menu): "Tour Packages" heading + small duration dropdown
+  (1 Night 2 Days … 7 Nights 8 Days). Settings → Package settings: longest package (days), rebuild list,
+  add/remove duration options. Rest of the page intentionally empty until the next instructions.
