@@ -38,3 +38,5 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
   add/remove duration options. Rest of the page intentionally empty until the next instructions.
 * Package Settings moved out of the Settings submenu to its own item under Settings in the left menu.
 * Packages page: choosing a duration shows one large empty box per day (nights + 1), labelled "Day N" (content to come).
+* Package Settings has two tabs: "Duration options" and "Day tab". Day tab = 10 buttons (Day 1 … Day 10), each opens an empty page.
+* Packages page: each Day box has a large + in the middle; tapping it opens Package Settings → Day tab → that Day's page.

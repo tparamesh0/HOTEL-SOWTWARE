@@ -122,7 +122,8 @@ label.btn{cursor:pointer}
 .addc{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:2px dashed var(--main);border-radius:var(--r);color:var(--main);min-height:150px;background:var(--card)}
 @media(max-width:700px){[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}.addrow{grid-template-columns:minmax(0,1fr) 120px 44px!important}.sumgrid{grid-template-columns:100px minmax(0,1fr)!important}.hero{padding-right:20px;padding-top:112px}.herologo{width:76px;height:76px;top:16px;right:auto;left:20px}}
 @media(max-width:560px){.bands{grid-template-columns:repeat(2,minmax(0,1fr))}.md{padding:16px}.top{gap:10px}}
-.daybox{min-height:320px}
+.plusbox{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:block;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:20px;min-height:320px}.plusbox:hover{background:var(--mainsoft)}.plusbox:focus-visible{outline:2px solid var(--main);outline-offset:2px}.plusbox .tag{position:absolute;top:20px;left:20px}.plus{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5.5rem;font-weight:300;color:var(--main);opacity:.85;pointer-events:none}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}.dayb{padding:22px 16px;font-size:1rem}
 </style>
 <div id="root"></div><div id="modal"></div><div id="toast" class="toast" hidden></div>
 <script>
@@ -160,7 +161,7 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){if(!sav
 
 /* ---------- state ---------- */
 function defF(){return{q:'',min:'',max:'',stars:[],facs:[],plans:[],pm:'any',sort:'price'}}
-let UI={f:defF(),pkgDur:'',pr:{plan:'',stars:[],fac:'',sort:'price',view:'cards'},coEdit:false,added:null,nfi:'',emCat:null,emTarget:null,hq:'',hist:[],errs:null,page:'home',island:'Port Blair',cls:'All',sel:null,q:'',fstar:'',ffac:'',frange:'',range:-1,facTab:null,edit:false,sset:'colors',checked:{},addPlan:false,by:'name',pmin:'',pmax:'',fs_star:'',fs_fac:'',sug:{low:3500,mid:6000},unlocked:false,pending:null,upd:{cls:true,star:true,fac:true},navOpen:false,confirmReset:false,importTxt:''};
+let UI={f:defF(),pkgDur:'',pkgTab:'dur',pkgDay:null,pr:{plan:'',stars:[],fac:'',sort:'price',view:'cards'},coEdit:false,added:null,nfi:'',emCat:null,emTarget:null,hq:'',hist:[],errs:null,page:'home',island:'Port Blair',cls:'All',sel:null,q:'',fstar:'',ffac:'',frange:'',range:-1,facTab:null,edit:false,sset:'colors',checked:{},addPlan:false,by:'name',pmin:'',pmax:'',fs_star:'',fs_fac:'',sug:{low:3500,mid:6000},unlocked:false,pending:null,upd:{cls:true,star:true,fac:true},navOpen:false,confirmReset:false,importTxt:''};
 try{const u=JSON.parse(localStorage.getItem(KEY+'-ui')||'null');if(u&&S.set.islands.some(i=>i.name===u.island))UI.island=u.island}catch(e){}
 let D=null; /* form draft (new hotel or edit) */
 
@@ -286,8 +287,11 @@ PAGES.star=()=>{const hs=scope(),stars=S.set.stars2?[2,3,4,5]:[3,4,5];
 function exCard(h,F,pf,roomOk){let o='';if(F.plans.length)o+='<div class="row" style="gap:6px;margin-top:8px">'+F.plans.map(p=>{const v=h.rooms.map(r=>r.p&&r.p[p]).filter(Boolean).map(Number);const pl=S.set.plans.find(x=>x.code===p)||{color:'#888'};return v.length?`<span class="tag" style="--c:${pl.color}">${esc(p)} from ${inr(Math.min(...v))}</span>`:''}).join('')+'</div>';if(pf){const n=h.rooms.filter(roomOk).length;o+=`<div class="mini" style="margin-top:6px">${n} room type${n===1?'':'s'} in this price</div>`}return o}
 const pkgLabel=n=>`${n} Night${n==1?'':'s'} ${n+1} Days`;
 PAGES.packages=()=>{const P=S.set.pkg,cur=UI.pkgDur;
- return pageHead('Tour Packages','Choose how long the trip is to start a package',esc(UI.island.toUpperCase()))+`<div class="card" style="width:fit-content;max-width:100%;margin-bottom:16px"><div class="lbl">Package duration</div><select data-upk="1" style="min-width:230px;max-width:100%" aria-label="Package duration"><option value="">Select nights &amp; days…</option>${P.durations.map(n=>`<option value="${n}" ${cur==n?'selected':''}>${pkgLabel(n)}</option>`).join('')}</select></div>`+(cur?`<div class="grid g2">${Array.from({length:+cur+1},(_,i)=>`<div class="card daybox"><span class="tag b">Day ${i+1}</span></div>`).join('')}</div>`:`<div class="card"><p class="mini">Choose a duration above to begin.</p></div>`)};
-PAGES.pkgset=()=>{const k=UI.sset;UI.sset='pkg';const b=settingsBody();UI.sset=k;return pageHead('Package Settings','Controls the duration dropdown on the Packages page','PACKAGES')+`<div class="grid" style="max-width:760px">${b}</div>`};
+ return pageHead('Tour Packages','Choose how long the trip is to start a package',esc(UI.island.toUpperCase()))+`<div class="card" style="width:fit-content;max-width:100%;margin-bottom:16px"><div class="lbl">Package duration</div><select data-upk="1" style="min-width:230px;max-width:100%" aria-label="Package duration"><option value="">Select nights &amp; days…</option>${P.durations.map(n=>`<option value="${n}" ${cur==n?'selected':''}>${pkgLabel(n)}</option>`).join('')}</select></div>`+(cur?`<div class="grid g2">${Array.from({length:+cur+1},(_,i)=>`<button class="plusbox" data-a="pkgOpenDay" data-k="${i+1}" aria-label="Open Day ${i+1} settings"><span class="tag b">Day ${i+1}</span><span class="plus" aria-hidden="true">＋</span></button>`).join('')}</div>`:`<div class="card"><p class="mini">Choose a duration above to begin.</p></div>`)};
+PAGES.pkgset=()=>{const tab=UI.pkgTab,d=UI.pkgDay;let body;
+ if(tab==='day'){body=d?`<div class="row" style="margin-bottom:12px"><button class="btn ghost sm" data-a="pkgDayBack">← Day tab</button><b>Day ${d}</b></div><div class="card" style="min-height:360px"></div>`:`<div class="card"><h3>Day tab</h3><div class="mini" style="margin-bottom:14px">Choose a day to open its page</div><div class="dgrid">${Array.from({length:10},(_,i)=>`<button class="btn ghost dayb" data-a="pkgDay" data-k="${i+1}">Day ${i+1}</button>`).join('')}</div></div>`}
+ else{const k=UI.sset;UI.sset='pkg';const b=settingsBody();UI.sset=k;body=`<div class="grid" style="max-width:760px">${b}</div>`}
+ return pageHead('Package Settings','Controls for the Packages page','PACKAGES')+`<div style="margin-bottom:14px;max-width:340px">${seg([['dur','Duration options'],['day','Day tab']],tab,'pkgTabSet')}</div>${body}`};
 const facCount=h=>(h.fac||[]).length;
 function bestScore(h){const ci=S.set.classes.findIndex(c=>c.name===h.tier),cb=ci===0?15:ci===1?8:0;return (h.star||0)*15+facCount(h)*4+Math.min(h.rooms.length,10)*1.5+Math.min(h.addons.length,10)*.5+cb+(h.bestRank?Math.max(0,21-h.bestRank)*1.5:0)}
 const kmOf=h=>{const v=parseFloat(h.nearKm);return isNaN(v)?null:v};
@@ -421,7 +425,7 @@ function go(p,noHist){if(p==='settings'&&S.set.pin&&!UI.unlocked){guard(()=>go('
 /* ---------- actions ---------- */
 const A={
  closeModal:()=>closeModal(),
- go:el=>go(el.dataset.k),
+ go:el=>{if(el.dataset.k==='pkgset'){UI.pkgTab='dur';UI.pkgDay=null}go(el.dataset.k)},
  navToggle:()=>{UI.navOpen=!UI.navOpen;render()},
  island:el=>{UI.island=el.dataset.k;try{localStorage.setItem(KEY+'-ui',JSON.stringify({island:UI.island}))}catch(e){}UI.cls='All';UI.sel=null;UI.checked={};if(D&&!D.id&&UI.page==='new')D.island=UI.island;render()},
  cls:el=>{UI.cls=el.dataset.k;render()},
@@ -470,6 +474,10 @@ const A={
  ddToggle:el=>{const c=el.closest('.combo'),p=c.querySelector('.ddp'),open=!p.hidden;closeDD();if(!open){c.querySelectorAll('.ddi').forEach(b=>b.hidden=false);openDD(c)}},
  ddPick:el=>{pset(D,el.dataset.p,el.dataset.v);const inp=document.querySelector('[data-m="'+el.dataset.p+'"]');if(inp)inp.value=el.dataset.v;closeDD();refreshStatus()},
  noop:()=>{},
+ pkgTabSet:el=>{UI.pkgTab=el.dataset.k;UI.pkgDay=null;render()},
+ pkgDay:el=>{UI.pkgDay=+el.dataset.k;render();window.scrollTo(0,0)},
+ pkgDayBack:()=>{UI.pkgDay=null;render()},
+ pkgOpenDay:el=>{const n=+el.dataset.k;if(n>10){toast('Day pages are available for Day 1 to Day 10');return}UI.pkgTab='day';UI.pkgDay=n;go('pkgset')},
  pkgGen:()=>{const m=S.set.pkg.maxDays;S.set.pkg.durations=Array.from({length:m-1},(_,i)=>i+1);save();render();toast('Duration list rebuilt')},
  pkgDel:el=>{const n=+el.dataset.k;S.set.pkg.durations=S.set.pkg.durations.filter(x=>x!==n);if(UI.pkgDur==n)UI.pkgDur='';save();render()},
  pkgAdd:()=>{const n=Math.round(+$('#pkgN').value);if(!n||n<1||n>30){toast('Type the number of nights (1 to 30)');return}const d=S.set.pkg.durations;if(d.includes(n)){toast(pkgLabel(n)+' is already in the list');return}d.push(n);d.sort((a,b)=>a-b);save();render()},
