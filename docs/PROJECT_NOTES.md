@@ -72,3 +72,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Bill: logo size −/＋ (30–140px), digital signature image upload, payment QR upload (prints beside bank details); switches in Footer group.
 - 4 new bill designs (Navy & Amber, Sunrise Blue, Tour Quote Teal, Green & Yellow) + Classic Tally; default chooser and previews in Bill details; per-bill design select on Packages; ⚙️ Settings shortcut next to Clear.
 - Packages: 1 Night 2 Days selected by default when nothing chosen; smaller Clear/Undo/Settings/History buttons, History shortcut.
+- Settings → Backup: export/import all data as a file (with confirm), Excel export (Hotels, Package History summary, optional sheet per package, Day packages, Ferry & Complimentary) via SheetJS; History entry 📊 Excel; trip total colour pill (green/yellow/red) with font/size/threshold settings in Day tab; smaller Dashboard Tour Packages button.
