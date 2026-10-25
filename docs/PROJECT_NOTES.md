@@ -66,3 +66,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Packages: Save package button at bottom -> Admin > Package History page (customer name, nights/days tag highlighted for 2/3-day, persons, total; Edit reopens exact saved tour, Quick print, Invoice, Delete). Quick Agent/Customer 'show complimentary on bill' pills on the Complimentary card.
 - Hotels pick-mode (empty cart → Find → Done back to Packages); travel-date on/off toggle; editable GSTIN, company, bank, terms, validity, declaration, signature, logo in Bill details; collapsible pinnable Hotels sidebar group; big Packages button on Dashboard.
 - Day tab count follows longest duration (nights+1); optional ferry/complimentary photos (Package Settings switches); Packages page remembers scroll position when leaving/returning.
+- Dashboard: removed 'no class' alert; tiles under collapsible Hotels heading with pin.
