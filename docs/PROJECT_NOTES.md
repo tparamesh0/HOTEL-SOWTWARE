@@ -46,3 +46,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 * Cart "+" icon on the package box: pastes it into the matching Day box on the Packages page (for the duration selected there)
   and jumps to that page. The Day box shows the package live (edits flow through); "Change" / "✕" on the box.
   Data keys: settings.pkgDays[day][i], settings.pkgPicks[nights][day] = package index.
+- Packages page: compact 3-column grid so 6 days fit on one screen without scrolling (1366×768, 1440×900, 1920×1080).
