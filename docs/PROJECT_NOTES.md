@@ -47,3 +47,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
   and jumps to that page. The Day box shows the package live (edits flow through); "Change" / "✕" on the box.
   Data keys: settings.pkgDays[day][i], settings.pkgPicks[nights][day] = package index.
 - Packages page: compact 3-column grid so 6 days fit on one screen without scrolling (1366×768, 1440×900, 1920×1080).
+- Package Settings Day tab: loaded packages from Andaman_Tour_Ideas.xlsx (Day 1: 11, Day 2: 8, Day 3: 6; empty template packages skipped), added Notes field, cards in a grid. Days 4-5 have data in the Excel but are not loaded yet.
