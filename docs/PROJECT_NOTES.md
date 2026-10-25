@@ -74,3 +74,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Packages: 1 Night 2 Days selected by default when nothing chosen; smaller Clear/Undo/Settings/History buttons, History shortcut.
 - Settings → Backup: export/import all data as a file (with confirm), Excel export (Hotels, Package History summary, optional sheet per package, Day packages, Ferry & Complimentary) via SheetJS; History entry 📊 Excel; trip total colour pill (green/yellow/red) with font/size/threshold settings in Day tab; smaller Dashboard Tour Packages button.
 - Change tracking (S.mt per hotel/history/ferry/comp/day/setting, deletions as negative time); 1-day (or 2/3/7-day) changes export; import compares and only adds new/changed, skips identical, keeps newer local edits, applies deletions; summary before import.
+- Day page filter bar: sort by rate, colour (low/medium/high), name chips built from current package names, search.
