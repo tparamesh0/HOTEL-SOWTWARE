@@ -67,3 +67,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Hotels pick-mode (empty cart → Find → Done back to Packages); travel-date on/off toggle; editable GSTIN, company, bank, terms, validity, declaration, signature, logo in Bill details; collapsible pinnable Hotels sidebar group; big Packages button on Dashboard.
 - Day tab count follows longest duration (nights+1); optional ferry/complimentary photos (Package Settings switches); Packages page remembers scroll position when leaving/returning.
 - Dashboard: removed 'no class' alert; tiles under collapsible Hotels heading with pin.
+- Ferry departure time with circular 12-hour clock picker (hour → minute → AM/PM); shown on card and on Packages ferry rows.
