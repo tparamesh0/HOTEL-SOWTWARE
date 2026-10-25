@@ -61,3 +61,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Packages: Save to PDF / Send to WhatsApp / Print (A4) / Preview; Quotation vs Invoice (Tally-style A4 layout, amount in words, GSTIN + bank in Company Info); persons stepper (+1 person multiplies total); commission shown to customers as 'Tax amount + GST included'.
 - Share card now has two sets: Agent (itemised prices) and Customer (itinerary/hotels/ferry, no prices, only overall total package amount), each with Save to PDF / WhatsApp / Print A4 / Preview.
 - Package Settings: new 'Bill details' tab — on/off switches (company header, document info, tour details, prices, footer) separately for Agent and Customer bills; docs and WhatsApp text follow the settings. Customer defaults: logo, hotel, ferry, prices OFF.
+- Bills: itinerary stops now bullet points one below another (preview/PDF/print/WhatsApp); Bill details switch 'Show stops as bullet points' (off = one line with arrows).
