@@ -71,3 +71,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Bill fix: logo now on by default for Customer bill (one-time migration turns it on); closed bottom border of terms/signature box.
 - Bill: logo size −/＋ (30–140px), digital signature image upload, payment QR upload (prints beside bank details); switches in Footer group.
 - 4 new bill designs (Navy & Amber, Sunrise Blue, Tour Quote Teal, Green & Yellow) + Classic Tally; default chooser and previews in Bill details; per-bill design select on Packages; ⚙️ Settings shortcut next to Clear.
+- Packages: 1 Night 2 Days selected by default when nothing chosen; smaller Clear/Undo/Settings/History buttons, History shortcut.
