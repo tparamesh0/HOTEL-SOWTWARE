@@ -81,3 +81,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Team 📤 Send package: choose Text/PDF, Quotation/Invoice, Agent/Customer, design; multi-package PDF (one bill per page) shared/downloaded + chat opened.
 - ⧉ Duplicate on Day package boxes (exact copy inserted after) and on History cards (copy with '(copy)' name, new bill number).
 - History cards: Edit + WhatsApp + '⋯ Options ▾' dropdown (profile, quick edit, duplicate, WhatsApp, print/PDF, invoice, Excel, delete). Modal closes on outside tap only when the press started outside (fixes forms closing on drag/select); profile & quick edit forms never close on outside tap. Quick edit travel-date on/off switch.
+- Tap a History card → full agent-view detail window (customer, days with place/trip/tickets/stops, hotels, ferry, tax, complimentary, notes, per-person and total) with ✕ / Close and Edit.
