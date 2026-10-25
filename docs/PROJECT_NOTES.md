@@ -40,3 +40,9 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 * Packages page: choosing a duration shows one large empty box per day (nights + 1), labelled "Day N" (content to come).
 * Package Settings has two tabs: "Duration options" and "Day tab". Day tab = 10 buttons (Day 1 … Day 10), each opens an empty page.
 * Packages page: each Day box has a large + in the middle; tapping it opens Package Settings → Day tab → that Day's page.
+* Package Settings → Day tab → Day 1 holds "PACKAGE 1" (Trip Price ₹2,650, Entry & ticket ₹410, Total auto = ₹3,060,
+  Stops 1-6: Airport Pickup, Cellular Jail, Corbyn's Cove Beach, Shivan Statue, Flag Point, Light & Sound Show).
+  Everything editable (Edit/Done, add/remove stops, total recalculates). Other days still empty.
+* Cart "+" icon on the package box: pastes it into the matching Day box on the Packages page (for the duration selected there)
+  and jumps to that page. The Day box shows the package live (edits flow through); "Change" / "✕" on the box.
+  Data keys: settings.pkgDays[day][i], settings.pkgPicks[nights][day] = package index.
