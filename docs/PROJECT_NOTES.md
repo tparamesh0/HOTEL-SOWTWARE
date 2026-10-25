@@ -70,3 +70,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Ferry departure time with circular 12-hour clock picker (hour → minute → AM/PM); shown on card and on Packages ferry rows.
 - Bill fix: logo now on by default for Customer bill (one-time migration turns it on); closed bottom border of terms/signature box.
 - Bill: logo size −/＋ (30–140px), digital signature image upload, payment QR upload (prints beside bank details); switches in Footer group.
+- 4 new bill designs (Navy & Amber, Sunrise Blue, Tour Quote Teal, Green & Yellow) + Classic Tally; default chooser and previews in Bill details; per-bill design select on Packages; ⚙️ Settings shortcut next to Clear.
