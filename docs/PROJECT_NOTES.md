@@ -52,3 +52,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Day tab: ＋ box on every Day page (1-10) adds a new empty package in edit mode (live total); Delete button (tap twice) in edit mode.
 - Packages page: boxes auto-fit content (no empty space); Change edits the package in place; packages added via cart are independent copies (edits don't touch Day tab; old saved picks migrated to copies).
 - Packages page: big Tour cost summary card under the day boxes (per-day trip/tickets/total + grand total, live). Package price fields now update totals as you type.
+- Find/Search: Add-to-cart on every hotel card (pick room + plan rate), Cart button top-right (all islands kept, removable). Packages: 'Hotels for this tour' card with Add hotels from cart (moves cart items, grouped by island, Remove each).
