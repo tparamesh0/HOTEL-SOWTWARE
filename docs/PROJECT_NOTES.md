@@ -56,3 +56,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Packages hotels: per-hotel nights stepper (−/＋), amount = rate × nights; hotels total added into Tour cost summary grand total (all islands).
 - Tour cost summary now packages only (Package total); hotel total shown only in the Hotels card.
 - Packages page: Grand total card at bottom (package total + hotel total), live.
+- Package Settings: Ferry tab (12 tickets as cards, edit/delete/add). Packages page: Ferry tickets card (＋ opens Ferry tab in pick mode, tick cards to add, ticket qty stepper, remove); Grand total now packages + hotels + ferry. Assumed #1 = Port Blair to Havelock 1300 and #4 = 700.
