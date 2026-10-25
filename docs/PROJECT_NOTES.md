@@ -54,3 +54,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Packages page: big Tour cost summary card under the day boxes (per-day trip/tickets/total + grand total, live). Package price fields now update totals as you type.
 - Find/Search: Add-to-cart on every hotel card (pick room + plan rate), Cart button top-right (all islands kept, removable). Packages: 'Hotels for this tour' card with Add hotels from cart (moves cart items, grouped by island, Remove each).
 - Packages hotels: per-hotel nights stepper (−/＋), amount = rate × nights; hotels total added into Tour cost summary grand total (all islands).
+- Tour cost summary now packages only (Package total); hotel total shown only in the Hotels card.
