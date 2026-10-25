@@ -82,3 +82,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - ⧉ Duplicate on Day package boxes (exact copy inserted after) and on History cards (copy with '(copy)' name, new bill number).
 - History cards: Edit + WhatsApp + '⋯ Options ▾' dropdown (profile, quick edit, duplicate, WhatsApp, print/PDF, invoice, Excel, delete). Modal closes on outside tap only when the press started outside (fixes forms closing on drag/select); profile & quick edit forms never close on outside tap. Quick edit travel-date on/off switch.
 - Tap a History card → full agent-view detail window (customer, days with place/trip/tickets/stops, hotels, ferry, tax, complimentary, notes, per-person and total) with ✕ / Close and Edit.
+- Full audit (tests/audit.js): every page, settings section, package-settings tab and island at 1366px, 400px and dark mode, plus click-through of every safe button and pop-up — 0 errors, 0 overflow. Fixed: trip price pill size in compact Packages grid.
