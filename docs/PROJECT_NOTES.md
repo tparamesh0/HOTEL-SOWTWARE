@@ -62,3 +62,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Share card now has two sets: Agent (itemised prices) and Customer (itinerary/hotels/ferry, no prices, only overall total package amount), each with Save to PDF / WhatsApp / Print A4 / Preview.
 - Package Settings: new 'Bill details' tab — on/off switches (company header, document info, tour details, prices, footer) separately for Agent and Customer bills; docs and WhatsApp text follow the settings. Customer defaults: logo, hotel, ferry, prices OFF.
 - Bills: itinerary stops now bullet points one below another (preview/PDF/print/WhatsApp); Bill details switch 'Show stops as bullet points' (off = one line with arrows).
+- Package Settings: Complimentary tab (10 sample free items, add/edit/delete). Packages page: Complimentary card (＋ opens tab in pick mode), shown at bottom of Agent/Customer bills and WhatsApp as free from our side; switch in Bill details.
