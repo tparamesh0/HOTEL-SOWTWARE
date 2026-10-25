@@ -50,3 +50,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - Package Settings Day tab: loaded packages from Andaman_Tour_Ideas.xlsx (Day 1: 11, Day 2: 8, Day 3: 6; empty template packages skipped), added Notes field, cards in a grid. Days 4-5 have data in the Excel but are not loaded yet.
 - Fixed: Excel packages not showing for browsers with old saved data (migration now checks seed flag before merging defaults). Added Day 4 (8 packages).
 - Day tab: ＋ box on every Day page (1-10) adds a new empty package in edit mode (live total); Delete button (tap twice) in edit mode.
+- Packages page: boxes auto-fit content (no empty space); Change edits the package in place; packages added via cart are independent copies (edits don't touch Day tab; old saved picks migrated to copies).
