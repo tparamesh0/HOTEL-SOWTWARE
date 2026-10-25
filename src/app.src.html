@@ -310,7 +310,10 @@ alter table public.mm_data enable row level security;
 drop policy if exists "own rows" on public.mm_data;
 create policy "own rows" on public.mm_data for all
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
-alter publication supabase_realtime add table public.mm_data;`;
+do $$ begin
+  if not exists (select 1 from pg_publication_tables where pubname='supabase_realtime' and tablename='mm_data')
+  then alter publication supabase_realtime add table public.mm_data; end if;
+end $$;`;
 const SBK=KEY+'-sync',SBD=(()=>{try{let d=localStorage.getItem(KEY+'-dev');if(!d){d='d'+Math.random().toString(36).slice(2,10);localStorage.setItem(KEY+'-dev',d)}return d}catch(e){return 'd'+Math.random().toString(36).slice(2,10)}})();
 const SBC=()=>{if(!UI.sbc){try{UI.sbc=JSON.parse(localStorage.getItem(SBK)||'null')||{}}catch(e){UI.sbc={}}}return UI.sbc};
 const sbSaveCfg=()=>{try{localStorage.setItem(SBK,JSON.stringify(SBC()))}catch(e){}};
