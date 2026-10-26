@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:900}});p.on('pageerror',e=>console.log('ERR',e.message));
+await p.goto('file:///home/claude/app/andaman_hotel_rates.html');await p.waitForTimeout(300);
+await p.evaluate(()=>{go('packages');UI.pkgDur='2';const d=S.set.pkgDays;S.set.pkgPicks['2']={1:J(d[1][0]),2:J(d[1][1]),3:J(d[1][2])};S.set.pkgPersons['2']=2;save();render()});
+await p.locator('.pkclick h3, .pkclick table').first().click();console.log('preview',await p.locator('.hv h2').innerText());await p.screenshot({path:'/tmp/claude-0/dp.png'});
+await p.click('.hv [data-a=dayPrev][data-k="2"]');console.log('next',await p.locator('.hv h2').innerText());await p.evaluate(()=>closeModal());
+await p.click('.dlink >> nth=2');console.log('from table',await p.locator('.hv h2').innerText());await p.evaluate(()=>closeModal());
+const t0=await p.evaluate(()=>docTotal('2'));await p.click('[data-a=covOpen][data-k="2"]');await p.click('[data-a=covTrip]');await p.screenshot({path:'/tmp/claude-0/ct.png'});await p.click('[data-a=covClose] >> nth=-1');
+const t1=await p.evaluate(()=>docTotal('2'));console.log('total',t0,'→',t1,'trips',await p.evaluate(()=>[1,2,3].reduce((a,d)=>a+(+S.set.pkgPicks['2'][d].trip||0),0)));
+console.log(await p.evaluate(()=>docLines('2',{prices:1}).map(l=>l.d.slice(0,40)+' x'+l.qty+'='+l.amt).join('\n')));
+console.log('lines sum = total',await p.evaluate(()=>docLines('2',{prices:1}).reduce((a,l)=>a+l.amt,0)===docTotal('2')));
+await b.close()})();

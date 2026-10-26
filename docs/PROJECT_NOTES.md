@@ -91,3 +91,4 @@ Edit `src/app.src.html` → `python3 build.py` → commit `src/` and `dist/`.
 - v1.4.1: − Remove day next to ＋ Add day (moves data to the shorter duration; asks a second tap if the last day has a package; disabled at 1 Night 2 Days).
 - v1.4.2: Day tab 🧺 package bucket — tap 🧺 on any package box, then on another Day page Copy all / Move all here (bucket bar shows count, View, Empty). Duplicate button shown as ⧉ icon to keep buttons on one line.
 - v1.4.3: Day page boxes redesigned — Select checkbox + 'Add to tour' on top, roomy footer (Edit · Duplicate · Bucket · Delete); selection bar with Select all, Put in bucket, Duplicate, Delete selected (two-tap), Clear.
+- v1.4.4: Packages page — tap a day card (or Day link in the summary) to open a Day preview sheet (price, trip/ticket split, places, notes, per-person amounts, prev/next, Change). Per-person: main 'Remove trip charge' switch + per-day trip-charge toggles; bills split into 'entry & tickets only' lines.
