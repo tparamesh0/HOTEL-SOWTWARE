@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1300,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file:///home/claude/app/andaman_hotel_rates.html');await p.waitForTimeout(300);
+const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+ok('no calendar on dashboard',await p.evaluate(()=>!document.querySelector('.cmini')&&!document.querySelector('.dash [data-k="cal"]')));
+const lab=await p.evaluate(()=>[...document.querySelectorAll('.nav button')].map(b=>b.textContent.trim()).slice(0,4));console.log(lab);
+ok('Calendar under Packages',lab[1].includes('Packages')&&lab[2].includes('Calendar'));
+await p.click('.nav [data-a="go"][data-k="cal"]');await p.waitForTimeout(200);
+ok('opens full calendar',await p.evaluate(()=>UI.page==='cal'&&!!document.querySelector('.app.full .cal')));
+await p.click('[data-a="calClose"]');await p.waitForTimeout(100);ok('close back to dashboard',await p.evaluate(()=>UI.page==='home'));
+await p.screenshot({path:'/tmp/claude-0/s170/nav.png'});
+ok('no errors',!errs.length);await b.close()})();

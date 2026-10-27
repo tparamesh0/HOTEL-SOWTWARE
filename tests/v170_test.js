@@ -39,11 +39,11 @@ ok('history view title',await p.evaluate(()=>document.querySelector('.md h2').te
 await p.evaluate(()=>closeModal());
 // dashboard
 await p.evaluate(()=>go('home'));await p.waitForTimeout(200);
-ok('dash mini calendar',await p.locator('.cmini').count()===1);
+ok('no dash calendar',await p.locator('.cmini').count()===0);
 ok('dash recent title',await p.evaluate(()=>[...document.querySelectorAll('.drn b')].some(b=>b.textContent.includes('Honeymoon'))));
 await p.screenshot({path:'/tmp/claude-0/s170/dash.png',fullPage:true});
 // calendar
-await p.click('.dsave [data-a="go"][data-k="cal"]');await p.waitForTimeout(200);
+await p.click('.nav [data-a="go"][data-k="cal"]');await p.waitForTimeout(200);
 ok('calendar full screen',await p.evaluate(()=>UI.page==='cal'&&document.querySelector('.app.full')&&getComputedStyle(document.querySelector('.side')).display==='none'));
 await p.evaluate(()=>{UI.calM='2026-11-01';render()});
 ok('package arrival highlighted 23 Nov',await p.evaluate(()=>{const c=document.querySelector('[data-a="calDay"][data-k="2026-11-23"]');return c.classList.contains('has')}));
