@@ -8,7 +8,7 @@ contextBridge.exposeInMainWorld('mmpc',{
   pickPdfDir:()=>ipcRenderer.invoke('mm:pickPdfDir'),
   openPath:p=>ipcRenderer.invoke('mm:openPath',p),
   listPdfs:()=>ipcRenderer.invoke('mm:listPdfs'),
-  waAutoSend:(w,m)=>ipcRenderer.invoke('mm:waAutoSend',w,m),
+  waAutoSend:(w,m,k)=>ipcRenderer.invoke('mm:waAutoSend',w,m,k),
   setPdfDir:p=>ipcRenderer.invoke('mm:setPdfDir',p),
   resetPdfDir:()=>ipcRenderer.invoke('mm:resetPdfDir'),
   openWA:(phone,text)=>ipcRenderer.invoke('mm:openWA',phone,text),

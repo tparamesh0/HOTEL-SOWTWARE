@@ -1,0 +1,21 @@
+const {_electron:electron}=require('playwright');
+(async()=>{const app=await electron.launch({args:['/home/claude/pc','--no-sandbox'],executablePath:'/home/claude/pc/node_modules/electron/dist/electron'});const w=await app.firstWindow();await w.waitForTimeout(1500);
+const errs=[];w.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await app.evaluate(({shell,ipcMain})=>{global.__c=[];shell.openExternal=async u=>{global.__c.push(['open',decodeURIComponent(u)])};ipcMain.removeHandler('mm:waAutoSend');ipcMain.handle('mm:waAutoSend',(e,w,m,k)=>{global.__c.push(['auto',w,m,k]);return 'sent'});shell.openPath=async()=>''});
+ok('classic default',await w.evaluate(()=>!document.body.classList.contains('pro')&&S.set.pro===false));
+await w.evaluate(()=>{S.set.customers=[{name:'Ravi Kumar',phone:'9876543210'},{name:'Anitha',phone:'9123456780'}];UI.pkgDur='3';const h=S.hotels[0];S.set.pkgHotels['3']=[h.id,h.id,h.id].map(id=>({id}));S.set.docMeta.pkgName='Premium Package';S.set.docMeta.name='';S.set.docMeta.phone='';go('packages')});await w.waitForTimeout(300);
+await w.locator('[data-a="docWa"][data-m="customer"]').click();await w.waitForTimeout(300);await w.screenshot({path:'/tmp/claude-0/s300/pw_nonum.png'});
+ok('chooser shown',await w.locator('.pwl button').count()===2);
+await w.click('[data-a="pwAs"][data-k="text"]');await w.click('.pwl button >> nth=0');await w.waitForTimeout(200);await w.screenshot({path:'/tmp/claude-0/s300/pw_num.png'});
+await w.click('[data-a="pwGo"]');await w.waitForTimeout(800);
+let c=await app.evaluate(()=>global.__c);console.log(JSON.stringify(c).slice(0,300));ok('text sent auto',c.some(x=>x[0]==='auto'&&x[3]==='text')&&c.some(x=>x[0]==='open'&&x[1].includes('919876543210')));
+await app.evaluate(()=>{global.__c=[]});
+await w.locator('[data-a="docWa"][data-m="agent"]').click();await w.waitForTimeout(200);await w.click('[data-a="pwAs"][data-k="pdf"]');await w.fill('#pwPh','9123456780');await w.click('[data-a="pwGo"]');await w.waitForTimeout(4000);
+c=await app.evaluate(()=>global.__c);console.log(JSON.stringify(c).slice(0,400));ok('pdf sent auto',c.some(x=>x[0]==='auto'&&x[3]==='file'));
+// message off
+await w.evaluate(()=>{S.set.waAuto={...WAO(),msgOn:0};save()});await app.evaluate(()=>{global.__c=[]});
+await w.locator('[data-a="docWa"][data-m="customer"]').click();await w.click('[data-a="pwAs"][data-k="pdf"]');await w.fill('#pwPh','9123456780');await w.click('[data-a="pwGo"]');await w.waitForTimeout(4000);
+c=await app.evaluate(()=>global.__c);console.log(JSON.stringify(c).slice(0,300));ok('no message',c.some(x=>x[0]==='open'&&!/text=./.test(x[1].split('&text=')[1]?'text='+x[1].split('&text=')[1]:'')));
+await w.evaluate(()=>{S.set.waAuto={...WAO(),msgOn:1};UI.sset='wa';go('settings')});await w.waitForTimeout(300);await w.screenshot({path:'/tmp/claude-0/s300/wa_set2.png'});
+await w.evaluate(()=>{UI.sset='pwm';go('settings')});await w.waitForTimeout(300);await w.screenshot({path:'/tmp/claude-0/s300/pwm.png'});
+console.log('errs',errs);await app.close()})();

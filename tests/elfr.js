@@ -1,0 +1,4 @@
+const {_electron:electron}=require('playwright');
+(async()=>{const app=await electron.launch({args:['/home/claude/fresh/pc','--no-sandbox','--user-data-dir=/tmp/claude-0/frud'],executablePath:'/home/claude/pc/node_modules/electron/dist/electron'});const w=await app.firstWindow();await w.waitForTimeout(1800);const errs=[];w.on('pageerror',e=>errs.push(e.message));
+console.log(JSON.stringify(await w.evaluate(()=>({hotels:S.hotels.length,company:S.set.company,ferry:S.set.ferry.length,hist:(S.set.hist||[]).length,pro:S.set.pro,title:document.title}))));
+for(const g of ['home','packages','find','hist','settings','pkgset','starsel','new','tpl'])await w.evaluate(p=>go(p),g);await w.evaluate(()=>go('home'));await w.screenshot({path:'/tmp/claude-0/s300/fresh16.png'});console.log('errs',errs);await app.close()})();
