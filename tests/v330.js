@@ -1,0 +1,21 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:860}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file:///home/claude/app/preview_extras_perperson.html');await p.waitForTimeout(800);
+await p.evaluate(()=>{UI.pkgDur='3';go('packages');A.pkgAddHotels()});await p.waitForTimeout(300);
+// find a hotel with addons
+const hid=await p.evaluate(()=>{const h=S.hotels.find(h=>haoList(h).length&&h.island===UI.island);return h&&h.id});console.log('hid',hid);
+await p.locator(`[data-id="${hid}"]:has-text("Add to cart")`).first().click().catch(async e=>{console.log('no btn');});await p.waitForTimeout(300);
+await p.screenshot({path:'/tmp/claude-0/s300/hao1.png'});
+await p.locator('[data-a="haoMode"][data-k="addon"]').click();await p.waitForTimeout(200);await p.screenshot({path:'/tmp/claude-0/s300/hao2.png'});
+console.log(errs);await b.close()})();
+(async()=>{const {chromium}=require('playwright');const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:860}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file:///home/claude/app/preview_extras_perperson.html');await p.waitForTimeout(800);
+await p.evaluate(()=>{UI.pkgDur='3';go('packages');A.pkgAddHotels()});await p.waitForTimeout(300);
+const hid='port-blair-islands-tourister';await p.locator(`[data-a="cartOpen"][data-id="${hid}"]`).click();await p.locator('[data-a="haoMode"][data-k="addon"]').click();
+const ticked=()=>p.evaluate(()=>HAO(S.hotels.find(h=>h.id==='port-blair-islands-tourister')).sel.length);console.log('after addon mode',await ticked());
+await p.locator('[data-a="haoTick"]').nth(1).click();await p.waitForTimeout(150);console.log('after tick one',await ticked());
+await p.locator('[data-a="cartAdd"]').first().click();await p.waitForTimeout(150);console.log('cart addons',await p.evaluate(()=>S.set.cart.map(x=>(x.addons||[]).length)));
+await p.click('[data-a="cartDone"]');await p.waitForTimeout(200);
+await p.locator('[data-a="cartOpen"]').nth(3).click();await p.waitForTimeout(200);await p.locator('[data-a="haoMode"][data-k="addon"]').click();
+console.log('other hotel ticked',await p.evaluate(()=>document.querySelectorAll('[data-a="haoTick"].on,[data-a="haoTick"][aria-checked="true"],[data-a="haoTick"]:checked').length));
+console.log(errs);await b.close()})();

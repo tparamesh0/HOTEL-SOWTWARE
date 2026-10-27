@@ -1,0 +1,13 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:860}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file:///home/claude/app/preview_extras_perperson.html');await p.waitForTimeout(1500);
+const sh=async n=>{await p.waitForTimeout(250);await p.screenshot({path:'/tmp/claude-0/s300/'+n+'.png'})};
+console.log('icons',await p.evaluate(()=>document.querySelectorAll('img.e3').length));await sh('i_home');
+await p.evaluate(()=>{UI.sset='colors';go('settings')});await sh('i_set');
+await p.evaluate(()=>{UI.pkgTab='day';go('pkgset')});await sh('i_pkgset');
+await p.evaluate(()=>go('find'));await sh('i_find');
+await p.evaluate(()=>{UI.pkgDur='3';go('packages')});await p.waitForTimeout(200);
+await p.locator('[data-a="docPrint"][data-k="pdf"]').first().click();await p.waitForTimeout(600);
+console.log('icons inside bill',await p.evaluate(()=>[...document.querySelectorAll('.docmd img.e3')].filter(i=>!i.closest('.noprint')).length));await sh('i_bill');
+const t=await p.evaluate(()=>{closeModal();const a=performance.now();for(let i=0;i<10;i++)go(['home','find','settings','packages','hotels'][i%5]);return (performance.now()-a)/10});console.log('avg page ms',t.toFixed(1));
+console.log('errs',errs);await b.close()})();

@@ -1,0 +1,17 @@
+const {_electron:electron}=require('playwright');const fs=require('fs');
+(async()=>{const app=await electron.launch({args:['/home/claude/pc','--no-sandbox'],executablePath:'/home/claude/pc/node_modules/electron/dist/electron'});const w=await app.firstWindow();await w.waitForTimeout(1500);
+const errs=[];w.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await app.evaluate(({shell})=>{shell.openPath=async p=>'';shell.showItemInFolder=()=>{}});
+await w.evaluate(()=>{S.set.pdfOpt=null;UI.sset='pdfdir';go('settings')});await w.waitForTimeout(500);
+await w.fill('#pdfDirIn','/tmp/claude-0/MMBills');await w.click('[data-a="pdfDirType"]');await w.waitForTimeout(300);
+ok('typed folder',await w.evaluate(()=>UI.pdfDir)==='/tmp/claude-0/MMBills');
+await w.click('[data-a="pdfOpt"][data-k="split"]');await w.click('[data-a="pdfOpt"][data-k="month"]');await w.click('[data-a="pdfOpt"][data-k="cust"]');
+await w.click('[data-a="pdfPreset"] >> nth=1');await w.waitForTimeout(200);
+console.log('example',await w.evaluate(()=>[...document.querySelectorAll('code.pdfdir')].map(c=>c.textContent)));
+await w.screenshot({path:'/tmp/claude-0/s300/pdfopt.png',fullPage:true});
+await w.evaluate(()=>{UI.pkgDur='3';const h=S.hotels[0];S.set.pkgHotels['3']=[h.id,h.id,h.id].map(id=>({id}));S.set.docMeta.pkgName='Premium Package';S.set.docMeta.name='Ravi Kumar';go('packages')});await w.waitForTimeout(300);
+await w.locator('[data-a="docPrint"][data-k="pdf"]').first().click();await w.waitForTimeout(4000);
+const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(f=>f.isDirectory()?walk(d+'/'+f.name):[d+'/'+f.name]);console.log(walk('/tmp/claude-0/MMBills'));
+await w.evaluate(()=>{closeModal();UI.histTab='pdf';UI.pdfList=null;go('hist')});await w.waitForTimeout(700);ok('listed in subfolder',await w.locator('.pdfr').count()===1);await w.screenshot({path:'/tmp/claude-0/s300/pdfhist2.png'});
+await w.evaluate(()=>mmpc.resetPdfDir());
+console.log('errs',errs);await app.close()})();

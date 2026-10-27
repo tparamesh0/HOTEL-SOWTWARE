@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await p.goto('file:///home/claude/app/preview_extras_perperson.html');await p.waitForTimeout(800);
+await p.click('.nav [data-a="go"][data-k="starsel"]');await p.waitForTimeout(300);
+const h=await p.evaluate(()=>S.hotels.find(h=>h.island===UI.island).id);
+await p.click(`[data-a="starHotel"][data-id="${h}"][data-k="4"]`);ok('set 4',await p.evaluate(h=>S.hotels.find(x=>x.id===h).star===4,h));
+await p.click('[data-a="ssf"][data-k="4"]');const n4=await p.locator('tbody tr, table tr').count();
+await p.click('[data-a="ssf"][data-k=""]');
+await p.locator('[data-a-change="chk"]').nth(1).check();await p.locator('[data-a-change="chk"]').nth(2).check();await p.waitForTimeout(100);
+await p.click('[data-a="sbulk"][data-k="5"]');ok('bulk',await p.evaluate(()=>S.hotels.filter(h=>h.island===UI.island).slice(0,3).filter(h=>h.star===5).length>=2));
+await p.screenshot({path:'/tmp/claude-0/s300/starsel.png'});
+console.log('errs',errs);await b.close()})();

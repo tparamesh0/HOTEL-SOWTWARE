@@ -1,0 +1,13 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:860}});const errs=[];p.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await p.goto('file:///home/claude/app/preview_extras_perperson.html');await p.waitForTimeout(800);
+await p.evaluate(()=>{UI.sset='stars';go('settings')});await p.waitForTimeout(300);await p.screenshot({path:'/tmp/claude-0/s300/set_stars.png'});
+console.log('before',await p.evaluate(()=>SCATS()));
+await p.click('[data-a="starCat"][data-k="2"]');console.log('after 2',await p.evaluate(()=>SCATS()));
+await p.evaluate(()=>go('star'));await p.waitForTimeout(200);const h=await p.evaluate(()=>document.querySelector('.main').innerText.slice(0,400));console.log(h.replace(/\n/g,' | ').slice(0,300));
+await p.evaluate(()=>go('find'));ok('find has 2★',await p.evaluate(()=>document.body.innerText.includes('2 ★')));
+await p.evaluate(()=>{UI.sset='stars';go('settings')});await p.click('[data-a="starCat"][data-k="1"]');console.log('after 1',await p.evaluate(()=>SCATS()));
+await p.evaluate(()=>go('starsel'));ok('starsel has 1★',await p.locator('[data-a="ssf"][data-k="1"]').count()===1);
+await p.evaluate(()=>go('new'));ok('form opts',await p.evaluate(()=>[...document.querySelectorAll('select[data-m="star"] option')].length===6));
+await p.reload();await p.waitForTimeout(800);console.log('persist',await p.evaluate(()=>SCATS()));
+console.log('errs',errs);await b.close()})();

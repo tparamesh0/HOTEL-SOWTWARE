@@ -1,0 +1,16 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:860}});const errs=[];p.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await p.goto('file:///home/claude/app/preview_extras_perperson.html');await p.waitForTimeout(800);
+await p.evaluate(()=>go('new'));await p.waitForTimeout(300);await p.screenshot({path:'/tmp/claude-0/s300/new2_full.png',fullPage:true});
+await p.fill('#fName','Test Sea Breeze');await p.selectOption('select[data-m="tier"]',{index:1});
+await p.fill('input[data-m="mobiles.0"]','9876543210');await p.click('[data-a="csSameWa"]');
+ok('wa copied',await p.evaluate(()=>D.cs.wa==='9876543210'));
+await p.fill('input[data-m="cs.person"]','Ravi');await p.fill('textarea[data-m="cs.cancel"]','Free till 7 days');
+await p.fill('input[data-m="rooms.0.category"]','DELUXE');await p.locator('input[data-m^="rooms.0.p."]').first().fill('3000');
+await p.click('[data-a="submitNew"]');await p.waitForTimeout(400);
+const h=await p.evaluate(()=>S.hotels.find(h=>h.name==='TEST SEA BREEZE'));console.log(h&&h.cs);ok('saved cs',h&&h.cs&&h.cs.person==='Ravi'&&h.cs.cin);
+await p.waitForTimeout(600);await p.reload();await p.waitForTimeout(800);ok('persist',await p.evaluate(()=>{const h=S.hotels.find(h=>h.name==='TEST SEA BREEZE');return h&&h.cs&&/free till 7 days/i.test(h.cs.cancel)}));
+await p.evaluate(()=>{const h=S.hotels.find(h=>h.name==='TEST SEA BREEZE');UI.island=h.island;UI.cls='All';UI.sel=h.id;go('detail')});await p.waitForTimeout(300);ok('detail shows',await p.evaluate(()=>document.body.innerText.includes('Customer service')));await p.screenshot({path:'/tmp/claude-0/s300/detail_cs.png'});
+await p.evaluate(()=>{UI.sset='hotelform';go('settings')});await p.waitForTimeout(200);await p.screenshot({path:'/tmp/claude-0/s300/set_hform.png'});
+await p.click('[data-a="hfTog"][data-k="policy"]');await p.evaluate(()=>go('new'));ok('policy hidden',await p.locator('textarea[data-m="cs.child"]').count()===0);
+console.log('errs',errs);await b.close()})();
