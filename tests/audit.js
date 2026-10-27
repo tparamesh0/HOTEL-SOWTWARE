@@ -2,7 +2,7 @@ const {chromium}=require('playwright');const fs=require('fs');
 const URL='file:///home/claude/app/andaman_hotel_rates.html';
 const PAGES=['home','packages','hotels','detail','find','range','star','rank','fac','classify','new','update','company','hist','settings','pkgset'];
 const SSET=['colors','fonts','name','plans','rooms','addons','text','facs','classes','islands','stars','ranges','ranks','company','backup','csv','pin','sound'];
-const TABS=['dur','day','ferry','comp','docs'];
+const TABS=['dur','day','ferry','comp','act','docs'];
 const DENY=new Set(['resetAll','delDo','docGo','bkFile','bkDelta','xlGo','waPdf','waTxt','teamGo','exportCsv','histDel','pkgDel','delPlan','delContactDo','delAsk','importDo','bkImportDo','deltaDo','navToggle','pinOk','sset','go','back','island','histEdit','pkgOpenDay','open','pkgDay','pkgDayBack','pkgTabSet','closeModal','noop','logoPick','goLogo','clrStart','clrDo']);
 (async()=>{const b=await chromium.launch();const issues=[];
 for(const [W,H,dark] of [[1366,860,false],[400,860,false],[1366,860,true]]){
