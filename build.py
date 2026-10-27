@@ -7,6 +7,9 @@ seed=(r/'data/seed.json').read_text(encoding='utf-8').strip()
 icons=(r/'data/icons3d.json').read_text(encoding='utf-8').strip()
 assert '/*__DATA__*/[]' in src and '/*__ICONS__*/{}' in src
 src=src.replace('/*__ICONS__*/{}',icons,1)
+logo=(r/'data/logo.txt').read_text(encoding='utf-8').strip()
+assert "''/*__LOGO__*/" in src
+src=src.replace("''/*__LOGO__*/","'"+logo+"'",1)
 (r/'dist').mkdir(exist_ok=True)
 (r/'dist/andaman_hotel_rates.html').write_text(src.replace('/*__DATA__*/[]',seed,1),encoding='utf-8')
 f=src
