@@ -4,7 +4,7 @@ import os,re,shutil
 R=os.path.dirname(os.path.abspath(__file__));N=os.path.join(R,'node_modules');A=os.path.join(R,'app')
 os.makedirs(os.path.join(A,'libs'),exist_ok=True);os.makedirs(os.path.join(A,'fonts'),exist_ok=True)
 for f in ['xlsx/dist/xlsx.full.min.js','html2canvas/dist/html2canvas.min.js','jspdf/dist/jspdf.umd.min.js']:shutil.copy(os.path.join(N,f),os.path.join(A,'libs'))
-F={'dm-sans':('DM Sans',[400,500,600,700]),'poppins':('Poppins',[500,600,700]),'oswald':('Oswald',[600,700]),'bebas-neue':('Bebas Neue',[400]),'anton':('Anton',[400]),'righteous':('Righteous',[400]),'teko':('Teko',[600])}
+F={'dm-sans':('DM Sans',[400,500,600,700]),'poppins':('Poppins',[500,600,700]),'oswald':('Oswald',[600,700]),'bebas-neue':('Bebas Neue',[400]),'anton':('Anton',[400]),'righteous':('Righteous',[400]),'teko':('Teko',[600]),'dancing-script':('Dancing Script',[700])}
 css=[]
 for k,(fam,ws) in F.items():
   for w in ws:

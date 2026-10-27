@@ -1,18 +1,28 @@
-const {app,BrowserWindow,shell,Menu,dialog,session}=require('electron');
+const {app,BrowserWindow,shell,Menu,dialog,session,ipcMain,clipboard}=require('electron');
+const fs=require('fs');
 const path=require('path');
 const APP_NAME='Magic Memories';
 if(!app.requestSingleInstanceLock()){app.quit()}
 let win;
 function create(){
   win=new BrowserWindow({width:1440,height:900,minWidth:1000,minHeight:640,title:APP_NAME+' — Hotel & Tour Software',icon:path.join(__dirname,'app','icon.png'),backgroundColor:'#f8f9fa',show:false,autoHideMenuBar:true,
-    webPreferences:{contextIsolation:true,nodeIntegration:false,sandbox:true,spellcheck:false}});
+    webPreferences:{contextIsolation:true,nodeIntegration:false,sandbox:true,spellcheck:false,preload:path.join(__dirname,'preload.js')}});
   win.loadFile(path.join(__dirname,'app','index.html'));
   win.once('ready-to-show',()=>{win.maximize();win.show()});
   // WhatsApp and other web links open in the normal browser / WhatsApp app
-  win.webContents.setWindowOpenHandler(({url})=>{if(/^https?:|^mailto:|^tel:|^whatsapp:/.test(url))shell.openExternal(url);return{action:'deny'}});
+  win.webContents.setWindowOpenHandler(({url})=>{if(/^https?:|^mailto:|^tel:|^whatsapp:/.test(url)){const m=/^https:\/\/wa\.me\/(\d*)\??(.*)$/.exec(url);if(m&&process.platform==='win32'){const q=new URLSearchParams(m[2]);openWA(m[1],q.get('text')||'')}else shell.openExternal(url)}else if(/^blob:|^file:/.test(url))return{action:'allow'};return{action:'deny'}});
   win.webContents.on('will-navigate',(e,url)=>{if(!url.startsWith('file:')){e.preventDefault();shell.openExternal(url)}});
   win.on('page-title-updated',e=>e.preventDefault());
 }
+const docsDir=()=>{const d=path.join(app.getPath('documents'),'Magic Memories','Documents');fs.mkdirSync(d,{recursive:true});return d};
+async function openWA(phone,text){const q='phone='+encodeURIComponent(phone||'')+'&text='+encodeURIComponent(text||'');try{await shell.openExternal('whatsapp://send?'+q);return 'app'}catch(e){await shell.openExternal('https://wa.me/'+(phone||'')+'?text='+encodeURIComponent(text||''));return 'web'}}
+ipcMain.handle('mm:saveDoc',(e,name,bytes)=>{const safe=String(name||'Document.pdf').replace(/[<>:"/\\|?*]+/g,'-');let p=path.join(docsDir(),safe),k=2;const ext=path.extname(safe),base=safe.slice(0,safe.length-ext.length);while(fs.existsSync(p))p=path.join(docsDir(),base+' ('+(k++)+')'+ext);fs.writeFileSync(p,Buffer.from(bytes));return p});
+ipcMain.handle('mm:copyFile',(e,p)=>{if(process.platform==='win32'){clipboard.writeBuffer('FileNameW',Buffer.from(p+'\0','ucs2'))}else clipboard.writeText(p);return true});
+ipcMain.handle('mm:openWA',(e,phone,text)=>openWA(phone,text));
+ipcMain.handle('mm:show',(e,p)=>{shell.showItemInFolder(p);return true});
+ipcMain.handle('mm:open',(e,p)=>shell.openPath(p));
+ipcMain.handle('mm:openFolder',()=>shell.openPath(docsDir()));
+ipcMain.handle('mm:printToPdf',async e=>{const wc=e.sender;return await wc.printToPDF({pageSize:'A4',printBackground:true,margins:{marginType:'custom',top:0.3,bottom:0.3,left:0.3,right:0.3}})});
 app.on('second-instance',()=>{if(win){if(win.isMinimized())win.restore();win.focus()}});
 app.whenReady().then(()=>{
   app.setAppUserModelId('com.magicmemories.hotelrates');
