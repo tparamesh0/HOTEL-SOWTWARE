@@ -13,7 +13,7 @@ src=src.replace("''/*__LOGO__*/","'"+logo+"'",1)
 (r/'dist').mkdir(exist_ok=True)
 (r/'dist/andaman_hotel_rates.html').write_text(src.replace('/*__DATA__*/[]',seed,1),encoding='utf-8')
 f=src
-for a,b in [('Andaman Hotel Rates</title>','Hotel Rate Software</title>'),("(o.file||'Magic-Memories')","(o.file||'Hotel-Rates')"),('Documents › Magic Memories › Documents','Documents › Hotel Rate Software › Documents'),("dlFile('Magic-Memories-backup-'","dlFile('Hotel-Rates-backup-'"),("dlFile('Magic-Memories-'+(d===1","dlFile('Hotel-Rates-'+(d===1"),('e.g. D:\\\\Magic Memories\\\\Bills','e.g. D:\\\\Hotel Rates\\\\Bills')]:
+for a,b in [('Andaman Hotel Rates</title>','Magic Memories Tours and Travels</title>'),("(o.file||'Magic-Memories')","(o.file||'Hotel-Rates')"),('Documents › Magic Memories › Documents','Documents › Magic Memories Tours and Travels › Documents'),("dlFile('Magic-Memories-backup-'","dlFile('Hotel-Rates-backup-'"),("dlFile('Magic-Memories-'+(d===1","dlFile('Hotel-Rates-'+(d===1"),('e.g. D:\\\\Magic Memories\\\\Bills','e.g. D:\\\\Hotel Rates\\\\Bills'),("function brand0(){return 'Magic Memories'}","function brand0(){return 'Magic Memories Tours and Travels'}")]:
     assert a in f,a
     f=f.replace(a,b)
 (r/'fresh/dist').mkdir(parents=True,exist_ok=True)

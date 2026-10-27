@@ -1,13 +1,13 @@
 const {app,BrowserWindow,shell,Menu,dialog,session,ipcMain,clipboard,nativeImage}=require('electron');
 const fs=require('fs');
 const path=require('path');
-const APP_NAME='Hotel Rate Software';
+const APP_NAME='Magic Memories Tours and Travels';
 if(!app.requestSingleInstanceLock()){app.quit()}
 let win;
 const BRF=()=>path.join(app.getPath('userData'),'branding.json');
 function brandLoad(){try{return JSON.parse(fs.readFileSync(BRF(),'utf8'))}catch(e){return {}}}
 const brandIcon=()=>{const p=path.join(app.getPath('userData'),'brand.png');return fs.existsSync(p)?p:path.join(__dirname,'app','icon.png')};
-const brandTitle=()=>{const b=brandLoad();return b.name||(APP_NAME+' — Hotel & Tour Software')};
+const brandTitle=()=>{const b=brandLoad();return b.name||APP_NAME};
 function icoFromPng(buf){const h=Buffer.alloc(22);h.writeUInt16LE(0,0);h.writeUInt16LE(1,2);h.writeUInt16LE(1,4);h.writeUInt8(0,6);h.writeUInt8(0,7);h.writeUInt8(0,8);h.writeUInt8(0,9);h.writeUInt16LE(1,10);h.writeUInt16LE(32,12);h.writeUInt32LE(buf.length,14);h.writeUInt32LE(22,18);return Buffer.concat([h,buf])}
 const zk=d=>{if(win&&!win.isDestroyed())win.webContents.send('mm:zoomKey',d)};
 function create(){

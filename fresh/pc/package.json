@@ -1,13 +1,13 @@
 {
   "name": "hotel-rate-software",
-  "version": "1.6.1",
-  "description": "Hotel Rate & Tour Package Software",
+  "version": "1.7.0",
+  "description": "Magic Memories Tours and Travels \u2014 Hotel Rate & Tour Package Software",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder --win nsis --x64"
   },
-  "author": "Hotel Rate Software",
+  "author": "Magic Memories Tours and Travels",
   "devDependencies": {
     "@fontsource/anton": "5.0.13",
     "@fontsource/bebas-neue": "5.0.13",
@@ -23,11 +23,11 @@
     "jspdf": "2.5.1",
     "xlsx": "0.18.5"
   },
-  "productName": "Hotel Rate Software",
+  "productName": "Magic Memories Tours and Travels",
   "build": {
     "appId": "com.hotelrate.software",
-    "productName": "Hotel Rate Software",
-    "copyright": "Hotel Rate Software",
+    "productName": "Magic Memories Tours and Travels",
+    "copyright": "Magic Memories Tours and Travels",
     "directories": {
       "output": "dist",
       "buildResources": "build"
@@ -48,7 +48,7 @@
         }
       ],
       "icon": "build/icon.ico",
-      "artifactName": "Hotel-Rate-Software-Setup-${version}.exe"
+      "artifactName": "Magic-Memories-Tours-and-Travels-Setup-${version}.exe"
     },
     "nsis": {
       "oneClick": false,
@@ -56,11 +56,11 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": "always",
       "createStartMenuShortcut": true,
-      "shortcutName": "Hotel Rate Software",
+      "shortcutName": "Magic Memories Tours and Travels",
       "installerIcon": "build/icon.ico",
       "uninstallerIcon": "build/icon.ico",
       "installerHeaderIcon": "build/icon.ico",
-      "uninstallDisplayName": "Hotel Rate Software",
+      "uninstallDisplayName": "Magic Memories Tours and Travels",
       "runAfterFinish": true,
       "deleteAppDataOnUninstall": false
     },
