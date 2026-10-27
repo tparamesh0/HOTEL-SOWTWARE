@@ -1,0 +1,16 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1300,height:850}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await p.goto('file:///home/claude/app/andaman_hotel_rates.html');await p.waitForTimeout(300);
+ok('utf-8',await p.evaluate(()=>document.characterSet==='UTF-8'));
+ok('browser auto = no zoom',await p.evaluate(()=>ZCUR===1&&!document.documentElement.style.zoom));
+await p.evaluate(()=>{UI.sset='screen';go('settings')});await p.waitForTimeout(100);
+ok('screen tab',await p.locator('[data-a="scrMode"]').count()===2);
+await p.click('[data-a="scrMode"][data-k="manual"]');await p.click('[data-a="scrSet"][data-k="90"]');
+ok('manual 90 css zoom',await p.evaluate(()=>document.documentElement.style.zoom==='0.9'&&S.set.disp.zoom===90));
+await p.click('[data-a="scrStep"][data-v="5"]');ok('step +5',await p.evaluate(()=>S.set.disp.zoom===95));
+await p.locator('[data-scr]').fill('110');await p.locator('[data-scr]').dispatchEvent('change');ok('slider',await p.evaluate(()=>S.set.disp.zoom===110&&document.documentElement.style.zoom==='1.1'));
+await p.screenshot({path:'/tmp/claude-0/s170/scr.png'});
+await p.reload();await p.waitForTimeout(300);ok('persist after reload',await p.evaluate(()=>document.documentElement.style.zoom==='1.1'));
+await p.evaluate(()=>{UI.sset='screen';go('settings')});await p.click('[data-a="scrReset"]');ok('reset',await p.evaluate(()=>!document.documentElement.style.zoom&&S.set.disp.mode==='auto'));
+console.log('errors',errs);await b.close()})();

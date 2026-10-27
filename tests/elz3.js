@@ -1,0 +1,10 @@
+const {_electron:electron}=require('playwright');
+(async()=>{let app=await electron.launch({args:['/home/claude/pc','--no-sandbox'],executablePath:'/home/claude/pc/node_modules/electron/dist/electron'});let w=await app.firstWindow();await w.waitForTimeout(1200);
+await w.evaluate(()=>{S.set.disp={mode:'manual',zoom:120};save();applyZoom()});await w.waitForTimeout(300);console.log('set 120',await w.evaluate(()=>[ZCUR,mmpc.getZoom()]));await app.close();
+app=await electron.launch({args:['/home/claude/pc','--no-sandbox'],executablePath:'/home/claude/pc/node_modules/electron/dist/electron'});w=await app.firstWindow();await w.waitForTimeout(1200);
+console.log('restart keeps',await w.evaluate(()=>[ZCUR,mmpc.getZoom(),S.set.disp.mode]));
+await w.evaluate(()=>A.scrReset());await w.waitForTimeout(300);
+await app.evaluate(({BrowserWindow})=>{const b=BrowserWindow.getAllWindows()[0];b.unmaximize();b.setContentSize(1093,614)});await w.waitForTimeout(700);
+console.log('auto small',await w.evaluate(()=>[ZCUR,mmpc.getZoom(),zBase()]));await app.close();
+app=await electron.launch({args:['/home/claude/pc','--no-sandbox'],executablePath:'/home/claude/pc/node_modules/electron/dist/electron'});w=await app.firstWindow();await w.waitForTimeout(1200);
+console.log('restart auto (window 1440)',await w.evaluate(()=>[ZCUR,mmpc.getZoom(),zBase(),S.set.disp.mode]));await app.close()})();
