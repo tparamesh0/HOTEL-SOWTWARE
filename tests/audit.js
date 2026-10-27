@@ -3,7 +3,7 @@ const URL='file:///home/claude/app/andaman_hotel_rates.html';
 const PAGES=['home','packages','hotels','detail','find','range','star','rank','fac','classify','new','update','company','hist','settings','pkgset'];
 const SSET=['colors','fonts','name','plans','rooms','addons','text','facs','classes','islands','stars','ranges','ranks','company','backup','csv','pin','sound'];
 const TABS=['dur','day','ferry','comp','docs'];
-const DENY=new Set(['resetAll','delDo','docGo','bkFile','bkDelta','xlGo','waPdf','waTxt','teamGo','exportCsv','histDel','pkgDel','delPlan','delContactDo','delAsk','importDo','bkImportDo','deltaDo','navToggle','pinOk','sset','go','back','island','histEdit','pkgOpenDay','open','pkgDay','pkgDayBack','pkgTabSet','closeModal','noop','logoPick','goLogo']);
+const DENY=new Set(['resetAll','delDo','docGo','bkFile','bkDelta','xlGo','waPdf','waTxt','teamGo','exportCsv','histDel','pkgDel','delPlan','delContactDo','delAsk','importDo','bkImportDo','deltaDo','navToggle','pinOk','sset','go','back','island','histEdit','pkgOpenDay','open','pkgDay','pkgDayBack','pkgTabSet','closeModal','noop','logoPick','goLogo','clrStart','clrDo']);
 (async()=>{const b=await chromium.launch();const issues=[];
 for(const [W,H,dark] of [[1366,860,false],[400,860,false],[1366,860,true]]){
  const ctx=await b.newContext({viewport:{width:W,height:H},colorScheme:dark?'dark':'light',acceptDownloads:true});const p=await ctx.newPage();

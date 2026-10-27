@@ -1,0 +1,69 @@
+{
+  "name": "hotel-rate-software",
+  "version": "1.0.0",
+  "description": "Hotel Rate & Tour Package Software",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --x64"
+  },
+  "author": "Hotel Rate Software",
+  "devDependencies": {
+    "@fontsource/anton": "5.0.13",
+    "@fontsource/bebas-neue": "5.0.13",
+    "@fontsource/dancing-script": "^5.0.18",
+    "@fontsource/dm-sans": "5.0.18",
+    "@fontsource/oswald": "5.0.17",
+    "@fontsource/poppins": "5.0.14",
+    "@fontsource/righteous": "5.0.13",
+    "@fontsource/teko": "5.0.18",
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3",
+    "html2canvas": "1.4.1",
+    "jspdf": "2.5.1",
+    "xlsx": "0.18.5"
+  },
+  "productName": "Hotel Rate Software",
+  "build": {
+    "appId": "com.hotelrate.software",
+    "productName": "Hotel Rate Software",
+    "copyright": "Hotel Rate Software",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "app/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "Hotel-Rate-Software-Setup-${version}.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "Hotel Rate Software",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "uninstallDisplayName": "Hotel Rate Software",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": null
+  }
+}
