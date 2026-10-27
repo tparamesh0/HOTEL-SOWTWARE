@@ -1,0 +1,17 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1300,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await p.goto('file:///home/claude/app/andaman_hotel_rates.html');await p.waitForTimeout(300);
+await p.evaluate(()=>{UI.pkgTab='dur';go('pkgset')});await p.click('[data-a="pkOrdZ"][data-k="60"]');ok('order compact',await p.evaluate(()=>S.set.pkOrdZ===60&&getComputedStyle(document.querySelector('.pord')).zoom==='0.6'));
+await p.locator('.card:has(h3:has-text("Packages page order"))').screenshot({path:'/tmp/claude-0/s220/ord_c.png'});
+await p.click('[data-a="czSet"][data-k="psec"][data-v="-10"]');await p.click('[data-a="czSet"][data-k="psec"][data-v="-10"]');await p.evaluate(()=>{UI.pkgDur='2';go('packages')});ok('sections smaller',await p.evaluate(()=>getComputedStyle(document.querySelector('[data-sec="hotel"]')).zoom==='0.8'));
+await p.evaluate(()=>{UI.sset='colors';go('settings')});await p.waitForTimeout(100);
+ok('18 themes',await p.locator('[data-a="theme"]').count()===18);
+await p.click('[data-a="theme"] >> nth=7');
+await p.locator('[data-s="intensity"]').fill('20');await p.locator('[data-s="intensity"]').dispatchEvent('change');ok('intensity darker',await p.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--main').trim()!==S.set.colors.main));
+await p.locator('[data-s="bgTint"]').fill('10');await p.locator('[data-s="bgTint"]').dispatchEvent('change');
+await p.fill('#myThName','Office Blue');await p.click('[data-a="myThemeSave"]');ok('my theme saved',await p.evaluate(()=>S.set.myThemes.length===1));
+await p.locator('[data-secc="hotel"]').fill('#ff0000');await p.locator('[data-secc="hotel"]').dispatchEvent('input');ok('section colour',await p.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--sc-hotel').trim()==='#ff0000'));
+await p.screenshot({path:'/tmp/claude-0/s220/colors.png',fullPage:true});
+await p.click('[data-a="theme"] >> nth=0');await p.click('[data-a="myThemeUse"]');ok('my theme reapplied',await p.evaluate(()=>S.set.intensity===20&&S.set.bgTint===10));
+await p.evaluate(()=>go('packages'));await p.waitForTimeout(150);await p.screenshot({path:'/tmp/claude-0/s220/pk_colored.png'});
+console.log('errs',errs);await b.close()})();

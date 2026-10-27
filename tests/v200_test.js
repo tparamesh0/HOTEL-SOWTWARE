@@ -3,18 +3,18 @@ const {chromium}=require('playwright');
 const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
 await p.goto('file:///home/claude/app/andaman_hotel_rates.html');await p.waitForTimeout(300);
 // ---------- designs
-ok('11 designs',await p.evaluate(()=>DSTYLES.length===11));
+ok('11 designs',await p.evaluate(()=>DSTYLES.length===14));
 await p.evaluate(()=>{const mk=n=>({name:n,trip:2000,ticket:500,stops:['Cellular Jail','Corbyn Cove'],notes:''});UI.pkgDur='2';S.set.pkgPicks['2']={1:mk('Port Blair'),2:mk('Havelock')};S.set.pkgComp['2']=[{id:'c',name:'Welcome drink'}];S.set.docMeta.name='Ravi Kumar';S.set.docMeta.phone='9876543210';S.set.pkgPersons['2']=2;save()});
 for(const st of ['royal','ocean','minimal','sunset','emerald']){await p.evaluate(s=>{document.getElementById('modal').innerHTML='<div style="position:fixed;inset:0;background:#ddd;overflow:auto;z-index:99;padding:10px">'+docHTML('2','agent',s)+'</div>'},st);await p.waitForTimeout(150);await p.screenshot({path:`/tmp/claude-0/s170/d_${st}.png`});const w=await p.evaluate(()=>{const d=document.querySelector('.dv');return d.scrollWidth<=d.clientWidth+1});if(!w)console.log('FAIL overflow',st)}
 await p.evaluate(()=>closeModal());
 await p.evaluate(()=>{UI.pkgTab='docs';go('pkgset')});await p.waitForTimeout(100);
-ok('delete buttons',await p.locator('[data-a="dsDel"]').count()===11);
+ok('delete buttons',await p.locator('[data-a="dsDel"]').count()===15);
 await p.click('[data-a="dsDel"][data-k="tally"]');await p.click('[data-a="dsDel"][data-k="tally"]');await p.waitForTimeout(100);
 ok('tally hidden, default moved',await p.evaluate(()=>S.set.dsHidden.includes('tally')&&S.set.docStyle!=='tally'&&dStyle()!=='tally'&&!dsList().some(x=>x[0]==='tally')));
 ok('restore box',await p.locator('[data-a="dsRestore"]').count()===2);
 await p.screenshot({path:'/tmp/claude-0/s170/ds_grid.png',fullPage:false});
 await p.evaluate(()=>A.billPrev({dataset:{m:'agent'}}));await p.waitForTimeout(150);
-ok('preview strip excludes tally',await p.evaluate(()=>!document.querySelector('[data-a="pvSt"][data-k="tally"]')&&document.querySelectorAll('[data-a="pvSt"]').length===10));
+ok('preview strip excludes tally',await p.evaluate(()=>!document.querySelector('[data-a="pvSt"][data-k="tally"]')&&document.querySelectorAll('[data-a="pvSt"]').length===14));
 const cur=await p.evaluate(()=>UI.pv.st);await p.click('#modal [data-a="dsDel"]');await p.click('#modal [data-a="dsDel"]');await p.waitForTimeout(100);
 ok('delete from preview',await p.evaluate(c=>S.set.dsHidden.includes(c)&&UI.pv.st!==c&&!!document.querySelector('#modal .docmd'),cur));
 await p.evaluate(()=>closeModal());await p.click('[data-a="dsRestore"][data-k=""]');ok('restore all',await p.evaluate(()=>S.set.dsHidden.length===0));

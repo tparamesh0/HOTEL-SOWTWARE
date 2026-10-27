@@ -1,0 +1,13 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1300,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await p.goto('file:///home/claude/app/andaman_hotel_rates.html');await p.waitForTimeout(300);
+ok('poster gone',await p.evaluate(()=>!DSTYLES.some(x=>x[0]==='poster')&&DSTYLES.length===15));
+ok('menu clean',await p.evaluate(()=>!JSON.stringify(SMENU).includes('pqph')&&!JSON.stringify(SMENU).includes('pkord')));
+await p.evaluate(()=>{S.set.docStyle='poster';UI.pkgDur='2';S.set.pkgPicks['2']={1:{name:'A',trip:100,ticket:0,stops:[],notes:''}}});ok('old poster default falls back',await p.evaluate(()=>dStyle()!=='poster'));
+await p.evaluate(()=>{showDoc(st=>docHTML('2','agent',st),'poster','x')});ok('preview poster → fallback',await p.evaluate(()=>UI.pv.st!=='poster'&&!document.querySelector('[data-a="pvSt"][data-k="poster"]')));await p.evaluate(()=>closeModal());
+await p.evaluate(()=>{UI.sset='colors';go('settings')});const m0=await p.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--main').trim());
+await p.locator('[data-s="saturation"]').fill('-60');await p.locator('[data-s="saturation"]').dispatchEvent('change');const m1=await p.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--main').trim());
+console.log(m0,m1);ok('saturation changes colour',m0!==m1);
+await p.locator('.card:has(h3:has-text("intensity"))').screenshot({path:'/tmp/claude-0/s220/sat.png'});
+await p.evaluate(()=>{UI.pkgTab='docs';go('pkgset')});ok('no poster text card',await p.evaluate(()=>!document.body.innerText.includes('Poster quotation text')));
+console.log('errs',errs);await b.close()})();

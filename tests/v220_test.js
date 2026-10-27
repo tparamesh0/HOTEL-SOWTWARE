@@ -1,0 +1,14 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await p.goto('file:///home/claude/app/andaman_hotel_rates.html');await p.waitForTimeout(300);
+await p.evaluate(()=>{UI.pkgDur='2';S.set.pkgPicks['2']={1:{name:'A',trip:1000,ticket:0,stops:[],notes:''}};S.set.pkgPersons['2']=3;save()});
+ok('nearest 1',await p.evaluate(()=>ppVal(1000,3)===333));
+await p.evaluate(()=>{S.set.pp.round=100});ok('nearest 100',await p.evaluate(()=>ppVal(1000,3)===300));
+await p.evaluate(()=>{S.set.pp.round=0.01});ok('exact',await p.evaluate(()=>ppVal(1000,3)===333.33&&ppFmt(333.33)==='₹333.33'));
+await p.evaluate(()=>{S.set.pp.round=1;S.set.pp.label='Rate per head'});ok('label in bill',await p.evaluate(()=>docHTML('2','customer','tally').includes('Rate per head')&&waText('2','customer').includes('Rate per head')));
+await p.evaluate(()=>{S.set.pp.wa=false});ok('wa off',await p.evaluate(()=>!waText('2','customer').includes('Rate per head')));
+await p.evaluate(()=>{S.set.pp.pkg=false;go('packages')});ok('pkg off',await p.evaluate(()=>!document.querySelector('.gttp')));
+await p.evaluate(()=>{S.set.pp.pkg=true;render()});ok('pkg on',await p.evaluate(()=>!!document.querySelector('.gttp')));
+await p.evaluate(()=>{UI.sset='pprate';go('settings')});ok('settings tab',await p.evaluate(()=>document.body.innerText.includes('Words to show'.toUpperCase())||document.body.innerText.includes('Words to show')));
+await p.click('[data-a="ppTog"][data-k="hist"]');ok('hist toggle',await p.evaluate(()=>S.set.pp.hist===false));
+console.log('errs',errs);await b.close()})();

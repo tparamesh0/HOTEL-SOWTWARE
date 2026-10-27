@@ -1,0 +1,14 @@
+const {_electron:electron}=require('playwright');
+(async()=>{const app=await electron.launch({args:['/home/claude/pc','--no-sandbox'],executablePath:'/home/claude/pc/node_modules/electron/dist/electron'});const w=await app.firstWindow();await w.waitForTimeout(1200);const errs=[];w.on('pageerror',e=>errs.push(e.message));
+await w.evaluate(()=>{UI.sset='brand';go('settings')});await w.waitForTimeout(200);
+await w.fill('[data-brn]','MM Tours');
+const png=await w.evaluate(()=>{const c=document.createElement('canvas');c.width=c.height=600;const x=c.getContext('2d');x.fillStyle='#e11d48';x.beginPath();x.arc(300,300,280,0,7);x.fill();x.fillStyle='#fff';x.font='bold 260px sans-serif';x.fillText('M',110,390);return c.toDataURL('image/png')});
+await w.evaluate(async u=>{const b=await (await fetch(u)).blob();photoIn('brandIco','1',new File([b],'i.png',{type:'image/png'}))},png);await w.waitForTimeout(300);await w.click('[data-a="cropOk"]');await w.waitForTimeout(300);
+await w.click('[data-a="brSet"]');await w.waitForTimeout(200);console.log('set before save blocked',await w.evaluate(()=>!S.set.brand.setAt));
+await w.click('[data-a="brSave"]');await w.waitForTimeout(200);await w.click('[data-a="brSet"]');await w.waitForTimeout(1200);
+const r=await app.evaluate(({BrowserWindow})=>BrowserWindow.getAllWindows()[0].getTitle());const fs0=require('fs');console.log('title',r,fs0.existsSync('/root/.config/Magic Memories/brand.png'),fs0.readFileSync('/root/.config/Magic Memories/branding.json','utf8'));
+console.log('setAt',await w.evaluate(()=>S.set.brand.setAt),'doc title',await w.title());
+await w.screenshot({path:'/tmp/claude-0/s220/brand.png'});console.log('errs',errs);await app.close();
+const app2=await electron.launch({args:['/home/claude/pc','--no-sandbox'],executablePath:'/home/claude/pc/node_modules/electron/dist/electron'});const w2=await app2.firstWindow();await w2.waitForTimeout(1000);console.log('restart title',await app2.evaluate(({BrowserWindow})=>BrowserWindow.getAllWindows()[0].getTitle()));
+const fs=require('fs');const ico=fs.readFileSync('/root/.config/Magic Memories/brand.ico');console.log('ico header',ico.slice(0,6).toString('hex'),ico.slice(22,26).toString('hex'));
+await app2.close()})();

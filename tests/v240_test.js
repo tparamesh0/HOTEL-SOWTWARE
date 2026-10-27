@@ -1,0 +1,18 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1300,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));const ok=(n,v)=>console.log(v?'PASS':'FAIL',n);
+await p.goto('file:///home/claude/app/andaman_hotel_rates.html');await p.waitForTimeout(300);
+const lab=await p.evaluate(()=>[...document.querySelectorAll('.nav button')].map(b=>b.textContent.trim()));ok('menu has Zone Hotels after Classify',lab.indexOf('📍Zone Hotels')===lab.indexOf('🏷️Classify Hotels')+1);
+await p.click('.nav [data-k="zonesel"]');await p.waitForTimeout(150);
+ok('page lists island hotels',await p.evaluate(()=>document.querySelectorAll('[data-a="zoneHotel"]').length>0&&UI.page==='zonesel'));
+const id=await p.evaluate(()=>S.hotels.filter(h=>h.island===UI.island)[0].id);
+await p.click(`[data-a="zoneHotel"][data-id="${id}"][data-k="Zone 2"]`);ok('set zone',await p.evaluate(i=>S.hotels.find(h=>h.id===i).zone==='Zone 2',id));
+const ids=await p.evaluate(()=>S.hotels.filter(h=>h.island===UI.island).slice(1,4).map(h=>h.id));for(const i of ids)await p.check(`[data-a-change="chk"][data-id="${i}"]`);
+await p.click('[data-a="zbulk"][data-k="Zone 1"]');ok('bulk zone 1',await p.evaluate(a=>a.every(i=>S.hotels.find(h=>h.id===i).zone==='Zone 1'),ids));
+await p.click('[data-a="zsf"][data-k="Zone 1"]');ok('filter zone 1',await p.evaluate(()=>document.querySelectorAll('tr [data-a-change="chk"]').length===3));
+await p.click('[data-a="zsf"][data-k="—"]');const nz=await p.evaluate(()=>document.querySelectorAll('tr [data-a-change="chk"]').length);
+await p.click('[data-a="zsf"][data-k=""]');
+await p.click('[data-a="island"][data-k="Havelock"]').catch(()=>{});await p.waitForTimeout(100);ok('island switch',await p.evaluate(()=>UI.island!=='Port Blair'&&UI.page==='zonesel'));
+await p.evaluate(()=>A.island({dataset:{k:'Port Blair'}}));await p.waitForTimeout(100);
+await p.screenshot({path:'/tmp/claude-0/s220/zones.png'});
+await p.setViewportSize({width:420,height:850});ok('mobile no overflow',await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+console.log('errs',errs,'nozone',nz);await b.close()})();
