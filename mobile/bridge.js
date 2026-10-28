@@ -7,5 +7,6 @@
   if(share&&SH){try{await SH.share({title:safe,url:r.uri,dialogTitle:'Share '+safe})}catch(e){}}return r.uri}
  window.dlFile=function(name,blob){saveBlob(name,blob,true).then(()=>toast('📄 Saved in Documents › Magic Memories')).catch(e=>{console.error(e);toast('Could not save the file')});return true};
  window.sendFileWA=async function(blob,name,phone,msg){try{if(window.docAdd)docAdd(blob,name,'sent');await saveBlob(name,blob,true)}catch(e){toast('Could not share the file')}};
+ const AP=P.App;if(AP&&AP.addListener)AP.addListener('backButton',()=>{try{const m=document.querySelector('#modal .ov');if(m){if(window.A&&A.pickClose&&document.querySelector('.pick'))A.pickClose();closeModal();return}if(UI.navOpen){UI.navOpen=false;render();return}if(UI.page!=='home'&&UI.hist&&UI.hist.length){A.back();return}if(UI.page!=='home'){go('home');return}AP.minimizeApp?AP.minimizeApp():AP.exitApp()}catch(e){AP.exitApp()}});
  window.openWADesktop=function(num,msg){location.href='https://wa.me/'+(num||'')+(msg?'?text='+encodeURIComponent(msg):'')};
 })();
