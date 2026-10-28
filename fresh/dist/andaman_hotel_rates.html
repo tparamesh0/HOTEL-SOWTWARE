@@ -556,7 +556,7 @@ body.mcomp .sxds>button,body.mcomp .pvst>button{min-width:80px;flex-basis:22%}
 body.mcomp .sxds .dsw,body.mcomp .pvst .dsw{height:34px}
 body.mcomp .seg button{padding:5px 8px;font-size:.76rem}
 body.mcomp .chip,body.mcomp .cc,body.mcomp .pill{padding:4px 10px;font-size:.76rem}
-body.mcomp .dhero{padding:14px!important;border-radius:16px}body.mcomp .dlogo{width:90px!important;height:90px!important}body.mcomp .dname{font-size:1.35rem!important}
+body.mcomp .dhero{padding:14px!important;border-radius:16px}body.mcomp .dname{font-size:1.35rem!important}
 body.mcomp .dac{padding:10px;border-radius:14px}body.mcomp .dai{width:34px;height:34px;font-size:1.1rem}
 body.mcomp .md{padding:12px!important}
 body.mcomp .fac{padding:7px 9px}
@@ -586,6 +586,19 @@ body.mfit .pvst .dsw,body.mfit .sxds .dsw{width:100%!important;height:22px!impor
 body.mfit .pvst>button span:last-child,body.mfit .sxds>button span:last-child{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 body.mcomp .sgi{padding:7px 10px!important;font-size:.88rem;margin-bottom:4px}body.mcomp .sgl{margin:8px 0 4px}
+
+/* phone: dashboard banner — logo above the text, everything inside the card */
+body.mfit .dhin{flex-direction:column;align-items:flex-start;gap:12px;flex-wrap:nowrap}
+body.mfit .dlogo{width:112px!important;height:112px!important;float:none}
+body.mfit .dlogo .dlimg{width:100%!important;height:100%!important}
+body.mfit .dlogo .dlimg img,body.mfit .dlogo .dlimg .logoph{width:92%!important;height:92%!important}
+body.mfit .dhtxt{min-width:0;width:100%}
+body.mfit .dname{font-size:clamp(1.25rem,6vw,1.7rem)!important;overflow-wrap:break-word}
+body.mfit .dmeta{display:flex;flex-wrap:wrap;gap:6px}body.mfit .dmeta span{padding:4px 10px;font-size:.78rem}
+body.mfit .dcta{display:inline-block;max-width:100%;white-space:normal}
+body.mcomp .dlogo{width:84px!important;height:84px!important}
+
+body.mfit .btn.ghost.sm+.mini{display:block;margin-top:6px}
 </style>
 <div id="root"></div><div id="modal"></div><div id="toast" class="toast" hidden></div>
 <script>
