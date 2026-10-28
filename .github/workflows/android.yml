@@ -32,25 +32,25 @@ jobs:
           npx capacitor-assets generate --android --iconBackgroundColor '#ffffff' --splashBackgroundColor '#ffffff'
           npx cap sync android
           cat > android/app/src/main/java/com/magicmemories/tours/MainActivity.java <<'JAVA'
-package com.magicmemories.tours;
+          package com.magicmemories.tours;
 
-import android.os.Bundle;
-import android.webkit.WebSettings;
-import com.getcapacitor.BridgeActivity;
+          import android.os.Bundle;
+          import android.webkit.WebSettings;
+          import com.getcapacitor.BridgeActivity;
 
-public class MainActivity extends BridgeActivity {
-  private void fixZoom() {
-    try {
-      WebSettings ws = getBridge().getWebView().getSettings();
-      ws.setTextZoom(100);          // the app has its own size setting; phone font size must not break the layout
-      ws.setLoadWithOverviewMode(true);
-      ws.setUseWideViewPort(true);
-    } catch (Exception e) { }
-  }
-  @Override public void onCreate(Bundle b) { super.onCreate(b); fixZoom(); }
-  @Override public void onResume() { super.onResume(); fixZoom(); }
-}
-JAVA
+          public class MainActivity extends BridgeActivity {
+            private void fixZoom() {
+              try {
+                WebSettings ws = getBridge().getWebView().getSettings();
+                ws.setTextZoom(100);          // the app has its own size setting; phone font size must not break the layout
+                ws.setLoadWithOverviewMode(true);
+                ws.setUseWideViewPort(true);
+              } catch (Exception e) { }
+            }
+            @Override public void onCreate(Bundle b) { super.onCreate(b); fixZoom(); }
+            @Override public void onResume() { super.onResume(); fixZoom(); }
+          }
+          JAVA
       - name: Build APK
         working-directory: mobile/android
         run: |
