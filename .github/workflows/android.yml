@@ -1,0 +1,46 @@
+name: Build Android APK
+on:
+  push:
+    paths: ['mobile/**','src/**','data/**','build.py','.github/workflows/android.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - name: Build HTML
+        run: python3 build.py
+      - name: Install
+        working-directory: mobile
+        run: |
+          npm install
+          npm install --no-save @fontsource/dm-sans@5.0.18 @fontsource/poppins@5.0.14 @fontsource/oswald@5.0.17 @fontsource/bebas-neue@5.0.13 @fontsource/anton@5.0.13 @fontsource/righteous@5.0.13 @fontsource/teko@5.0.18 @fontsource/dancing-script@5.0.18 html2canvas@1.4.1 jspdf@2.5.1 xlsx@0.18.5
+      - name: Web files
+        working-directory: mobile
+        run: python3 prepare_www.py
+      - name: Android project + icon
+        working-directory: mobile
+        run: |
+          npx cap add android
+          mkdir -p assets && cp ../pc/build/icon.png assets/icon.png && cp ../pc/build/icon.png assets/splash.png
+          npx capacitor-assets generate --android --iconBackgroundColor '#ffffff' --splashBackgroundColor '#ffffff'
+          npx cap sync android
+      - name: Build APK
+        working-directory: mobile/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+          cp app/build/outputs/apk/debug/app-debug.apk ../../Magic-Memories.apk
+      - uses: actions/upload-artifact@v4
+        with: { name: Magic-Memories-APK, path: Magic-Memories.apk }
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.run_number }}
+          name: Magic Memories Android ${{ github.run_number }}
+          files: Magic-Memories.apk

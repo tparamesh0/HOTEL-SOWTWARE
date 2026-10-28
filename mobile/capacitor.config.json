@@ -1,0 +1,7 @@
+{
+  "appId": "com.magicmemories.tours",
+  "appName": "Magic Memories",
+  "webDir": "www",
+  "android": { "allowMixedContent": true, "webContentsDebuggingEnabled": false },
+  "server": { "androidScheme": "https" }
+}
