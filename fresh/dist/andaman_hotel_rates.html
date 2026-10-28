@@ -2167,19 +2167,21 @@ function loginHide(){const o=document.getElementById('loginOv');if(o)o.remove();
 function loginDraw(){const o=document.getElementById('loginOv'),L=UI.login;if(!o||!L)return;const c=S.set.company||{},setup=L.mode==='setup';
  o.innerHTML=`<div class="lgbox"><div class="lglogo">${S.set.logo?`<img src="${esc(S.set.logo)}" alt="">`:'🏝️'}</div><h2>${esc(c.name||S.set.appName||'Magic Memories')}</h2><p class="mini" style="margin:2px 0 16px">${setup?'Owner first-time setup — choose your password':'Log in to open the company data'}</p>
  <div class="lbl">Email</div><input type="email" id="lgEm" data-nocap autocomplete="username" value="${esc(L.email||(sbLS('lastEmail')||''))}" placeholder="you@gmail.com">
- ${setup?`<div class="lbl" style="margin-top:10px">Setup code (from Claude)</div><input type="text" id="lgCode" data-nocap placeholder="8 letters / numbers" style="text-transform:uppercase">`:''}
+ ${setup?`<div class="lbl" style="margin-top:10px">Setup code (from Claude)</div><input type="text" id="lgCode" data-nocap value="${esc(L.code||'')}" placeholder="8 letters / numbers" style="text-transform:uppercase">`:''}
  <div class="lbl" style="margin-top:10px">${setup?'New password':'Password'}</div><div class="lgpw"><input type="password" id="lgPw" data-nocap autocomplete="${setup?'new-password':'current-password'}" placeholder="${setup?'at least 6 characters':'Password'}"><button type="button" data-a="lgEye" aria-label="Show password">👁</button></div>
  ${setup?`<div class="lbl" style="margin-top:10px">New password again</div><input type="password" id="lgPw2" data-nocap autocomplete="new-password">`:''}
  ${L.msg?`<p class="lgerr">${L.msg}</p>`:''}
  <button class="btn" style="width:100%;margin-top:14px;padding:12px" data-a="${setup?'lgSetup':'lgIn'}" ${L.busy?'disabled':''}>${L.busy?'Please wait…':setup?'Set password & log in':'🔐 Log in'}</button>
  <div class="lglinks">${setup?`<button class="lnk" data-a="lgMode" data-k="in">← Back to log in</button>`:`<span class="mini">Forgot your password? Ask the owner to reset it (Settings → Team).</span><button class="lnk" data-a="lgMode" data-k="setup">Owner: first-time setup</button>`}</div></div>`;
  const f=o.querySelector(L.email||sbLS('lastEmail')?'#lgPw':'#lgEm');if(f)setTimeout(()=>f.focus(),30)}
-async function lgDo(kind){const L=UI.login;if(!L)return;const em=(($('#lgEm')||{}).value||'').trim().toLowerCase(),pw=($('#lgPw')||{}).value||'';L.email=em;
+async function lgDo(kind){const L=UI.login;if(!L)return;const em=(($('#lgEm')||{}).value||'').trim().toLowerCase(),pw=($('#lgPw')||{}).value||'',code=(($('#lgCode')||{}).value||'').trim(),pw2=($('#lgPw2')||{}).value||'';L.email=em;L.code=code;
  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){L.msg='Type your email.';loginDraw();return}
  if(pw.length<6){L.msg='The password has at least 6 characters.';loginDraw();return}
+ if(kind==='setup'&&pw!==pw2){L.msg='The two passwords are not the same.';loginDraw();return}
+ if(kind==='setup'&&code.length<6){L.msg='Type the setup code.';loginDraw();return}
  if(!navigator.onLine){L.msg='No internet. Connect once to log in — after that the app works offline too.';loginDraw();return}
  L.busy=1;L.msg='';loginDraw();const cl=sbClient();
- try{if(kind==='setup'){const code=(($('#lgCode')||{}).value||'').trim(),pw2=($('#lgPw2')||{}).value||'';if(pw!==pw2)throw new Error('The two passwords are not the same.');const r=await cl.rpc('mmt_owner_setup',{p_email:em,p_code:code,p_password:pw});if(r.error)throw r.error}
+ try{if(kind==='setup'){if(pw!==pw2)throw new Error('The two passwords are not the same.');const r=await cl.rpc('mmt_owner_setup',{p_email:em,p_code:code,p_password:pw});if(r.error)throw r.error}
   const r=await cl.auth.signInWithPassword({email:em,password:pw});if(r.error)throw r.error;sbLS('lastEmail',em);L.busy=0;await sbAfterLogin(r.data.user)}
  catch(e){L.busy=0;const m=String(e.message||e);L.msg=/Invalid login/i.test(m)?'Wrong email or password.':/banned/i.test(m)?'This login was removed by the owner.':/fetch|network/i.test(m)?'Could not reach the server — check the internet.':esc(m);loginDraw()}}
 
