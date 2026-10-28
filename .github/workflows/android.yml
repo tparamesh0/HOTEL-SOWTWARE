@@ -20,7 +20,7 @@ jobs:
         working-directory: mobile
         run: |
           npm install
-          npm install --no-save @fontsource/dm-sans@5.0.18 @fontsource/poppins@5.0.14 @fontsource/oswald@5.0.17 @fontsource/bebas-neue@5.0.13 @fontsource/anton@5.0.13 @fontsource/righteous@5.0.13 @fontsource/teko@5.0.18 @fontsource/dancing-script@5.0.18 html2canvas@1.4.1 jspdf@2.5.1 xlsx@0.18.5
+          npm install --no-save @fontsource/dm-sans@5.0.18 @fontsource/poppins@5.0.14 @fontsource/oswald@5.0.17 @fontsource/bebas-neue@5.0.13 @fontsource/anton@5.0.13 @fontsource/righteous@5.0.13 @fontsource/teko@5.0.18 @fontsource/dancing-script@5.0.18 html2canvas@1.4.1 jspdf@2.5.1 xlsx@0.18.5 @supabase/supabase-js@2.45.4
       - name: Web files
         working-directory: mobile
         run: python3 prepare_www.py

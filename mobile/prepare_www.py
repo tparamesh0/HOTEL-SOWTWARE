@@ -3,7 +3,7 @@ plus a small bridge so Save PDF / Excel / backup files are saved on the phone an
 import os,re,shutil,json,urllib.request
 R=os.path.dirname(os.path.abspath(__file__));W=os.path.join(R,'www');N=os.path.join(R,'node_modules')
 os.makedirs(os.path.join(W,'libs'),exist_ok=True);os.makedirs(os.path.join(W,'fonts'),exist_ok=True)
-for f in ['xlsx/dist/xlsx.full.min.js','html2canvas/dist/html2canvas.min.js','jspdf/dist/jspdf.umd.min.js']:shutil.copy(os.path.join(N,f),os.path.join(W,'libs'))
+for f in ['xlsx/dist/xlsx.full.min.js','html2canvas/dist/html2canvas.min.js','jspdf/dist/jspdf.umd.min.js','@supabase/supabase-js/dist/umd/supabase.js']:shutil.copy(os.path.join(N,f),os.path.join(W,'libs'))
 F={'dm-sans':('DM Sans',[400,500,600,700]),'poppins':('Poppins',[500,600,700]),'oswald':('Oswald',[600,700]),'bebas-neue':('Bebas Neue',[400]),'anton':('Anton',[400]),'righteous':('Righteous',[400]),'teko':('Teko',[600]),'dancing-script':('Dancing Script',[700])}
 css=[]
 for k,(fam,ws) in F.items():
