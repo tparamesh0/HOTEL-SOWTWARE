@@ -1,0 +1,37 @@
+name: Build Windows PC installer
+on:
+  push:
+    paths: ['fresh/pc/**','.github/workflows/pc.yml','data/PC_BUILD']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  win:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Build HTML
+        run: python build.py
+      - name: Install
+        working-directory: fresh/pc
+        run: npm install
+      - name: App files
+        working-directory: fresh/pc
+        run: python prepare_app.py
+      - name: Installer
+        working-directory: fresh/pc
+        run: npx electron-builder --win nsis --x64 --publish never
+        env: { CSC_IDENTITY_AUTO_DISCOVERY: 'false' }
+      - name: Rename
+        shell: bash
+        run: cp fresh/pc/dist/*Setup*.exe Magic-Memories-PC-Setup.exe
+      - name: Publish (fixed link, never marked latest)
+        shell: bash
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          gh release delete pc-latest --yes --cleanup-tag || true
+          gh release create pc-latest Magic-Memories-PC-Setup.exe --title "PC software (Windows) — latest installer" --notes "Windows installer. After installing, the software updates itself online (Settings → Software update)." --latest=false
