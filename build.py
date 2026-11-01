@@ -3,6 +3,7 @@ from src/app.src.html + data/seed.json + data/icons3d.json (Microsoft Fluent 3D 
 import pathlib
 r=pathlib.Path(__file__).parent
 src=(r/'src/app.src.html').read_text(encoding='utf-8')
+src=src.replace('__OTA_BUILD__',(r/'data/OTA_BUILD').read_text().strip(),1)
 seed=(r/'data/seed.json').read_text(encoding='utf-8').strip()
 icons=(r/'data/icons3d.json').read_text(encoding='utf-8').strip()
 assert '/*__DATA__*/[]' in src and '/*__ICONS__*/{}' in src
