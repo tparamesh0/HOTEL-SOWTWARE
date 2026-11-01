@@ -1,1 +1,3 @@
-Ferry: duplicate, big time, destination filter · History: filters + grid · Bills: package name heading, bigger day text, no page cut · Hotel photos · Faster instant sync · Recycle bin
+Devices list for the owner (who uses which phone/PC and which version)
+Update pop-up appears directly on the screen
+"Ask everyone to update now" button
