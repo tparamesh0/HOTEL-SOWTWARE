@@ -1,1 +1,2 @@
-Ferry timing filter: Evening = 3 PM to 6 PM, Afternoon = 12 to 3 PM, new Night = after 6 PM
+Phone: no empty frames on the sides — Settings use the full width
+Phone: Menu opens full screen with its own scroll and ✕ (dashboard no longer shows under it)

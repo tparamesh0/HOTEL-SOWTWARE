@@ -1,1 +1,1 @@
-{"build": 303, "ver": "2.5.2", "notes": "Ferry timing filter: Evening = 3 PM to 6 PM, Afternoon = 12 to 3 PM, new Night = after 6 PM", "date": "2026-11-01"}
+{"build": 304, "ver": "2.5.3", "notes": "Phone: no empty frames on the sides — Settings use the full width\nPhone: Menu opens full screen with its own scroll and ✕ (dashboard no longer shows under it)", "date": "2026-11-01"}
