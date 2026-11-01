@@ -1,1 +1,1 @@
-{"build": 304, "ver": "2.5.3", "notes": "Phone: no empty frames on the sides — Settings use the full width\nPhone: Menu opens full screen with its own scroll and ✕ (dashboard no longer shows under it)", "date": "2026-11-01"}
+{"build": 305, "ver": "2.6.0", "notes": "Phone: 2 cards per row and compact hotel lists — much less scrolling\n25 separate role controls (add / edit / delete for each part)\nPackage History Edit now follows the role controls", "date": "2026-11-01"}

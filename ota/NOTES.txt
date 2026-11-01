@@ -1,2 +1,3 @@
-Phone: no empty frames on the sides — Settings use the full width
-Phone: Menu opens full screen with its own scroll and ✕ (dashboard no longer shows under it)
+Phone: 2 cards per row and compact hotel lists — much less scrolling
+25 separate role controls (add / edit / delete for each part)
+Package History Edit now follows the role controls
