@@ -1,3 +1,1 @@
-Devices list for the owner (who uses which phone/PC and which version)
-Update pop-up appears directly on the screen
-"Ask everyone to update now" button
+Ferry timing filter: Evening = 3 PM to 6 PM, Afternoon = 12 to 3 PM, new Night = after 6 PM
