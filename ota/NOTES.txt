@@ -1,1 +1,2 @@
-Phone: Package History Grid view now shows 2 per row; List view is compact
+Role controls: new 👁️ See controls — anything not allowed is fully hidden (pages, rates, amounts, quotations)
+PC software install link in Settings → Team
