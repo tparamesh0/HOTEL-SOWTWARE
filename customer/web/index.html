@@ -61,7 +61,7 @@ button{font:inherit;color:inherit;cursor:pointer}img{max-width:100%;display:bloc
 .dot{position:relative;margin-top:12px;width:12px;height:12px;border-radius:50%;background:var(--card);border:2px solid var(--soft)}
 .it.done .dot{background:var(--ok);border-color:var(--ok)}.it.now .dot{border-color:var(--acc);background:var(--acc);box-shadow:0 0 0 4px var(--acc2)}.it.next .dot{border-color:var(--acc)}
 .ib2{border:0;background:none;text-align:left;width:100%;padding:8px 0 10px;display:block}
-.it:not(:last-child) .body{border-bottom:1px solid var(--line)}
+.it:not(:last-child) .body{border-bottom:1px solid var(--line)}.ib2:disabled{cursor:default;opacity:1}
 .ih{display:flex;gap:8px;align-items:flex-start}.ih .tx{flex:1;min-width:0}.ih b{font-size:14px;display:block}
 .ih .pl{color:var(--soft);font-size:12px}.chev{color:var(--soft);transition:transform .2s;margin-top:1px}.open .chev{transform:rotate(90deg)}
 .pill{font-size:10.5px;font-weight:700;letter-spacing:.03em;border-radius:6px;padding:2px 6px;background:var(--bg);color:var(--soft);white-space:nowrap}
@@ -101,6 +101,22 @@ textarea.ta{width:100%;border-radius:10px;border:1.5px solid var(--line);padding
 .menu{position:absolute;right:10px;top:50px;z-index:9;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:4px;min-width:200px;animation:pop .15s ease-out both}.menu button{display:block;width:100%;text-align:left;border:0;background:none;padding:10px 12px;border-radius:8px;font-size:13px}.menu button:active{background:var(--bg)}
 .live{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ok);margin-right:4px;vertical-align:middle}.live.off{background:var(--soft)}
 button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+/* done button beside each event */
+.dn{flex:none;border:1.5px solid var(--line);background:var(--card);color:var(--soft);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:4px;transition:background .15s,color .15s,border-color .15s,transform .1s}
+.dn:active{transform:scale(.94)}.dn.on{background:var(--ok);border-color:var(--ok);color:#fff}.dn.next{border-color:var(--acc);color:var(--acc)}
+.st2{display:inline-block;font-size:10.5px;font-weight:700;border-radius:6px;padding:1px 6px;margin-top:3px}.st2.now{background:var(--acc2);color:var(--acc)}.st2.next{background:var(--amb2);color:var(--amb)}
+/* instant message alert */
+.alrt{position:fixed;left:10px;right:10px;top:calc(10px + env(safe-area-inset-top,0px));z-index:40;max-width:520px;margin:0 auto;background:var(--card);border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.28);border:1px solid var(--line);overflow:hidden;animation:adown .35s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes adown{from{transform:translateY(-120%);opacity:0}}.alrt.out{transition:transform .3s,opacity .3s;transform:translateY(-120%);opacity:0}
+.alrt .ah{display:flex;align-items:center;gap:8px;background:var(--acc);color:#fff;padding:8px 14px;font-size:12px;font-weight:700;letter-spacing:.03em}
+.alrt .ab2{padding:12px 16px 14px}.alrt h4{margin:0 0 4px;font-size:17px;line-height:1.3}.alrt p{margin:0;font-size:15px;line-height:1.5;white-space:pre-line}
+.alrt .bar{height:3px;background:var(--acc);transform-origin:left;animation:abar 7s linear forwards}@keyframes abar{to{transform:scaleX(0)}}
+.alrt.night .ah{background:#3b2d7a}
+.perm{display:flex;gap:10px;align-items:center;background:var(--acc2);color:var(--ink);border-radius:12px;padding:10px 12px;font-size:13px}.perm .btn{margin-left:auto;white-space:nowrap}
+/* pull to refresh */
+.ptr{position:fixed;left:50%;top:calc(56px + env(safe-area-inset-top,0px));z-index:7;transform:translate(-50%,-140px);opacity:0;width:36px;height:36px;border-radius:50%;background:var(--card);box-shadow:0 4px 14px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--acc);transition:transform .2s}
+.ptr.vis{opacity:1}.ptr.spin span{animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.closed{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:30px 24px;min-height:100%}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition:none!important}}
 </style></head>
 <body>
@@ -140,16 +156,29 @@ function loginView(err){show('login');$('#login').innerHTML=`<div class="lw fi">
   try{const r=await rpc('mmc_login',{p_code:code,p_device:(navigator.userAgent||'').slice(0,60)});if(!r||!r.ok){$('#lerr').textContent=(r&&r.err)||'Could not open the booking';b.disabled=false;b.textContent='Open my tour';return}
    ST.tok=r.token;LS.set('tok',r.token);LS.set('lastCode',code);ST.data=null;LS.del('data');LS.set('seen',{});welcomeView(r.name)}
   catch(x){$('#lerr').textContent=navigator.onLine?'Could not reach the server. Please try again.':'No internet connection. Please connect and try again.';b.disabled=false;b.textContent='Open my tour'}})}
-function welcomeView(name){show('welcome');const p=load(true);$('#welcome').innerHTML=`<div class="fi"><div class="ge" aria-hidden="true">👋</div><h1>Welcome, ${esc(first(name))}!</h1><p class="sub" style="margin-top:6px">We're delighted to have you with us.</p><p style="font-weight:600;margin:10px 0 0">Your Journey Begins Here!</p></div>`;setTimeout(()=>p.then(()=>{draw();rtStart();setTimeout(()=>greetings(true),400);phoneAlarms()}),1600)}
+function welcomeView(name){show('welcome');const p=load(true);$('#welcome').innerHTML=`<div class="fi"><div class="ge" aria-hidden="true">👋</div><h1>Welcome, ${esc(first(name))}!</h1><p class="sub" style="margin-top:6px">We're delighted to have you with us.</p><p style="font-weight:600;margin:10px 0 0">Your Journey Begins Here!</p></div>`;setTimeout(()=>p.then(()=>{draw();rtStart();setTimeout(()=>greetings(true),400);askPerm(false).then(()=>phoneAlarms())}),1600)}
 
 /* ---------- data + instant updates ---------- */
 let loading=null;
 function load(silent){if(!ST.tok)return Promise.resolve(false);if(loading)return loading;loading=(async()=>{
- try{const d=await rpc('mmc_data',{p_token:ST.tok});if(!d||!d.ok){if(d&&d.err==='session'){logout(true,'Your booking session has ended. Please enter your Booking ID again.');return false}throw new Error('bad')}
+ try{const d=await rpc('mmc_data',{p_token:ST.tok});if(!d||!d.ok){if(d&&d.err==='closed'){closedView();return false}if(d&&d.err==='session'){logout(true,'Your booking session has ended. Please enter your Booking ID again.');return false}throw new Error('bad')}
   const prev=ST.data;ST.skew=new Date(d.now)-Date.now();ST.data=d;ST.at=Date.now();ST.offline=false;LS.set('data',d);LS.set('at',ST.at);
   if(prev&&prev.unlocked<d.unlocked&&d.unlocked>0){notify('🌅 Day '+d.unlocked+' is now open',`Day ${d.unlocked} of your tour is now available.`);ST.day=d.unlocked}
-  if(prev){const old=new Set((prev.notifs||[]).map(n=>n.id));(d.notifs||[]).filter(n=>!old.has(n.id)).forEach(n=>notify('🔔 '+n.title,n.body))}
+  if(prev){const old=new Set((prev.notifs||[]).map(n=>n.id));(d.notifs||[]).filter(n=>!old.has(n.id)&&!n.read_at).reverse().forEach(n=>bigAlert(n))}
   unlockTimer();return true}catch(e){ST.offline=true;if(!silent&&!ST.data)toast('No connection — showing saved information');return !!ST.data}finally{loading=null}})();return loading}
+/* ---------- instant message alert: sound + big banner for a few seconds + phone notification ---------- */
+let AC=null,alertQ=[],alertOn=false;
+function chime(night){try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();const t=AC.currentTime;(night?[523.25,659.25,783.99]:[880,1174.66,1318.5]).forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t+i*.13);g.gain.linearRampToValueAtTime(.25,t+i*.13+.02);g.gain.exponentialRampToValueAtTime(.001,t+i*.13+.6);o.connect(g);g.connect(AC.destination);o.start(t+i*.13);o.stop(t+i*.13+.65)})}catch(e){}try{navigator.vibrate&&navigator.vibrate([120,60,120])}catch(e){}}
+function bigAlert(n){alertQ.push(n);phoneNote(n);if(!alertOn)nextAlert()}
+function nextAlert(){const n=alertQ.shift();if(!n){alertOn=false;return}alertOn=true;const night=n.kind==='night';chime(night);
+ const a=document.createElement('div');a.className='alrt'+(night?' night':'');a.setAttribute('role','alert');a.innerHTML=`<div class="ah"><span aria-hidden="true">${night?'🌙':'🔔'}</span>${night?'Good night from Magic Memories':'New message from Magic Memories'}</div><div class="ab2"><h4>${esc(n.title)}</h4><p>${esc(n.body||'')}</p></div><div class="bar"></div>`;document.body.appendChild(a);
+ const close=()=>{if(a.dataset.c)return;a.dataset.c=1;a.classList.add('out');setTimeout(()=>{a.remove();const i=$('#bell');if(i){i.animate&&i.animate([{transform:'scale(1)'},{transform:'scale(1.25)'},{transform:'scale(1)'}],{duration:400})}nextAlert()},300)};a.onclick=close;setTimeout(close,7000);
+ if(permNeeded())setTimeout(()=>{const p=$('#permc');if(p&&p.animate)p.animate([{transform:'scale(1)'},{transform:'scale(1.04)'},{transform:'scale(1)'}],{duration:500})},7400)}
+function permNeeded(){if(window.Capacitor)return false;return 'Notification' in window&&Notification.permission==='default'}
+async function askPerm(gesture){try{const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications;if(LN){let p=await LN.checkPermissions();if(p.display!=='granted')p=await LN.requestPermissions();return p.display==='granted'}
+ if('Notification' in window&&Notification.permission==='default'&&gesture){await Notification.requestPermission();draw()}}catch(e){}return false}
+let noteId=5000;function phoneNote(n){try{const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications;if(LN){LN.schedule({notifications:[{id:++noteId,title:n.title,body:n.body||'',schedule:{at:new Date(Date.now()+300),allowWhileIdle:true}}]}).catch(()=>{});return}
+ if('Notification' in window&&Notification.permission==='granted'&&document.hidden)new Notification(n.title,{body:n.body||'',icon:LOGO,tag:'mmc-'+n.id})}catch(e){}}
 function notify(t,b){toast(t);try{if('Notification' in window&&Notification.permission==='granted'&&document.hidden)new Notification(t,{body:b||'',icon:LOGO})}catch(e){}}
 let rtT=null;function refreshSoon(){clearTimeout(rtT);rtT=setTimeout(async()=>{if(await load(true)){draw();phoneAlarms();checkUpdate()}},250)}
 /* realtime: the server pushes a message the moment Magic Memories changes anything */
@@ -163,8 +192,8 @@ function rtStart(){const chan=ST.data&&ST.data.chan;if(!chan||!ST.tok)return;if(
 function rtStop(){const w=RT.ws;RT.ws=null;RT.ok=false;clearInterval(RT.hb);if(w)try{w.close()}catch(e){}}
 function liveDot(){const d=$('#live');if(d){d.className='live'+(RT.ok?'':' off');d.title=RT.ok?'Live':'Connecting…'}}
 /* safety net: a tiny check every 15 s (every 6 s if the live link is down) */
-async function poll(){if(!ST.tok||document.hidden)return;try{const v=await rpc('mmc_ver',{p_token:ST.tok},8000);if(v==='session'){logout(true,'Your booking session has ended. Please enter your Booking ID again.');return}if(v!==ST.ver){const f0=!ST.ver;ST.ver=v;if(!f0)refreshSoon()}if(ST.offline){ST.offline=false;draw()}}catch(e){if(!ST.offline){ST.offline=true;draw()}}}
-(function tick(){poll();setTimeout(tick,RT.ok?15000:6000)})();
+async function poll(){if(!ST.tok||document.hidden)return;try{const v=await rpc('mmc_ver',{p_token:ST.tok},8000);if(v==='closed'){closedView();return}if(v==='session'){logout(true,'Your booking session has ended. Please enter your Booking ID again.');return}if(v!==ST.ver){const f0=!ST.ver;ST.ver=v;if(!f0)refreshSoon()}if(ST.offline){ST.offline=false;draw()}}catch(e){if(!ST.offline){ST.offline=true;draw()}}}
+(function tick(){poll();setTimeout(tick,4000)})();
 let ulT=null;function unlockTimer(){clearTimeout(ulT);const d=ST.data;if(!d||!d.next_unlock)return;const ms=new Date(d.next_unlock)-nowS()+3000;if(ms>0&&ms<864e5*2)ulT=setTimeout(()=>refreshSoon(),ms)}
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ST.tok){refreshSoon();rtStart();setTimeout(()=>greetings(),500)}});
 window.addEventListener('online',()=>{if(ST.tok){refreshSoon();rtStart()}});window.addEventListener('offline',()=>{ST.offline=true;if(ST.data)draw()});
@@ -172,22 +201,23 @@ window.addEventListener('online',()=>{if(ST.tok){refreshSoon();rtStart()}});wind
 /* ---------- home ---------- */
 const ICON={activity:'📍',ferry:'⛴️',pickup:'🚕'};
 function stateOf(it,date,done){const now=tzParts(nowS()),t=tmin(it.time);if(done.has(it.id))return 'done';if(date<now.date)return 'past';if(date>now.date||t==null)return 'up';if(now.min>=t&&now.min<t+durMin(it.duration))return 'now';if(now.min>=t+durMin(it.duration))return 'past';return 'up'}
-function itemRow(it,D,done,isNext){const s=stateOf(it,D.date,done),dt=it.data||{},open=ST.open[it.id]!=null?ST.open[it.id]:(s==='now'||isNext);
- const pill={done:['done','Done'],now:['now','Now'],past:['','Pending'],up:[isNext?'next':'',isNext?'Next':'']}[s];
+function itemRow(it,D,done,isNext){const s=stateOf(it,D.date,done),dt=it.data||{},open=ST.open[it.id]!=null?ST.open[it.id]:false,isDone=s==='done';
  let key='';if(it.kind==='ferry')key=`<div class="key">${dt.report?`<span>Report ${esc(dt.report)}</span>`:''}${it.time?`<span class="b">Departs ${esc(it.time)}</span>`:''}</div>`;
  if(it.kind==='pickup')key=`<div class="key"><span class="b">Pickup ${esc(it.time||'—')}</span>${it.place?`<span>Wait at ${esc(it.place)}</span>`:''}</div>`;
  const kv=it.kind==='ferry'?[['Ferry',[dt.name,dt.number&&'#'+dt.number].filter(Boolean).join(' ')],['Report at',dt.reportAt],['Harbour',dt.harbour],['To',dt.to],['Ticket',dt.ticket],['Status',dt.status]]:it.kind==='pickup'?[['Vehicle',[dt.vehicle,dt.reg].filter(Boolean).join(' · ')],['Driver',dt.driver],['Going to',dt.next],['Journey',dt.eta]]:[['Duration',it.duration]];
  const kvH=kv.filter(x=>x[1]).map(x=>`<span>${x[0]}</span><b>${esc(x[1])}</b>`).join('');
- const acts=[it.map&&`<a class="btn o s" href="${esc(it.map)}" target="_blank" rel="noopener">🗺️ Directions</a>`,it.kind==='pickup'&&dt.dphone&&`<a class="btn o s" href="tel:${esc(String(dt.dphone).replace(/[^\d+]/g,''))}">📞 Call driver</a>`,`<button class="btn s ${s==='done'?'o':''}" data-mark="${it.id}" data-v="${s==='done'?0:1}">${s==='done'?'Undo':'✓ Mark as done'}</button>`].filter(Boolean).join('');
- return `<div class="it ${s==='done'?'done':s==='now'?'now':isNext?'next':''} ${open?'open':''}"><div class="tm">${esc(it.time||'')}</div><div class="rail"><span class="dot"></span></div>
- <div class="body"><button class="ib2" data-tg="${it.id}" aria-expanded="${open}"><div class="ih"><span aria-hidden="true">${ICON[it.kind]||'📍'}</span><div class="tx"><b>${esc(it.title||'')}</b>${it.place&&it.kind==='activity'?`<div class="pl">${esc(it.place)}</div>`:''}${key}</div>${pill[1]?`<span class="pill ${pill[0]}">${pill[1]}</span>`:''}<span class="chev" aria-hidden="true">›</span></div></button>
- <div class="det"><div><div class="in">${it.photo?(open?`<img src="${esc(it.photo)}" alt="" decoding="async">`:`<img data-src="${esc(it.photo)}" alt="" decoding="async">`):''}${it.descr?`<p>${esc(it.descr)}</p>`:''}${kvH?`<div class="kv">${kvH}</div>`:''}${it.instructions?`<div class="ins">ℹ️ ${esc(it.instructions)}</div>`:''}<div class="acts">${acts}</div></div></div></div></div></div>`}
+ const acts=[it.map&&`<a class="btn o s" href="${esc(it.map)}" target="_blank" rel="noopener">🗺️ Directions</a>`,it.kind==='pickup'&&dt.dphone&&`<a class="btn o s" href="tel:${esc(String(dt.dphone).replace(/[^\d+]/g,''))}">📞 Call driver</a>`].filter(Boolean).join('');
+ const hasDet=!!(it.photo||it.descr||kvH||it.instructions||acts),st2=s==='now'?'<span class="st2 now">Now</span>':(isNext&&!isDone)?'<span class="st2 next">Next</span>':'';
+ return `<div class="it ${isDone?'done':s==='now'?'now':isNext?'next':''} ${open?'open':''}"><div class="tm">${esc(it.time||'')}</div><div class="rail"><span class="dot"></span></div>
+ <div class="body"><div class="ih" style="padding:8px 0 10px"><button class="ib2" style="padding:0;flex:1;min-width:0" data-tg="${it.id}" aria-expanded="${open}" ${hasDet?'':'disabled'}><div class="ih"><span aria-hidden="true">${ICON[it.kind]||'📍'}</span><div class="tx"><b>${esc(it.title||'')}</b>${it.place&&it.kind==='activity'?`<div class="pl">${esc(it.place)}</div>`:''}${key}${st2}</div>${hasDet?'<span class="chev" aria-hidden="true">›</span>':''}</div></button>
+ <button class="dn ${isDone?'on':isNext||s==='now'?'next':''}" data-mark="${it.id}" data-v="${isDone?0:1}" aria-pressed="${isDone}" aria-label="${isDone?'Done — tap to undo':'Mark '+esc(it.title||'this')+' as done'}">${isDone?'✓ Done':'Done'}</button></div>
+ ${hasDet?`<div class="det"><div><div class="in">${it.photo?(open?`<img src="${esc(it.photo)}" alt="" decoding="async">`:`<img data-src="${esc(it.photo)}" alt="" decoding="async">`):''}${it.descr?`<p>${esc(it.descr)}</p>`:''}${kvH?`<div class="kv">${kvH}</div>`:''}${it.instructions?`<div class="ins">ℹ️ ${esc(it.instructions)}</div>`:''}${acts?`<div class="acts">${acts}</div>`:''}</div></div></div>`:''}</div></div>`}
 function countdown(iso){const ms=new Date(iso)-nowS();if(!(ms>0))return '';const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);return `<div class="cd">${d?`<div><b>${d}</b><small>days</small></div>`:''}<div><b>${h}</b><small>hours</small></div><div><b>${m}</b><small>min</small></div></div>`}
 const tel=p=>String(p).replace(/[^\d+]/g,''),wa=p=>{let n=String(p).replace(/\D/g,'');if(n.length===10)n='91'+n;return n};
 function remLists(d){return {RD:(d.docs||[]).filter(x=>(x.kind||'doc')==='doc'),RM:[...(d.terms||[]).map(t=>typeof t==='string'?{name:t}:t),...(d.docs||[]).filter(x=>x.kind==='term')]}}
 let lastDay=null;
 function draw(){const d=ST.data;if(!d){loginView();return}show('home');const b=d.booking,done=new Set(d.done||[]),today=tzParts(nowS()).date,days=d.days||[];
- if(ST.day==null)ST.day=Math.max(1,Math.min(d.unlocked||1,b.days));const D=days[ST.day-1]||{day:ST.day,locked:true,items:[]},unread=(d.notifs||[]).filter(n=>!n.read_at).length;
+ if(ST.day==null){const td=days.find(x=>x.date===today&&!x.locked),op=days.filter(x=>!x.locked).pop();ST.day=td?td.day:op?op.day:1}const D=days[ST.day-1]||{day:ST.day,locked:true,items:[]},unread=(d.notifs||[]).filter(n=>!n.read_at).length;
  const items=D.items||[],nextIdx=D.locked?-1:items.findIndex(it=>{const s=stateOf(it,D.date,done);return s==='up'||s==='now'}),doneN=items.filter(i=>done.has(i.id)).length;
  const {RD,RM}=remLists(d),rN=RD.length+RM.length;
  const alerts=[];days.filter(x=>!x.locked&&(x.date===today||x.date===fdIso(today,1))).forEach(x=>(x.items||[]).forEach(it=>{if(done.has(it.id)||it.kind==='activity'||stateOf(it,x.date,done)==='past')return;const dt=it.data||{},when=x.date===today?'Today':'Tomorrow';
@@ -196,7 +226,7 @@ function draw(){const d=ST.data;if(!d){loginView();return}show('home');const b=d
  const h=d.help||{},ph=(h.phones||[]).filter(Boolean),anim=lastDay!==ST.day;lastDay=ST.day;
  const lastDate=days.length?days[days.length-1].date:b.start,sc=$('#home').scrollTop;
  $('#home').innerHTML=`<div class="top"><img src="${LOGO}" alt=""><b>MM TravelMate<small><span class="live${RT.ok?'':' off'}" id="live"></span>by Magic Memories Tours and Travels</small></b><button class="ib" id="bell" aria-label="Messages${unread?', '+unread+' new':''}">🔔${unread?`<i>${unread}</i>`:''}</button><button class="ib" id="mnu" aria-label="Menu" aria-expanded="false">⋮</button></div>
- <div class="wrap">${ST.offline?`<div class="offl" role="status">📴 Offline — showing information saved at ${new Date(ST.at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</div>`:''}
+ <div class="wrap">${permNeeded()?`<div class="perm" id="permc"><span aria-hidden="true">🔔</span><span>Turn on notifications so you never miss a message from us.</span><button class="btn s" id="permb">Allow</button></div>`:''}${ST.offline?`<div class="offl" role="status">📴 Offline — showing information saved at ${new Date(ST.at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</div>`:''}
  <section class="card trip"><h2>${esc(b.passenger)}</h2><div class="pk">${esc(b.package||'Your tour')}</div><div class="meta"><span>🌙 ${b.nights}N / ${b.days}D</span><span>🗓️ ${fdate(b.start,{day:'2-digit',month:'short'})} – ${fdate(lastDate,{day:'2-digit',month:'short'})}</span><span>👤 ${b.adults}${b.children?' + 🧒 '+b.children:''}</span><span>🎫 ${esc(b.code)}</span></div></section>
  <div class="days" role="tablist" aria-label="Tour days">${days.map(x=>`<button class="dt ${x.day===ST.day?'on':''} ${x.locked?'lk':''} ${x.date===today?'today':''}" role="tab" aria-selected="${x.day===ST.day}" data-day="${x.day}"><b>${x.locked?'🔒 ':''}Day ${x.day}</b><small>${x.date===today?'Today':fdate(x.date,{day:'2-digit',month:'short'})}</small></button>`).join('')}</div>
  <div class="qa"><button class="qb" id="ieb"><span>✅ Included / Excluded<small>What Day ${ST.day} covers</small></span><span class="ar">›</span></button><button class="qb" id="remb"><span>📋 Documents & reminders<small>${rN?rN+' thing'+(rN===1?'':'s')+' to remember':'Nothing yet'}</small></span><span class="ar">›</span></button></div>
@@ -204,22 +234,26 @@ function draw(){const d=ST.data;if(!d){loginView();return}show('home');const b=d
   `<div class="dh"><h3>${esc(D.title||('Day '+D.day))}</h3><small>${doneN}/${items.length} done</small></div><div class="dsub">Day ${D.day} · ${fdate(D.date,{weekday:'long',day:'2-digit',month:'short'})}</div><div class="pb"><i style="width:${items.length?Math.round(100*doneN/items.length):0}%"></i></div>
   <div class="tl">${items.length?items.map((it,i)=>itemRow(it,D,done,i===nextIdx)).join(''):'<div class="empty">Your plan for this day will appear here soon.</div>'}</div>`}</section>
  ${alerts.length?`<section class="card"><h3 class="sec">🔔 Coming up</h3>${alerts.map(a=>`<div class="al"><span aria-hidden="true">${a[0]}</span><div><b>${esc(a[1])}</b><p>${esc(a[2])}</p></div></div>`).join('')}</section>`:''}
- <section class="card" id="helpc"><span class="hbadge">${esc(h.hours||'Available 24/7')}</span><h3 class="sec" style="margin-top:4px">Need help? We're here for you</h3><p class="sub">${esc((h.message||'Whatever you need, whenever you need us, Magic Memories Tours and Travels is always here to help you.').split('\n')[0])}</p>${helpBtns(h,ph)}</section>
- </div><button class="fab" id="fab" aria-label="Help desk">Help</button>`;
+ </div><button class="fab" id="fab" aria-label="Help desk — call, WhatsApp or email us">🆘 Help desk</button><div class="ptr" id="ptr" aria-hidden="true"><span>↻</span></div>`;
  if(!anim)$('#home').scrollTop=sc;bind()}
 function helpBtns(h,ph){const b=[ph[0]&&`<a class="btn" href="tel:${esc(tel(ph[0]))}">📞 Call</a>`,h.whatsapp&&`<a class="btn" style="background:#16a34a" href="https://wa.me/${esc(wa(h.whatsapp))}" target="_blank" rel="noopener">💬 WhatsApp</a>`,h.email&&`<a class="btn o" href="mailto:${esc(h.email)}">✉️ Email</a>`].filter(Boolean);
  return (b.length?`<div class="hb" style="grid-template-columns:repeat(${b.length},minmax(0,1fr))">${b.join('')}</div>`:'')+`<div class="ls">${ph.map(p=>`📞 <a href="tel:${esc(tel(p))}">${esc(p)}</a>`).join(' &nbsp; ')}${h.whatsapp?`<br>💬 ${esc(String(h.whatsapp).replace(/^\+?91(\d{10})$/,'+91 $1'))}`:''}${h.email?`<br>✉️ ${esc(h.email)}`:''}</div>`}
 function bind(){document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{ST.day=+b.dataset.day;draw();$('#home').scrollTo({top:0})});
  const on=$('.dt.on');if(on)on.scrollIntoView({inline:'center',block:'nearest'});
- $('#ieb').onclick=ieSheet;$('#remb').onclick=remSheet;$('#bell').onclick=notifSheet;$('#mnu').onclick=menu;$('#fab').onclick=helpSheet;
+ const pb=$('#permb');if(pb)pb.onclick=()=>askPerm(true);$('#ieb').onclick=ieSheet;$('#remb').onclick=remSheet;$('#bell').onclick=notifSheet;$('#mnu').onclick=menu;$('#fab').onclick=helpSheet;
  document.querySelectorAll('[data-tg]').forEach(b=>b.onclick=()=>{const it=b.closest('.it'),o=!it.classList.contains('open');it.classList.toggle('open',o);b.setAttribute('aria-expanded',o);ST.open[b.dataset.tg]=o;const im=it.querySelector('img[data-src]');if(o&&im){im.src=im.dataset.src;im.removeAttribute('data-src')}});
  document.querySelectorAll('[data-mark]').forEach(b=>b.onclick=()=>mark(b.dataset.mark,b.dataset.v==='1',b))}
 async function mark(id,done,btn){btn.disabled=true;const s=new Set(ST.data.done||[]);done?s.add(id):s.delete(id);ST.data.done=[...s];if(done){celebrate();ST.open[id]=false}draw();
  try{const r=await rpc('mmc_mark',{p_token:ST.tok,p_item:id,p_done:done});if(!r.ok)throw new Error(r.err);LS.set('data',ST.data);const D=ST.data.days[ST.day-1];
-  if(done&&D&&(D.items||[]).length&&(D.items||[]).every(i=>s.has(i.id))&&(ST.data.greet||{}).fb_on!==false)setTimeout(()=>feedback(D.day,true),1000)}
+  if(done&&tripDone(ST.data)){setTimeout(()=>tripReview(),1000)}else if(done&&D&&(D.items||[]).length&&(D.items||[]).every(i=>s.has(i.id))&&(ST.data.greet||{}).fb_on!==false)setTimeout(()=>feedback(D.day,true),1000)}
  catch(e){done?s.delete(id):s.add(id);ST.data.done=[...s];draw();toast(navigator.onLine?'Could not save — please try again':'No internet — please try again when online')}}
 function celebrate(){const o=modal(`<svg class="chk" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 22-24"/></svg><p style="margin:6px 0 0;font-weight:600">Done!</p>`,true);setTimeout(()=>o.remove(),850)}
 
+/* ---------- pull down from the top to refresh ---------- */
+(function(){let y0=null,dy=0;const H=()=>$('#home'),P=()=>$('#ptr');
+ document.addEventListener('touchstart',e=>{const h=H();if(!h||h.hidden||h.scrollTop>0||document.querySelector('.ov'))return;y0=e.touches[0].clientY;dy=0},{passive:true});
+ document.addEventListener('touchmove',e=>{if(y0==null)return;dy=Math.max(0,e.touches[0].clientY-y0);const p=P();if(p&&dy>8){p.classList.add('vis');p.style.transition='none';p.style.transform=`translate(-50%,${Math.min(dy,110)*.7-80}px) rotate(${dy*2}deg)`}},{passive:true});
+ document.addEventListener('touchend',async()=>{if(y0==null)return;const p=P(),go=dy>70;y0=null;if(!p)return;p.style.transition='';if(!go){p.style.transform='';p.classList.remove('vis');return}p.style.transform='translate(-50%,10px)';p.classList.add('spin');const ok=await load(true);if(ok)draw();const q=P();if(q){q.classList.remove('spin','vis');q.style.transform=''}toast(ok&&!ST.offline?'✓ Up to date':'No connection — showing saved information')})})();
 /* ---------- sheets ---------- */
 function modal(html,mid){const o=document.createElement('div');o.className='ov'+(mid?' mid':'');o.innerHTML=`<div class="sh" role="dialog" aria-modal="true">${html}</div>`;o.addEventListener('click',e=>{if(e.target===o||e.target.closest('[data-close]'))o.remove()});$('#layer').appendChild(o);return o}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){const o=[...document.querySelectorAll('.ov')].pop();if(o)o.remove();const m=$('.menu');if(m)m.remove()}});
@@ -227,15 +261,29 @@ const X='<button class="x" data-close aria-label="Close">✕</button>';
 function ieSheet(){const D=(ST.data.days||[])[ST.day-1]||{};if(D.locked){modal(`${X}<h3>Day ${D.day}</h3><p class="sub">These details open together with this day's plan.</p>`);return}
  modal(`${X}<h3>Day ${D.day} · What's covered</h3><p class="sub">Included items are part of your package. Excluded items are not covered and may need separate payment.</p><div class="grp in"><h4>✅ Included</h4>${(D.included||[]).length?`<ul>${D.included.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="sub">Our team will share the details.</p>'}</div><div class="grp ex"><h4>❌ Not included</h4>${(D.excluded||[]).length?`<ul>${D.excluded.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="sub">Nothing listed for this day.</p>'}</div>`)}
 function remSheet(){const {RD,RM}=remLists(ST.data);modal(`${X}<h3>📋 Documents & reminders</h3><p class="sub">Please keep these ready for a smooth trip.</p>${RD.length?`<div class="grp"><h4>📄 Documents to carry</h4><ul>${RD.map(x=>`<li><b>${esc(x.name)}</b>${x.note?`<small>${esc(x.note)}</small>`:''}</li>`).join('')}</ul></div>`:''}${RM.length?`<div class="grp"><h4>📌 Important notes</h4><ul>${RM.map(x=>`<li>${esc(x.name)}${x.note?`<small>${esc(x.note)}</small>`:''}</li>`).join('')}</ul></div>`:''}${!RD.length&&!RM.length?'<div class="empty">Nothing to remember yet.</div>':''}`)}
-function helpSheet(){const h=(ST.data&&ST.data.help)||{},ph=(h.phones||[]).filter(Boolean);modal(`${X}<h3>Help Desk · 24/7</h3><p class="sub">${esc((h.message||'We are always here to help you.').split('\n')[0])}</p>${helpBtns(h,ph)}`)}
-function notifSheet(){const L=ST.data.notifs||[];modal(`${X}<h3>🔔 Messages</h3>${L.length?L.map(n=>`<div class="nt ${n.read_at?'':'new'}"><b>${esc(n.title)}</b><p>${esc(n.body)}</p><small>${new Date(n.created_at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</small></div>`).join(''):'<div class="empty">No messages yet.</div>'}${'Notification' in window&&Notification.permission==='default'&&!window.Capacitor?'<button class="btn w" id="npm">Allow notifications</button>':''}`);
- const b=$('#npm');if(b)b.onclick=()=>Notification.requestPermission().then(()=>b.remove());
+function helpSheet(){const h=(ST.data&&ST.data.help)||{},ph=(h.phones||[]).filter(Boolean);modal(`${X}<span class="hbadge">${esc(h.hours||'Available 24/7')}</span><h3 style="margin-top:4px">🆘 Help Desk${h.team?' · '+esc(h.team):''}</h3><p class="sub" style="white-space:pre-line">${esc(h.message||"We're available 24/7! Whatever you need, whenever you need us, Magic Memories Tours and Travels is always here to help you.\nYour Journey, Our Responsibility.")}</p>${helpBtns(h,ph)}`)}
+function notifSheet(){const L=ST.data.notifs||[];const o=modal(`${X}<h3>🔔 Messages</h3>${L.length?'<button class="btn o s" id="nclr" style="margin:4px 0 6px">🧹 Clear all</button>':''}${L.length?L.map(n=>`<div class="nt ${n.read_at?'':'new'}"><b>${esc(n.title)}</b><p>${esc(n.body)}</p><small>${new Date(n.created_at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</small></div>`).join(''):'<div class="empty">No messages yet.</div>'}${'Notification' in window&&Notification.permission==='default'&&!window.Capacitor?'<button class="btn w" id="npm">Allow notifications</button>':''}`);
+ const b=$('#npm');if(b)b.onclick=()=>Notification.requestPermission().then(()=>{b.remove();draw()});
+ const c=o.querySelector('#nclr');if(c)c.onclick=async()=>{c.disabled=true;try{const r=await rpc('mmc_notif_clear',{p_token:ST.tok});if(!r.ok)throw 0;ST.data.notifs=[];LS.set('data',ST.data);o.remove();draw();toast('🧹 Messages cleared')}catch(e){c.disabled=false;toast('Could not clear — please try again')}};
  if(L.some(n=>!n.read_at))rpc('mmc_notif_read',{p_token:ST.tok}).then(()=>{L.forEach(n=>n.read_at=n.read_at||new Date().toISOString());LS.set('data',ST.data);const i=$('#bell i');if(i)i.remove()}).catch(()=>{})}
-function menu(){const old=$('.menu');if(old){old.remove();return}const m=document.createElement('div');m.className='menu';m.setAttribute('role','menu');m.innerHTML=`<button role="menuitem" data-m="refresh">↻ Refresh</button><button role="menuitem" data-m="out">🔁 Change Booking ID</button>`;$('#home').appendChild(m);
- m.onclick=async e=>{const k=e.target.dataset.m;m.remove();if(k==='refresh'){toast('Refreshing…');if(await load())draw()}if(k==='out')logout(false)}}
+function menu(){const old=$('.menu');if(old){old.remove();return}const m=document.createElement('div');m.className='menu';m.setAttribute('role','menu');m.innerHTML=`<button role="menuitem" data-m="help">🆘 Help desk</button><button role="menuitem" data-m="out">🔁 Change Booking ID</button>`;$('#home').appendChild(m);
+ m.onclick=async e=>{const k=e.target.dataset.m;m.remove();if(k==='help')helpSheet();if(k==='out')logout(false)}}
 function logout(silent,msg){try{const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications;if(LN)LN.getPending().then(p=>p.notifications.length&&LN.cancel({notifications:p.notifications.map(n=>({id:n.id}))}));alarmSig=''}catch(e){}
  const t=ST.tok;if(t&&!silent)rpc('mmc_logout',{p_token:t}).catch(()=>{});rtStop();ST.tok=null;ST.data=null;ST.day=null;ST.ver='';ST.open={};['tok','data','at','seen'].forEach(LS.del);loginView(msg||'')}
 
+/* ---------- tour closed: thank-you screen ---------- */
+function closedView(){const name=ST.data?first(ST.data.booking.passenger):'';rtStop();ST.tok=null;ST.data=null;ST.day=null;ST.ver='';['tok','data','at','seen'].forEach(LS.del);document.querySelectorAll('.ov,.alrt,.upd').forEach(x=>x.remove());show('login');
+ $('#login').innerHTML=`<div class="closed fi"><img class="lg" src="${LOGO}" alt=""><div class="ge" aria-hidden="true">🙏</div><h2 style="margin:4px 0">Thank you${name?', '+esc(name):''}!</h2><p class="sub" style="max-width:320px">Your tour with Magic Memories Tours and Travels is complete. We hope to welcome you again soon!</p><button class="btn w" style="max-width:320px" id="again">Open another Booking ID</button></div>`;$('#again').onclick=()=>loginView('')}
+/* ---------- end of the trip: congratulations + whole-trip rating ---------- */
+function tripDone(d){const days=d.days||[],done=new Set(d.done||[]),today=tzParts(nowS()).date,last=days[days.length-1];if(!last||(d.feedback||{})[0])return false;
+ const all=days.every(x=>!x.locked)&&days.some(x=>(x.items||[]).length)&&days.every(x=>(x.items||[]).every(i=>done.has(i.id)));return all||today>last.date}
+function tripReview(){const d=ST.data,seen=LS.get('seen',{}),today=tzParts(nowS()).date;if(seen.trip===today)return false;seen.trip=today;LS.set('seen',seen);let stars=0;const nm=first(d.booking.passenger);chime(false);
+ const o=modal(`<div class="ge" aria-hidden="true">🎉</div><h3 style="margin-top:8px;font-size:18px">Congratulations, ${esc(nm)}!</h3><p class="gt" style="font-size:14px">All your tour events are completed.
+You are our valuable customer — we are truly lucky to have a customer like you.</p><p style="font-weight:600;margin:8px 0 0">How would you rate your whole trip?</p><div class="stars" role="radiogroup" aria-label="Trip rating">${[1,2,3,4,5].map(n=>`<button role="radio" aria-checked="false" aria-label="${n} star${n>1?'s':''}" data-s="${n}">★</button>`).join('')}</div><textarea class="ta" id="trc" rows="2" placeholder="Tell us about your trip (optional)"></textarea><button class="btn w" id="trs">Submit my review</button><button class="btn o w" data-close style="margin-top:8px">Later</button>`,true);
+ o.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{stars=+b.dataset.s;o.querySelectorAll('[data-s]').forEach(x=>{x.classList.toggle('on',+x.dataset.s<=stars);x.setAttribute('aria-checked',+x.dataset.s===stars)})});
+ o.querySelector('#trs').onclick=async()=>{if(!stars){toast('Tap the stars to rate your trip');return}const btn=o.querySelector('#trs');btn.disabled=true;try{const r=await rpc('mmc_feedback_save',{p_token:ST.tok,p_day:0,p_stars:stars,p_comment:o.querySelector('#trc').value});if(!r.ok)throw 0;(ST.data.feedback=ST.data.feedback||{})[0]={stars};LS.set('data',ST.data);
+  o.querySelector('.sh').innerHTML=`<div class="ge" aria-hidden="true">💚</div><h3 style="margin-top:8px">Thank you, ${esc(nm)}!</h3><p class="gt" style="font-size:14px">Your review means a lot to us.
+We hope to see you again soon!</p><button class="btn w" data-close>Close</button>`;setTimeout(()=>refreshSoon(),1500)}catch(e){btn.disabled=false;toast('Could not send — please try again')}};return true}
 /* ---------- greetings (each time the app is opened) & feedback ---------- */
 function fill(t){return String(t||'').replace(/\{name\}/g,first(ST.data.booking.passenger))}
 function feedback(day,auto){const seen=LS.get('seen',{}),k='fb'+day;if(auto&&seen[k])return;seen[k]=1;LS.set('seen',seen);let stars=((ST.data.feedback||{})[day]||{}).stars||0;
@@ -244,18 +292,18 @@ function feedback(day,auto){const seen=LS.get('seen',{}),k='fb'+day;if(auto&&see
  o.querySelector('#fbs').onclick=async()=>{if(!stars){toast('Tap the stars to rate');return}try{const r=await rpc('mmc_feedback_save',{p_token:ST.tok,p_day:day,p_stars:stars,p_comment:o.querySelector('#fbc').value});if(!r.ok)throw 0;(ST.data.feedback=ST.data.feedback||{})[day]={stars};LS.set('data',ST.data);o.remove();toast('Thank you for your feedback!')}catch(e){toast('Could not send — please try again')}}}
 let gLast=0;
 function greetCard(emoji,text,btn,onbtn){const o=modal(`<div class="ge" aria-hidden="true">${emoji}</div><p class="gt">${esc(text)}</p><button class="btn w" id="gbtn">${btn}</button>`,true);o.querySelector('#gbtn').onclick=()=>{o.remove();onbtn&&onbtn()}}
-function greetings(force){const d=ST.data;if(!d||!d.unlocked||document.querySelector('.ov'))return;if(!force&&Date.now()-gLast<15*60000)return;
+function greetings(force){const d=ST.data;if(!d||document.querySelector('.ov'))return;if(tripDone(d)&&tripReview())return;if(!d.unlocked)return;if(!force&&Date.now()-gLast<15*60000)return;
  const g=d.greet||{},now=tzParts(nowS()),seen=LS.get('seen',{}),days=d.days||[],D=days.find(x=>x.date===now.date&&!x.locked),done=new Set(d.done||[]),last=days[days.length-1];
  const prev=days.filter(x=>!x.locked&&x.date<now.date&&(x.items||[]).length&&(x.items||[]).every(i=>done.has(i.id))&&!(d.feedback||{})[x.day]).pop();
  if(prev&&!seen['fb'+prev.day]&&g.fb_on!==false){gLast=Date.now();feedback(prev.day,true);return}
  const mf=tmin(g.morning_from||'05:00'),mt=tmin(g.morning_to||'11:59'),nf=tmin(g.night_from||'18:00'),am=now.min>=mf&&now.min<=mt,pm=now.min>=nf||now.min<mf;
  if(am&&D&&g.morning&&g.am_on!==false){gLast=Date.now();greetCard('☀️',fill(g.morning),"See today's plan",()=>{ST.day=D.day;draw()});return}
- if(pm&&g.pm_on!==false){const yest=fdIso(now.date,-1),onTour=days.some(x=>x.date===now.date)||(now.min<mf&&last&&last.date>=yest);if(!onTour)return;
+ if(false){const yest=fdIso(now.date,-1),onTour=days.some(x=>x.date===now.date)||(now.min<mf&&last&&last.date>=yest);if(!onTour)return;
   const isLast=last&&(last.date===now.date||(now.min<mf&&last.date===yest));
   gLast=Date.now();greetCard('🌙',isLast?`Good Night, ${first(d.booking.passenger)}!\nHope you had a wonderful trip with us!\nThank you for travelling with Magic Memories Tours and Travels.`:fill(g.night||'Good Night, {name}!\nSee You Tomorrow!'),'Good night')}}
 
 /* ---------- automatic updates ---------- */
-const CBUILD=+'6',REMOTE='https://magic-memories-customer.vercel.app/',IS_APP=location.hostname==='localhost',VER_URL=(IS_APP||location.protocol!=='https:'?REMOTE:'/')+'version.json';
+const CBUILD=+'7',REMOTE='https://magic-memories-customer.vercel.app/',IS_APP=location.hostname==='localhost',VER_URL=(IS_APP||location.protocol!=='https:'?REMOTE:'/')+'version.json';
 async function checkUpdate(){try{const r=await fetch(VER_URL+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(!(v.build>CBUILD)||$('.upd'))return;
  if(!ST.tok||$('#home').hidden){applyUpdate(v.build);return}
  const u=document.createElement('div');u.className='upd';u.setAttribute('role','status');u.innerHTML=`<span aria-hidden="true">🎉</span><span><b>New update available</b><small>${esc(v.notes||'Improvements to your tour app')}</small></span><button class="btn s" id="updb">Update now</button>`;document.body.appendChild(u);u.querySelector('#updb').onclick=()=>applyUpdate(v.build)}catch(e){}}

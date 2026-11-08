@@ -1,1 +1,1 @@
-Customer app is now called MM TravelMate.
+Customer Bookings: package fills the whole day plan, drag & drop, destinations, day lock/unlock, delete with countdown, close tour, good night. Dashboard: Website + Admin Website.
