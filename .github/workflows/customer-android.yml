@@ -1,0 +1,57 @@
+name: Build Customer App APK
+on:
+  push:
+    paths: ['customer/src/**','customer/mobile/**','customer/build.py','.github/workflows/customer-android.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: customer-apk, cancel-in-progress: true }
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - name: Build web app
+        run: python3 customer/build.py
+      - name: Install
+        working-directory: customer/mobile
+        run: |
+          npm install
+          npm install --no-save @fontsource/poppins@5.0.14
+      - name: Web files
+        working-directory: customer/mobile
+        run: python3 prepare_www.py
+      - name: Android project + icon
+        working-directory: customer/mobile
+        run: |
+          npx cap add android
+          mkdir -p assets && cp ../../pc/build/icon.png assets/icon.png && cp ../../pc/build/icon.png assets/splash.png
+          npx capacitor-assets generate --android --iconBackgroundColor '#ffffff' --splashBackgroundColor '#ff4f7b'
+          npx cap sync android
+      - name: Build APK
+        working-directory: customer/mobile/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon -Pandroid.injected.signing.store.file=$GITHUB_WORKSPACE/customer/mobile/debug.keystore -Pandroid.injected.signing.store.password=android -Pandroid.injected.signing.key.alias=androiddebugkey -Pandroid.injected.signing.key.password=android
+          cp app/build/outputs/apk/debug/app-debug.apk $GITHUB_WORKSPACE/Magic-Memories-Customer.apk
+      - uses: actions/upload-artifact@v4
+        with: { name: Magic-Memories-Customer-APK, path: Magic-Memories-Customer.apk }
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: customer-apk-${{ github.run_number }}
+          name: Magic Memories Customer App ${{ github.run_number }}
+          files: Magic-Memories-Customer.apk
+          prerelease: true
+          make_latest: false
+      - name: Publish APK file to the customer website folder
+        run: |
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          git pull --rebase origin main
+          cp Magic-Memories-Customer.apk customer/web/Magic-Memories-Customer.apk
+          git add customer/web/Magic-Memories-Customer.apk
+          git commit -m "Customer APK build ${{ github.run_number }}" || true
+          git push origin HEAD:main

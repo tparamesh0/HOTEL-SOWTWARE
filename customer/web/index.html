@@ -170,7 +170,7 @@ async function load(silent){if(!ST.tok){loginView();return false}
   if(prev){const old=new Set((prev.notifs||[]).map(n=>n.id));(d.notifs||[]).filter(n=>!old.has(n.id)).forEach(n=>notify(n.title,n.body))}
   return true}catch(e){ST.offline=true;if(!silent&&!ST.data)toast('No connection — showing saved information');return !!ST.data}}
 function notify(t,b){toast(t);try{if('Notification' in window&&Notification.permission==='granted'&&document.hidden)new Notification(t,{body:b||'',icon:LOGO})}catch(e){}}
-async function poll(){if(!ST.tok||document.hidden)return;try{const v=await rpc('mmc_ver',{p_token:ST.tok},8000);if(v==='session'){logout(true,'Your session has ended. Please open your booking again.');return}if(v!==ST.ver){const f0=!ST.ver;ST.ver=v;if(!f0){await load(true);draw()}}ST.offline=false}catch(e){if(!ST.offline){ST.offline=true;draw()}}}
+async function poll(){if(!ST.tok||document.hidden)return;try{const v=await rpc('mmc_ver',{p_token:ST.tok},8000);if(v==='session'){logout(true,'Your session has ended. Please open your booking again.');return}if(v!==ST.ver){const f0=!ST.ver;ST.ver=v;if(!f0){await load(true);draw();phoneAlarms()}}ST.offline=false}catch(e){if(!ST.offline){ST.offline=true;draw()}}}
 setInterval(poll,20000);document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ST.tok){load(true).then(ok=>{if(ok)draw();greetings()})}});
 window.addEventListener('online',()=>{if(ST.tok)load(true).then(()=>draw())});window.addEventListener('offline',()=>{ST.offline=true;draw()});
 
@@ -228,7 +228,7 @@ function notifSheet(){const L=ST.data.notifs||[];modal(`<button class="x" data-c
  if(L.some(n=>!n.read_at))rpc('mmc_notif_read',{p_token:ST.tok}).then(()=>{L.forEach(n=>n.read_at=n.read_at||new Date().toISOString());LS.set('data',ST.data);const i=$('#bell i');if(i)i.remove()}).catch(()=>{})}
 function menu(){const old=$('.menu');if(old){old.remove();return}const m=document.createElement('div');m.className='menu';m.setAttribute('role','menu');const rm=document.documentElement.classList.contains('rm');m.innerHTML=`<button role="menuitem" data-m="refresh">↻ Refresh</button><button role="menuitem" data-m="rm">${rm?'✨ Turn animations on':'🧘 Reduce animations'}</button><button role="menuitem" data-m="change">🔁 Change booking</button><button role="menuitem" data-m="out">🚪 Log out</button>`;$('#home').appendChild(m);$('#mnu').setAttribute('aria-expanded','true');
  m.onclick=async e=>{const k=e.target.dataset.m;m.remove();if(k==='refresh'){toast('Refreshing…');await load();draw()}if(k==='rm'){document.documentElement.classList.toggle('rm');LS.set('rm',document.documentElement.classList.contains('rm'))}if(k==='change'||k==='out')logout(false,k==='change'?'':null)}}
-function logout(silent,msg){const t=ST.tok;if(t&&!silent)rpc('mmc_logout',{p_token:t}).catch(()=>{});ST.tok=null;ST.data=null;ST.day=null;ST.ver='';['tok','data','at','seen'].forEach(LS.del);loginView(msg||'')}
+function logout(silent,msg){try{const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications;if(LN)LN.getPending().then(p=>p.notifications.length&&LN.cancel({notifications:p.notifications.map(n=>({id:n.id}))}));alarmSig=''}catch(e){}const t=ST.tok;if(t&&!silent)rpc('mmc_logout',{p_token:t}).catch(()=>{});ST.tok=null;ST.data=null;ST.day=null;ST.ver='';['tok','data','at','seen'].forEach(LS.del);loginView(msg||'')}
 
 /* ---------- greetings & feedback (once per day, server time) ---------- */
 function fill(t){return String(t||'').replace(/\{name\}/g,first(ST.data.booking.passenger))}
@@ -254,17 +254,32 @@ function greetings(force){const d=ST.data;if(!d||!d.unlocked||document.querySele
 const fdIso=(iso,n)=>{const x=new Date(iso+'T00:00Z');x.setUTCDate(x.getUTCDate()+n);return x.toISOString().slice(0,10)};
 
 /* ---------- automatic updates: a correction published by Magic Memories reaches every phone ---------- */
-const CBUILD=2,VER_URL=(location.protocol==='https:'?'/version.json':'https://magic-memories-customer.vercel.app/version.json');
+const CBUILD=+'3',REMOTE='https://magic-memories-customer.vercel.app/',IS_APP=location.hostname==='localhost',VER_URL=(IS_APP||location.protocol!=='https:'?REMOTE:'/')+'version.json';
 async function checkUpdate(){try{const r=await fetch(VER_URL+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(!(v.build>CBUILD)||$('.upd'))return;
  if(!ST.tok||$('#splash:not([hidden])')){applyUpdate(v.build);return}
  const u=document.createElement('div');u.className='upd ag';u.setAttribute('role','status');u.innerHTML=`<span style="font-size:1.6rem" aria-hidden="true">🎉</span><span><b>New update available</b><small>${esc(v.notes||'Improvements for your tour app')}</small></span><button id="updb">Update now</button>`;document.body.appendChild(u);u.querySelector('#updb').onclick=()=>applyUpdate(v.build)}catch(e){}}
-function applyUpdate(b){LS.set('updTo',b);location.replace(location.pathname+'?v='+b)}
+async function applyUpdate(b){if(!IS_APP){location.replace(location.pathname+'?v='+b);return}
+ try{toast('Updating…');const r=await fetch(REMOTE+'index.html?b='+b+'&t='+Date.now(),{cache:'no-store'});const h=await r.text();if(!r.ok||h.indexOf("CBUILD=+'"+b+"'")<0)throw 0;
+  localStorage.setItem('mmc.ota.h',h);localStorage.setItem('mmc.ota.b',String(b));location.reload()}catch(e){toast('Update could not download — it will try again later')}}
 setTimeout(checkUpdate,4000);setInterval(checkUpdate,30*60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdate()});
 
 /* ---------- reminders while the app is open (phone app adds alarms when closed) ---------- */
 setInterval(()=>{const d=ST.data;if(!d||!ST.tok)return;const now=tzParts(nowS()),seen=LS.get('seen',{}),done=new Set(d.done||[]);(d.days||[]).filter(x=>x.date===now.date&&!x.locked).forEach(x=>(x.items||[]).forEach(it=>{if(done.has(it.id))return;const dt=it.data||{},base=it.kind==='ferry'?tmin(dt.report||it.time):tmin(it.time);if(base==null||it.kind==='activity')return;(dt.rem||(it.kind==='ferry'?[60,30]:[30,15,5])).forEach(m=>{const k='r'+it.id+m;if(!seen[k]&&now.min>=base-m&&now.min<base){seen[k]=1;LS.set('seen',seen);notify(it.kind==='ferry'?`⛴️ Ferry reporting in ${base-now.min} min`:`🚕 Cab pickup in ${base-now.min} min`,it.kind==='ferry'?`Report at ${dt.reportAt||dt.harbour||''} by ${dt.report||it.time}`:`Wait at ${it.place||''} · ${dt.vehicle||''} ${dt.reg||''}`)}})}))},30000);
 
+/* ---------- phone alarms: ferry, pickup and new-day reminders even when the app is closed ---------- */
+function tzMs(date,t){const m=tmin(t);if(m==null)return null;const off=TZ()==='Asia/Kolkata'?'+05:30':'';const hh=String(Math.floor(m/60)).padStart(2,'0'),mm=String(m%60).padStart(2,'0');return Date.parse(date+'T'+hh+':'+mm+':00'+off)}
+let alarmSig='';
+async function phoneAlarms(){const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications,d=ST.data;if(!LN||!d)return;
+ try{const L=[],done=new Set(d.done||[]),now=Date.now()+ST.skew;let id=1000;
+  (d.days||[]).filter(x=>!x.locked).forEach(x=>(x.items||[]).forEach(it=>{if(done.has(it.id)||it.kind==='activity')return;const dt=it.data||{},base=tzMs(x.date,it.kind==='ferry'?(dt.report||it.time):it.time);if(!base)return;
+   (dt.rem||(it.kind==='ferry'?[60,30]:[30,15,5])).forEach(m=>{const at=base-m*60000;if(at>now+30000)L.push({id:id++,title:it.kind==='ferry'?`⛴️ Ferry reporting in ${m} min`:`🚕 Cab pickup in ${m} min`,body:it.kind==='ferry'?`Report at ${dt.reportAt||dt.harbour||'the harbour'} by ${dt.report||it.time} · ${it.title||''}`:`Wait at ${it.place||''}${dt.vehicle?' · '+dt.vehicle+' '+(dt.reg||''):''}`,schedule:{at:new Date(at-ST.skew),allowWhileIdle:true}})})}));
+  if(d.next_unlock){const at=new Date(d.next_unlock).getTime();if(at>now)L.push({id:999,title:'🌅 Good Morning!',body:`Day ${d.unlocked+1} of your ${d.booking.package||'tour'} is now available. Open the app to explore today's schedule.`,schedule:{at:new Date(at-ST.skew+60000),allowWhileIdle:true}})}
+  const sig=JSON.stringify(L.map(x=>[x.id,x.title,+x.schedule.at]));if(sig===alarmSig)return;
+  let p=await LN.checkPermissions();if(p.display!=='granted')p=await LN.requestPermissions();if(p.display!=='granted')return;
+  const pend=await LN.getPending();if(pend.notifications.length)await LN.cancel({notifications:pend.notifications.map(n=>({id:n.id}))});
+  if(L.length)await LN.schedule({notifications:L.slice(0,60)});alarmSig=sig}catch(e){}}
+
 /* ---------- start ---------- */
-async function boot(){if(!ST.tok){loginView();return}if(ST.data){draw()}const ok=await load();if(ok){draw();setTimeout(()=>greetings(true),700)}else if(!ST.data)loginView()}
+async function boot(){if(!ST.tok){loginView();return}if(ST.data){draw()}const ok=await load();if(ok){draw();setTimeout(()=>greetings(true),700);phoneAlarms()}else if(!ST.data)loginView()}
 setTimeout(()=>{boot()},LS.get('tok',null)?1400:2300);
 </script></body></html>

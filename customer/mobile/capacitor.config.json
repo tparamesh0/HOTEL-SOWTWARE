@@ -1,0 +1,8 @@
+{
+  "appId": "com.magicmemories.customer",
+  "appName": "Magic Memories – My Tour",
+  "webDir": "www",
+  "android": {"webContentsDebuggingEnabled": false},
+  "server": {"androidScheme": "https"},
+  "plugins": {"LocalNotifications": {"iconColor": "#ff4f7b"}}
+}

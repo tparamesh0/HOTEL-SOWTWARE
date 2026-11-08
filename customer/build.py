@@ -1,10 +1,13 @@
-# Builds the Magic Memories customer app -> customer/web/index.html
-import re,os
-R=os.path.dirname(os.path.abspath(__file__))
-s=open(os.path.join(R,'src','app.src.html'),encoding='utf-8').read()
-logo=open(os.path.join(R,'src','logo.txt')).read().strip()
+# Builds the Magic Memories customer app: web/index.html + web/version.json (build number in src/BUILD, notes in src/NOTES)
+import re,os,json
+R=os.path.dirname(os.path.abspath(__file__));S=os.path.join(R,'src')
+s=open(os.path.join(S,'app.src.html'),encoding='utf-8').read()
+logo=open(os.path.join(S,'logo.txt')).read().strip()
+b=int(open(os.path.join(S,'BUILD')).read().strip())
+notes=open(os.path.join(S,'NOTES'),encoding='utf-8').read().strip()
 key=re.search(r"SB_KEY='([^']+)'",open(os.path.join(R,'..','src','app.src.html'),encoding='utf-8').read()).group(1)
-s=s.replace("''/*__LOGO__*/","'"+logo+"'",1).replace("__SB_KEY__",key,1)
-os.makedirs(os.path.join(R,'web'),exist_ok=True)
-open(os.path.join(R,'web','index.html'),'w',encoding='utf-8').write(s)
-print('built',len(s)//1024,'KB')
+s=s.replace("''/*__LOGO__*/","'"+logo+"'",1).replace("__SB_KEY__",key,1).replace("__CB__",str(b))
+W=os.path.join(R,'web');os.makedirs(W,exist_ok=True)
+open(os.path.join(W,'index.html'),'w',encoding='utf-8').write(s)
+json.dump({'build':b,'notes':notes},open(os.path.join(W,'version.json'),'w'),ensure_ascii=False)
+print('built',len(s)//1024,'KB build',b)
