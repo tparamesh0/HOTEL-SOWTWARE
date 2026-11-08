@@ -113,6 +113,15 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 .alrt .bar{height:3px;background:var(--acc);transform-origin:left;animation:abar 7s linear forwards}@keyframes abar{to{transform:scaleX(0)}}
 .alrt.night .ah{background:#3b2d7a}
 .perm{display:flex;gap:10px;align-items:center;background:var(--acc2);color:var(--ink);border-radius:12px;padding:10px 12px;font-size:13px}.perm .btn{margin-left:auto;white-space:nowrap}
+/* message pop-up in the middle of the screen */
+.mpop{position:fixed;inset:0;z-index:45;background:rgba(10,20,25,.45);display:flex;align-items:center;justify-content:center;padding:20px;animation:fo .2s both}
+.mpop .mc{position:relative;width:100%;max-width:400px;background:var(--card);border-radius:20px;padding:22px 20px 18px;text-align:center;border:2px solid var(--acc);animation:pop .3s cubic-bezier(.2,.9,.3,1.3) both,glow 2.2s ease-in-out .3s infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 3px var(--acc2),0 0 22px rgba(15,118,110,.35)}50%{box-shadow:0 0 0 6px var(--acc2),0 0 46px rgba(15,118,110,.6)}}
+.mpop.night .mc{border-color:#6d5bd0}.mpop.night .mc{animation:pop .3s cubic-bezier(.2,.9,.3,1.3) both,glown 2.2s ease-in-out .3s infinite}@keyframes glown{0%,100%{box-shadow:0 0 0 3px #ece8ff,0 0 22px rgba(109,91,208,.4)}50%{box-shadow:0 0 0 6px #ece8ff,0 0 46px rgba(109,91,208,.65)}}
+.mpop .mx{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;border:0;background:var(--bg);font-size:15px;color:var(--soft)}
+.mpop .me{font-size:34px;line-height:1}.mpop .mk{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);margin-top:6px}.mpop.night .mk{color:#6d5bd0}
+.mpop h4{margin:6px 0 6px;font-size:19px;line-height:1.3}.mpop p{margin:0;font-size:15.5px;line-height:1.55;white-space:pre-line;color:var(--ink)}
+.mpop .mt{font-size:11px;color:var(--soft);margin-top:10px}.mpop .btn{margin-top:14px;width:100%}.mpop.night .btn{background:#6d5bd0}
 /* pull to refresh */
 .ptr{position:fixed;left:50%;top:calc(56px + env(safe-area-inset-top,0px));z-index:7;transform:translate(-50%,-140px);opacity:0;width:36px;height:36px;border-radius:50%;background:var(--card);box-shadow:0 4px 14px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--acc);transition:transform .2s}
 .ptr.vis{opacity:1}.ptr.spin span{animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
@@ -156,7 +165,7 @@ function loginView(err){show('login');$('#login').innerHTML=`<div class="lw fi">
   try{const r=await rpc('mmc_login',{p_code:code,p_device:(navigator.userAgent||'').slice(0,60)});if(!r||!r.ok){$('#lerr').textContent=(r&&r.err)||'Could not open the booking';b.disabled=false;b.textContent='Open my tour';return}
    ST.tok=r.token;LS.set('tok',r.token);LS.set('lastCode',code);ST.data=null;LS.del('data');LS.set('seen',{});welcomeView(r.name)}
   catch(x){$('#lerr').textContent=navigator.onLine?'Could not reach the server. Please try again.':'No internet connection. Please connect and try again.';b.disabled=false;b.textContent='Open my tour'}})}
-function welcomeView(name){show('welcome');const p=load(true);$('#welcome').innerHTML=`<div class="fi"><div class="ge" aria-hidden="true">👋</div><h1>Welcome, ${esc(first(name))}!</h1><p class="sub" style="margin-top:6px">We're delighted to have you with us.</p><p style="font-weight:600;margin:10px 0 0">Your Journey Begins Here!</p></div>`;setTimeout(()=>p.then(()=>{draw();rtStart();setTimeout(()=>greetings(true),400);askPerm(false).then(()=>phoneAlarms())}),1600)}
+function welcomeView(name){show('welcome');const p=load(true);$('#welcome').innerHTML=`<div class="fi"><div class="ge" aria-hidden="true">👋</div><h1>Welcome, ${esc(first(name))}!</h1><p class="sub" style="margin-top:6px">We're delighted to have you with us.</p><p style="font-weight:600;margin:10px 0 0">Your Journey Begins Here!</p></div>`;setTimeout(()=>p.then(()=>{draw();rtStart();popNew();setTimeout(()=>greetings(true),600);askPerm(false).then(()=>phoneAlarms())}),1600)}
 
 /* ---------- data + instant updates ---------- */
 let loading=null;
@@ -164,16 +173,19 @@ function load(silent){if(!ST.tok)return Promise.resolve(false);if(loading)return
  try{const d=await rpc('mmc_data',{p_token:ST.tok});if(!d||!d.ok){if(d&&d.err==='closed'){closedView();return false}if(d&&d.err==='session'){logout(true,'Your booking session has ended. Please enter your Booking ID again.');return false}throw new Error('bad')}
   const prev=ST.data;ST.skew=new Date(d.now)-Date.now();ST.data=d;ST.at=Date.now();ST.offline=false;LS.set('data',d);LS.set('at',ST.at);
   if(prev&&prev.unlocked<d.unlocked&&d.unlocked>0){notify('🌅 Day '+d.unlocked+' is now open',`Day ${d.unlocked} of your tour is now available.`);ST.day=d.unlocked}
-  if(prev){const old=new Set((prev.notifs||[]).map(n=>n.id));(d.notifs||[]).filter(n=>!old.has(n.id)&&!n.read_at).reverse().forEach(n=>bigAlert(n))}
+  if(!$('#home').hidden)setTimeout(popNew,200);
   unlockTimer();return true}catch(e){ST.offline=true;if(!silent&&!ST.data)toast('No connection — showing saved information');return !!ST.data}finally{loading=null}})();return loading}
 /* ---------- instant message alert: sound + big banner for a few seconds + phone notification ---------- */
 let AC=null,alertQ=[],alertOn=false;
 function chime(night){try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();const t=AC.currentTime;(night?[523.25,659.25,783.99]:[880,1174.66,1318.5]).forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t+i*.13);g.gain.linearRampToValueAtTime(.25,t+i*.13+.02);g.gain.exponentialRampToValueAtTime(.001,t+i*.13+.6);o.connect(g);g.connect(AC.destination);o.start(t+i*.13);o.stop(t+i*.13+.65)})}catch(e){}try{navigator.vibrate&&navigator.vibrate([120,60,120])}catch(e){}}
 function bigAlert(n){alertQ.push(n);phoneNote(n);if(!alertOn)nextAlert()}
 function nextAlert(){const n=alertQ.shift();if(!n){alertOn=false;return}alertOn=true;const night=n.kind==='night';chime(night);
- const a=document.createElement('div');a.className='alrt'+(night?' night':'');a.setAttribute('role','alert');a.innerHTML=`<div class="ah"><span aria-hidden="true">${night?'🌙':'🔔'}</span>${night?'Good night from Magic Memories':'New message from Magic Memories'}</div><div class="ab2"><h4>${esc(n.title)}</h4><p>${esc(n.body||'')}</p></div><div class="bar"></div>`;document.body.appendChild(a);
- const close=()=>{if(a.dataset.c)return;a.dataset.c=1;a.classList.add('out');setTimeout(()=>{a.remove();const i=$('#bell');if(i){i.animate&&i.animate([{transform:'scale(1)'},{transform:'scale(1.25)'},{transform:'scale(1)'}],{duration:400})}nextAlert()},300)};a.onclick=close;setTimeout(close,7000);
- if(permNeeded())setTimeout(()=>{const p=$('#permc');if(p&&p.animate)p.animate([{transform:'scale(1)'},{transform:'scale(1.04)'},{transform:'scale(1)'}],{duration:500})},7400)}
+ const a=document.createElement('div');a.className='mpop'+(night?' night':'');a.setAttribute('role','alertdialog');a.setAttribute('aria-modal','true');a.setAttribute('aria-label',n.title);
+ a.innerHTML=`<div class="mc"><button class="mx" aria-label="Close message">✕</button><div class="me" aria-hidden="true">${night?'🌙':'📨'}</div><div class="mk">${night?'Good night from Magic Memories':'Message from Magic Memories'}</div><h4>${esc(n.title)}</h4>${n.body?`<p>${esc(n.body)}</p>`:''}<div class="mt">${new Date(n.created_at||Date.now()).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</div><button class="btn">${night?'Good night 🌙':'OK, got it'}</button></div>`;document.body.appendChild(a);
+ const close=()=>{if(a.dataset.c)return;a.dataset.c=1;a.style.transition='opacity .2s';a.style.opacity='0';setTimeout(()=>{a.remove();if(!alertQ.length){rpc('mmc_notif_read',{p_token:ST.tok}).then(()=>{(ST.data&&ST.data.notifs||[]).forEach(x=>x.read_at=x.read_at||new Date().toISOString());LS.set('data',ST.data);const i=$('#bell i');if(i)i.remove()}).catch(()=>{})}nextAlert()},200)};
+ a.querySelector('.mx').onclick=close;a.querySelector('.btn').onclick=close;a.addEventListener('click',e=>{if(e.target===a)close()});setTimeout(()=>{const b=a.querySelector('.btn');if(b)b.focus({preventScroll:true})},50)}
+/* show every message that has not popped up yet — also after the app was closed */
+function popNew(){const d=ST.data;if(!d||!ST.tok)return;const pop=LS.get('popped',[]),L=(d.notifs||[]).filter(n=>!n.read_at&&!pop.includes(n.id)).slice(0,5).reverse();if(!L.length)return;LS.set('popped',[...pop,...L.map(n=>n.id)].slice(-200));L.forEach(n=>bigAlert(n))}
 function permNeeded(){if(window.Capacitor)return false;return 'Notification' in window&&Notification.permission==='default'}
 async function askPerm(gesture){try{const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications;if(LN){let p=await LN.checkPermissions();if(p.display!=='granted')p=await LN.requestPermissions();return p.display==='granted'}
  if('Notification' in window&&Notification.permission==='default'&&gesture){await Notification.requestPermission();draw()}}catch(e){}return false}
@@ -269,7 +281,7 @@ function notifSheet(){const L=ST.data.notifs||[];const o=modal(`${X}<h3>🔔 Mes
 function menu(){const old=$('.menu');if(old){old.remove();return}const m=document.createElement('div');m.className='menu';m.setAttribute('role','menu');m.innerHTML=`<button role="menuitem" data-m="help">🆘 Help desk</button><button role="menuitem" data-m="out">🔁 Change Booking ID</button>`;$('#home').appendChild(m);
  m.onclick=async e=>{const k=e.target.dataset.m;m.remove();if(k==='help')helpSheet();if(k==='out')logout(false)}}
 function logout(silent,msg){try{const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications;if(LN)LN.getPending().then(p=>p.notifications.length&&LN.cancel({notifications:p.notifications.map(n=>({id:n.id}))}));alarmSig=''}catch(e){}
- const t=ST.tok;if(t&&!silent)rpc('mmc_logout',{p_token:t}).catch(()=>{});rtStop();ST.tok=null;ST.data=null;ST.day=null;ST.ver='';ST.open={};['tok','data','at','seen'].forEach(LS.del);loginView(msg||'')}
+ const t=ST.tok;if(t&&!silent)rpc('mmc_logout',{p_token:t}).catch(()=>{});rtStop();ST.tok=null;ST.data=null;ST.day=null;ST.ver='';ST.open={};['tok','data','at','seen','popped'].forEach(LS.del);loginView(msg||'')}
 
 /* ---------- tour closed: thank-you screen ---------- */
 function closedView(){const name=ST.data?first(ST.data.booking.passenger):'';rtStop();ST.tok=null;ST.data=null;ST.day=null;ST.ver='';['tok','data','at','seen'].forEach(LS.del);document.querySelectorAll('.ov,.alrt,.upd').forEach(x=>x.remove());show('login');
@@ -292,7 +304,7 @@ function feedback(day,auto){const seen=LS.get('seen',{}),k='fb'+day;if(auto&&see
  o.querySelector('#fbs').onclick=async()=>{if(!stars){toast('Tap the stars to rate');return}try{const r=await rpc('mmc_feedback_save',{p_token:ST.tok,p_day:day,p_stars:stars,p_comment:o.querySelector('#fbc').value});if(!r.ok)throw 0;(ST.data.feedback=ST.data.feedback||{})[day]={stars};LS.set('data',ST.data);o.remove();toast('Thank you for your feedback!')}catch(e){toast('Could not send — please try again')}}}
 let gLast=0;
 function greetCard(emoji,text,btn,onbtn){const o=modal(`<div class="ge" aria-hidden="true">${emoji}</div><p class="gt">${esc(text)}</p><button class="btn w" id="gbtn">${btn}</button>`,true);o.querySelector('#gbtn').onclick=()=>{o.remove();onbtn&&onbtn()}}
-function greetings(force){const d=ST.data;if(!d||document.querySelector('.ov'))return;if(tripDone(d)&&tripReview())return;if(!d.unlocked)return;if(!force&&Date.now()-gLast<15*60000)return;
+function greetings(force){const d=ST.data;if(!d||document.querySelector('.ov,.mpop'))return;if(tripDone(d)&&tripReview())return;if(!d.unlocked)return;if(!force&&Date.now()-gLast<15*60000)return;
  const g=d.greet||{},now=tzParts(nowS()),seen=LS.get('seen',{}),days=d.days||[],D=days.find(x=>x.date===now.date&&!x.locked),done=new Set(d.done||[]),last=days[days.length-1];
  const prev=days.filter(x=>!x.locked&&x.date<now.date&&(x.items||[]).length&&(x.items||[]).every(i=>done.has(i.id))&&!(d.feedback||{})[x.day]).pop();
  if(prev&&!seen['fb'+prev.day]&&g.fb_on!==false){gLast=Date.now();feedback(prev.day,true);return}
@@ -303,7 +315,7 @@ function greetings(force){const d=ST.data;if(!d||document.querySelector('.ov'))r
   gLast=Date.now();greetCard('🌙',isLast?`Good Night, ${first(d.booking.passenger)}!\nHope you had a wonderful trip with us!\nThank you for travelling with Magic Memories Tours and Travels.`:fill(g.night||'Good Night, {name}!\nSee You Tomorrow!'),'Good night')}}
 
 /* ---------- automatic updates ---------- */
-const CBUILD=+'7',REMOTE='https://magic-memories-customer.vercel.app/',IS_APP=location.hostname==='localhost',VER_URL=(IS_APP||location.protocol!=='https:'?REMOTE:'/')+'version.json';
+const CBUILD=+'8',REMOTE='https://magic-memories-customer.vercel.app/',IS_APP=location.hostname==='localhost',VER_URL=(IS_APP||location.protocol!=='https:'?REMOTE:'/')+'version.json';
 async function checkUpdate(){try{const r=await fetch(VER_URL+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(!(v.build>CBUILD)||$('.upd'))return;
  if(!ST.tok||$('#home').hidden){applyUpdate(v.build);return}
  const u=document.createElement('div');u.className='upd';u.setAttribute('role','status');u.innerHTML=`<span aria-hidden="true">🎉</span><span><b>New update available</b><small>${esc(v.notes||'Improvements to your tour app')}</small></span><button class="btn s" id="updb">Update now</button>`;document.body.appendChild(u);u.querySelector('#updb').onclick=()=>applyUpdate(v.build)}catch(e){}}
@@ -325,6 +337,6 @@ async function phoneAlarms(){const LN=window.Capacitor&&Capacitor.Plugins&&Capac
   if(L.length)await LN.schedule({notifications:L.slice(0,60)});alarmSig=sig}catch(e){}}
 
 /* ---------- start: show the saved tour instantly, refresh in the background ---------- */
-async function boot(){if(!ST.tok){loginView();return}if(ST.data){draw();rtStart()}const ok=await load(!!ST.data);if(ok){draw();rtStart();setTimeout(()=>greetings(true),400);phoneAlarms()}else if(!ST.data)loginView()}
+async function boot(){if(!ST.tok){loginView();return}if(ST.data){draw();rtStart()}const ok=await load(!!ST.data);if(ok){draw();rtStart();popNew();setTimeout(()=>greetings(true),600);phoneAlarms()}else if(!ST.data)loginView()}
 if(ST.tok&&ST.data)boot();else setTimeout(boot,ST.tok?300:900);
 </script></body></html>
