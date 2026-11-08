@@ -1,1 +1,1 @@
-Customer app: opens with Booking ID only; live updates.
+Customer app is now called MM TravelMate.

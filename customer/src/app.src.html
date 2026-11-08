@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
-<title>Magic Memories — My Tour</title>
+<title>MM TravelMate</title>
 <style>
 :root{--bg:#f3f4f6;--card:#fff;--ink:#1f2933;--soft:#6b7280;--line:#e5e7eb;--acc:#0f766e;--acc2:#e6f4f1;--amb:#b45309;--amb2:#fef3c7;--ok:#15803d;--ok2:#dcfce7;--bad:#b91c1c;--r:14px;color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1214;--card:#1a1f23;--ink:#e5e7eb;--soft:#9ca3af;--line:#2a3036;--acc:#2dd4bf;--acc2:#12302c;--amb:#fbbf24;--amb2:#33280f;--ok:#4ade80;--ok2:#11301d;color-scheme:dark}}
@@ -18,7 +18,7 @@ button{font:inherit;color:inherit;cursor:pointer}img{max-width:100%;display:bloc
 .fi{animation:fin .28s ease-out both}
 /* splash / login / welcome */
 #splash,#welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:24px;background:var(--card)}
-.lg{width:96px;height:96px;border-radius:50%;object-fit:contain;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.08);animation:pop .4s ease-out both}
+.lg{width:112px;height:112px;border-radius:24%;object-fit:contain;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.08);animation:pop .4s ease-out both}
 .ttl{font-weight:700;font-size:17px;margin:4px 0 0}.sub{color:var(--soft);font-size:13px;margin:0}
 #login{background:var(--card)}
 .lw{max-width:420px;margin:0 auto;padding:48px 20px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
@@ -33,7 +33,7 @@ button{font:inherit;color:inherit;cursor:pointer}img{max-width:100%;display:bloc
 #welcome h1{font-size:22px;margin:6px 0 0}
 /* home */
 .top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:8px 14px;background:var(--card);border-bottom:1px solid var(--line)}
-.top img{width:32px;height:32px;border-radius:50%;object-fit:contain;background:#fff}.top b{flex:1;font-size:14px;line-height:1.2}.top small{display:block;font-weight:400;color:var(--soft);font-size:11px}
+.top img{width:34px;height:34px;border-radius:24%;object-fit:contain;background:#fff}.top b{flex:1;font-size:14px;line-height:1.2}.top small{display:block;font-weight:400;color:var(--soft);font-size:11px}
 .ib{position:relative;width:36px;height:36px;border-radius:50%;border:0;background:var(--bg);font-size:16px;display:flex;align-items:center;justify-content:center}
 .ib i{position:absolute;top:-2px;right:-2px;background:var(--bad);color:#fff;font-style:normal;font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px}
 .wrap{max-width:640px;margin:0 auto;padding:12px 12px 90px;display:flex;flex-direction:column;gap:10px}
@@ -104,7 +104,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition:none!important}}
 </style></head>
 <body>
-<div id="splash" class="scr"><img class="lg" id="lg1" alt="Magic Memories Tours and Travels logo"><p class="ttl">Magic Memories Tours and Travels</p><p class="sub">Welcome Our Valuable Customer</p></div>
+<div id="splash" class="scr"><img class="lg" id="lg1" alt="MM TravelMate logo"><p class="ttl">MM TravelMate</p><p class="sub">by Magic Memories Tours and Travels</p><p class="sub" style="margin-top:8px">Welcome Our Valuable Customer</p></div>
 <div id="login" class="scr" hidden></div>
 <div id="welcome" class="scr" hidden></div>
 <div id="home" class="scr" hidden></div>
@@ -130,7 +130,7 @@ const fdate=(iso,o)=>new Date(iso+'T00:00').toLocaleDateString('en-GB',o||{weekd
 const fdIso=(iso,n)=>{const x=new Date(iso+'T00:00Z');x.setUTCDate(x.getUTCDate()+n);return x.toISOString().slice(0,10)};
 
 /* ---------- login: Booking ID only ---------- */
-function loginView(err){show('login');$('#login').innerHTML=`<div class="lw fi"><img class="lg" src="${LOGO}" alt=""><p class="ttl">Magic Memories Tours and Travels</p><p class="sub">Your personal tour companion</p>
+function loginView(err){show('login');$('#login').innerHTML=`<div class="lw fi"><img class="lg" src="${LOGO}" alt=""><p class="ttl">MM TravelMate</p><p class="sub">by Magic Memories Tours and Travels</p>
  <form class="lf" id="lf" novalidate><label class="lbl" for="bid">Enter your Booking ID</label><input class="inp" id="bid" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="MM-XXXXXX" maxlength="12" value="${esc(LS.get('lastCode',''))}" enterkeyhint="go">
  <div class="err" id="lerr" role="alert">${esc(err||'')}</div><button class="btn w" id="lgo" type="submit">Open my tour</button>
  <p class="hint">You'll find your Booking ID in the WhatsApp message from Magic Memories.</p></form></div>`;
@@ -195,7 +195,7 @@ function draw(){const d=ST.data;if(!d){loginView();return}show('home');const b=d
   if(it.kind==='pickup')alerts.push(['🚕',`${when}: cab pickup at ${it.time||'—'}`,`Wait at ${it.place||'—'}${dt.vehicle?' · '+dt.vehicle+' '+(dt.reg||''):''}`])}));
  const h=d.help||{},ph=(h.phones||[]).filter(Boolean),anim=lastDay!==ST.day;lastDay=ST.day;
  const lastDate=days.length?days[days.length-1].date:b.start,sc=$('#home').scrollTop;
- $('#home').innerHTML=`<div class="top"><img src="${LOGO}" alt=""><b>Magic Memories<small><span class="live${RT.ok?'':' off'}" id="live"></span>Tours and Travels</small></b><button class="ib" id="bell" aria-label="Messages${unread?', '+unread+' new':''}">🔔${unread?`<i>${unread}</i>`:''}</button><button class="ib" id="mnu" aria-label="Menu" aria-expanded="false">⋮</button></div>
+ $('#home').innerHTML=`<div class="top"><img src="${LOGO}" alt=""><b>MM TravelMate<small><span class="live${RT.ok?'':' off'}" id="live"></span>by Magic Memories Tours and Travels</small></b><button class="ib" id="bell" aria-label="Messages${unread?', '+unread+' new':''}">🔔${unread?`<i>${unread}</i>`:''}</button><button class="ib" id="mnu" aria-label="Menu" aria-expanded="false">⋮</button></div>
  <div class="wrap">${ST.offline?`<div class="offl" role="status">📴 Offline — showing information saved at ${new Date(ST.at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</div>`:''}
  <section class="card trip"><h2>${esc(b.passenger)}</h2><div class="pk">${esc(b.package||'Your tour')}</div><div class="meta"><span>🌙 ${b.nights}N / ${b.days}D</span><span>🗓️ ${fdate(b.start,{day:'2-digit',month:'short'})} – ${fdate(lastDate,{day:'2-digit',month:'short'})}</span><span>👤 ${b.adults}${b.children?' + 🧒 '+b.children:''}</span><span>🎫 ${esc(b.code)}</span></div></section>
  <div class="days" role="tablist" aria-label="Tour days">${days.map(x=>`<button class="dt ${x.day===ST.day?'on':''} ${x.locked?'lk':''} ${x.date===today?'today':''}" role="tab" aria-selected="${x.day===ST.day}" data-day="${x.day}"><b>${x.locked?'🔒 ':''}Day ${x.day}</b><small>${x.date===today?'Today':fdate(x.date,{day:'2-digit',month:'short'})}</small></button>`).join('')}</div>

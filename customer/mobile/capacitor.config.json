@@ -1,6 +1,6 @@
 {
   "appId": "com.magicmemories.customer",
-  "appName": "Magic Memories – My Tour",
+  "appName": "MM TravelMate",
   "webDir": "www",
   "android": {"webContentsDebuggingEnabled": false},
   "server": {"androidScheme": "https"},
