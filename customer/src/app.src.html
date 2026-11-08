@@ -170,7 +170,7 @@ async function load(silent){if(!ST.tok){loginView();return false}
   if(prev){const old=new Set((prev.notifs||[]).map(n=>n.id));(d.notifs||[]).filter(n=>!old.has(n.id)).forEach(n=>notify(n.title,n.body))}
   return true}catch(e){ST.offline=true;if(!silent&&!ST.data)toast('No connection — showing saved information');return !!ST.data}}
 function notify(t,b){toast(t);try{if('Notification' in window&&Notification.permission==='granted'&&document.hidden)new Notification(t,{body:b||'',icon:LOGO})}catch(e){}}
-async function poll(){if(!ST.tok||document.hidden)return;try{const v=await rpc('mmc_ver',{p_token:ST.tok},8000);if(v==='session'){logout(true,'Your session has ended. Please open your booking again.');return}if(v!==ST.ver){const f0=!ST.ver;ST.ver=v;if(!f0){await load(true);draw();phoneAlarms()}}ST.offline=false}catch(e){if(!ST.offline){ST.offline=true;draw()}}}
+async function poll(){if(!ST.tok||document.hidden)return;try{const v=await rpc('mmc_ver',{p_token:ST.tok},8000);if(v==='session'){logout(true,'Your session has ended. Please open your booking again.');return}if(v!==ST.ver){const f0=!ST.ver;ST.ver=v;if(!f0){await load(true);draw();phoneAlarms();checkUpdate()}}ST.offline=false}catch(e){if(!ST.offline){ST.offline=true;draw()}}}
 setInterval(poll,20000);document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ST.tok){load(true).then(ok=>{if(ok)draw();greetings()})}});
 window.addEventListener('online',()=>{if(ST.tok)load(true).then(()=>draw())});window.addEventListener('offline',()=>{ST.offline=true;draw()});
 
@@ -209,7 +209,7 @@ function bind(){document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=
  document.querySelectorAll('[data-mark]').forEach(b=>b.onclick=()=>mark(b.dataset.mark,b.dataset.v==='1',b));
  }
 async function mark(id,done,btn){btn.disabled=true;try{const r=await rpc('mmc_mark',{p_token:ST.tok,p_item:id,p_done:done});if(!r.ok)throw new Error(r.err);const s=new Set(ST.data.done||[]);done?s.add(id):s.delete(id);ST.data.done=[...s];LS.set('data',ST.data);
-  if(done)celebrate();draw();const D=ST.data.days[ST.day-1];if(done&&D&&(D.items||[]).length&&(D.items||[]).every(i=>s.has(i.id)))setTimeout(()=>feedback(D.day,true),1300)}catch(e){btn.disabled=false;toast(navigator.onLine?'Could not save — try again':'No internet — try again when online')}}
+  if(done)celebrate();draw();const D=ST.data.days[ST.day-1];if(done&&D&&(D.items||[]).length&&(D.items||[]).every(i=>s.has(i.id))&&(ST.data.greet||{}).fb_on!==false)setTimeout(()=>feedback(D.day,true),1300)}catch(e){btn.disabled=false;toast(navigator.onLine?'Could not save — try again':'No internet — try again when online')}}
 function celebrate(){const o=modal(`<svg class="chk" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 22-24"/></svg><h3 style="margin:8px 0 0">Well done! 🎉</h3>`,true);setTimeout(()=>o.remove(),1100)}
 const tel=p=>String(p).replace(/[^\d+]/g,''),wa=p=>{let n=String(p).replace(/\D/g,'');if(n.length===10)n='91'+n;return n};
 function helpRows(h,ph){return [...ph.map((p,i)=>`<a class="hrow" href="tel:${esc(tel(p))}"><span class="hi" aria-hidden="true">📞</span><span><small>${ph.length>1?'Phone '+(i+1):'Phone'}</small><b>${esc(p)}</b></span><span class="go">Call</span></a>`),h.whatsapp?`<a class="hrow wa" href="https://wa.me/${esc(wa(h.whatsapp))}" target="_blank" rel="noopener"><span class="hi" aria-hidden="true">💬</span><span><small>WhatsApp</small><b>${esc(String(h.whatsapp).replace(/^\+?91(\d{10})$/,'+91 $1'))}</b></span><span class="go">Chat</span></a>`:'',h.email?`<a class="hrow em" href="mailto:${esc(h.email)}"><span class="hi" aria-hidden="true">✉️</span><span><small>Email</small><b>${esc(h.email)}</b></span><span class="go">Write</span></a>`:''].filter(Boolean).join('')}
@@ -243,11 +243,11 @@ function greetCard(kind,text,btn,onbtn){const o=document.createElement('div');o.
 function greetings(force){const d=ST.data;if(!d||!d.unlocked||document.querySelector('.ov'))return;if(!force&&Date.now()-gLast<15*60000)return;
  const g=d.greet||{},now=tzParts(nowS()),seen=LS.get('seen',{}),D=(d.days||[]).find(x=>x.date===now.date&&!x.locked),done=new Set(d.done||[]),last=(d.days||[]).slice(-1)[0];
  const prev=(d.days||[]).filter(x=>!x.locked&&x.date<now.date&&(x.items||[]).length&&(x.items||[]).every(i=>done.has(i.id))&&!(d.feedback||{})[x.day]).pop();
- if(prev&&!seen['fb'+prev.day]){gLast=Date.now();feedback(prev.day,true);return}
+ if(prev&&!seen['fb'+prev.day]&&g.fb_on!==false){gLast=Date.now();feedback(prev.day,true);return}
  const mf=tmin(g.morning_from||'05:00'),mt=tmin(g.morning_to||'11:59'),nf=tmin(g.night_from||'18:00');
  const am=now.min>=mf&&now.min<=mt,pm=now.min>=nf||now.min<mf;
- if(am&&D&&g.morning){gLast=Date.now();greetCard('am',fill(g.morning),"See today's itinerary ☀️",()=>{ST.day=D.day;draw();const c=$('#dayc');if(c)c.scrollIntoView({behavior:'smooth'})});return}
- if(pm){const onTour=(d.days||[]).some(x=>x.date===now.date)||(now.min<mf&&last&&last.date>=fdIso(now.date,-1));if(!onTour)return;
+ if(am&&D&&g.morning&&g.am_on!==false){gLast=Date.now();greetCard('am',fill(g.morning),"See today's itinerary ☀️",()=>{ST.day=D.day;draw();const c=$('#dayc');if(c)c.scrollIntoView({behavior:'smooth'})});return}
+ if(pm&&g.pm_on!==false){const onTour=(d.days||[]).some(x=>x.date===now.date)||(now.min<mf&&last&&last.date>=fdIso(now.date,-1));if(!onTour)return;
   const isLast=last&&(last.date===now.date||(now.min<mf&&last.date===fdIso(now.date,-1)));
   const txt=isLast?`Good Night, ${first(d.booking.passenger)}!\nHope you had a wonderful trip with us!\nThank you for travelling with Magic Memories Tours and Travels.`:fill(g.night||'Good Night, {name}!\nSee You Tomorrow!');
   gLast=Date.now();greetCard('pm',txt,'Good night! 🌙')}}

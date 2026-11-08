@@ -1,1 +1,1 @@
-New: 🎫 Create Customer Booking ID — day-wise plan, reminders and messages for the customer app. Updates now also come from a backup server.
+New: 🎫 Create Customer Booking ID — day-wise plan, reminders, greetings and customer app controls. Updates now also come from a backup server.
