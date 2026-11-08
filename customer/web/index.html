@@ -254,7 +254,7 @@ function greetings(force){const d=ST.data;if(!d||!d.unlocked||document.querySele
 const fdIso=(iso,n)=>{const x=new Date(iso+'T00:00Z');x.setUTCDate(x.getUTCDate()+n);return x.toISOString().slice(0,10)};
 
 /* ---------- automatic updates: a correction published by Magic Memories reaches every phone ---------- */
-const CBUILD=2,VER_URL='https://raw.githubusercontent.com/tparamesh0/HOTEL-SOWTWARE/main/customer/version.json';
+const CBUILD=2,VER_URL=(location.protocol==='https:'?'/version.json':'https://magic-memories-customer.vercel.app/version.json');
 async function checkUpdate(){try{const r=await fetch(VER_URL+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(!(v.build>CBUILD)||$('.upd'))return;
  if(!ST.tok||$('#splash:not([hidden])')){applyUpdate(v.build);return}
  const u=document.createElement('div');u.className='upd ag';u.setAttribute('role','status');u.innerHTML=`<span style="font-size:1.6rem" aria-hidden="true">🎉</span><span><b>New update available</b><small>${esc(v.notes||'Improvements for your tour app')}</small></span><button id="updb">Update now</button>`;document.body.appendChild(u);u.querySelector('#updb').onclick=()=>applyUpdate(v.build)}catch(e){}}
