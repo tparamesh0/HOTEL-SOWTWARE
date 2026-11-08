@@ -1,2 +1,1 @@
-Role controls: new 👁️ See controls — anything not allowed is fully hidden (pages, rates, amounts, quotations)
-PC software install link in Settings → Team
+New: 🎫 Create Customer Booking ID — day-wise plan, reminders and messages for the customer app. Updates now also come from a backup server.
