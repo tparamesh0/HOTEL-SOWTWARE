@@ -1,285 +1,282 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#ff4f7b">
+<meta name="theme-color" content="#ffffff">
 <title>Magic Memories — My Tour</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--sea:#d63a6e;--sea2:#ff7a45;--lagoon:#ff9548;--vio:#7c4dff;--sand:#fff1e6;--sun:#f59e0b;--leaf:#12a150;--coral:#ef4444;--ink:#2a1420;--soft:#7a6470;--line:#f1dfe3;--card:#ffffff;--bg:#fff7f2;--r:22px;
- --grad:linear-gradient(125deg,#ff8a3d 0%,#ff4f7b 35%,#a646ff 70%,#ff8a3d 100%);--glow:rgba(255,79,123,.35);color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#fbe9ef;--soft:#c9a9b6;--line:#3a2230;--card:#22121c;--bg:#160b12;--sand:#2c1a12;color-scheme:dark}}
-:root[data-theme="dark"]{--ink:#fbe9ef;--soft:#c9a9b6;--line:#3a2230;--card:#22121c;--bg:#160b12;--sand:#2c1a12;color-scheme:dark}
+:root{--bg:#f3f4f6;--card:#fff;--ink:#1f2933;--soft:#6b7280;--line:#e5e7eb;--acc:#0f766e;--acc2:#e6f4f1;--amb:#b45309;--amb2:#fef3c7;--ok:#15803d;--ok2:#dcfce7;--bad:#b91c1c;--r:14px;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1214;--card:#1a1f23;--ink:#e5e7eb;--soft:#9ca3af;--line:#2a3036;--acc:#2dd4bf;--acc2:#12302c;--amb:#fbbf24;--amb2:#33280f;--ok:#4ade80;--ok2:#11301d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1214;--card:#1a1f23;--ink:#e5e7eb;--soft:#9ca3af;--line:#2a3036;--acc:#2dd4bf;--acc2:#12302c;--amb:#fbbf24;--amb2:#33280f;--ok:#4ade80;--ok2:#11301d;color-scheme:dark}
 *{box-sizing:border-box}html,body{margin:0;height:100%}
-body{font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
-button{font:inherit;color:inherit}img{max-width:100%}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;background:var(--bg);color:var(--ink);-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+button{font:inherit;color:inherit;cursor:pointer}img{max-width:100%;display:block}a{color:inherit}
 .scr{position:fixed;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
-.scr[hidden],[hidden]{display:none!important}
-.fade-in{animation:fin .45s ease both}@keyframes fin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.ag,.card.ag,.sh .ag{background:var(--grad);background-size:300% 300%;animation:gshift 14s ease-in-out infinite}
-@keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-/* floating bubbles + sun (pure CSS, light on old phones) */
-.fx{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.fx i{position:absolute;bottom:-60px;border-radius:50%;background:rgba(255,255,255,.22);animation:rise linear infinite}
-.fx i:nth-child(1){left:8%;width:26px;height:26px;animation-duration:11s}.fx i:nth-child(2){left:28%;width:14px;height:14px;animation-duration:8s;animation-delay:2s}.fx i:nth-child(3){left:52%;width:34px;height:34px;animation-duration:14s;animation-delay:1s}.fx i:nth-child(4){left:74%;width:18px;height:18px;animation-duration:9s;animation-delay:3s}.fx i:nth-child(5){left:90%;width:24px;height:24px;animation-duration:12s;animation-delay:5s}
-@keyframes rise{from{transform:translateY(0) scale(.8);opacity:0}15%{opacity:1}to{transform:translateY(-110vh) scale(1.1);opacity:0}}
-.sunb{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,236,170,.9) 0,rgba(255,200,90,.45) 40%,transparent 70%);top:-90px;right:-80px;animation:breathe 6s ease-in-out infinite}
-@keyframes breathe{50%{transform:scale(1.12);opacity:.85}}
-.sea{position:absolute;left:-10%;right:-10%;bottom:-20px;height:110px;background:radial-gradient(60% 40px at 50% 0,rgba(255,255,255,.28),transparent 70%);animation:sway 7s ease-in-out infinite}
-@keyframes sway{50%{transform:translateX(5%)}}
-/* splash */
-#splash{color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:24px}
-.slogo{width:min(46vw,190px);aspect-ratio:1/1;border-radius:50%;background:#fff;padding:8px;box-shadow:0 18px 50px rgba(80,0,40,.4);animation:lpop 1s cubic-bezier(.2,.9,.3,1.3) both,bob 4s ease-in-out 1s infinite;position:relative;z-index:1}
-.slogo img{width:100%;height:100%;object-fit:contain;border-radius:50%;display:block}
-.slogo::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:3px solid rgba(255,255,255,.6);animation:ring 1.8s ease-out .5s infinite}
-@keyframes lpop{from{transform:scale(.4) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}@keyframes ring{from{transform:scale(.9);opacity:.9}to{transform:scale(1.28);opacity:0}}@keyframes bob{50%{transform:translateY(-8px)}}
-.sname{font-weight:800;font-size:1.35rem;letter-spacing:.02em;animation:fin .6s .45s both;z-index:1;text-shadow:0 2px 12px rgba(80,0,40,.3)}.swel{opacity:.95;animation:fin .6s .7s both;z-index:1}
-/* login */
-#login{background:var(--bg)}
-.lhead{color:#fff;text-align:center;padding:28px 20px 76px;position:relative;overflow:hidden}.lhead>:not(.fx):not(.sunb){position:relative}.lhead img{width:78px;height:78px;border-radius:50%;background:#fff;padding:4px;object-fit:contain;box-shadow:0 8px 24px rgba(80,0,40,.3)}
-.lhead h1{margin:8px 0 2px;font-size:1.2rem}.lhead p{margin:0;opacity:.9;font-size:.85rem}
-.lcard{margin:-50px 16px 0;background:var(--card);border-radius:26px;padding:22px 18px;box-shadow:0 14px 40px rgba(120,20,60,.14);position:relative}
-.lbl{font-size:.8rem;font-weight:600;color:var(--soft);margin:12px 0 6px;display:block}
-.inp{width:100%;font:inherit;font-size:1.15rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 16px;border-radius:16px;border:2px solid var(--line);background:var(--bg);color:var(--ink);outline:none}
-.inp:focus{border-color:var(--sea)}
-.pins{display:flex;gap:10px}.pins input{width:56px;height:60px;text-align:center;font-size:1.5rem;font-weight:800;border-radius:16px;border:2px solid var(--line);background:var(--bg);color:var(--ink);outline:none}.pins input:focus{border-color:var(--sea)}
-.big{width:100%;margin-top:20px;padding:15px;border:0;border-radius:16px;background:var(--grad);background-size:250% 250%;animation:gshift 8s ease-in-out infinite;color:#fff;font-weight:700;font-size:1.05rem;cursor:pointer;box-shadow:0 10px 26px var(--glow)}
-.big:disabled{opacity:.6}.err{color:var(--coral);font-size:.86rem;margin-top:10px;min-height:1.2em}.hint{color:var(--soft);font-size:.78rem;margin-top:14px;text-align:center}
-/* welcome */
-#welcome{color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}#welcome>div:not(.fx){position:relative}
-#welcome h1{font-size:2rem;margin:10px 0 6px}#welcome p{margin:4px 0;opacity:.95}.wv{font-size:3.4rem;animation:wave 1.6s ease-in-out infinite;display:inline-block;transform-origin:70% 70%}@keyframes wave{0%,60%,100%{transform:none}20%{transform:rotate(14deg)}40%{transform:rotate(-8deg)}}
-.wbtn{margin-top:22px;background:#fff;color:var(--sea);border:0;border-radius:999px;padding:13px 26px;font-weight:700;cursor:pointer}
+[hidden]{display:none!important}
+@keyframes fin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.fi{animation:fin .28s ease-out both}
+/* splash / login / welcome */
+#splash,#welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:24px;background:var(--card)}
+.lg{width:96px;height:96px;border-radius:50%;object-fit:contain;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.08);animation:pop .4s ease-out both}
+.ttl{font-weight:700;font-size:17px;margin:4px 0 0}.sub{color:var(--soft);font-size:13px;margin:0}
+#login{background:var(--card)}
+.lw{max-width:420px;margin:0 auto;padding:48px 20px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.lf{width:100%;margin-top:22px;text-align:left}
+.lbl{display:block;font-size:13px;font-weight:600;margin:0 0 6px}
+.inp{width:100%;font:inherit;font-size:18px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);outline:none;transition:border-color .15s}
+.inp:focus{border-color:var(--acc);background:var(--card)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:12px;padding:12px 16px;font-weight:600;background:var(--acc);color:#fff;text-decoration:none;transition:transform .1s,opacity .15s}
+.btn:active{transform:scale(.98)}.btn:disabled{opacity:.6}.btn.w{width:100%;margin-top:14px;font-size:15px}
+.btn.o{background:var(--card);color:var(--acc);border:1.5px solid var(--line)}.btn.s{padding:8px 12px;font-size:13px;border-radius:10px}
+.err{color:var(--bad);font-size:13px;min-height:18px;margin-top:8px}.hint{color:var(--soft);font-size:12px;margin-top:16px;text-align:center}
+#welcome h1{font-size:22px;margin:6px 0 0}
 /* home */
-.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 16px;color:#fff;box-shadow:0 6px 20px rgba(120,20,60,.18)}
-.top img{width:38px;height:38px;border-radius:50%;background:#fff;padding:2px;object-fit:contain}.top b{flex:1;font-size:.95rem;line-height:1.15}.top small{display:block;font-weight:500;opacity:.9;font-size:.7rem}
-.ib{position:relative;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.22);color:#fff;font-size:1.15rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.ib i{position:absolute;top:-2px;right:-2px;background:#fff;color:var(--sea);font-style:normal;font-size:.65rem;font-weight:800;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px}
-.wrap{padding:14px 16px 120px;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-.card{background:var(--card);border-radius:var(--r);padding:16px;box-shadow:0 6px 22px rgba(120,20,60,.07)}
-.hero{color:#fff;position:relative;overflow:hidden}.hero>:not(.fx):not(.sunb){position:relative}
-.hero .lab{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;opacity:.85}.hero h2{margin:2px 0 8px;font-size:1.45rem}.hero .pk{font-weight:700;font-size:1.02rem}.hero .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.chip{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.22);font-size:.76rem;font-weight:600;backdrop-filter:blur(4px)}
-.offline{background:#fef3c7;color:#78350f;border-radius:14px;padding:8px 12px;font-size:.8rem}
-.days{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 8px;scroll-snap-type:x mandatory;scrollbar-width:none}.days::-webkit-scrollbar{display:none}
-.dt{flex:0 0 auto;scroll-snap-align:start;min-width:76px;border:0;border-radius:18px;padding:9px 12px;background:var(--card);box-shadow:0 3px 12px rgba(120,20,60,.08);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;transition:transform .25s,box-shadow .25s}
-.dt b{font-size:.92rem}.dt small{font-size:.66rem;color:var(--soft)}.dt.on{background:var(--grad);background-size:250% 250%;animation:gshift 8s ease-in-out infinite;color:#fff;transform:translateY(-3px);box-shadow:0 10px 22px var(--glow)}.dt.on small{color:rgba(255,255,255,.9)}.dt.lk{opacity:.55}.dt.today::after{content:"TODAY";font-size:.55rem;font-weight:800;color:var(--sun);letter-spacing:.08em}.dt.on.today::after{color:#fff}
-.dbar{display:flex;gap:8px;align-items:center}.ie{border:0;border-radius:999px;padding:9px 14px;background:var(--sand);color:#b4441c;font-weight:700;font-size:.82rem;cursor:pointer;white-space:nowrap}
-.dhd{display:flex;justify-content:space-between;align-items:flex-end;gap:8px}.dhd h3{margin:0;font-size:1.1rem}.dhd small{color:var(--soft)}
-.prog{height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin:10px 0 2px}.prog i{display:block;height:100%;background:var(--grad);background-size:200% 100%;animation:gshift 4s linear infinite;border-radius:8px;transition:width .7s cubic-bezier(.2,.8,.2,1)}
-.tl{position:relative;margin-top:12px}.tl::before{content:"";position:absolute;left:21px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--sea2),var(--vio) 60%,var(--line))}
-.ti{position:relative;display:grid;grid-template-columns:46px minmax(0,1fr);gap:10px;padding:8px 0;animation:fin .45s ease both}
-.tdot{width:44px;height:44px;border-radius:50%;background:var(--card);border:3px solid var(--sea2);display:flex;align-items:center;justify-content:center;font-size:1.15rem;z-index:1;transition:all .3s}
-.ti.done .tdot{background:var(--leaf);border-color:var(--leaf);color:#fff}.ti.now .tdot{border-color:var(--sea);box-shadow:0 0 0 6px var(--glow);animation:pulse 1.8s infinite}.ti.next .tdot{border-color:var(--vio)}
-@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(255,79,123,0)}}
-.tc{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}.ti.now .tc{border-color:var(--sea);box-shadow:0 8px 24px var(--glow)}.ti.done .tc{opacity:.8}
-.tc img{display:block;width:100%;aspect-ratio:16/8;object-fit:cover}
-.tb{padding:12px 14px}.tt{display:flex;justify-content:space-between;gap:8px;align-items:baseline}.ttime{font-weight:800;color:var(--sea);font-size:.9rem}.st{font-size:.66rem;font-weight:800;letter-spacing:.06em;padding:3px 8px;border-radius:999px;background:var(--line);color:var(--soft)}.st.now{background:#ffe4ec;color:#a3164a}.st.done{background:#dcfce7;color:#166534}.st.next{background:#efe7ff;color:#5b21b6}
-.tb h4{margin:4px 0 2px;font-size:1.02rem}.pl{color:var(--soft);font-size:.82rem}.ds{font-size:.86rem;margin:6px 0 0;line-height:1.5}.ins{margin-top:8px;font-size:.8rem;background:var(--sand);color:#b4441c;border-radius:12px;padding:7px 10px}
-.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.84rem;margin-top:8px}.kv span{color:var(--soft)}
-.hl{display:flex;gap:8px;margin-top:10px}.hl div{flex:1;border-radius:14px;padding:8px 10px;text-align:center}.hl small{display:block;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}.hl b{font-size:1.15rem}
-.hl .rep{background:#fff1d6;color:#92400e}.hl .dep{background:#efe7ff;color:#5b21b6}
-.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.ab{border:0;border-radius:999px;padding:8px 13px;font-weight:600;font-size:.8rem;cursor:pointer;background:var(--bg);color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:5px}
-.ab.ok{background:var(--leaf);color:#fff}.ab.pri{background:var(--sea);color:#fff}
-.lock{text-align:center;padding:30px 16px}.lock .lk{font-size:3rem;animation:shake 2.4s ease-in-out infinite}@keyframes shake{0%,90%,100%{transform:none}93%{transform:rotate(-10deg)}96%{transform:rotate(10deg)}}
-.cd{display:flex;gap:8px;justify-content:center;margin-top:12px}.cd div{background:var(--bg);border-radius:14px;padding:8px 12px;min-width:62px}.cd b{display:block;font-size:1.3rem}.cd small{font-size:.65rem;color:var(--soft)}
-.al{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}.al:last-child{border-bottom:0}.al .ic{font-size:1.3rem}.al b{font-size:.9rem}.al p{margin:2px 0 0;font-size:.8rem;color:var(--soft)}
-.remb{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;cursor:pointer;background:linear-gradient(90deg,#fff1e6,#ffe4ec);color:#7a2140;border-radius:18px;padding:14px 14px;margin:6px 0 4px;box-shadow:inset 0 0 0 1px #ffd2dd}
-.remb .ic{font-size:1.6rem}.remb b{display:block;font-size:.95rem}.remb small{font-size:.76rem;opacity:.85}.remb .ar{margin-left:auto;font-size:1.4rem;font-weight:800;animation:nudge 1.6s ease-in-out infinite}@keyframes nudge{50%{transform:translateX(4px)}}
-.rl{margin:6px 0 0;padding:0;list-style:none}.rl li{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9rem}.rl li:last-child{border-bottom:0}.rl small{display:block;color:var(--soft);font-size:.78rem}
-.rsec{border-radius:16px;padding:12px 14px;margin-top:12px}.rsec.d{background:#fff1e6;color:#6b2a10}.rsec.t{background:#f3ecff;color:#3b1d7a}.rsec h4{margin:0}
-/* help desk — highlighted */
-.help{color:#fff;position:relative;overflow:hidden;padding:18px;box-shadow:0 14px 34px var(--glow)}.help>:not(.fx){position:relative}
-.help h3{margin:0 0 4px;font-size:1.25rem}.help p{white-space:pre-line;opacity:.95;font-size:.88rem;margin:6px 0 12px}
-.hbad{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.22);border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:700;letter-spacing:.05em}.hbad::before{content:"";width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:live 1.6s infinite}@keyframes live{70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}}
-.hc{display:grid;gap:8px}.hrow{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.95);color:#2a1420;border-radius:16px;padding:10px 12px;text-decoration:none}.hrow .hi{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex:none;background:#ffe4ec}.hrow.wa .hi{background:#dcfce7}.hrow.em .hi{background:#efe7ff}
-.hrow span{min-width:0}.hrow small{display:block;font-size:.7rem;color:#7a6470;font-weight:600;text-transform:uppercase;letter-spacing:.05em}.hrow b{font-size:.98rem;word-break:break-all;user-select:all}.hrow .go{margin-left:auto;font-weight:700;font-size:.78rem;color:var(--sea);white-space:nowrap}
-.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;border:0;border-radius:999px;padding:13px 18px;color:#fff;font-weight:700;box-shadow:0 10px 28px var(--glow);cursor:pointer;background:var(--grad);background-size:250% 250%;animation:gshift 8s ease-in-out infinite,fpulse 2.4s ease-in-out infinite}
-@keyframes fpulse{50%{transform:scale(1.06)}}
-/* sheets & modals */
-.ov{position:fixed;inset:0;z-index:20;background:rgba(30,6,20,.55);display:flex;align-items:flex-end;justify-content:center;animation:fo .2s both}@keyframes fo{from{opacity:0}}
-.sh{width:100%;max-width:640px;max-height:86vh;overflow-y:auto;background:var(--card);border-radius:26px 26px 0 0;padding:20px 18px calc(24px + env(safe-area-inset-bottom,0px));animation:su .32s cubic-bezier(.2,.9,.3,1) both}@keyframes su{from{transform:translateY(100%)}}
-.sh h3{margin:0 0 4px}.x{float:right;border:0;background:var(--bg);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem}
-.mid{align-items:center;padding:20px}.mid .sh{border-radius:26px;text-align:center;max-width:420px}
-/* greeting cards */
-.gr .sh{padding:0;overflow:hidden;color:#fff}.gr .gin{position:relative;padding:34px 22px 24px}.gr .gin>:not(.fx){position:relative}
-.gr.am .sh{background:linear-gradient(160deg,#ffb347,#ff6f61 55%,#ff4f7b)}.gr.pm .sh{background:linear-gradient(160deg,#1d1147,#4b1d6e 60%,#a1336b)}
-.gr h3{white-space:pre-line;line-height:1.45;font-size:1.12rem}.gr .big{background:#fff;color:#a3164a;animation:none;box-shadow:none}
-.sunr{width:86px;height:86px;margin:0 auto 6px;border-radius:50%;background:radial-gradient(circle,#fff7c2,#ffd166 60%,#ffb347);box-shadow:0 0 40px 10px rgba(255,220,120,.7);animation:sunup 1.4s cubic-bezier(.2,.9,.3,1) both,breathe 5s ease-in-out 1.4s infinite}@keyframes sunup{from{transform:translateY(60px);opacity:0}}
-.moon{width:80px;height:80px;margin:0 auto 6px;border-radius:50%;box-shadow:-18px 8px 0 4px #ffe9a8;transform:translateX(12px);animation:fin 1s both}
-.stars2 i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 2.4s ease-in-out infinite}@keyframes tw{50%{opacity:.15}}
-.ies{display:grid;gap:12px;margin-top:12px}.ies ul{margin:6px 0 0;padding-left:20px}.ies li{margin:4px 0;font-size:.9rem}.inc{background:#f0fdf4;color:#14532d;border-radius:16px;padding:12px 14px}.exc{background:#fef2f2;color:#7f1d1d;border-radius:16px;padding:12px 14px}
-.stars{display:flex;gap:6px;justify-content:center;margin:14px 0}.stars button{border:0;background:none;font-size:2.3rem;cursor:pointer;color:#e5d3da;transition:transform .15s}.stars button.on{color:#f59e0b}.stars button:active{transform:scale(1.25)}
-.nt{padding:12px 0;border-bottom:1px solid var(--line)}.nt.new b::before{content:"● ";color:var(--sea)}.nt p{margin:3px 0 0;font-size:.85rem;white-space:pre-line}.nt small{color:var(--soft);font-size:.72rem}
-.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;background:#2a1420;color:#fff;padding:11px 18px;border-radius:14px;font-size:.88rem;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:calc(100vw - 32px);animation:fin .3s both}
-.upd{position:fixed;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:25;max-width:520px;margin:0 auto;border-radius:20px;padding:14px 16px;color:#fff;display:flex;gap:12px;align-items:center;box-shadow:0 14px 36px var(--glow);animation:su .4s cubic-bezier(.2,.9,.3,1) both}
-.upd b{display:block}.upd small{opacity:.9;font-size:.78rem}.upd button{margin-left:auto;border:0;border-radius:999px;background:#fff;color:#a3164a;font-weight:800;padding:10px 14px;cursor:pointer;white-space:nowrap}
-.chk{width:80px;height:80px;margin:0 auto}.chk circle{stroke:var(--leaf);stroke-width:4;fill:none;stroke-dasharray:240;stroke-dashoffset:240;animation:dr .6s ease forwards}.chk path{stroke:var(--leaf);stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:dr .4s .5s ease forwards}@keyframes dr{to{stroke-dashoffset:0}}
-.empty{text-align:center;color:var(--soft);padding:18px 8px;font-size:.88rem}
-.menu{position:absolute;right:12px;top:58px;z-index:9;background:var(--card);color:var(--ink);border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.2);padding:6px;min-width:220px}.menu button{display:block;width:100%;text-align:left;border:0;background:none;padding:11px 12px;border-radius:12px;cursor:pointer;font-size:.9rem}.menu button:hover{background:var(--bg)}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--vio);outline-offset:2px}
-.rm *,.rm *::before,.rm *::after{animation:none!important;transition:none!important}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:8px 14px;background:var(--card);border-bottom:1px solid var(--line)}
+.top img{width:32px;height:32px;border-radius:50%;object-fit:contain;background:#fff}.top b{flex:1;font-size:14px;line-height:1.2}.top small{display:block;font-weight:400;color:var(--soft);font-size:11px}
+.ib{position:relative;width:36px;height:36px;border-radius:50%;border:0;background:var(--bg);font-size:16px;display:flex;align-items:center;justify-content:center}
+.ib i{position:absolute;top:-2px;right:-2px;background:var(--bad);color:#fff;font-style:normal;font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px}
+.wrap{max-width:640px;margin:0 auto;padding:12px 12px 90px;display:flex;flex-direction:column;gap:10px}
+.card{background:var(--card);border-radius:var(--r);padding:14px;border:1px solid var(--line)}
+.trip h2{margin:0;font-size:17px}.trip .pk{font-size:13px;color:var(--soft);margin-top:1px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.meta span{font-size:12px;background:var(--bg);border-radius:8px;padding:3px 8px}
+.offl{background:var(--amb2);color:var(--amb);border-radius:10px;padding:8px 12px;font-size:12px}
+.days{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0}.days::-webkit-scrollbar{display:none}
+.dt{flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:6px 12px;text-align:center;line-height:1.25;transition:background .15s,color .15s,border-color .15s}
+.dt b{display:block;font-size:13px}.dt small{font-size:11px;color:var(--soft)}
+.dt.on{background:var(--acc);border-color:var(--acc);color:#fff}.dt.on small{color:rgba(255,255,255,.85)}.dt.lk{opacity:.55}
+.dt.today:not(.on){border-color:var(--acc)}
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.qb{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 12px;text-align:left;font-size:13px;font-weight:600}
+.qb span{flex:1;min-width:0}.qb small{display:block;font-weight:400;color:var(--soft);font-size:11px}.qb .ar{flex:none;color:var(--soft);font-size:16px}
+.dh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.dh h3{margin:0;font-size:16px}.dh small{color:var(--soft);font-size:12px;white-space:nowrap}
+.dsub{color:var(--soft);font-size:12px}
+.pb{height:4px;border-radius:4px;background:var(--line);margin:10px 0 4px;overflow:hidden}.pb i{display:block;height:100%;background:var(--ok);border-radius:4px;transition:width .5s ease}
+.slide{animation:fin .25s ease-out both}
+/* timeline */
+.it{display:grid;grid-template-columns:62px 16px minmax(0,1fr);column-gap:8px;position:relative}
+.it .tm{font-weight:700;font-size:12.5px;padding-top:10px;text-align:right;white-space:nowrap}
+.rail{position:relative;display:flex;justify-content:center}.rail::before{content:"";position:absolute;top:0;bottom:0;width:2px;background:var(--line)}
+.it:first-child .rail::before{top:16px}.it:last-child .rail::before{bottom:calc(100% - 16px)}
+.dot{position:relative;margin-top:12px;width:12px;height:12px;border-radius:50%;background:var(--card);border:2px solid var(--soft)}
+.it.done .dot{background:var(--ok);border-color:var(--ok)}.it.now .dot{border-color:var(--acc);background:var(--acc);box-shadow:0 0 0 4px var(--acc2)}.it.next .dot{border-color:var(--acc)}
+.ib2{border:0;background:none;text-align:left;width:100%;padding:8px 0 10px;display:block}
+.it:not(:last-child) .body{border-bottom:1px solid var(--line)}
+.ih{display:flex;gap:8px;align-items:flex-start}.ih .tx{flex:1;min-width:0}.ih b{font-size:14px;display:block}
+.ih .pl{color:var(--soft);font-size:12px}.chev{color:var(--soft);transition:transform .2s;margin-top:1px}.open .chev{transform:rotate(90deg)}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.03em;border-radius:6px;padding:2px 6px;background:var(--bg);color:var(--soft);white-space:nowrap}
+.pill.now{background:var(--acc2);color:var(--acc)}.pill.done{background:var(--ok2);color:var(--ok)}.pill.next{background:var(--amb2);color:var(--amb)}
+.key{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.key span{font-size:12px;border-radius:8px;padding:3px 8px;background:var(--amb2);color:var(--amb);font-weight:600}.key span.b{background:var(--acc2);color:var(--acc)}
+.det{display:grid;grid-template-rows:0fr;transition:grid-template-rows .22s ease}.open .det{grid-template-rows:1fr}.det>div{overflow:hidden}
+.det .in{padding:0 0 10px}
+.det img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:var(--bg);margin-bottom:8px}
+.det p{margin:0 0 6px;font-size:13px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13px;margin:4px 0 6px}.kv span{color:var(--soft)}
+.ins{font-size:12.5px;background:var(--amb2);color:var(--amb);border-radius:8px;padding:6px 9px;margin:4px 0 6px}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.lock{text-align:center;padding:22px 10px}.lock .e{font-size:30px}.lock h3{margin:6px 0 2px;font-size:16px}.lock p{margin:0;color:var(--soft);font-size:13px}
+.cd{display:inline-flex;gap:6px;margin-top:10px}.cd div{background:var(--bg);border-radius:8px;padding:6px 10px;min-width:54px}.cd b{display:block;font-size:16px}.cd small{font-size:10px;color:var(--soft)}
+.empty{text-align:center;color:var(--soft);padding:14px 6px;font-size:13px}
+.sec{margin:0 0 6px;font-size:14px}
+.al{display:flex;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:13px}.al:first-of-type{border-top:0}.al p{margin:1px 0 0;color:var(--soft);font-size:12px}
+.hb{display:grid;gap:8px;margin-top:10px}.hb .btn{padding:10px 6px;font-size:13px}
+.ls{margin-top:8px;font-size:12px;color:var(--soft);line-height:1.7;user-select:text}
+.hbadge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--ok)}.hbadge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:6;border:0;border-radius:999px;padding:10px 16px;background:var(--acc);color:#fff;font-weight:700;font-size:13px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+/* sheets */
+.ov{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center;animation:fo .15s both}@keyframes fo{from{opacity:0}}
+.sh{width:100%;max-width:560px;max-height:85vh;overflow-y:auto;background:var(--card);border-radius:18px 18px 0 0;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px));animation:su .22s ease-out both}@keyframes su{from{transform:translateY(40px);opacity:0}}
+.sh h3{margin:0 0 4px;font-size:16px}.x{float:right;border:0;background:var(--bg);width:32px;height:32px;border-radius:50%}
+.mid{align-items:center;padding:20px}.mid .sh{border-radius:18px;text-align:center;max-width:380px;animation:pop .22s ease-out both}
+.grp{border-radius:12px;padding:10px 12px;margin-top:10px;background:var(--bg)}.grp h4{margin:0 0 4px;font-size:13px}.grp ul{margin:0;padding-left:18px}.grp li{margin:4px 0;font-size:13px}.grp li small{display:block;color:var(--soft)}
+.grp.in{background:var(--ok2)}.grp.ex{background:#fdecec;color:#7f1d1d}
+.ge{font-size:40px;line-height:1;animation:pop .4s ease-out both}.gt{white-space:pre-line;font-size:15px;line-height:1.5;margin:10px 0 4px}
+.stars{display:flex;gap:4px;justify-content:center;margin:10px 0}.stars button{border:0;background:none;font-size:30px;color:#d1d5db;transition:transform .12s}.stars button.on{color:#f59e0b}.stars button:active{transform:scale(1.2)}
+textarea.ta{width:100%;border-radius:10px;border:1.5px solid var(--line);padding:8px;font:inherit;background:var(--bg);color:var(--ink)}
+.nt{padding:10px 0;border-bottom:1px solid var(--line)}.nt:last-child{border-bottom:0}.nt.new b::before{content:"● ";color:var(--bad)}.nt p{margin:2px 0;font-size:13px;white-space:pre-line}.nt small{color:var(--soft);font-size:11px}
+.toast{position:fixed;left:50%;bottom:calc(70px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;background:#1f2933;color:#fff;padding:9px 14px;border-radius:10px;font-size:13px;max-width:calc(100vw - 32px);animation:fin .2s both}
+.upd{position:fixed;left:12px;right:12px;bottom:calc(64px + env(safe-area-inset-bottom,0px));z-index:25;max-width:480px;margin:0 auto;border-radius:14px;padding:10px 12px;background:var(--card);border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.15);display:flex;gap:10px;align-items:center;animation:su .25s ease-out both}
+.upd b{display:block;font-size:13px}.upd small{color:var(--soft);font-size:12px}.upd .btn{margin-left:auto;white-space:nowrap}
+.chk{width:64px;height:64px;margin:0 auto}.chk circle{stroke:var(--ok);stroke-width:4;fill:none;stroke-dasharray:240;stroke-dashoffset:240;animation:dr .45s ease forwards}.chk path{stroke:var(--ok);stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:dr .3s .35s ease forwards}@keyframes dr{to{stroke-dashoffset:0}}
+.menu{position:absolute;right:10px;top:50px;z-index:9;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:4px;min-width:200px;animation:pop .15s ease-out both}.menu button{display:block;width:100%;text-align:left;border:0;background:none;padding:10px 12px;border-radius:8px;font-size:13px}.menu button:active{background:var(--bg)}
+.live{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ok);margin-right:4px;vertical-align:middle}.live.off{background:var(--soft)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition:none!important}}
 </style></head>
 <body>
-<div id="splash" class="scr ag"><div class="fx" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="sunb" aria-hidden="true"></div><div class="slogo"><img id="lg1" alt="Magic Memories Tours and Travels logo"></div><div class="sname">Magic Memories Tours and Travels</div><div class="swel">Welcome Our Valuable Customer</div><div class="sea" aria-hidden="true"></div></div>
+<div id="splash" class="scr"><img class="lg" id="lg1" alt="Magic Memories Tours and Travels logo"><p class="ttl">Magic Memories Tours and Travels</p><p class="sub">Welcome Our Valuable Customer</p></div>
 <div id="login" class="scr" hidden></div>
-<div id="welcome" class="scr ag" hidden></div>
+<div id="welcome" class="scr" hidden></div>
 <div id="home" class="scr" hidden></div>
 <div id="layer"></div>
 <script>
-const FX='<div class="fx" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>';
 const LOGO=''/*__LOGO__*/;
 const SB_URL='https://cyjaueyafftscpgviflm.supabase.co',SB_KEY='__SB_KEY__';
 const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const LS={get(k,d){try{const v=localStorage.getItem('mmc.'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('mmc.'+k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem('mmc.'+k)}catch(e){}}};
-let ST={tok:LS.get('tok',null),data:LS.get('data',null),at:LS.get('at',0),day:null,offline:false,skew:0,ver:''};
-document.querySelectorAll('#lg1').forEach(i=>i.src=LOGO);
-if(LS.get('rm',false))document.documentElement.classList.add('rm');
-async function rpc(fn,args,ms){const c=new AbortController(),t=setTimeout(()=>c.abort(),ms||12000);try{const r=await fetch(SB_URL+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},body:JSON.stringify(args||{}),signal:c.signal});if(!r.ok){let m='Server error '+r.status;try{m=(await r.json()).message||m}catch(e){}throw new Error(m)}return await r.json()}finally{clearTimeout(t)}}
-function toast(m){const d=document.createElement('div');d.className='toast';d.setAttribute('role','status');d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),3400)}
+let ST={tok:LS.get('tok',null),data:LS.get('data',null),at:LS.get('at',0),day:null,offline:false,skew:0,ver:'',open:{}};
+$('#lg1').src=LOGO;
+async function rpc(fn,args,ms){const c=new AbortController(),t=setTimeout(()=>c.abort(),ms||10000);try{const r=await fetch(SB_URL+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},body:JSON.stringify(args||{}),signal:c.signal});if(!r.ok){let m='Server error '+r.status;try{m=(await r.json()).message||m}catch(e){}throw new Error(m)}return await r.json()}finally{clearTimeout(t)}}
+function toast(m){document.querySelectorAll('.toast').forEach(x=>x.remove());const d=document.createElement('div');d.className='toast';d.setAttribute('role','status');d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),3000)}
 function show(id){['splash','login','welcome','home'].forEach(s=>$('#'+s).hidden=s!==id)}
 const first=n=>String(n||'').replace(/\(.*?\)/g,'').trim().split(/\s+/)[0]||'';
-/* ---- time in the tour's time zone, from SERVER time (never the phone clock) ---- */
+/* time in the tour's time zone, from SERVER time (never the phone clock) */
 const TZ=()=>(ST.data&&ST.data.booking&&ST.data.booking.tz)||'Asia/Kolkata';
 const nowS=()=>new Date(Date.now()+ST.skew);
-function tzParts(d){const p=new Intl.DateTimeFormat('en-CA',{timeZone:TZ(),year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(d),o={};p.forEach(x=>o[x.type]=x.value);return {date:o.year+'-'+o.month+'-'+o.day,min:(+o.hour%24)*60+ +o.minute,h:+o.hour%24}}
+function tzParts(d){const p=new Intl.DateTimeFormat('en-CA',{timeZone:TZ(),year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(d),o={};p.forEach(x=>o[x.type]=x.value);return {date:o.year+'-'+o.month+'-'+o.day,min:(+o.hour%24)*60+ +o.minute}}
 const tmin=t=>{const m=/^(\d{1,2}):(\d{2})\s*([AP]M)?/i.exec(String(t||''));if(!m)return null;let h=+m[1];if(m[3])h=h%12+(/p/i.test(m[3])?12:0);return h*60+ +m[2]};
 const durMin=s=>{s=String(s||'').toLowerCase();let m=0;const h=/(\d+(?:\.\d+)?)\s*h/.exec(s),mi=/(\d+)\s*m/.exec(s);if(h)m+=parseFloat(h[1])*60;if(mi)m+=+mi[1];return m||60};
 const fdate=(iso,o)=>new Date(iso+'T00:00').toLocaleDateString('en-GB',o||{weekday:'short',day:'2-digit',month:'short'});
-
-/* ---------- login ---------- */
-function loginView(err){show('login');$('#login').innerHTML=`<div class="lhead ag fade-in">${FX}<div class="sunb" aria-hidden="true"></div><img src="${LOGO}" alt=""><h1>Magic Memories Tours and Travels</h1><p>Your personal tour companion</p></div>
- <form class="lcard fade-in" id="lf" novalidate><h2 style="margin:0 0 4px;font-size:1.2rem">Open my tour</h2><p style="margin:0;color:var(--soft);font-size:.85rem">Enter the Booking ID sent to you by Magic Memories.</p>
- <label class="lbl" for="bid">Booking ID</label><input class="inp" id="bid" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="MM-XXXXXX" maxlength="12" value="${esc(LS.get('lastCode',''))}">
- <label class="lbl" id="pinl">Last 4 digits of your mobile number</label><div class="pins" role="group" aria-labelledby="pinl">${[0,1,2,3].map(i=>`<input inputmode="numeric" maxlength="1" aria-label="Digit ${i+1}" data-p="${i}" autocomplete="off">`).join('')}</div>
- <div class="err" id="lerr" role="alert">${esc(err||'')}</div><button class="big" id="lgo" type="submit">Open my tour →</button>
- <div class="hint">🔒 Your details are private — only you can see your booking.</div></form>`;
- const P=[...document.querySelectorAll('[data-p]')];P.forEach((p,i)=>{p.addEventListener('input',()=>{p.value=p.value.replace(/\D/g,'').slice(-1);if(p.value&&P[i+1])P[i+1].focus()});p.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!p.value&&P[i-1])P[i-1].focus()})});
- $('#lf').addEventListener('submit',async e=>{e.preventDefault();const code=$('#bid').value.trim().toUpperCase(),pin=P.map(p=>p.value).join('');if(code.replace(/^MM-/,'').length<6){$('#lerr').textContent='Enter your full Booking ID';return}if(pin.length!==4){$('#lerr').textContent='Enter the last 4 digits of your mobile number';return}
-  const b=$('#lgo');b.disabled=true;b.textContent='Checking…';$('#lerr').textContent='';
-  try{const r=await rpc('mmc_login',{p_code:code,p_verify:pin,p_device:(navigator.userAgent||'').slice(0,60)});if(!r||!r.ok){$('#lerr').textContent=(r&&r.err)||'Could not open the booking';b.disabled=false;b.textContent='Open my tour →';return}
-   ST.tok=r.token;LS.set('tok',r.token);LS.set('lastCode',code);ST.data=null;LS.del('data');LS.set('seen',{});welcomeView(r.name)}
-  catch(x){$('#lerr').textContent=navigator.onLine?'Could not reach the server. Please try again.':'No internet connection. Connect and try again.';b.disabled=false;b.textContent='Open my tour →'}});}
-function welcomeView(name){show('welcome');$('#welcome').innerHTML=`${FX}<div class="fade-in"><div class="wv" aria-hidden="true">👋</div><h1>Welcome, ${esc(first(name))}!</h1><p>We're delighted to have you with us.</p><p style="font-weight:700;font-size:1.1rem;margin-top:10px">Your Journey Begins Here!</p><button class="wbtn" id="wgo">Open my tour</button></div>`;const go=()=>{clearTimeout(t);boot()};const t=setTimeout(go,3200);$('#wgo').onclick=go}
-
-/* ---------- data ---------- */
-async function load(silent){if(!ST.tok){loginView();return false}
- try{const d=await rpc('mmc_data',{p_token:ST.tok});if(!d||!d.ok){if(d&&d.err==='session'){logout(true,'Your session has ended. Please open your booking again.');return false}throw new Error('bad')}
-  const prev=ST.data;ST.skew=new Date(d.now)-Date.now();ST.data=d;ST.at=Date.now();ST.offline=false;LS.set('data',d);LS.set('at',ST.at);
-  if(prev&&prev.unlocked<d.unlocked&&d.unlocked>0){notify('🌅 Day '+d.unlocked+' is now available',`Good Morning! Day ${d.unlocked} of your ${d.booking.package||'tour'} is now available. Open to explore today's schedule.`);ST.day=d.unlocked}
-  if(prev){const old=new Set((prev.notifs||[]).map(n=>n.id));(d.notifs||[]).filter(n=>!old.has(n.id)).forEach(n=>notify(n.title,n.body))}
-  return true}catch(e){ST.offline=true;if(!silent&&!ST.data)toast('No connection — showing saved information');return !!ST.data}}
-function notify(t,b){toast(t);try{if('Notification' in window&&Notification.permission==='granted'&&document.hidden)new Notification(t,{body:b||'',icon:LOGO})}catch(e){}}
-async function poll(){if(!ST.tok||document.hidden)return;try{const v=await rpc('mmc_ver',{p_token:ST.tok},8000);if(v==='session'){logout(true,'Your session has ended. Please open your booking again.');return}if(v!==ST.ver){const f0=!ST.ver;ST.ver=v;if(!f0){await load(true);draw();phoneAlarms();checkUpdate()}}ST.offline=false}catch(e){if(!ST.offline){ST.offline=true;draw()}}}
-setInterval(poll,20000);document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ST.tok){load(true).then(ok=>{if(ok)draw();greetings()})}});
-window.addEventListener('online',()=>{if(ST.tok)load(true).then(()=>draw())});window.addEventListener('offline',()=>{ST.offline=true;draw()});
-
-/* ---------- home ---------- */
-function stateOf(it,dayDate,doneSet){const now=tzParts(nowS()),t=tmin(it.time);if(doneSet.has(it.id))return 'done';if(dayDate<now.date)return 'past';if(dayDate>now.date||t==null)return 'up';if(now.min>=t&&now.min<t+durMin(it.duration))return 'now';if(now.min>=t+durMin(it.duration))return 'past';return 'up'}
-function itemCard(it,dd,doneSet,isNext,i){const s=stateOf(it,dd.date,doneSet),dt=it.data||{},ic={activity:'🏝️',ferry:'⛴️',pickup:'🚕'}[it.kind]||'📍';
- const lab={done:['done','COMPLETED'],now:['now','ON NOW'],past:['','PENDING'],up:[isNext?'next':'',isNext?'UP NEXT':'UPCOMING']}[s];
- let extra='';if(it.kind==='ferry')extra=`<div class="hl">${dt.report?`<div class="rep"><small>Reporting</small><b>${esc(dt.report)}</b></div>`:''}${it.time?`<div class="dep"><small>Departure</small><b>${esc(it.time)}</b></div>`:''}</div><div class="kv">${[['Ferry',[dt.name,dt.number&&'#'+dt.number].filter(Boolean).join(' ')],['Report at',dt.reportAt],['Harbour',dt.harbour],['To',dt.to],['Ticket',dt.ticket],['Status',dt.status]].filter(x=>x[1]).map(x=>`<span>${x[0]}</span><b>${esc(x[1])}</b>`).join('')}</div>`;
- if(it.kind==='pickup')extra=`<div class="hl"><div class="dep"><small>Pickup time</small><b>${esc(it.time||'—')}</b></div>${dt.eta?`<div class="rep"><small>Journey</small><b>${esc(dt.eta)}</b></div>`:''}</div><div class="kv">${[['Wait at',it.place],['Vehicle',[dt.vehicle,dt.reg].filter(Boolean).join(' · ')],['Driver',dt.driver],['Next stop',dt.next]].filter(x=>x[1]).map(x=>`<span>${x[0]}</span><b>${esc(x[1])}</b>`).join('')}</div>`;
- const acts=[it.map&&`<a class="ab" href="${esc(it.map)}" target="_blank" rel="noopener">🗺️ Directions</a>`,it.kind==='pickup'&&dt.dphone&&`<a class="ab" href="tel:${esc(String(dt.dphone).replace(/[^\d+]/g,''))}">📞 Call driver</a>`,`<button class="ab ${s==='done'?'':'ok'}" data-mark="${it.id}" data-v="${s==='done'?0:1}">${s==='done'?'↺ Not done':'✓ Mark as done'}</button>`].filter(Boolean).join('');
- return `<div class="ti ${s==='done'?'done':s==='now'?'now':isNext?'next':''}" style="animation-delay:${Math.min(i*60,420)}ms"><div class="tdot" aria-hidden="true">${s==='done'?'✓':ic}</div><div class="tc">${it.photo?`<img src="${esc(it.photo)}" alt="${esc(it.title)}" loading="lazy">`:''}<div class="tb"><div class="tt"><span class="ttime">${esc(it.time||'')}</span><span class="st ${lab[0]}">${lab[1]}</span></div><h4>${esc(it.title||'')}</h4>${it.place&&it.kind!=='pickup'?`<div class="pl">📍 ${esc(it.place)}${it.duration?' · ⏱ '+esc(it.duration):''}</div>`:''}${it.descr?`<p class="ds">${esc(it.descr)}</p>`:''}${extra}${it.instructions?`<div class="ins">ℹ️ ${esc(it.instructions)}</div>`:''}<div class="acts">${acts}</div></div></div></div>`}
-function countdown(iso){const ms=new Date(iso)-nowS();if(!(ms>0))return '';const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);return `<div class="cd">${d?`<div><b>${d}</b><small>days</small></div>`:''}<div><b>${h}</b><small>hours</small></div><div><b>${m}</b><small>min</small></div></div>`}
-function draw(){const d=ST.data;if(!d){loginView();return}show('home');const b=d.booking,doneSet=new Set(d.done||[]),today=tzParts(nowS()).date,days=d.days||[];
- if(ST.day==null)ST.day=Math.max(1,Math.min(d.unlocked||1,b.days));const D=days[ST.day-1]||{day:ST.day,locked:true,items:[]},unread=(d.notifs||[]).filter(n=>!n.read_at).length;
- const items=(D.items||[]),nextIdx=D.locked?-1:items.findIndex(it=>{const s=stateOf(it,D.date,doneSet);return s==='up'||s==='now'}),doneN=items.filter(i=>doneSet.has(i.id)).length;
- const dnext=d.next_unlock&&D.locked&&D.day===d.unlocked+1?d.next_unlock:null;
- const alerts=[];days.filter(x=>!x.locked&&x.date>=today).forEach(x=>(x.items||[]).forEach(it=>{if(doneSet.has(it.id))return;const dt=it.data||{};if(it.kind==='ferry')alerts.push(['⛴️',`Ferry ${x.date===today?'today':fdate(x.date)}: ${it.title||''}`,`Reporting ${dt.report||'—'}${dt.reportAt||dt.harbour?' at '+(dt.reportAt||dt.harbour):''} · Departure ${it.time||'—'}${dt.status?' · '+dt.status:''}`]);if(it.kind==='pickup')alerts.push(['🚕',`Cab pickup ${x.date===today?'today':fdate(x.date)} at ${it.time||'—'}`,`Wait at ${it.place||'—'}${(it.data||{}).vehicle?' · '+it.data.vehicle+' '+(it.data.reg||''):''}`])}));
- const RD=(d.docs||[]).filter(x=>(x.kind||'doc')==='doc'),RT=[...(d.terms||[]).map(t=>typeof t==='string'?{name:t}:t),...(d.docs||[]).filter(x=>x.kind==='term')],rN=RD.length+RT.length;
- const h=d.help||{},ph=(h.phones||[]).filter(Boolean);
- $('#home').innerHTML=`<div class="top ag"><img src="${LOGO}" alt=""><b>Magic Memories<small>Tours and Travels</small></b><button class="ib" id="bell" aria-label="Notifications${unread?', '+unread+' new':''}">🔔${unread?`<i>${unread}</i>`:''}</button><button class="ib" id="mnu" aria-label="Menu" aria-expanded="false">⋮</button></div>
- <div class="wrap">${ST.offline?`<div class="offline" role="status">📴 Offline — showing information saved ${new Date(ST.at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}. It refreshes when you are back online.</div>`:''}
- <section class="card hero ag fade-in">${FX}<div class="sunb" aria-hidden="true"></div><div class="lab">Passenger</div><h2>${esc(b.passenger)}</h2><div class="lab">Booked package</div><div class="pk">${esc(b.package||'Your tour')}</div><div class="meta"><span class="chip">🌙 ${b.nights} Night${b.nights===1?'':'s'} / ☀️ ${b.days} Day${b.days===1?'':'s'}</span><span class="chip">🗓️ ${fdate(b.start,{day:'2-digit',month:'short'})} – ${fdate(days.length?days[days.length-1].date:b.start,{day:'2-digit',month:'short'})}</span><span class="chip">👤 ${b.adults}${b.children?' + 🧒 '+b.children:''}</span><span class="chip">🎫 ${esc(b.code)}</span></div></section>
- <div class="dbar"><div class="days" role="tablist" aria-label="Tour days">${days.map(x=>`<button class="dt ${x.day===ST.day?'on':''} ${x.locked?'lk':''} ${x.date===today?'today':''}" role="tab" aria-selected="${x.day===ST.day}" data-day="${x.day}"><b>${x.locked?'🔒 ':''}Day ${x.day}</b><small>${fdate(x.date,{day:'2-digit',month:'short'})}</small></button>`).join('')}</div></div>
- <button class="ie" id="ieb" style="align-self:flex-start">✅ Included / ❌ Excluded · Day ${ST.day}</button>
- <section class="card" id="dayc" aria-live="polite">${D.locked?`<div class="lock fade-in"><div class="lk" aria-hidden="true">🔒</div><h3 style="margin:8px 0 4px">Day ${D.day} is locked</h3><p style="color:var(--soft);margin:0">Your schedule for ${fdate(D.date,{weekday:'long',day:'2-digit',month:'long'})} opens automatically${d.unlocked===0&&D.day===1?' on your tour start date':' on that morning'}.</p>${dnext||(!d.unlocked&&D.day===1&&d.next_unlock)?countdown(dnext||d.next_unlock):''}</div>`:
-  `<div class="dhd"><div><small>Day ${D.day} · ${fdate(D.date,{weekday:'long',day:'2-digit',month:'short'})}</small><h3>${esc(D.title||(D.date===today?"Today's itinerary":'Itinerary'))}</h3></div><small>${doneN}/${items.length} done</small></div><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${items.length}" aria-valuenow="${doneN}"><i style="width:${items.length?Math.round(100*doneN/items.length):0}%"></i></div>
-  <div class="tl">${items.length?items.map((it,i)=>itemCard(it,D,doneSet,i===nextIdx,i)).join(''):'<div class="empty">Your schedule for this day will appear here soon.</div>'}</div>`}</section>
- <section class="card"><h3 style="margin:0 0 4px">🔔 Important alerts & reminders</h3>${rN?`<button class="remb" id="remb"><span class="ic" aria-hidden="true">📋</span><span><b>Documents & things to remember</b><small>${[RD.length&&RD.length+' document'+(RD.length===1?'':'s')+' to carry',RT.length&&RT.length+' important note'+(RT.length===1?'':'s')].filter(Boolean).join(' · ')} — tap to see</small></span><span class="ar" aria-hidden="true">›</span></button>`:''}${alerts.length?alerts.map(a=>`<div class="al"><span class="ic" aria-hidden="true">${a[0]}</span><div><b>${esc(a[1])}</b><p>${esc(a[2])}</p></div></div>`).join(''):rN?'':'<div class="empty">No pending alerts. Enjoy your trip! 🌴</div>'}</section>
- ${helpCard(h,ph)}
- <p style="text-align:center;color:var(--soft);font-size:.72rem">Magic Memories Tours and Travels · updated ${new Date(ST.at).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'})}</p></div>
- <button class="fab" id="fab" aria-label="Help desk — call, WhatsApp or email">🆘 Help 24/7</button>`;
- bind()}
-function bind(){document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{ST.day=+b.dataset.day;draw();const c=$('#dayc');if(c)c.classList.add('fade-in')});
- const on=$('.dt.on');if(on)on.scrollIntoView({inline:'center',block:'nearest'});
- $('#ieb').onclick=ieSheet;$('#bell').onclick=notifSheet;$('#mnu').onclick=menu;const f=$('#fab');if(f)f.onclick=helpSheet;const rb=$('#remb');if(rb)rb.onclick=remSheet;
- document.querySelectorAll('[data-mark]').forEach(b=>b.onclick=()=>mark(b.dataset.mark,b.dataset.v==='1',b));
- }
-async function mark(id,done,btn){btn.disabled=true;try{const r=await rpc('mmc_mark',{p_token:ST.tok,p_item:id,p_done:done});if(!r.ok)throw new Error(r.err);const s=new Set(ST.data.done||[]);done?s.add(id):s.delete(id);ST.data.done=[...s];LS.set('data',ST.data);
-  if(done)celebrate();draw();const D=ST.data.days[ST.day-1];if(done&&D&&(D.items||[]).length&&(D.items||[]).every(i=>s.has(i.id))&&(ST.data.greet||{}).fb_on!==false)setTimeout(()=>feedback(D.day,true),1300)}catch(e){btn.disabled=false;toast(navigator.onLine?'Could not save — try again':'No internet — try again when online')}}
-function celebrate(){const o=modal(`<svg class="chk" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 22-24"/></svg><h3 style="margin:8px 0 0">Well done! 🎉</h3>`,true);setTimeout(()=>o.remove(),1100)}
-const tel=p=>String(p).replace(/[^\d+]/g,''),wa=p=>{let n=String(p).replace(/\D/g,'');if(n.length===10)n='91'+n;return n};
-function helpRows(h,ph){return [...ph.map((p,i)=>`<a class="hrow" href="tel:${esc(tel(p))}"><span class="hi" aria-hidden="true">📞</span><span><small>${ph.length>1?'Phone '+(i+1):'Phone'}</small><b>${esc(p)}</b></span><span class="go">Call</span></a>`),h.whatsapp?`<a class="hrow wa" href="https://wa.me/${esc(wa(h.whatsapp))}" target="_blank" rel="noopener"><span class="hi" aria-hidden="true">💬</span><span><small>WhatsApp</small><b>${esc(String(h.whatsapp).replace(/^\+?91(\d{10})$/,'+91 $1'))}</b></span><span class="go">Chat</span></a>`:'',h.email?`<a class="hrow em" href="mailto:${esc(h.email)}"><span class="hi" aria-hidden="true">✉️</span><span><small>Email</small><b>${esc(h.email)}</b></span><span class="go">Write</span></a>`:''].filter(Boolean).join('')}
-function helpCard(h,ph){const rows=helpRows(h,ph);return `<section class="card help ag" id="helpc">${FX}<span class="hbad">${esc(h.hours||'Available 24/7')}</span><h3 style="margin-top:8px">🆘 We're Available 24/7!</h3><p>${esc(h.message||'Whatever you need, whenever you need us, Magic Memories Tours and Travels is always here to help you.\nYour Journey, Our Responsibility.')}</p><div class="hc">${rows||'<span style="font-size:.8rem;opacity:.9">Contact numbers will appear here.</span>'}</div>${h.team?`<p style="margin:10px 0 0;font-size:.78rem;text-align:center">${esc(h.team)}</p>`:''}</section>`}
-function helpSheet(){const h=(ST.data&&ST.data.help)||{},ph=(h.phones||[]).filter(Boolean);modal(`<button class="x" data-close aria-label="Close">✕</button><h3>🆘 Help Desk · 24/7</h3><p style="color:var(--soft);font-size:.85rem;margin:2px 0 12px">Tap to call, chat on WhatsApp or send an email. We're always here to help you.</p><div class="hc help ag card" style="padding:12px">${FX}${helpRows(h,ph)||'<span>Contact numbers will appear here.</span>'}</div>`)}
-function remSheet(){const d=ST.data,RD=(d.docs||[]).filter(x=>(x.kind||'doc')==='doc'),RT=[...(d.terms||[]).map(t=>typeof t==='string'?{name:t}:t),...(d.docs||[]).filter(x=>x.kind==='term')];
- modal(`<button class="x" data-close aria-label="Close">✕</button><h3>📋 Documents & things to remember</h3><p style="color:var(--soft);font-size:.85rem;margin:2px 0 0">Please keep these ready for a smooth trip.</p>${RD.length?`<div class="rsec d"><h4>📄 Documents to carry</h4><ul class="rl">${RD.map(x=>`<li><span aria-hidden="true">•</span><span><b>${esc(x.name)}</b>${x.note?`<small>${esc(x.note)}</small>`:''}</span></li>`).join('')}</ul></div>`:''}${RT.length?`<div class="rsec t"><h4>📌 Important terms & reminders</h4><ul class="rl">${RT.map(x=>`<li><span aria-hidden="true">•</span><span>${esc(x.name)}${x.note?`<small>${esc(x.note)}</small>`:''}</span></li>`).join('')}</ul></div>`:''}<p style="font-size:.78rem;color:var(--soft);margin-top:12px">Any doubt? Tap 🆘 Help — we're available 24/7.</p>`)}
-
-/* ---------- sheets / modals ---------- */
-function modal(html,mid,onclose){const o=document.createElement('div');o.className='ov'+(mid?' mid':'');o.innerHTML=`<div class="sh" role="dialog" aria-modal="true">${html}</div>`;o.addEventListener('click',e=>{if(e.target===o||e.target.closest('[data-close]')){o.remove();onclose&&onclose()}});$('#layer').appendChild(o);const f=o.querySelector('button,[href],input');if(f)f.focus({preventScroll:true});return o}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){const o=[...document.querySelectorAll('.ov')].pop();if(o)o.remove();const m=$('.menu');if(m)m.remove()}});
-function ieSheet(){const D=(ST.data.days||[])[ST.day-1]||{};if(D.locked){modal(`<button class="x" data-close aria-label="Close">✕</button><h3>Day ${D.day}</h3><p style="color:var(--soft)">Included and excluded details open together with this day's schedule.</p>`);return}
- modal(`<button class="x" data-close aria-label="Close">✕</button><h3>Day ${D.day} · what's covered</h3><p style="color:var(--soft);font-size:.85rem;margin:2px 0 0">Included items are part of your package price. Excluded items are not covered and may need separate payment.</p><div class="ies"><div class="inc"><b>✅ Included</b>${(D.included||[]).length?`<ul>${D.included.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p style="margin:6px 0 0;font-size:.85rem">Details will be shared by our team.</p>'}</div><div class="exc"><b>❌ Not included</b>${(D.excluded||[]).length?`<ul>${D.excluded.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p style="margin:6px 0 0;font-size:.85rem">Nothing listed for this day.</p>'}</div></div><p style="font-size:.78rem;color:var(--soft);margin-top:12px">Questions? Our help desk is available 24/7.</p>`)}
-function notifSheet(){const L=ST.data.notifs||[];modal(`<button class="x" data-close aria-label="Close">✕</button><h3>🔔 Notifications</h3>${L.length?L.map(n=>`<div class="nt ${n.read_at?'':'new'}"><b>${esc(n.title)}</b><p>${esc(n.body)}</p><small>${new Date(n.created_at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</small></div>`).join(''):'<div class="empty">No notifications yet.</div>'}${'Notification' in window&&Notification.permission==='default'?'<button class="big" id="npm">Allow notifications on this phone</button>':''}`);
- const b=$('#npm');if(b)b.onclick=()=>Notification.requestPermission().then(()=>b.remove());
- if(L.some(n=>!n.read_at))rpc('mmc_notif_read',{p_token:ST.tok}).then(()=>{L.forEach(n=>n.read_at=n.read_at||new Date().toISOString());LS.set('data',ST.data);const i=$('#bell i');if(i)i.remove()}).catch(()=>{})}
-function menu(){const old=$('.menu');if(old){old.remove();return}const m=document.createElement('div');m.className='menu';m.setAttribute('role','menu');const rm=document.documentElement.classList.contains('rm');m.innerHTML=`<button role="menuitem" data-m="refresh">↻ Refresh</button><button role="menuitem" data-m="rm">${rm?'✨ Turn animations on':'🧘 Reduce animations'}</button><button role="menuitem" data-m="change">🔁 Change booking</button><button role="menuitem" data-m="out">🚪 Log out</button>`;$('#home').appendChild(m);$('#mnu').setAttribute('aria-expanded','true');
- m.onclick=async e=>{const k=e.target.dataset.m;m.remove();if(k==='refresh'){toast('Refreshing…');await load();draw()}if(k==='rm'){document.documentElement.classList.toggle('rm');LS.set('rm',document.documentElement.classList.contains('rm'))}if(k==='change'||k==='out')logout(false,k==='change'?'':null)}}
-function logout(silent,msg){try{const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications;if(LN)LN.getPending().then(p=>p.notifications.length&&LN.cancel({notifications:p.notifications.map(n=>({id:n.id}))}));alarmSig=''}catch(e){}const t=ST.tok;if(t&&!silent)rpc('mmc_logout',{p_token:t}).catch(()=>{});ST.tok=null;ST.data=null;ST.day=null;ST.ver='';['tok','data','at','seen'].forEach(LS.del);loginView(msg||'')}
-
-/* ---------- greetings & feedback (once per day, server time) ---------- */
-function fill(t){return String(t||'').replace(/\{name\}/g,first(ST.data.booking.passenger))}
-function feedback(day,auto){const seen=LS.get('seen',{}),k='fb'+day;if(auto&&seen[k])return;seen[k]=1;LS.set('seen',seen);let stars=((ST.data.feedback||{})[day]||{}).stars||0;
- const o=modal(`<div style="font-size:2.6rem">🌅</div><h3>How Was Your Day?</h3><p style="color:var(--soft);margin:4px 0">We hope you had a wonderful day with us!<br>Rate Day ${day}'s experience.</p><div class="stars" role="radiogroup" aria-label="Rating">${[1,2,3,4,5].map(n=>`<button role="radio" aria-checked="${n===stars}" aria-label="${n} star${n>1?'s':''}" data-s="${n}" class="${n<=stars?'on':''}">★</button>`).join('')}</div><textarea id="fbc" rows="2" placeholder="Anything you'd like to tell us? (optional)" style="width:100%;border-radius:14px;border:2px solid var(--line);padding:10px;font:inherit;background:var(--bg);color:var(--ink)">${esc(((ST.data.feedback||{})[day]||{}).comment||'')}</textarea><button class="big" id="fbs">Send rating</button><button class="ab" data-close style="margin-top:10px">Skip</button>`,true);
- o.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{stars=+b.dataset.s;o.querySelectorAll('[data-s]').forEach(x=>{x.classList.toggle('on',+x.dataset.s<=stars);x.setAttribute('aria-checked',+x.dataset.s===stars)})});
- o.querySelector('#fbs').onclick=async()=>{if(!stars){toast('Tap the stars to rate');return}try{const r=await rpc('mmc_feedback_save',{p_token:ST.tok,p_day:day,p_stars:stars,p_comment:o.querySelector('#fbc').value});if(!r.ok)throw 0;(ST.data.feedback=ST.data.feedback||{})[day]={stars};LS.set('data',ST.data);o.remove();toast('Thank you for your feedback! 💙')}catch(e){toast('Could not send — try again')}}}
-let gLast=0;
-function stars2(){return '<div class="fx stars2" aria-hidden="true">'+[[12,18],[30,8],[52,22],[70,10],[86,26],[20,40],[64,36],[90,48],[8,56]].map((p,i)=>`<i style="left:${p[0]}%;top:${p[1]}%;animation-delay:${i*.3}s"></i>`).join('')+'</div>'}
-function greetCard(kind,text,btn,onbtn){const o=document.createElement('div');o.className='ov mid gr '+kind;o.innerHTML=`<div class="sh" role="dialog" aria-modal="true"><div class="gin">${kind==='am'?FX+'<div class="sunr" aria-hidden="true"></div>':stars2()+'<div class="moon" aria-hidden="true"></div>'}<h3>${esc(text)}</h3><button class="big" id="gbtn">${btn}</button><button class="ab" data-close style="margin-top:10px;background:rgba(255,255,255,.2);color:#fff">Close</button></div></div>`;o.addEventListener('click',e=>{if(e.target===o||e.target.closest('[data-close]'))o.remove()});$('#layer').appendChild(o);o.querySelector('#gbtn').onclick=()=>{o.remove();onbtn&&onbtn()};return o}
-/* shown every time the app is opened (or brought back after 15 min), in the morning or at night — tour-zone server time */
-function greetings(force){const d=ST.data;if(!d||!d.unlocked||document.querySelector('.ov'))return;if(!force&&Date.now()-gLast<15*60000)return;
- const g=d.greet||{},now=tzParts(nowS()),seen=LS.get('seen',{}),D=(d.days||[]).find(x=>x.date===now.date&&!x.locked),done=new Set(d.done||[]),last=(d.days||[]).slice(-1)[0];
- const prev=(d.days||[]).filter(x=>!x.locked&&x.date<now.date&&(x.items||[]).length&&(x.items||[]).every(i=>done.has(i.id))&&!(d.feedback||{})[x.day]).pop();
- if(prev&&!seen['fb'+prev.day]&&g.fb_on!==false){gLast=Date.now();feedback(prev.day,true);return}
- const mf=tmin(g.morning_from||'05:00'),mt=tmin(g.morning_to||'11:59'),nf=tmin(g.night_from||'18:00');
- const am=now.min>=mf&&now.min<=mt,pm=now.min>=nf||now.min<mf;
- if(am&&D&&g.morning&&g.am_on!==false){gLast=Date.now();greetCard('am',fill(g.morning),"See today's itinerary ☀️",()=>{ST.day=D.day;draw();const c=$('#dayc');if(c)c.scrollIntoView({behavior:'smooth'})});return}
- if(pm&&g.pm_on!==false){const onTour=(d.days||[]).some(x=>x.date===now.date)||(now.min<mf&&last&&last.date>=fdIso(now.date,-1));if(!onTour)return;
-  const isLast=last&&(last.date===now.date||(now.min<mf&&last.date===fdIso(now.date,-1)));
-  const txt=isLast?`Good Night, ${first(d.booking.passenger)}!\nHope you had a wonderful trip with us!\nThank you for travelling with Magic Memories Tours and Travels.`:fill(g.night||'Good Night, {name}!\nSee You Tomorrow!');
-  gLast=Date.now();greetCard('pm',txt,'Good night! 🌙')}}
 const fdIso=(iso,n)=>{const x=new Date(iso+'T00:00Z');x.setUTCDate(x.getUTCDate()+n);return x.toISOString().slice(0,10)};
 
-/* ---------- automatic updates: a correction published by Magic Memories reaches every phone ---------- */
+/* ---------- login: Booking ID only ---------- */
+function loginView(err){show('login');$('#login').innerHTML=`<div class="lw fi"><img class="lg" src="${LOGO}" alt=""><p class="ttl">Magic Memories Tours and Travels</p><p class="sub">Your personal tour companion</p>
+ <form class="lf" id="lf" novalidate><label class="lbl" for="bid">Enter your Booking ID</label><input class="inp" id="bid" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="MM-XXXXXX" maxlength="12" value="${esc(LS.get('lastCode',''))}" enterkeyhint="go">
+ <div class="err" id="lerr" role="alert">${esc(err||'')}</div><button class="btn w" id="lgo" type="submit">Open my tour</button>
+ <p class="hint">You'll find your Booking ID in the WhatsApp message from Magic Memories.</p></form></div>`;
+ const i=$('#bid');i.addEventListener('input',()=>{$('#lerr').textContent=''});
+ $('#lf').addEventListener('submit',async e=>{e.preventDefault();const code=i.value.trim().toUpperCase();if(code.replace(/^MM-?/,'').length<6){$('#lerr').textContent='Please enter your full Booking ID';return}
+  const b=$('#lgo');b.disabled=true;b.textContent='Opening…';
+  try{const r=await rpc('mmc_login',{p_code:code,p_device:(navigator.userAgent||'').slice(0,60)});if(!r||!r.ok){$('#lerr').textContent=(r&&r.err)||'Could not open the booking';b.disabled=false;b.textContent='Open my tour';return}
+   ST.tok=r.token;LS.set('tok',r.token);LS.set('lastCode',code);ST.data=null;LS.del('data');LS.set('seen',{});welcomeView(r.name)}
+  catch(x){$('#lerr').textContent=navigator.onLine?'Could not reach the server. Please try again.':'No internet connection. Please connect and try again.';b.disabled=false;b.textContent='Open my tour'}})}
+function welcomeView(name){show('welcome');const p=load(true);$('#welcome').innerHTML=`<div class="fi"><div class="ge" aria-hidden="true">👋</div><h1>Welcome, ${esc(first(name))}!</h1><p class="sub" style="margin-top:6px">We're delighted to have you with us.</p><p style="font-weight:600;margin:10px 0 0">Your Journey Begins Here!</p></div>`;setTimeout(()=>p.then(()=>{draw();rtStart();setTimeout(()=>greetings(true),400);phoneAlarms()}),1600)}
+
+/* ---------- data + instant updates ---------- */
+let loading=null;
+function load(silent){if(!ST.tok)return Promise.resolve(false);if(loading)return loading;loading=(async()=>{
+ try{const d=await rpc('mmc_data',{p_token:ST.tok});if(!d||!d.ok){if(d&&d.err==='session'){logout(true,'Your booking session has ended. Please enter your Booking ID again.');return false}throw new Error('bad')}
+  const prev=ST.data;ST.skew=new Date(d.now)-Date.now();ST.data=d;ST.at=Date.now();ST.offline=false;LS.set('data',d);LS.set('at',ST.at);
+  if(prev&&prev.unlocked<d.unlocked&&d.unlocked>0){notify('🌅 Day '+d.unlocked+' is now open',`Day ${d.unlocked} of your tour is now available.`);ST.day=d.unlocked}
+  if(prev){const old=new Set((prev.notifs||[]).map(n=>n.id));(d.notifs||[]).filter(n=>!old.has(n.id)).forEach(n=>notify('🔔 '+n.title,n.body))}
+  unlockTimer();return true}catch(e){ST.offline=true;if(!silent&&!ST.data)toast('No connection — showing saved information');return !!ST.data}finally{loading=null}})();return loading}
+function notify(t,b){toast(t);try{if('Notification' in window&&Notification.permission==='granted'&&document.hidden)new Notification(t,{body:b||'',icon:LOGO})}catch(e){}}
+let rtT=null;function refreshSoon(){clearTimeout(rtT);rtT=setTimeout(async()=>{if(await load(true)){draw();phoneAlarms();checkUpdate()}},250)}
+/* realtime: the server pushes a message the moment Magic Memories changes anything */
+const RT={ws:null,ok:false,hb:null,ref:0,chan:''};
+function rtStart(){const chan=ST.data&&ST.data.chan;if(!chan||!ST.tok)return;if(RT.ws&&RT.chan===chan&&RT.ws.readyState<2)return;rtStop();RT.chan=chan;
+ let ws;try{ws=new WebSocket(SB_URL.replace(/^http/,'ws')+'/realtime/v1/websocket?apikey='+SB_KEY+'&vsn=1.0.0')}catch(e){return}RT.ws=ws;
+ const send=o=>{try{ws.send(JSON.stringify(o))}catch(e){}};
+ ws.onopen=()=>{[chan,'mmc-all'].forEach(t=>{const r=String(++RT.ref);send({topic:'realtime:'+t,event:'phx_join',payload:{config:{broadcast:{self:false,ack:false},presence:{key:''},private:false}},ref:r,join_ref:r})});RT.hb=setInterval(()=>send({topic:'phoenix',event:'heartbeat',payload:{},ref:String(++RT.ref)}),25000)};
+ ws.onmessage=e=>{let m;try{m=JSON.parse(e.data)}catch(x){return}if(m.event==='phx_reply'&&m.payload&&m.payload.status==='ok'&&String(m.topic).startsWith('realtime:')){if(!RT.ok){RT.ok=true;liveDot()}}if(m.event==='broadcast')refreshSoon()};
+ ws.onclose=()=>{clearInterval(RT.hb);RT.ok=false;liveDot();if(RT.ws===ws){RT.ws=null;if(ST.tok)setTimeout(rtStart,3000)}};ws.onerror=()=>{try{ws.close()}catch(e){}}}
+function rtStop(){const w=RT.ws;RT.ws=null;RT.ok=false;clearInterval(RT.hb);if(w)try{w.close()}catch(e){}}
+function liveDot(){const d=$('#live');if(d){d.className='live'+(RT.ok?'':' off');d.title=RT.ok?'Live':'Connecting…'}}
+/* safety net: a tiny check every 15 s (every 6 s if the live link is down) */
+async function poll(){if(!ST.tok||document.hidden)return;try{const v=await rpc('mmc_ver',{p_token:ST.tok},8000);if(v==='session'){logout(true,'Your booking session has ended. Please enter your Booking ID again.');return}if(v!==ST.ver){const f0=!ST.ver;ST.ver=v;if(!f0)refreshSoon()}if(ST.offline){ST.offline=false;draw()}}catch(e){if(!ST.offline){ST.offline=true;draw()}}}
+(function tick(){poll();setTimeout(tick,RT.ok?15000:6000)})();
+let ulT=null;function unlockTimer(){clearTimeout(ulT);const d=ST.data;if(!d||!d.next_unlock)return;const ms=new Date(d.next_unlock)-nowS()+3000;if(ms>0&&ms<864e5*2)ulT=setTimeout(()=>refreshSoon(),ms)}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ST.tok){refreshSoon();rtStart();setTimeout(()=>greetings(),500)}});
+window.addEventListener('online',()=>{if(ST.tok){refreshSoon();rtStart()}});window.addEventListener('offline',()=>{ST.offline=true;if(ST.data)draw()});
+
+/* ---------- home ---------- */
+const ICON={activity:'📍',ferry:'⛴️',pickup:'🚕'};
+function stateOf(it,date,done){const now=tzParts(nowS()),t=tmin(it.time);if(done.has(it.id))return 'done';if(date<now.date)return 'past';if(date>now.date||t==null)return 'up';if(now.min>=t&&now.min<t+durMin(it.duration))return 'now';if(now.min>=t+durMin(it.duration))return 'past';return 'up'}
+function itemRow(it,D,done,isNext){const s=stateOf(it,D.date,done),dt=it.data||{},open=ST.open[it.id]!=null?ST.open[it.id]:(s==='now'||isNext);
+ const pill={done:['done','Done'],now:['now','Now'],past:['','Pending'],up:[isNext?'next':'',isNext?'Next':'']}[s];
+ let key='';if(it.kind==='ferry')key=`<div class="key">${dt.report?`<span>Report ${esc(dt.report)}</span>`:''}${it.time?`<span class="b">Departs ${esc(it.time)}</span>`:''}</div>`;
+ if(it.kind==='pickup')key=`<div class="key"><span class="b">Pickup ${esc(it.time||'—')}</span>${it.place?`<span>Wait at ${esc(it.place)}</span>`:''}</div>`;
+ const kv=it.kind==='ferry'?[['Ferry',[dt.name,dt.number&&'#'+dt.number].filter(Boolean).join(' ')],['Report at',dt.reportAt],['Harbour',dt.harbour],['To',dt.to],['Ticket',dt.ticket],['Status',dt.status]]:it.kind==='pickup'?[['Vehicle',[dt.vehicle,dt.reg].filter(Boolean).join(' · ')],['Driver',dt.driver],['Going to',dt.next],['Journey',dt.eta]]:[['Duration',it.duration]];
+ const kvH=kv.filter(x=>x[1]).map(x=>`<span>${x[0]}</span><b>${esc(x[1])}</b>`).join('');
+ const acts=[it.map&&`<a class="btn o s" href="${esc(it.map)}" target="_blank" rel="noopener">🗺️ Directions</a>`,it.kind==='pickup'&&dt.dphone&&`<a class="btn o s" href="tel:${esc(String(dt.dphone).replace(/[^\d+]/g,''))}">📞 Call driver</a>`,`<button class="btn s ${s==='done'?'o':''}" data-mark="${it.id}" data-v="${s==='done'?0:1}">${s==='done'?'Undo':'✓ Mark as done'}</button>`].filter(Boolean).join('');
+ return `<div class="it ${s==='done'?'done':s==='now'?'now':isNext?'next':''} ${open?'open':''}"><div class="tm">${esc(it.time||'')}</div><div class="rail"><span class="dot"></span></div>
+ <div class="body"><button class="ib2" data-tg="${it.id}" aria-expanded="${open}"><div class="ih"><span aria-hidden="true">${ICON[it.kind]||'📍'}</span><div class="tx"><b>${esc(it.title||'')}</b>${it.place&&it.kind==='activity'?`<div class="pl">${esc(it.place)}</div>`:''}${key}</div>${pill[1]?`<span class="pill ${pill[0]}">${pill[1]}</span>`:''}<span class="chev" aria-hidden="true">›</span></div></button>
+ <div class="det"><div><div class="in">${it.photo?(open?`<img src="${esc(it.photo)}" alt="" decoding="async">`:`<img data-src="${esc(it.photo)}" alt="" decoding="async">`):''}${it.descr?`<p>${esc(it.descr)}</p>`:''}${kvH?`<div class="kv">${kvH}</div>`:''}${it.instructions?`<div class="ins">ℹ️ ${esc(it.instructions)}</div>`:''}<div class="acts">${acts}</div></div></div></div></div></div>`}
+function countdown(iso){const ms=new Date(iso)-nowS();if(!(ms>0))return '';const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);return `<div class="cd">${d?`<div><b>${d}</b><small>days</small></div>`:''}<div><b>${h}</b><small>hours</small></div><div><b>${m}</b><small>min</small></div></div>`}
+const tel=p=>String(p).replace(/[^\d+]/g,''),wa=p=>{let n=String(p).replace(/\D/g,'');if(n.length===10)n='91'+n;return n};
+function remLists(d){return {RD:(d.docs||[]).filter(x=>(x.kind||'doc')==='doc'),RM:[...(d.terms||[]).map(t=>typeof t==='string'?{name:t}:t),...(d.docs||[]).filter(x=>x.kind==='term')]}}
+let lastDay=null;
+function draw(){const d=ST.data;if(!d){loginView();return}show('home');const b=d.booking,done=new Set(d.done||[]),today=tzParts(nowS()).date,days=d.days||[];
+ if(ST.day==null)ST.day=Math.max(1,Math.min(d.unlocked||1,b.days));const D=days[ST.day-1]||{day:ST.day,locked:true,items:[]},unread=(d.notifs||[]).filter(n=>!n.read_at).length;
+ const items=D.items||[],nextIdx=D.locked?-1:items.findIndex(it=>{const s=stateOf(it,D.date,done);return s==='up'||s==='now'}),doneN=items.filter(i=>done.has(i.id)).length;
+ const {RD,RM}=remLists(d),rN=RD.length+RM.length;
+ const alerts=[];days.filter(x=>!x.locked&&(x.date===today||x.date===fdIso(today,1))).forEach(x=>(x.items||[]).forEach(it=>{if(done.has(it.id)||it.kind==='activity'||stateOf(it,x.date,done)==='past')return;const dt=it.data||{},when=x.date===today?'Today':'Tomorrow';
+  if(it.kind==='ferry')alerts.push(['⛴️',`${when}: ferry ${it.title||''}`,`Report ${dt.report||'—'}${dt.reportAt||dt.harbour?' at '+(dt.reportAt||dt.harbour):''} · Departs ${it.time||'—'}`]);
+  if(it.kind==='pickup')alerts.push(['🚕',`${when}: cab pickup at ${it.time||'—'}`,`Wait at ${it.place||'—'}${dt.vehicle?' · '+dt.vehicle+' '+(dt.reg||''):''}`])}));
+ const h=d.help||{},ph=(h.phones||[]).filter(Boolean),anim=lastDay!==ST.day;lastDay=ST.day;
+ const lastDate=days.length?days[days.length-1].date:b.start,sc=$('#home').scrollTop;
+ $('#home').innerHTML=`<div class="top"><img src="${LOGO}" alt=""><b>Magic Memories<small><span class="live${RT.ok?'':' off'}" id="live"></span>Tours and Travels</small></b><button class="ib" id="bell" aria-label="Messages${unread?', '+unread+' new':''}">🔔${unread?`<i>${unread}</i>`:''}</button><button class="ib" id="mnu" aria-label="Menu" aria-expanded="false">⋮</button></div>
+ <div class="wrap">${ST.offline?`<div class="offl" role="status">📴 Offline — showing information saved at ${new Date(ST.at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</div>`:''}
+ <section class="card trip"><h2>${esc(b.passenger)}</h2><div class="pk">${esc(b.package||'Your tour')}</div><div class="meta"><span>🌙 ${b.nights}N / ${b.days}D</span><span>🗓️ ${fdate(b.start,{day:'2-digit',month:'short'})} – ${fdate(lastDate,{day:'2-digit',month:'short'})}</span><span>👤 ${b.adults}${b.children?' + 🧒 '+b.children:''}</span><span>🎫 ${esc(b.code)}</span></div></section>
+ <div class="days" role="tablist" aria-label="Tour days">${days.map(x=>`<button class="dt ${x.day===ST.day?'on':''} ${x.locked?'lk':''} ${x.date===today?'today':''}" role="tab" aria-selected="${x.day===ST.day}" data-day="${x.day}"><b>${x.locked?'🔒 ':''}Day ${x.day}</b><small>${x.date===today?'Today':fdate(x.date,{day:'2-digit',month:'short'})}</small></button>`).join('')}</div>
+ <div class="qa"><button class="qb" id="ieb"><span>✅ Included / Excluded<small>What Day ${ST.day} covers</small></span><span class="ar">›</span></button><button class="qb" id="remb"><span>📋 Documents & reminders<small>${rN?rN+' thing'+(rN===1?'':'s')+' to remember':'Nothing yet'}</small></span><span class="ar">›</span></button></div>
+ <section class="card ${anim?'slide':''}" id="dayc" aria-live="polite">${D.locked?`<div class="lock"><div class="e" aria-hidden="true">🔒</div><h3>Day ${D.day} opens soon</h3><p>Your plan for ${fdate(D.date,{weekday:'long',day:'2-digit',month:'long'})} opens automatically on that day.</p>${(D.day===d.unlocked+1||(!d.unlocked&&D.day===1))&&d.next_unlock?countdown(d.next_unlock):''}</div>`:
+  `<div class="dh"><h3>${esc(D.title||('Day '+D.day))}</h3><small>${doneN}/${items.length} done</small></div><div class="dsub">Day ${D.day} · ${fdate(D.date,{weekday:'long',day:'2-digit',month:'short'})}</div><div class="pb"><i style="width:${items.length?Math.round(100*doneN/items.length):0}%"></i></div>
+  <div class="tl">${items.length?items.map((it,i)=>itemRow(it,D,done,i===nextIdx)).join(''):'<div class="empty">Your plan for this day will appear here soon.</div>'}</div>`}</section>
+ ${alerts.length?`<section class="card"><h3 class="sec">🔔 Coming up</h3>${alerts.map(a=>`<div class="al"><span aria-hidden="true">${a[0]}</span><div><b>${esc(a[1])}</b><p>${esc(a[2])}</p></div></div>`).join('')}</section>`:''}
+ <section class="card" id="helpc"><span class="hbadge">${esc(h.hours||'Available 24/7')}</span><h3 class="sec" style="margin-top:4px">Need help? We're here for you</h3><p class="sub">${esc((h.message||'Whatever you need, whenever you need us, Magic Memories Tours and Travels is always here to help you.').split('\n')[0])}</p>${helpBtns(h,ph)}</section>
+ </div><button class="fab" id="fab" aria-label="Help desk">Help</button>`;
+ if(!anim)$('#home').scrollTop=sc;bind()}
+function helpBtns(h,ph){const b=[ph[0]&&`<a class="btn" href="tel:${esc(tel(ph[0]))}">📞 Call</a>`,h.whatsapp&&`<a class="btn" style="background:#16a34a" href="https://wa.me/${esc(wa(h.whatsapp))}" target="_blank" rel="noopener">💬 WhatsApp</a>`,h.email&&`<a class="btn o" href="mailto:${esc(h.email)}">✉️ Email</a>`].filter(Boolean);
+ return (b.length?`<div class="hb" style="grid-template-columns:repeat(${b.length},minmax(0,1fr))">${b.join('')}</div>`:'')+`<div class="ls">${ph.map(p=>`📞 <a href="tel:${esc(tel(p))}">${esc(p)}</a>`).join(' &nbsp; ')}${h.whatsapp?`<br>💬 ${esc(String(h.whatsapp).replace(/^\+?91(\d{10})$/,'+91 $1'))}`:''}${h.email?`<br>✉️ ${esc(h.email)}`:''}</div>`}
+function bind(){document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{ST.day=+b.dataset.day;draw();$('#home').scrollTo({top:0})});
+ const on=$('.dt.on');if(on)on.scrollIntoView({inline:'center',block:'nearest'});
+ $('#ieb').onclick=ieSheet;$('#remb').onclick=remSheet;$('#bell').onclick=notifSheet;$('#mnu').onclick=menu;$('#fab').onclick=helpSheet;
+ document.querySelectorAll('[data-tg]').forEach(b=>b.onclick=()=>{const it=b.closest('.it'),o=!it.classList.contains('open');it.classList.toggle('open',o);b.setAttribute('aria-expanded',o);ST.open[b.dataset.tg]=o;const im=it.querySelector('img[data-src]');if(o&&im){im.src=im.dataset.src;im.removeAttribute('data-src')}});
+ document.querySelectorAll('[data-mark]').forEach(b=>b.onclick=()=>mark(b.dataset.mark,b.dataset.v==='1',b))}
+async function mark(id,done,btn){btn.disabled=true;const s=new Set(ST.data.done||[]);done?s.add(id):s.delete(id);ST.data.done=[...s];if(done){celebrate();ST.open[id]=false}draw();
+ try{const r=await rpc('mmc_mark',{p_token:ST.tok,p_item:id,p_done:done});if(!r.ok)throw new Error(r.err);LS.set('data',ST.data);const D=ST.data.days[ST.day-1];
+  if(done&&D&&(D.items||[]).length&&(D.items||[]).every(i=>s.has(i.id))&&(ST.data.greet||{}).fb_on!==false)setTimeout(()=>feedback(D.day,true),1000)}
+ catch(e){done?s.delete(id):s.add(id);ST.data.done=[...s];draw();toast(navigator.onLine?'Could not save — please try again':'No internet — please try again when online')}}
+function celebrate(){const o=modal(`<svg class="chk" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 22-24"/></svg><p style="margin:6px 0 0;font-weight:600">Done!</p>`,true);setTimeout(()=>o.remove(),850)}
+
+/* ---------- sheets ---------- */
+function modal(html,mid){const o=document.createElement('div');o.className='ov'+(mid?' mid':'');o.innerHTML=`<div class="sh" role="dialog" aria-modal="true">${html}</div>`;o.addEventListener('click',e=>{if(e.target===o||e.target.closest('[data-close]'))o.remove()});$('#layer').appendChild(o);return o}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const o=[...document.querySelectorAll('.ov')].pop();if(o)o.remove();const m=$('.menu');if(m)m.remove()}});
+const X='<button class="x" data-close aria-label="Close">✕</button>';
+function ieSheet(){const D=(ST.data.days||[])[ST.day-1]||{};if(D.locked){modal(`${X}<h3>Day ${D.day}</h3><p class="sub">These details open together with this day's plan.</p>`);return}
+ modal(`${X}<h3>Day ${D.day} · What's covered</h3><p class="sub">Included items are part of your package. Excluded items are not covered and may need separate payment.</p><div class="grp in"><h4>✅ Included</h4>${(D.included||[]).length?`<ul>${D.included.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="sub">Our team will share the details.</p>'}</div><div class="grp ex"><h4>❌ Not included</h4>${(D.excluded||[]).length?`<ul>${D.excluded.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="sub">Nothing listed for this day.</p>'}</div>`)}
+function remSheet(){const {RD,RM}=remLists(ST.data);modal(`${X}<h3>📋 Documents & reminders</h3><p class="sub">Please keep these ready for a smooth trip.</p>${RD.length?`<div class="grp"><h4>📄 Documents to carry</h4><ul>${RD.map(x=>`<li><b>${esc(x.name)}</b>${x.note?`<small>${esc(x.note)}</small>`:''}</li>`).join('')}</ul></div>`:''}${RM.length?`<div class="grp"><h4>📌 Important notes</h4><ul>${RM.map(x=>`<li>${esc(x.name)}${x.note?`<small>${esc(x.note)}</small>`:''}</li>`).join('')}</ul></div>`:''}${!RD.length&&!RM.length?'<div class="empty">Nothing to remember yet.</div>':''}`)}
+function helpSheet(){const h=(ST.data&&ST.data.help)||{},ph=(h.phones||[]).filter(Boolean);modal(`${X}<h3>Help Desk · 24/7</h3><p class="sub">${esc((h.message||'We are always here to help you.').split('\n')[0])}</p>${helpBtns(h,ph)}`)}
+function notifSheet(){const L=ST.data.notifs||[];modal(`${X}<h3>🔔 Messages</h3>${L.length?L.map(n=>`<div class="nt ${n.read_at?'':'new'}"><b>${esc(n.title)}</b><p>${esc(n.body)}</p><small>${new Date(n.created_at).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}</small></div>`).join(''):'<div class="empty">No messages yet.</div>'}${'Notification' in window&&Notification.permission==='default'&&!window.Capacitor?'<button class="btn w" id="npm">Allow notifications</button>':''}`);
+ const b=$('#npm');if(b)b.onclick=()=>Notification.requestPermission().then(()=>b.remove());
+ if(L.some(n=>!n.read_at))rpc('mmc_notif_read',{p_token:ST.tok}).then(()=>{L.forEach(n=>n.read_at=n.read_at||new Date().toISOString());LS.set('data',ST.data);const i=$('#bell i');if(i)i.remove()}).catch(()=>{})}
+function menu(){const old=$('.menu');if(old){old.remove();return}const m=document.createElement('div');m.className='menu';m.setAttribute('role','menu');m.innerHTML=`<button role="menuitem" data-m="refresh">↻ Refresh</button><button role="menuitem" data-m="out">🔁 Change Booking ID</button>`;$('#home').appendChild(m);
+ m.onclick=async e=>{const k=e.target.dataset.m;m.remove();if(k==='refresh'){toast('Refreshing…');if(await load())draw()}if(k==='out')logout(false)}}
+function logout(silent,msg){try{const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications;if(LN)LN.getPending().then(p=>p.notifications.length&&LN.cancel({notifications:p.notifications.map(n=>({id:n.id}))}));alarmSig=''}catch(e){}
+ const t=ST.tok;if(t&&!silent)rpc('mmc_logout',{p_token:t}).catch(()=>{});rtStop();ST.tok=null;ST.data=null;ST.day=null;ST.ver='';ST.open={};['tok','data','at','seen'].forEach(LS.del);loginView(msg||'')}
+
+/* ---------- greetings (each time the app is opened) & feedback ---------- */
+function fill(t){return String(t||'').replace(/\{name\}/g,first(ST.data.booking.passenger))}
+function feedback(day,auto){const seen=LS.get('seen',{}),k='fb'+day;if(auto&&seen[k])return;seen[k]=1;LS.set('seen',seen);let stars=((ST.data.feedback||{})[day]||{}).stars||0;
+ const o=modal(`<div class="ge" aria-hidden="true">🌅</div><h3 style="margin-top:8px">How was your day?</h3><p class="sub">Rate Day ${day} of your tour.</p><div class="stars" role="radiogroup" aria-label="Rating">${[1,2,3,4,5].map(n=>`<button role="radio" aria-checked="${n===stars}" aria-label="${n} star${n>1?'s':''}" data-s="${n}" class="${n<=stars?'on':''}">★</button>`).join('')}</div><textarea class="ta" id="fbc" rows="2" placeholder="Anything to tell us? (optional)">${esc(((ST.data.feedback||{})[day]||{}).comment||'')}</textarea><button class="btn w" id="fbs">Send</button><button class="btn o w" data-close style="margin-top:8px">Skip</button>`,true);
+ o.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{stars=+b.dataset.s;o.querySelectorAll('[data-s]').forEach(x=>{x.classList.toggle('on',+x.dataset.s<=stars);x.setAttribute('aria-checked',+x.dataset.s===stars)})});
+ o.querySelector('#fbs').onclick=async()=>{if(!stars){toast('Tap the stars to rate');return}try{const r=await rpc('mmc_feedback_save',{p_token:ST.tok,p_day:day,p_stars:stars,p_comment:o.querySelector('#fbc').value});if(!r.ok)throw 0;(ST.data.feedback=ST.data.feedback||{})[day]={stars};LS.set('data',ST.data);o.remove();toast('Thank you for your feedback!')}catch(e){toast('Could not send — please try again')}}}
+let gLast=0;
+function greetCard(emoji,text,btn,onbtn){const o=modal(`<div class="ge" aria-hidden="true">${emoji}</div><p class="gt">${esc(text)}</p><button class="btn w" id="gbtn">${btn}</button>`,true);o.querySelector('#gbtn').onclick=()=>{o.remove();onbtn&&onbtn()}}
+function greetings(force){const d=ST.data;if(!d||!d.unlocked||document.querySelector('.ov'))return;if(!force&&Date.now()-gLast<15*60000)return;
+ const g=d.greet||{},now=tzParts(nowS()),seen=LS.get('seen',{}),days=d.days||[],D=days.find(x=>x.date===now.date&&!x.locked),done=new Set(d.done||[]),last=days[days.length-1];
+ const prev=days.filter(x=>!x.locked&&x.date<now.date&&(x.items||[]).length&&(x.items||[]).every(i=>done.has(i.id))&&!(d.feedback||{})[x.day]).pop();
+ if(prev&&!seen['fb'+prev.day]&&g.fb_on!==false){gLast=Date.now();feedback(prev.day,true);return}
+ const mf=tmin(g.morning_from||'05:00'),mt=tmin(g.morning_to||'11:59'),nf=tmin(g.night_from||'18:00'),am=now.min>=mf&&now.min<=mt,pm=now.min>=nf||now.min<mf;
+ if(am&&D&&g.morning&&g.am_on!==false){gLast=Date.now();greetCard('☀️',fill(g.morning),"See today's plan",()=>{ST.day=D.day;draw()});return}
+ if(pm&&g.pm_on!==false){const yest=fdIso(now.date,-1),onTour=days.some(x=>x.date===now.date)||(now.min<mf&&last&&last.date>=yest);if(!onTour)return;
+  const isLast=last&&(last.date===now.date||(now.min<mf&&last.date===yest));
+  gLast=Date.now();greetCard('🌙',isLast?`Good Night, ${first(d.booking.passenger)}!\nHope you had a wonderful trip with us!\nThank you for travelling with Magic Memories Tours and Travels.`:fill(g.night||'Good Night, {name}!\nSee You Tomorrow!'),'Good night')}}
+
+/* ---------- automatic updates ---------- */
 const CBUILD=+'__CB__',REMOTE='https://magic-memories-customer.vercel.app/',IS_APP=location.hostname==='localhost',VER_URL=(IS_APP||location.protocol!=='https:'?REMOTE:'/')+'version.json';
 async function checkUpdate(){try{const r=await fetch(VER_URL+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(!(v.build>CBUILD)||$('.upd'))return;
- if(!ST.tok||$('#splash:not([hidden])')){applyUpdate(v.build);return}
- const u=document.createElement('div');u.className='upd ag';u.setAttribute('role','status');u.innerHTML=`<span style="font-size:1.6rem" aria-hidden="true">🎉</span><span><b>New update available</b><small>${esc(v.notes||'Improvements for your tour app')}</small></span><button id="updb">Update now</button>`;document.body.appendChild(u);u.querySelector('#updb').onclick=()=>applyUpdate(v.build)}catch(e){}}
+ if(!ST.tok||$('#home').hidden){applyUpdate(v.build);return}
+ const u=document.createElement('div');u.className='upd';u.setAttribute('role','status');u.innerHTML=`<span aria-hidden="true">🎉</span><span><b>New update available</b><small>${esc(v.notes||'Improvements to your tour app')}</small></span><button class="btn s" id="updb">Update now</button>`;document.body.appendChild(u);u.querySelector('#updb').onclick=()=>applyUpdate(v.build)}catch(e){}}
 async function applyUpdate(b){if(!IS_APP){location.replace(location.pathname+'?v='+b);return}
- try{toast('Updating…');const r=await fetch(REMOTE+'index.html?b='+b+'&t='+Date.now(),{cache:'no-store'});const h=await r.text();if(!r.ok||h.indexOf("CBUILD=+'"+b+"'")<0)throw 0;
-  localStorage.setItem('mmc.ota.h',h);localStorage.setItem('mmc.ota.b',String(b));location.reload()}catch(e){toast('Update could not download — it will try again later')}}
-setTimeout(checkUpdate,4000);setInterval(checkUpdate,30*60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdate()});
-
-/* ---------- reminders while the app is open (phone app adds alarms when closed) ---------- */
-setInterval(()=>{const d=ST.data;if(!d||!ST.tok)return;const now=tzParts(nowS()),seen=LS.get('seen',{}),done=new Set(d.done||[]);(d.days||[]).filter(x=>x.date===now.date&&!x.locked).forEach(x=>(x.items||[]).forEach(it=>{if(done.has(it.id))return;const dt=it.data||{},base=it.kind==='ferry'?tmin(dt.report||it.time):tmin(it.time);if(base==null||it.kind==='activity')return;(dt.rem||(it.kind==='ferry'?[60,30]:[30,15,5])).forEach(m=>{const k='r'+it.id+m;if(!seen[k]&&now.min>=base-m&&now.min<base){seen[k]=1;LS.set('seen',seen);notify(it.kind==='ferry'?`⛴️ Ferry reporting in ${base-now.min} min`:`🚕 Cab pickup in ${base-now.min} min`,it.kind==='ferry'?`Report at ${dt.reportAt||dt.harbour||''} by ${dt.report||it.time}`:`Wait at ${it.place||''} · ${dt.vehicle||''} ${dt.reg||''}`)}})}))},30000);
+ try{toast('Updating…');const r=await fetch(REMOTE+'index.html?b='+b+'&t='+Date.now(),{cache:'no-store'});const h=await r.text();if(!r.ok||h.indexOf("CBUILD=+'"+b+"'")<0)throw 0;localStorage.setItem('mmc.ota.h',h);localStorage.setItem('mmc.ota.b',String(b));location.reload()}catch(e){toast('Update could not download — it will try again later')}}
+setTimeout(checkUpdate,3000);setInterval(checkUpdate,30*60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdate()});
 
 /* ---------- phone alarms: ferry, pickup and new-day reminders even when the app is closed ---------- */
-function tzMs(date,t){const m=tmin(t);if(m==null)return null;const off=TZ()==='Asia/Kolkata'?'+05:30':'';const hh=String(Math.floor(m/60)).padStart(2,'0'),mm=String(m%60).padStart(2,'0');return Date.parse(date+'T'+hh+':'+mm+':00'+off)}
+function tzMs(date,t){const m=tmin(t);if(m==null)return null;const off=TZ()==='Asia/Kolkata'?'+05:30':'';return Date.parse(date+'T'+String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')+':00'+off)}
 let alarmSig='';
 async function phoneAlarms(){const LN=window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.LocalNotifications,d=ST.data;if(!LN||!d)return;
  try{const L=[],done=new Set(d.done||[]),now=Date.now()+ST.skew;let id=1000;
   (d.days||[]).filter(x=>!x.locked).forEach(x=>(x.items||[]).forEach(it=>{if(done.has(it.id)||it.kind==='activity')return;const dt=it.data||{},base=tzMs(x.date,it.kind==='ferry'?(dt.report||it.time):it.time);if(!base)return;
-   (dt.rem||(it.kind==='ferry'?[60,30]:[30,15,5])).forEach(m=>{const at=base-m*60000;if(at>now+30000)L.push({id:id++,title:it.kind==='ferry'?`⛴️ Ferry reporting in ${m} min`:`🚕 Cab pickup in ${m} min`,body:it.kind==='ferry'?`Report at ${dt.reportAt||dt.harbour||'the harbour'} by ${dt.report||it.time} · ${it.title||''}`:`Wait at ${it.place||''}${dt.vehicle?' · '+dt.vehicle+' '+(dt.reg||''):''}`,schedule:{at:new Date(at-ST.skew),allowWhileIdle:true}})})}));
-  if(d.next_unlock){const at=new Date(d.next_unlock).getTime();if(at>now)L.push({id:999,title:'🌅 Good Morning!',body:`Day ${d.unlocked+1} of your ${d.booking.package||'tour'} is now available. Open the app to explore today's schedule.`,schedule:{at:new Date(at-ST.skew+60000),allowWhileIdle:true}})}
+   (dt.rem||(it.kind==='ferry'?[60,30]:[30,15,5])).forEach(m=>{const at=base-m*60000;if(at>now+30000)L.push({id:id++,title:it.kind==='ferry'?`⛴️ Ferry reporting in ${m} min`:`🚕 Cab pickup in ${m} min`,body:it.kind==='ferry'?`Report at ${dt.reportAt||dt.harbour||'the harbour'} by ${dt.report||it.time}`:`Wait at ${it.place||''}${dt.vehicle?' · '+dt.vehicle+' '+(dt.reg||''):''}`,schedule:{at:new Date(at-ST.skew),allowWhileIdle:true}})})}));
+  if(d.next_unlock){const at=new Date(d.next_unlock).getTime();if(at>now)L.push({id:999,title:'🌅 Good Morning!',body:`Day ${d.unlocked+1} of your tour is now open. Tap to see today's plan.`,schedule:{at:new Date(at-ST.skew+60000),allowWhileIdle:true}})}
   const sig=JSON.stringify(L.map(x=>[x.id,x.title,+x.schedule.at]));if(sig===alarmSig)return;
   let p=await LN.checkPermissions();if(p.display!=='granted')p=await LN.requestPermissions();if(p.display!=='granted')return;
   const pend=await LN.getPending();if(pend.notifications.length)await LN.cancel({notifications:pend.notifications.map(n=>({id:n.id}))});
   if(L.length)await LN.schedule({notifications:L.slice(0,60)});alarmSig=sig}catch(e){}}
 
-/* ---------- start ---------- */
-async function boot(){if(!ST.tok){loginView();return}if(ST.data){draw()}const ok=await load();if(ok){draw();setTimeout(()=>greetings(true),700);phoneAlarms()}else if(!ST.data)loginView()}
-setTimeout(()=>{boot()},LS.get('tok',null)?1400:2300);
+/* ---------- start: show the saved tour instantly, refresh in the background ---------- */
+async function boot(){if(!ST.tok){loginView();return}if(ST.data){draw();rtStart()}const ok=await load(!!ST.data);if(ok){draw();rtStart();setTimeout(()=>greetings(true),400);phoneAlarms()}else if(!ST.data)loginView()}
+if(ST.tok&&ST.data)boot();else setTimeout(boot,ST.tok?300:900);
 </script></body></html>

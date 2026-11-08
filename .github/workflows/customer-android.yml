@@ -32,6 +32,26 @@ jobs:
           mkdir -p assets && cp ../../pc/build/icon.png assets/icon.png && cp ../../pc/build/icon.png assets/splash.png
           npx capacitor-assets generate --android --iconBackgroundColor '#ffffff' --splashBackgroundColor '#ff4f7b'
           npx cap sync android
+          cat > android/app/src/main/java/com/magicmemories/customer/MainActivity.java <<'JAVA'
+          package com.magicmemories.customer;
+
+          import android.os.Bundle;
+          import android.webkit.WebSettings;
+          import com.getcapacitor.BridgeActivity;
+
+          public class MainActivity extends BridgeActivity {
+            private void fixZoom() {
+              try {
+                WebSettings ws = getBridge().getWebView().getSettings();
+                ws.setTextZoom(100);          // phone font-size setting must not blow up the layout
+                ws.setLoadWithOverviewMode(true);
+                ws.setUseWideViewPort(true);
+              } catch (Exception e) { }
+            }
+            @Override public void onCreate(Bundle b) { super.onCreate(b); fixZoom(); }
+            @Override public void onResume() { super.onResume(); fixZoom(); }
+          }
+          JAVA
       - name: Build APK
         working-directory: customer/mobile/android
         run: |
