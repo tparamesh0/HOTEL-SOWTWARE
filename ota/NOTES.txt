@@ -1,1 +1,1 @@
-Customer Bookings made simple: all days on one screen, type times directly, events arrange by time, quick add. Back arrow fixed. Included/Excluded filled by you.
+Customer Bookings: cab time beside each event time, step-by-step timings after creating, wait-here photo for the cab.
