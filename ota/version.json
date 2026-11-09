@@ -1,1 +1,1 @@
-{"build": 314, "ver": "2.8.6", "notes": "Customer Bookings: cab time beside each event time, step-by-step timings after creating, wait-here photo for the cab.", "date": "2026-11-09"}
+{"build": 315, "ver": "2.8.7", "notes": "Delete fixed: events delete with one tap (with Undo), delete all events of a day, deleted bookings can be deleted permanently.", "date": "2026-11-09"}

@@ -1,1 +1,1 @@
-Customer Bookings: cab time beside each event time, step-by-step timings after creating, wait-here photo for the cab.
+Delete fixed: events delete with one tap (with Undo), delete all events of a day, deleted bookings can be deleted permanently.
