@@ -7,8 +7,8 @@ permissions:
   contents: write
 jobs:
   win:
-    # builds run only in the repo the live apps download from (the copy in management-software skips them)
-    if: github.repository == 'tparamesh0/HOTEL-SOWTWARE'
+    # builds run only in the one real repo (tparamesh0/Management-software)
+    if: github.repository == 'tparamesh0/Management-software'
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
