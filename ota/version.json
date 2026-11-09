@@ -1,1 +1,1 @@
-{"build": 320, "ver": "2.9.2", "notes": "Package History cards look like before again: the Customer Package option is now inside ⋯ Options (Make / Remove from Customer Package). Grid view: no more empty space, buttons sit right under the price.", "date": "2026-11-09"}
+{"build": 321, "ver": "2.9.3", "notes": "New Settings → 💽 Storage (owner only): shows how much of the free Supabase space (500 MB) is used, what is using it, and a button to clean old cloud backups. Red banner on the Dashboard when it passes 80%.", "date": "2026-11-09"}
