@@ -1,1 +1,1 @@
-{"build": 315, "ver": "2.8.7", "notes": "Delete fixed: events delete with one tap (with Undo), delete all events of a day, deleted bookings can be deleted permanently.", "date": "2026-11-09"}
+{"build": 316, "ver": "2.8.8", "notes": "Customer Bookings: the ⋯ menu now opens in the middle of the screen on phones; step-by-step timings are asked in the package's own order (Day 1 first event first) with an AM/PM check; each event can have its cab switched off (🚫 No cab) or back on; Undo after deleting an event works again.", "date": "2026-11-09"}
