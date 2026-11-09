@@ -63,7 +63,7 @@ Quick syntax check of the built admin file: extract each `<script>` and run `nod
 ## Publish (every release)
 1. Run the tests (above). 
 2. `python tools/publish.py --ver X.Y.Z --notes "plain-words notes for the owner"` (add `--customer "notes"` if the customer app changed).
-   It bumps `ABOUT ver` + `data/OTA_BUILD`, builds, prepares the PC app, makes the OTA package, commits and pushes to both repos.
+   It bumps `ABOUT ver` + `data/OTA_BUILD`, builds, prepares the PC app, makes the OTA package, commits and pushes to the one repo (`origin`).
 3. **Deploy on Vercel** (a git push does NOT deploy): team `team_A1USqqZFyv2g6xIbc3YJY1Ws`, from GitHub `tparamesh0/Management-software` `main`, target production:
    - `magic-memories-updates` (root `ota`) — always
    - `magic-memories-customer` (root `customer/web`) — when the customer app changed
