@@ -1,1 +1,1 @@
-New Customer Package tab (above Package History). Tap ⭐ Make Customer Package on any saved package: it stays in Package History and also shows in Customer Package, with all the same options (Edit, WhatsApp, Print, Invoice and more). When you create a Booking ID, the package list shows only Customer Packages.
+Package History cards look like before again: the Customer Package option is now inside ⋯ Options (Make / Remove from Customer Package). Grid view: no more empty space, buttons sit right under the price.
