@@ -10,6 +10,11 @@ This repo holds **two apps** that share one Supabase database:
 | **Magic Memories software** (admin) | Hotel rates, packages, bills, PDFs, WhatsApp, **Customer Bookings** module. Runs as Windows PC app (Electron), Android app and web page. | `src/app.src.html` (one file: HTML+CSS+JS) | `dist/andaman_hotel_rates.html` (with hotel data), `fresh/dist/…` (empty) | Online update package on Vercel project `magic-memories-updates` (folder `ota/`) |
 | **MM TravelMate** (customer app) | What travellers open with their Booking ID: day-by-day plan, cab/ferry times, messages, Done buttons, reviews. | `customer/src/app.src.html` (+ `BUILD`, `NOTES`, `logo.txt`) | `customer/web/index.html` + `version.json` | https://magic-memories-customer.vercel.app (APK: `/Magic-Memories-Customer.apk`) |
 
+## Two GitHub repos (keep them identical)
+- **`tparamesh0/management-software`** — this repo, the **main working copy**. Work and commit here.
+- **`tparamesh0/HOTEL-SOWTWARE`** — the **live** copy. Vercel deploys from it, the APK / PC-installer builds run there (GitHub Actions; the workflows skip themselves in management-software), and installed apps download installers from its Releases. Never delete it.
+- Every push goes to **both**: once per clone run `git remote add live https://github.com/tparamesh0/HOTEL-SOWTWARE.git`; `tools/publish.py` then pulls `live` (APK-build commits), pushes `origin` and `live`. For a manual push: `git pull --rebase live main && git push origin HEAD:main && git push live HEAD:main`. A Claude Code session needs both repos attached to push to both.
+
 **Related repo:** the company website www.magicmemoriestour.com is `tparamesh0/Magic-Memories-Tours-and-Travels` (Next.js on Vercel, its own Supabase project `irjtdscxteefrppgsiaw`; it has its own CLAUDE.md).
 The dashboard tiles 🌐 Website and 🔐 Admin Website open it.
 
@@ -20,7 +25,7 @@ The dashboard tiles 🌐 Website and 🔐 Admin Website open it.
 4. **Zero bugs: test 2–3 times** (PC width 1366 and phone width 390). Run the tests below before every publish.
 5. Must work on **mobile, PC and tablet** (no sideways scroll at 390 px).
 6. **Never invent** credentials, phone numbers, contacts or ferry details. Placeholders like "e.g. Makruzz" are fine.
-7. Every change goes to GitHub `tparamesh0/HOTEL-SOWTWARE` (branch `main`). The repo is public for now — never commit secrets/keys.
+7. Every change goes to GitHub `tparamesh0/management-software` **and** `tparamesh0/HOTEL-SOWTWARE` (branch `main`, see Two GitHub repos). Both are public for now — never commit secrets/keys.
 8. After publishing, tell him what changed in a few bullets and show screenshots.
 
 ## Where things are
@@ -37,7 +42,7 @@ The dashboard tiles 🌐 Website and 🔐 Admin Website open it.
 - `tools/publish.py` — one command for a release (see Publish).
 - `tests/bookings/` — Playwright tests for Customer Bookings + customer app (`node run.js`). Older tests for other pages are in `tests/`.
 - `docs/PROJECT_NOTES.md` — long change log. `BUILD_GUIDE.md` — how to build installers by hand.
-- `.github/workflows/` — `pc.yml` (Windows installer, on `fresh/pc/**` or `data/PC_BUILD`), `android.yml` (admin APK), `customer-android.yml` (customer APK; it pushes a commit "Customer APK build N", so `git pull --rebase` before pushing if a push is rejected).
+- `.github/workflows/` (run only in HOTEL-SOWTWARE) — `pc.yml` (Windows installer, on `fresh/pc/**` or `data/PC_BUILD`), `android.yml` (admin APK), `customer-android.yml` (customer APK; it pushes a commit "Customer APK build N", so `git pull --rebase` before pushing if a push is rejected).
 
 ## Backend (Supabase project `cyjaueyafftscpgviflm`)
 - Admin data: `mmt_*` tables (store, members, perms, backups, devices…), `mm_data`, `mm_items`.
@@ -58,8 +63,8 @@ Quick syntax check of the built admin file: extract each `<script>` and run `nod
 ## Publish (every release)
 1. Run the tests (above). 
 2. `python tools/publish.py --ver X.Y.Z --notes "plain-words notes for the owner"` (add `--customer "notes"` if the customer app changed).
-   It bumps `ABOUT ver` + `data/OTA_BUILD`, builds, prepares the PC app, makes the OTA package, commits and pushes.
-3. **Deploy on Vercel** (a git push does NOT deploy): team `team_A1USqqZFyv2g6xIbc3YJY1Ws`, from GitHub `tparamesh0/HOTEL-SOWTWARE` `main`, target production:
+   It bumps `ABOUT ver` + `data/OTA_BUILD`, builds, prepares the PC app, makes the OTA package, commits and pushes to both repos.
+3. **Deploy on Vercel** (a git push does NOT deploy): team `team_A1USqqZFyv2g6xIbc3YJY1Ws`, from GitHub `tparamesh0/HOTEL-SOWTWARE` `main` (the live copy — push there first), target production:
    - `magic-memories-updates` (root `ota`) — always
    - `magic-memories-customer` (root `customer/web`) — when the customer app changed
    With the Vercel connector: `create_deployment` with `gitSource {type:github, org:tparamesh0, repo:HOTEL-SOWTWARE, ref:main}`, then check `get_deployment` = READY.

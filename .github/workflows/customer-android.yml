@@ -8,6 +8,8 @@ permissions:
 concurrency: { group: customer-apk, cancel-in-progress: true }
 jobs:
   apk:
+    # builds run only in the repo the live apps download from (the copy in management-software skips them)
+    if: github.repository == 'tparamesh0/HOTEL-SOWTWARE'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

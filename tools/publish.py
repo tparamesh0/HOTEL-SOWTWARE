@@ -50,7 +50,14 @@ run([py,os.path.join('tools','make_ota.py')])
 run(['git','add','src','data','dist','fresh','ota','customer'])
 run(['git','commit','-m','%s (%d): %s%s'%(a.ver,build,a.notes.strip(),cmsg)])
 if not a.no_push:
-    r=subprocess.run(['git','push'],cwd=R)
+    # main repo = origin (management-software). 'live' = HOTEL-SOWTWARE, where the app builds run and old installs look.
+    live='live' in subprocess.run(['git','remote'],cwd=R,capture_output=True,text=True).stdout.split()
+    if live:run(['git','pull','--rebase','live','main'])   # bring in "APK build" commits made there
+    r=subprocess.run(['git','push','origin','HEAD:main'],cwd=R)
     if r.returncode:
-        print('push was rejected (the phone-app build may have pushed) - pulling and retrying');run(['git','pull','--rebase']);run(['git','push'])
+        print('push was rejected - pulling and retrying');run(['git','pull','--rebase','origin','main']);run(['git','push','origin','HEAD:main'])
+    if live:
+        r=subprocess.run(['git','push','live','HEAD:main'],cwd=R)
+        if r.returncode:run(['git','pull','--rebase','live','main']);run(['git','push','live','HEAD:main']);run(['git','push','origin','HEAD:main'])
+    else:print('NOTE: no "live" remote - run once: git remote add live https://github.com/tparamesh0/HOTEL-SOWTWARE.git')
 print('\nDONE. Now deploy Vercel (magic-memories-updates%s) and send {"build":%d}. See CLAUDE.md -> Publish.'%(', magic-memories-customer' if a.customer else '',build))
