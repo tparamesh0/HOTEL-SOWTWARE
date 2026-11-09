@@ -133,6 +133,14 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 .ptr{position:fixed;left:50%;top:calc(56px + env(safe-area-inset-top,0px));z-index:7;transform:translate(-50%,-140px);opacity:0;width:36px;height:36px;border-radius:50%;background:var(--card);box-shadow:0 4px 14px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--acc);transition:transform .2s}
 .ptr.vis{opacity:1}.ptr.spin span{animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 .closed{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:30px 24px;min-height:100%}
+.donebar{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;margin:8px 0 2px;padding:8px 12px;border:0;border-radius:10px;background:var(--ok2);color:var(--ok);font-weight:600;font-size:13px;text-align:left}.donebar span{text-decoration:underline;white-space:nowrap}
+.it.done .body{opacity:.5;filter:saturate(.3)}.it.done .tm{opacity:.5}
+.it.cur .body{background:var(--card);border:1.5px solid var(--acc);border-radius:14px;padding:0 10px;margin:4px 0 8px;box-shadow:0 6px 18px -8px var(--acc)}.it.cur .tm{color:var(--acc)}
+.it.cur.now .body{animation:actglow 2.4s ease-in-out infinite}
+@keyframes actglow{0%,100%{box-shadow:0 0 0 0 var(--acc2),0 6px 18px -8px var(--acc)}50%{box-shadow:0 0 0 6px var(--acc2),0 8px 26px -6px var(--acc)}}
+.it.pop .body{animation:itpop .5s cubic-bezier(.2,.9,.3,1.3)}.it.pop.now .body{animation:itpop .5s cubic-bezier(.2,.9,.3,1.3),actglow 2.4s ease-in-out .5s infinite}
+@keyframes itpop{0%{transform:scale(.94);opacity:.4}100%{transform:none;opacity:1}}
+.st2.now{color:var(--acc);font-weight:700}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition:none!important}}
 </style></head>
 <body>
@@ -178,7 +186,7 @@ function welcomeView(name){show('welcome');const p=load(true);$('#welcome').inne
 let loading=null;
 function load(silent){if(!ST.tok)return Promise.resolve(false);if(loading)return loading;loading=(async()=>{
  try{const d=await rpc('mmc_data',{p_token:ST.tok});if(!d||!d.ok){if(d&&d.err==='closed'){closedView();return false}if(d&&d.err==='session'){logout(true,'Your booking session has ended. Please enter your Booking ID again.');return false}throw new Error('bad')}
-  const prev=ST.data;ST.skew=new Date(d.now)-Date.now();ST.data=d;ST.at=Date.now();ST.offline=false;LS.set('data',d);LS.set('at',ST.at);
+  const prev=ST.data;ST.skew=new Date(d.now)-Date.now();if(ST.pend&&Object.keys(ST.pend).length){const s0=new Set(d.done||[]);for(const k in ST.pend)ST.pend[k]?s0.add(k):s0.delete(k);d.done=[...s0]}ST.data=d;ST.at=Date.now();ST.offline=false;LS.set('data',d);LS.set('at',ST.at);
   if(prev&&prev.unlocked<d.unlocked&&d.unlocked>0){notify('🌅 Day '+d.unlocked+' is now open',`Day ${d.unlocked} of your tour is now available.`);ST.day=d.unlocked}
   if(!$('#home').hidden)setTimeout(popNew,200);
   unlockTimer();return true}catch(e){ST.offline=true;if(!silent&&!ST.data)toast('No connection — showing saved information');return !!ST.data}finally{loading=null}})();return loading}
@@ -220,7 +228,7 @@ window.addEventListener('online',()=>{if(ST.tok){refreshSoon();rtStart()}});wind
 /* ---------- home ---------- */
 const ICON={activity:'📍',ferry:'⛴️',pickup:'🚕'};
 function stateOf(it,date,done){const now=tzParts(nowS()),t=tmin(it.time);if(done.has(it.id))return 'done';if(date<now.date)return 'past';if(date>now.date||t==null)return 'up';if(now.min>=t&&now.min<t+durMin(it.duration))return 'now';if(now.min>=t+durMin(it.duration))return 'past';return 'up'}
-function itemRow(it,D,done,isNext){const s=stateOf(it,D.date,done),dt=it.data||{},cs=cabOf(it,D),soon=cs&&cs.ms>0&&cs.ms<=60*60000&&!done.has(it.id),open=ST.open[it.id]!=null?ST.open[it.id]:!!soon,isDone=s==='done';
+function itemRow(it,D,done,isNext,isAct,isPop){const s0=stateOf(it,D.date,done),s=isAct&&s0!=='done'?'now':s0,dt=it.data||{},cs=cabOf(it,D),soon=cs&&cs.ms>0&&cs.ms<=60*60000&&!done.has(it.id),open=ST.open[it.id]!=null?ST.open[it.id]:!!soon||(!!isNext&&!done.has(it.id)),isDone=s==='done';
  let key='';if(it.kind==='ferry')key=`<div class="key">${dt.report?`<span>Report ${esc(dt.report)}</span>`:''}${it.time?`<span class="b">Departs ${esc(it.time)}</span>`:''}</div>`;
  if(it.kind==='pickup')key=`<div class="key"><span class="cab ${soon?'soon':''}">🚕 Cab ${esc(it.time||'—')}</span>${it.place?`<span>Wait at ${esc(it.place)}</span>`:''}</div>`;
  if(it.kind!=='pickup'&&dt.cab)key=`<div class="key"><span class="pair"><span class="cab ${soon?'soon':''}">🚕 Cab ${esc(dt.cab)}</span>${it.kind==='activity'&&it.time?`<span class="to">→</span><span class="b">📍 ${esc(it.title||'Event')} ${esc(it.time)}</span>`:''}${it.kind==='ferry'&&it.time?`<span class="to">→</span><span class="b">⛴️ Ferry ${esc(it.time)}</span>`:''}</span>${it.kind==='ferry'&&dt.report?`<span>Report ${esc(dt.report)}</span>`:''}</div>`;
@@ -228,8 +236,8 @@ function itemRow(it,D,done,isNext){const s=stateOf(it,D.date,done),dt=it.data||{
  const kvH=kv.filter(x=>x[1]).map(x=>`<span>${x[0]}</span><b>${esc(x[1])}</b>`).join('');
  const wPh=it.kind==='pickup'?it.photo:dt.cabPhoto,wAt=it.kind==='pickup'?it.place:dt.cabAt,wait=(wPh||wAt)&&(it.kind==='pickup'||dt.cab)?`<figure class="wait">${wPh?`<img ${open?'src':'data-src'}="${esc(wPh)}" alt="Where to wait for the cab" decoding="async">`:''}<figcaption>🚕 Please wait here for your cab${wAt?' · '+esc(wAt):''}${(it.kind==='pickup'?it.time:dt.cab)?' · '+esc(it.kind==='pickup'?it.time:dt.cab):''}</figcaption></figure>`:'';
  const acts=[it.map&&`<a class="btn o s" href="${esc(it.map)}" target="_blank" rel="noopener">🗺️ Directions</a>`,dt.dphone&&(it.kind==='pickup'||dt.cab)&&`<a class="btn o s" href="tel:${esc(String(dt.dphone).replace(/[^\d+]/g,''))}">📞 Call driver</a>`].filter(Boolean).join('');
- const hasDet=!!(it.photo||it.descr||kvH||it.instructions||acts||wait),st2=s==='now'?'<span class="st2 now">Now</span>':(isNext&&!isDone)?'<span class="st2 next">Next</span>':'';
- return `<div class="it ${isDone?'done':s==='now'?'now':isNext?'next':''} ${open?'open':''}"><div class="tm">${esc(it.time||'')}</div><div class="rail"><span class="dot"></span></div>
+ const hasDet=!!(it.photo||it.descr||kvH||it.instructions||acts||wait),st2=s==='now'?'<span class="st2 now">● Happening now</span>':(isNext&&!isDone)?'<span class="st2 next">Next</span>':'';
+ return `<div class="it ${isDone?'done':s==='now'?'now':isNext?'next':''} ${isNext&&!isDone?'cur':''} ${isPop?'pop':''} ${open?'open':''}" data-it="${it.id}"><div class="tm">${esc(it.time||'')}</div><div class="rail"><span class="dot"></span></div>
  <div class="body"><div class="ih" style="padding:8px 0 10px"><button class="ib2" style="padding:0;flex:1;min-width:0" data-tg="${it.id}" aria-expanded="${open}" ${hasDet?'':'disabled'}><div class="ih"><span aria-hidden="true">${ICON[it.kind]||'📍'}</span><div class="tx"><b>${esc(it.title||'')}</b>${it.place&&it.kind==='activity'?`<div class="pl">${esc(it.place)}</div>`:''}${key}${st2}</div>${hasDet?'<span class="chev" aria-hidden="true">›</span>':''}</div></button>
  <button class="dn ${isDone?'on':isNext||s==='now'?'next':''}" data-mark="${it.id}" data-v="${isDone?0:1}" aria-pressed="${isDone}" aria-label="${isDone?'Done — tap to undo':'Mark '+esc(it.title||'this')+' as done'}">${isDone?'✓ Done':'Done'}</button></div>
  ${hasDet?`<div class="det"><div><div class="in">${wait}${it.photo&&it.kind!=='pickup'?(open?`<img src="${esc(it.photo)}" alt="" decoding="async">`:`<img data-src="${esc(it.photo)}" alt="" decoding="async">`):''}${it.descr?`<p>${esc(it.descr)}</p>`:''}${kvH?`<div class="kv">${kvH}</div>`:''}${it.instructions?`<div class="ins">ℹ️ ${esc(it.instructions)}</div>`:''}${acts?`<div class="acts">${acts}</div>`:''}</div></div></div>`:''}</div></div>`}
@@ -246,7 +254,7 @@ function remLists(d){return {RD:(d.docs||[]).filter(x=>(x.kind||'doc')==='doc'),
 let lastDay=null;
 function draw(){const d=ST.data;if(!d){loginView();return}show('home');const b=d.booking,done=new Set(d.done||[]),today=tzParts(nowS()).date,days=d.days||[];
  if(ST.day==null){const td=days.find(x=>x.date===today&&!x.locked),op=days.filter(x=>!x.locked).pop();ST.day=td?td.day:op?op.day:1}const D=days[ST.day-1]||{day:ST.day,locked:true,items:[]},unread=(d.notifs||[]).filter(n=>!n.read_at).length;
- const items=D.items||[],nextIdx=D.locked?-1:items.findIndex(it=>{const s=stateOf(it,D.date,done);return s==='up'||s==='now'}),doneN=items.filter(i=>done.has(i.id)).length;
+ const items=D.items||[],nextIdx=D.locked?-1:items.findIndex(it=>{const s=stateOf(it,D.date,done);return s==='up'||s==='now'}),doneN=items.filter(i=>done.has(i.id)).length,nw=tzParts(nowS()),nI=items[nextIdx],nT=nI?tmin(nI.time):null,nC=nI?tmin((nI.data||{}).cab):null,actIdx=nI&&D.date===nw.date&&((nC!=null&&nw.min>=nC)||(nT!=null&&nw.min>=nT))?nextIdx:-1,showDone=!!ST.showDone,popId=ST.pop&&nI?nI.id:null;ST.pop=0;
  const {RD,RM}=remLists(d),rN=RD.length+RM.length;
  const alerts=[];days.filter(x=>!x.locked&&(x.date===today||x.date===fdIso(today,1))).forEach(x=>(x.items||[]).forEach(it=>{if(done.has(it.id)||it.kind==='activity'||stateOf(it,x.date,done)==='past')return;const dt=it.data||{},when=x.date===today?'Today':'Tomorrow';
   if(it.kind==='ferry')alerts.push(['⛴️',`${when}: ferry ${it.title||''}`,`Report ${dt.report||'—'}${dt.reportAt||dt.harbour?' at '+(dt.reportAt||dt.harbour):''} · Departs ${it.time||'—'}`]);
@@ -260,7 +268,7 @@ function draw(){const d=ST.data;if(!d){loginView();return}show('home');const b=d
  <div class="qa"><button class="qb" id="ieb"><span>✅ Included / Excluded<small>What Day ${ST.day} covers</small></span><span class="ar">›</span></button><button class="qb" id="remb"><span>📋 Documents & reminders<small>${rN?rN+' thing'+(rN===1?'':'s')+' to remember':'Nothing yet'}</small></span><span class="ar">›</span></button></div>
  <section class="card ${anim?'slide':''}" id="dayc" aria-live="polite">${D.locked?`<div class="lock"><div class="e" aria-hidden="true">🔒</div><h3>Day ${D.day} opens soon</h3><p>Your plan for ${fdate(D.date,{weekday:'long',day:'2-digit',month:'long'})} opens automatically on that day.</p>${(D.day===d.unlocked+1||(!d.unlocked&&D.day===1))&&d.next_unlock?countdown(d.next_unlock):''}</div>`:
   `<div class="dh"><h3>${esc(D.title||('Day '+D.day))}</h3><small>${doneN}/${items.length} done</small></div><div class="dsub">Day ${D.day} · ${fdate(D.date,{weekday:'long',day:'2-digit',month:'short'})}</div><div class="pb"><i style="width:${items.length?Math.round(100*doneN/items.length):0}%"></i></div>
-  <div class="tl">${items.length?items.map((it,i)=>itemRow(it,D,done,i===nextIdx)).join(''):'<div class="empty">Your plan for this day will appear here soon.</div>'}</div>`}</section>
+  ${doneN&&items.length?`<button class="donebar" id="dnb" aria-expanded="${showDone}">✅ ${doneN} completed${doneN<items.length?'':' — all done for today 🎉'} <span>${showDone?'Hide':'Show'}</span></button>`:''}<div class="tl">${items.length?items.map((it,i)=>(!showDone&&done.has(it.id))?'':itemRow(it,D,done,i===nextIdx,i===actIdx,it.id===popId)).join(''):'<div class="empty">Your plan for this day will appear here soon.</div>'}</div>`}</section>
  ${alerts.length?`<section class="card"><h3 class="sec">🔔 Coming up</h3>${alerts.map(a=>`<div class="al"><span aria-hidden="true">${a[0]}</span><div><b>${esc(a[1])}</b><p>${esc(a[2])}</p></div></div>`).join('')}</section>`:''}
  </div><button class="fab" id="fab" aria-label="Help desk — call, WhatsApp or email us">🆘 Help desk</button><div class="ptr" id="ptr" aria-hidden="true"><span>↻</span></div>`;
  if(!anim)$('#home').scrollTop=sc;bind()}
@@ -270,11 +278,12 @@ function bind(){document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=
  const on=$('.dt.on');if(on)on.scrollIntoView({inline:'center',block:'nearest'});
  const pb=$('#permb');if(pb)pb.onclick=()=>askPerm(true);$('#ieb').onclick=ieSheet;$('#remb').onclick=remSheet;$('#bell').onclick=notifSheet;$('#mnu').onclick=menu;$('#fab').onclick=helpSheet;
  document.querySelectorAll('[data-tg]').forEach(b=>b.onclick=()=>{const it=b.closest('.it'),o=!it.classList.contains('open');it.classList.toggle('open',o);b.setAttribute('aria-expanded',o);ST.open[b.dataset.tg]=o;if(o)it.querySelectorAll('img[data-src]').forEach(im=>{im.src=im.dataset.src;im.removeAttribute('data-src')})});
- document.querySelectorAll('[data-mark]').forEach(b=>b.onclick=()=>mark(b.dataset.mark,b.dataset.v==='1',b))}
-async function mark(id,done,btn){btn.disabled=true;const s=new Set(ST.data.done||[]);done?s.add(id):s.delete(id);ST.data.done=[...s];if(done){celebrate();ST.open[id]=false}draw();
- try{const r=await rpc('mmc_mark',{p_token:ST.tok,p_item:id,p_done:done});if(!r.ok)throw new Error(r.err);LS.set('data',ST.data);const D=ST.data.days[ST.day-1];
+ document.querySelectorAll('[data-mark]').forEach(b=>b.onclick=()=>mark(b.dataset.mark,b.dataset.v==='1',b));const dnb=$('#dnb');if(dnb)dnb.onclick=()=>{ST.showDone=!ST.showDone;draw()}}
+async function mark(id,done,btn){const s=new Set(ST.data.done||[]);done?s.add(id):s.delete(id);ST.data.done=[...s];ST.pend=ST.pend||{};ST.pend[id]=done;if(done){ST.open[id]=false;ST.pop=1}draw();LS.set('data',ST.data);
+ if(done){const n=document.querySelector('.it.next,.it.now');toast(n?'✅ Done! Next: '+((n.querySelector('.tx b')||{}).textContent||''):'✅ Done!');if(n)n.scrollIntoView({behavior:'smooth',block:'center'})}
+ try{const r=await rpc('mmc_mark',{p_token:ST.tok,p_item:id,p_done:done});delete ST.pend[id];if(!r.ok)throw new Error(r.err);const D=ST.data.days[ST.day-1];
   if(done&&tripDone(ST.data)){setTimeout(()=>tripReview(),1000)}else if(done&&D&&(D.items||[]).length&&(D.items||[]).every(i=>s.has(i.id))&&(ST.data.greet||{}).fb_on!==false)setTimeout(()=>feedback(D.day,true),1000)}
- catch(e){done?s.delete(id):s.add(id);ST.data.done=[...s];draw();toast(navigator.onLine?'Could not save — please try again':'No internet — please try again when online')}}
+ catch(e){delete (ST.pend||{})[id];const s2=new Set(ST.data.done||[]);done?s2.delete(id):s2.add(id);ST.data.done=[...s2];LS.set('data',ST.data);draw();toast(navigator.onLine?'Could not save — please try again':'No internet — please try again when online')}}
 function celebrate(){const o=modal(`<svg class="chk" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 22-24"/></svg><p style="margin:6px 0 0;font-weight:600">Done!</p>`,true);setTimeout(()=>o.remove(),850)}
 
 /* ---------- pull down from the top to refresh ---------- */
