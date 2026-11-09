@@ -3,7 +3,7 @@ const H=require(T+'h.js');const fs=require('fs');(async()=>{let fails=0;for(cons
 const errs=[];p.on('pageerror',e=>errs.push(e.message));
 await p.addScriptTag({content:fs.readFileSync(T+'sbmock.js','utf8')});
 await p.evaluate(()=>{loginHide();SB=__mockSB();ME={email:'x@y.z',role:'owner',perms:{}};roleApply();S.set.ferry=[{id:'f1',name:'Port Blair To Havelock',boat:'MAKRUZZ',time:'1:30 PM'}];
- S.set.hist=[{id:'h1',name:'SPECIAL',pkgName:'SPECIAL',dur:'1',date:'',nums:{},snap:{persons:2,meta:{},picks:{1:{name:'CITY',place:'City',stops:['Airport To Hotel','Cellular Jail','Radhanagar Beach']},2:{name:'HL',place:'Havelock',stops:['Kalapathar Beach']}},ferry:[],act:[],hotels:[],comp:[]}}];go('home');go('bookings')});await p.waitForTimeout(300);
+ S.set.hist=[{id:'h1',cust:1,name:'SPECIAL',pkgName:'SPECIAL',dur:'1',date:'',nums:{},snap:{persons:2,meta:{},picks:{1:{name:'CITY',place:'City',stops:['Airport To Hotel','Cellular Jail','Radhanagar Beach']},2:{name:'HL',place:'Havelock',stops:['Kalapathar Beach']}},ferry:[],act:[],hotels:[],comp:[]}}];go('home');go('bookings')});await p.waitForTimeout(300);
 await p.evaluate(()=>A.bkNew());await p.waitForTimeout(150);await p.selectOption('#bk_hist','h1');await p.fill('#bk_name','Ferry Test');await p.fill('#bk_phone','96795'+String(10000+Math.floor(Math.random()*89999)));
 await p.click('[data-a="bkCreate"]');await p.waitForTimeout(1200);
 const TL=async()=>p.evaluate(()=>[...document.querySelectorAll('.bk-tl2[data-day="1"] .bk-it2 b')].map(x=>x.textContent.trim()));
