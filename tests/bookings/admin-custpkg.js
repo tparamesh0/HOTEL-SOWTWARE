@@ -1,8 +1,9 @@
-// ⭐ Customer Package: new tab above Package History, star button, same options, booking list shows only ⭐ packages.
+// ⭐ Customer Package: new tab above Package History, star in ⋯ Options menu, same options, booking list shows only ⭐ packages.
 const T=__dirname+'/';const H=require(T+'h.js');const fs=require('fs');
 (async()=>{let fails=0;for(const round of [1,2,3])for(const [W,mob] of [[1366,false],[390,true]]){const [b,p]=await H(W,900,mob);await p.waitForTimeout(700);
 await p.addScriptTag({content:fs.readFileSync(T+'sbmock.js','utf8')});
 const ok=(c,m)=>{if(!c){fails++;console.log('  FAIL',round,W,m)}};
+const star=async k=>{await p.click('.hcard2[data-k="'+k+'"] summary');await p.waitForTimeout(150);await p.click('.hcard2[data-k="'+k+'"] .hmenu [data-a="histCust"]');await p.waitForTimeout(250)};
 await p.evaluate(()=>{loginHide();SB=__mockSB();ME={email:'tparamesh0@gmail.com',role:'owner',perms:{}};roleApply();
  const mk=(id,name,dur,total)=>({id,name,pkgName:name,dur:String(dur),date:'07 Nov 2026',nums:{},total,snap:{persons:2,meta:{name},picks:{1:{name:'CORBYN',place:'City',stops:['Airport To Hotel','Cellular Jail']}},ferry:[],act:[],hotels:[],comp:[]}});
  S.set.hist=[mk('p1','SHARMA FAMILY',4,48500),mk('p2','DAS COUPLE',3,36200),mk('p3','HAVELOCK GROUP',5,71000)];go('home')});
@@ -21,10 +22,10 @@ ok(await p.evaluate(()=>!document.querySelector('.hcard2')),'no cards when none 
 // 3. mark from Package History -> shows in both
 await p.evaluate(()=>go('hist'));await p.waitForTimeout(250);
 ok(await p.evaluate(()=>document.querySelectorAll('.hcard2').length)===3,'hist has 3');
-await p.click('.hcard2 button[data-a="histCust"][data-k="p2"]');await p.waitForTimeout(250);
-await p.click('.hcard2 button[data-a="histCust"][data-k="p3"]');await p.waitForTimeout(250);
+await star('p2');await star('p3');
 ok(await p.evaluate(()=>document.querySelectorAll('.hcard2').length)===3,'hist still 3 after marking');
-ok(await p.evaluate(()=>document.querySelector('.hcard2 button[data-a="histCust"][data-k="p2"]').textContent.includes('Customer Package ✓')),'hist shows ✓');
+ok(await p.evaluate(()=>document.querySelector('.hcard2[data-k="p2"] .hmenu [data-a="histCust"]').textContent.includes('Remove from Customer Package')),'menu shows Remove when marked');
+ok(await p.evaluate(()=>!document.querySelector('.hcard2 > .row:last-child > .row [data-a="histCust"]')),'no extra button on the card face');
 if(round===1)await p.screenshot({path:T+'out/cpk_hist_'+W+'.png',fullPage:false});
 await p.evaluate(()=>go('cpk'));await p.waitForTimeout(250);
 const ids=await p.evaluate(()=>[...document.querySelectorAll('.hcard2')].map(c=>c.dataset.k));
@@ -69,7 +70,7 @@ await p.evaluate(()=>closeModal());
 
 // 7. remove from cpk: gone there, still in Package History, nothing deleted
 await p.evaluate(()=>go('cpk'));await p.waitForTimeout(250);
-await p.click('.hcard2 button[data-a="histCust"][data-k="p3"]');await p.waitForTimeout(250);
+await star('p3');
 ok(await p.evaluate(()=>[...document.querySelectorAll('.hcard2')].map(c=>c.dataset.k).join())==='p2','p3 removed from cpk');
 ok(await p.evaluate(()=>S.set.hist.length)===4&&await p.evaluate(()=>!!S.set.hist.find(e=>e.id==='p3')),'p3 still saved');
 await p.evaluate(()=>go('hist'));await p.waitForTimeout(200);ok(await p.evaluate(()=>document.querySelectorAll('.hcard2').length)===4,'hist shows all 4');
