@@ -14,7 +14,7 @@ i=s.rfind('</script>');s=s[:i]+'\n'+bridge+'\n'+s[i:]
 s=re.sub(r'^\s*<meta charset=[^>]*>\s*','',s)
 s='<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'+s
 open(os.path.join(O,'android.html'),'w',encoding='utf-8').write(s)
-pc=sys.argv[1] if len(sys.argv)>1 else '/home/claude/fresh/pc/app/index.html'
+pc=sys.argv[1] if len(sys.argv)>1 else os.path.join(R,'fresh','pc','app','index.html')
 shutil.copy(pc,os.path.join(O,'pc.html'))
 for f in ['android.html','pc.html']:
     t=open(os.path.join(O,f),encoding='utf-8').read();assert f"var B=+'{build}'" in t,(f,'build mark missing')

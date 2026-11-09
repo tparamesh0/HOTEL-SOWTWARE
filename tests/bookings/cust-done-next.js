@@ -1,0 +1,31 @@
+const T=__dirname+'/';const B_=JSON.parse(require('fs').readFileSync(T+'../../customer/web/version.json','utf8')).build;
+const {chromium}=require('playwright');const fs=require('fs');
+(async()=>{let fails=0;const ok=(c,m)=>{if(!c){fails++;console.log('  FAIL',m)}};
+for(const round of [1,2,3]){const D=JSON.parse(fs.readFileSync(T+'mmcdata.json','utf8'));D.days.forEach(d=>d.items.forEach(i=>{if(i.photo==='PH')i.photo=''}));D.notifs.forEach(n=>n.read_at='x');D.done=[];
+D.now='2026-11-08T01:15:00+00:00'; // 6:45 AM IST on day 2
+let slow=0;
+const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,timezoneId:'Asia/Kolkata'});
+await ctx.route('**/version.json*',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify({build:B_})}));
+await ctx.route('**/rest/v1/rpc/*',async r=>{const fn=r.request().url().split('/').pop();let res={ok:true};if(fn==='mmc_data')res=D;if(fn==='mmc_ver')res='v1';if(fn==='mmc_mark'){slow++;await new Promise(z=>setTimeout(z,1500));const a=JSON.parse(r.request().postData());if(a.p_done)D.done.push(a.p_item)}r.fulfill({status:200,contentType:'application/json',body:JSON.stringify(res)})});
+await ctx.addInitScript(()=>{localStorage.setItem('mmc.tok','"tok"')});
+const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.goto('http://127.0.0.1:8765/index.html');await p.waitForSelector('#home:not([hidden])');await p.waitForTimeout(800);await p.evaluate(()=>document.querySelectorAll('.ov,.mpop').forEach(o=>o.remove()));
+const day2=D.days[1];await p.click('.dt[data-day="2"]');await p.waitForTimeout(400);
+const ids=day2.items.map(i=>i.id);
+const cur=async()=>p.evaluate(()=>{const c=document.querySelector('.it.cur');return c&&c.dataset.it});
+const c0=await cur();ok(!!c0,'a current event is highlighted');ok(await p.evaluate(()=>document.querySelectorAll('.it.cur').length===1),'only one highlighted');
+const isNow=await p.evaluate(()=>!!document.querySelector('.it.cur.now'));ok(isNow,'event that has started glows as happening now');
+if(round===1)await p.screenshot({path:T+'out/r8_before.png'});
+const t0=Date.now();await p.click(`.it[data-it="${c0}"] [data-mark]`);await p.waitForTimeout(150);const dt=Date.now()-t0;
+ok(!(await p.$(`.it[data-it="${c0}"]`)),'done event hidden instantly ('+dt+'ms)');
+const c1=await cur();ok(c1&&c1!==c0&&ids.indexOf(c1)>ids.indexOf(c0),'next event highlighted: '+c1);
+ok(await p.evaluate(()=>!!document.querySelector('.it.cur.pop')),'next event pops');
+ok(await p.isVisible('#dnb'),'completed bar shown');
+await p.waitForTimeout(400);if(round===1)await p.screenshot({path:T+'out/r8_after.png'});
+// a refresh while the save is still running must not bring the done event back
+await p.evaluate(()=>typeof load==='function'&&load());await p.waitForTimeout(300);ok(!(await p.$(`.it[data-it="${c0}"]`)),'stays hidden during refresh before save finishes');
+await p.click('#dnb');await p.waitForTimeout(200);ok(!!(await p.$(`.it.done[data-it="${c0}"]`)),'Show reveals completed (faded)');await p.click('#dnb');await p.waitForTimeout(200);ok(!(await p.$(`.it[data-it="${c0}"]`)),'Hide hides again');
+await p.waitForTimeout(1600);ok(D.done.includes(c0),'saved to server');
+ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no sideways scroll');
+ok(errs.length===0,'errors '+errs.join(';'));
+await b.close()}console.log('TOTAL FAILS',fails)})();

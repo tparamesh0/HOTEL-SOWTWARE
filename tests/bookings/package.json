@@ -1,0 +1,6 @@
+{
+  "name": "mm-bookings-tests",
+  "private": true,
+  "scripts": { "test": "node run.js" },
+  "devDependencies": { "playwright": "1.49.1" }
+}

@@ -1,5 +1,7 @@
 # Andaman Hotel Rate Software (Magic Memories Tours and Travels, Port Blair)
 
+> **Working with Claude Code?** Start with [`CLAUDE.md`](CLAUDE.md) — project map, owner rules, build, test and publish steps.
+
 A single-page website that turns the HIGH / MID / LOW class hotel rate Excel workbooks
 (Port Blair, Havelock, Neil Island) into software. 106 hotels, 347 room categories, 665 add-on rates.
 
