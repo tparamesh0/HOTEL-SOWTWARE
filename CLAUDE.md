@@ -10,6 +10,9 @@ This repo holds **two apps** that share one Supabase database:
 | **Magic Memories software** (admin) | Hotel rates, packages, bills, PDFs, WhatsApp, **Customer Bookings** module. Runs as Windows PC app (Electron), Android app and web page. | `src/app.src.html` (one file: HTML+CSS+JS) | `dist/andaman_hotel_rates.html` (with hotel data), `fresh/dist/…` (empty) | Online update package on Vercel project `magic-memories-updates` (folder `ota/`) |
 | **MM TravelMate** (customer app) | What travellers open with their Booking ID: day-by-day plan, cab/ferry times, messages, Done buttons, reviews. | `customer/src/app.src.html` (+ `BUILD`, `NOTES`, `logo.txt`) | `customer/web/index.html` + `version.json` | https://magic-memories-customer.vercel.app (APK: `/Magic-Memories-Customer.apk`) |
 
+**Related repo:** the company website www.magicmemoriestour.com is `tparamesh0/Magic-Memories-Tours-and-Travels` (Next.js on Vercel, its own Supabase project `irjtdscxteefrppgsiaw`; it has its own CLAUDE.md).
+The dashboard tiles 🌐 Website and 🔐 Admin Website open it.
+
 ## Owner's standing rules (always follow)
 1. **Show a demo/mock-up first for new features; build after he says OK.** For corrections/bug reports he sends, just fix and publish.
 2. **Never remove existing features.** Never remove the logo, company name, software name or icon.
