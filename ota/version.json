@@ -1,1 +1,1 @@
-{"build": 321, "ver": "2.9.3", "notes": "New Settings → 💽 Storage (owner only): shows how much of the free Supabase space (500 MB) is used, what is using it, and a button to clean old cloud backups. Red banner on the Dashboard when it passes 80%.", "date": "2026-11-09"}
+{"build": 322, "ver": "2.9.4", "notes": "Login fix: the online server got stuck and was restarted. Cloud backups now wait 1 hour after a failed try, so a slow server is not loaded with big uploads every 10 minutes.", "date": "2026-11-10"}
